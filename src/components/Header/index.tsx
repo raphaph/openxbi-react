@@ -2,7 +2,7 @@ import { SunDim } from 'phosphor-react'
 import { useContext } from 'react'
 import { NavLink } from 'react-router-dom'
 import { AppContext } from '../../context/AppContext'
-import { HeaderContainer, HeaderSideRight } from './styles'
+import { HeaderContainer, HeaderSideRight, SeparatorRightSide } from './styles'
 
 export function Header() {
   const { themeValue, setThemeValue } = useContext(AppContext)
@@ -18,7 +18,7 @@ export function Header() {
   }
 
   return (
-    <HeaderContainer>
+    <HeaderContainer variant={themeValue}>
       <NavLink to="/">
         <img
           src={`./src/assets/${
@@ -33,17 +33,17 @@ export function Header() {
           <NavLink to="/components" title="components">
             Components
           </NavLink>
-          <NavLink to="/" title="components">
+          <NavLink to="/templates" title="templates">
             Templates
           </NavLink>
-          <NavLink to="/" title="components">
+          <NavLink to="/services" title="services">
             Services
           </NavLink>
-          <NavLink to="/" title="components">
+          <NavLink to="/documentations" title="docs">
             Docs
           </NavLink>
         </nav>
-        <div>|</div>
+        <SeparatorRightSide variant={themeValue}></SeparatorRightSide>
         <button title="changeTheme" onClick={() => changeTheme()}>
           <SunDim
             size={22}

@@ -2,16 +2,16 @@ export const defaultTheme = {
   white: '#fff',
 
   // principal color
-  turq: '#29ABE2',
-  'turq-100': '#ABECF4',
-  'turq-200': '#90E0EA',
-  'turq-300': '#75D3E0',
-  'turq-400': '#5AC6D7',
-  'turq-500': '#4AB8CF',
-  'turq-600': '#3CAAC7',
-  'turq-700': '#2D9CBF',
-  'turq-800': '#1E8DB6',
-  'turq-900': '#0E7EAF',
+  'blue-turq': '#29ABE2',
+  'bturq-100': '#ABECF4',
+  'bturq-200': '#90E0EA',
+  'bturq-300': '#75D3E0',
+  'bturq-400': '#5AC6D7',
+  'bturq-500': '#4AB8CF',
+  'bturq-600': '#3CAAC7',
+  'bturq-700': '#2D9CBF',
+  'bturq-800': '#1E8DB6',
+  'bturq-900': '#0E7EAF',
 
   // combinations
   'red-orange': '#E25437',
