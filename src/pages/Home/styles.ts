@@ -5,9 +5,9 @@ export const MainContainer = styled.main`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-
+  margin-left: 1rem;
   height: auto;
-  background: linear-gradient(rgba(41, 171, 226, 0.05), rgba(0, 0, 0, 0.1));
+  
 `
 
 export const MainContentOne = styled.div`
@@ -32,5 +32,25 @@ export const MainContentOne = styled.div`
     color: ${(props) => props.theme['gray-500']};
     font-weight: 300;
     margin-bottom: 2rem;
+  }
+`
+
+export const CardsMainContentOne = styled.div`
+  display: flex;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 1rem;
+  flex-wrap: wrap;
+  align-items: center;
+
+  div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    background: linear-gradient( -15deg,rgba(52,	22,	227,.1),rgba(255, 140, 0, 0.1) ,rgba(41, 171, 226,0.1));
+    
+    width: 25rem;
+    height: 25rem;
+    border-radius: 6px;
   }
 `

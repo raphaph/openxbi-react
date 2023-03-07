@@ -1,4 +1,4 @@
-import { MainContainer, MainContentOne } from './styles'
+import { CardsMainContentOne, MainContainer, MainContentOne } from './styles'
 
 export function Home() {
   return (
@@ -10,6 +10,11 @@ export function Home() {
           <br />
           create an experience different from the ordinary.
         </strong>
+        <CardsMainContentOne>
+          <div>Card1</div>
+          <div>Card2</div>
+          <div>Card3</div>
+        </CardsMainContentOne>
       </MainContentOne>
     </MainContainer>
   )
