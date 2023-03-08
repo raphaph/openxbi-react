@@ -9,7 +9,7 @@ export function Home() {
   return (
     <MainContainer variant={themeValue}>
       <MainContentOne>
-        <h1>Intelligence applied to elements for BI</h1>
+        <h1>Intelligence applied to components for BI</h1>
         <strong>
           Nós utilizamos componentes estilizados com HTML e CSS, incorporando variáveis e medidas DAX,{' '} 
           <br />

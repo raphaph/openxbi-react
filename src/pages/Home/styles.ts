@@ -79,6 +79,12 @@ export const CardsMainContentOne = styled.div`
 
 export const MainContentTwo = styled.main`
   display: flex; 
+  flex-direction: row;
+
+  @media (max-width: 700px) {
+    display: flex;
+    flex-direction: column;
+  }
 `
 
 export const ContentTwoCard = styled.div`
