@@ -15,6 +15,7 @@ export const AppContext = createContext({} as AppContextType)
 
 export function AppContextProvider({ children }: AppContextProviderProps) {
   const [themeValue, setThemeValue] = useState<themeValueType>(null)
+  const [contentsNames, setContentsNames] = useState([]); 
 
   useEffect(() => {
     const currentTheme: any = localStorage.getItem('theme')
@@ -25,6 +26,7 @@ export function AppContextProvider({ children }: AppContextProviderProps) {
     } else {
       setThemeValue(currentTheme)
     }
+
   }, [])
 
   return (

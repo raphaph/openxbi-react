@@ -22,6 +22,7 @@ export const StyledAccordion = styled(Accordion)`
 export const ItemBody = styled(AccordionItem)<ThemeProps>`
   width: 100%;
   max-width: 500px;
+  transition: .3s;
 `
 
 export const Trigger = styled(AccordionTrigger)<ThemeProps>`
@@ -53,7 +54,35 @@ export const Trigger = styled(AccordionTrigger)<ThemeProps>`
 `
 
 export const Content = styled(AccordionContent)`
-  padding: 1rem;
+  margin: .5rem;
+  overflow: hidden;
+  
+  &[data-state='open'] {
+    animation: slideDown 500ms ease-in-out;
+  }
+
+  &[data-state='closed'] {
+    animation: slideUp 500ms ease-in-out;
+  }
+
+  @keyframes slideDown {
+    from {
+      height: 0;
+    }
+    to {
+      height: var(--radix-accordion-content-height);
+    }
+  }
+
+  @keyframes slideUp {
+    from {
+      height: var(--radix-accordion-content-height);
+    }
+    to {
+      height: 0;
+    }
+  }
+
 `
 
 export const TitleAccord = styled.h2`

@@ -11,6 +11,7 @@ export const GlobalStyle = createGlobalStyle<ThemeProps>`
         margin: 0;
         padding: 0;
         box-sizing: border-box;
+        scroll-behavior: smooth;
     }
 
     :focus {
@@ -23,10 +24,26 @@ export const GlobalStyle = createGlobalStyle<ThemeProps>`
           props.variant === 'light' ? props.theme.white : props.theme.offblack};
         color: ${(props) =>
           props.variant === 'light' ? props.theme.offblack : props.theme.white};
-
+        
+        scroll-behavior: smooth;
 
         -webkit-font-smoothing: antialiased; 
     }
+
+    body::-webkit-scrollbar {
+      width: .6rem;
+    }
+
+    body::-webkit-scrollbar-track {
+        background: rgba(255,255,255,0.3);
+    }
+
+    body::-webkit-scrollbar-thumb {
+      background: rgba(0,0,0,0.3);
+    }
+
+
+
     // jetBrains/FiraCode for code and Inter for texts
     body, input, textarea, button {
         font-family: 'Inter', sans-serif;
