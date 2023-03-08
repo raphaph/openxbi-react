@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+
 interface ThemeProps {
   variant?: 'light' | 'dark' | null
 }
@@ -20,6 +21,13 @@ export const HeaderContainer = styled.header<ThemeProps>`
   img {
     height: 2.5rem;
     margin-left: 1.5rem;
+  }
+
+  @media (max-width: 700px) {
+    img {
+      width: 0;
+      visibility: hidden;
+    }
   }
 `
 

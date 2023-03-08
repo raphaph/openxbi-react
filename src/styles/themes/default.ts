@@ -20,7 +20,7 @@ export const defaultTheme = {
   'soft-blue': '#7AC7E2',
   'blue-emerald': '#009ACD',
   'vibrant-green': '#00C957',
-  'purple-god': '#3416e3', //rgba(52,	22,	227,1)
+  'purple-god': '#3416e3', // rgba(52,	22,	227,1)
 
   // gray's
   'gray-100': '#E1E1E6',
@@ -32,4 +32,5 @@ export const defaultTheme = {
   'gray-800': '#202024',
   'gray-900': '#141414',
   offblack: '#080808',
+  black: '#000',
 } as const

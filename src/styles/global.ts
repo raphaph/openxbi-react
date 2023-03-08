@@ -27,6 +27,23 @@ export const GlobalStyle = createGlobalStyle<ThemeProps>`
 
         -webkit-font-smoothing: antialiased; 
     }
+
+    body::-webkit-scrollbar {
+      width: 12px;
+    }
+
+    body::-webkit-scrollbar-track {
+      background: ${(props) =>
+        props.theme['gray-100']};        /* color of the tracking area */
+    } 
+
+    body::-webkit-scrollbar-thumb {
+      background-color: black;    /* color of the scroll thumb */
+      border-radius: 10px;       /* roundness of the scroll thumb */
+      border: 2px solid ${(props) =>
+        props.theme['gray-100']}; ;  /* creates padding around scroll thumb */
+    }
+
     // jetBrains/FiraCode for code and Inter for texts
     body, input, textarea, button {
         font-family: 'Inter', sans-serif;
