@@ -17,7 +17,7 @@ export function ClickedComponent() {
       const texto = await (await (await (await resposta.text())
       .replace(/<script.*RefreshRuntime.*<\/script>/s, "")
       .replace(/<script.*src="\/@vite\/client"><\/script>/s, "")));
-      setCodigo(texto);
+      setCodigo(texto); 
     }
     buscarCodigo();
   }, []);
