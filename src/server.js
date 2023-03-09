@@ -13,8 +13,9 @@ let contents = {
     {
       id: "2b248371-d3d9-42b7-b8af-342a14f89f22",
       name: "card-detailed",
-      src: "/src/components/@Contents/card-detailed.html",
-      code: "card"
+      path: "/src/components/@Contents/card-detailed.html",
+      type: "card",
+      creator: "raphaph"
   }
   ]
 };
@@ -58,23 +59,23 @@ app.get('/contents/:id', authMiddleware, (req, res) => {
 
 app.post('/contents', authMiddleware, (req, res) => {
   const { name, src, code } = req.body;
-  if (!name || !src || !code) {
+  if (!name || !path || !type || !creator ) {
     return res.status(400).json({ error: 'Invalid data' });
   }
   const id = uuidv4();
-  const content = { id, name, src, code };
+  const content = { id, name, path, type, creator };
   contents.contents.push(content);
   res.json(content);
 });
 
 app.put('/contents/:id', authMiddleware, (req, res) => {
   const { id } = req.params;
-  const { name, src, code } = req.body;
+  const { name, path, type, creator } = req.body;
   const contentIndex = contents.contents.findIndex(c => c.id === id || c.name === id);
   if (contentIndex < 0) {
     return res.status(404).json({ error: 'Content not found' });
   }
-  const updatedContent = { ...contents.contents[contentIndex], name, src, code };
+  const updatedContent = { ...contents.contents[contentIndex], name, path, type, creator };
   contents.contents[contentIndex] = updatedContent;
   res.json(updatedContent);
 });

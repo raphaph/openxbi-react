@@ -2,36 +2,35 @@
 <div class='card-container'>
     <link rel='stylesheet' href='https://fonts.googleapis.com/icon?family=Material+Icons:FILL'>
     <div class='card-info'>
-        <strong>Amout Received
+        <strong>Amout Received <!-- Título do card -->
         </strong>
-        <strong>R$ 5.689.988,00</strong>
+        <strong>$ 5.689.988,00</strong> <!-- Valor total -->
         <p>hover me</p>
     </div>
     <div class='card-hidden'>
         <p><span class='material-icons' style='font-size:1rem; font-weight: bold;'>swap_vert</span>
-            <strong> transactions:</strong> 4569</p>
+            <strong> transactions:</strong> 4569</p>  <!-- Quantidade de transações -->
         <p><span class='material-icons' style='font-size:1rem; font-weight: bold; color: green'>expand_less</span>
-            <strong> max:</strong> R$ 84.234,09</p>
+            <strong> max:</strong> $ 84.234,09</p> <!-- Valor máximo -->
         <p><span class='material-icons' style='font-size:1rem; font-weight: bold; color: red'>expand_more</span>
-            <strong> min:</strong> R$ 1.545,00</p>
+            <strong> min:</strong> R$ 1.545,00</p> <!-- Valor mínimo -->
         <p><span class='material-icons' style='font-size:1rem; font-weight: bold;'>percent</span>
-            <strong> annual target:</strong> 59%</p>
+            <strong> annual target:</strong> 59%</p> <!-- Edite a meta -->
         <p><span class='material-icons' style='font-size:1rem; font-weight: bold;'>calendar_month</span>
-            <strong> last month:</strong> R$ 12.589.099,10</p>
-        
+            <strong> last month:</strong> $ 12.589.099,10</p> <!-- Valor mês anterior -->
     </div>
 </div>
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap');
 
 * {
-    -webkit-font-smoothing: antialiased;
+    -webkit-font-smoothing: antialiased; /* Font mais suave */
 }
 
 .card-container {
     font-family: 'Inter', sans-serif;
     cursor: pointer;
-    color: #111;
+    color: #111; /* Cor da font valores */
 }
 
 .card-container,
@@ -45,18 +44,18 @@
 .card-info {
     flex-direction: column;
     
-    width: 200px;
-    height: 120px;
+    width: 200px; /* Largura do card */
+    height: 120px; /* altura do card */
 
-    background: white;
-    border-radius: 11px;
+    background: white; /* Background do card principal */
+    border-radius: 11px; /* Raio da borda */
     border: 1px solid rgba(136, 136, 136, 0.1);
     box-shadow: 1px 1px 2px 1px rgba(133, 133, 133, 0.1);
 }
 
 .card-info p {
     margin: 0.3rem 0;
-    color: #3416e3;
+    color: #3416e3; /* Cor do 'hover me' */
     font-weight: bold;
     font-size: .8rem;
 }
@@ -78,13 +77,13 @@
     
     opacity: 0;
     
-    background: white;
+    background: white; /* Background do card tooltip */
     border-radius: 11px;
     border: 1px solid rgba(110, 110, 110, 0.1);
     box-shadow: 1px 1px 2px 1px rgba(110, 110, 110, 0.1);
 
     transform: translateY(0px);
-    transition: .3s;
+    transition: 300ms; /* Tempo de transição do card secundário */
 }
 
 .card-hidden p {
@@ -92,7 +91,7 @@
 }
 
 .card-container:hover>.card-hidden {
-    animation: fadeUp 0.3s;
+    animation: fadeUp 300ms; /* Tempo de transição do card secundário */
     animation-fill-mode: forwards;
 }
 

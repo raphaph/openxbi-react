@@ -30,10 +30,13 @@ export function Home() {
               height={300}
             ></iframe>
           </div>
-          <div></div>
+          <div><iframe
+              src={contentsNames[1]}
+              frameBorder={0}
+              height={300}
+            ></iframe></div>
           <div></div>
         </CardsMainContentOne>
-
         <MainContentTwo>
           <ContentTwoCard>
             <h3>Estilizando</h3>
@@ -59,7 +62,9 @@ export function Home() {
             </p>
           </ContentTwoCard>
         </MainContentTwo>
+        <h1>#FREE  #UX #BI</h1>
         <MyAccordion />
+        
       </MainContentOne>
     </MainContainer>
   )

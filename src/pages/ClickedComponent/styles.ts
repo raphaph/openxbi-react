@@ -14,6 +14,8 @@ export const ClickedBodyContainer = styled.main<ThemeProps>`
       props.variant === 'light'
         ? props.theme['gray-100']
         : props.theme['gray-900']};
+
+  padding: 2rem 0;
 `
 
 export const ClickedMainContent = styled.div<ThemeProps>`
