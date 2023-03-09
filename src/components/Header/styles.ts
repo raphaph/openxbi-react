@@ -19,14 +19,13 @@ export const HeaderContainer = styled.header<ThemeProps>`
 
   img {
     height: 2.5rem;
-    margin-left: 1.5rem;
+    margin-left: 1.5rem;    
   }
 
   @media (max-width: 700px) {
     img {
       width: 0;
     }
-    
   }
 `
 
@@ -51,6 +50,7 @@ export const HeaderSideRight = styled.div`
     &.active {
       color: ${(props) => props.theme['blue-turq']};
       font-weight: 500;
+      text-shadow: 0 0 10px ;
     }
   }
 

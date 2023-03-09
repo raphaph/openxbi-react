@@ -23,7 +23,8 @@ export function MyAccordion() {
           <Content>
             O uso de componentes estilizados em html e css, possuem um impacto
             mínimo ou dependendo do componente, uma performance melhor do que
-            componentes nativos do PowerBI.<br />
+            componentes nativos do PowerBI.
+            <br />
             <br />
             Podendo agregar ainda mais na eficiência do seu Dashboard e no seu
             tempo de carregamento.
@@ -35,7 +36,8 @@ export function MyAccordion() {
           </Trigger>
           <Content>
             Components estão prontos para uso, copie o código e incorpore com
-            medidas e variáveis DAX.<br />
+            medidas e variáveis DAX.
+            <br />
             <br />
             Trabalhamos para que os códigos sejam o mais otimizado possivel,
             além de inserir comentários para que usuários com pouca experiência

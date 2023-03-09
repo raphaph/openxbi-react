@@ -1,6 +1,5 @@
 import { createContext, ReactNode, useEffect, useState } from 'react'
 
-
 type themeValueType = 'light' | 'dark' | null
 
 interface AppContextType {
@@ -23,18 +22,18 @@ export const AppContext = createContext({} as AppContextType)
 
 export function AppContextProvider({ children }: AppContextProviderProps) {
   const [themeValue, setThemeValue] = useState<themeValueType>(null)
-  const [contentsNames, setContentsNames] = useState<string[]>([]); 
+  const [contentsNames, setContentsNames] = useState<string[]>([])
   const [clickedContent, setClickedContent] = useState('')
 
   useEffect(() => {
     const loadFiles = async () => {
-      const files = await import.meta.glob('/src/components/@Contents/*.html');
+      const files = await import.meta.glob('/src/components/@Contents/*.html')
       const files2 = Object.keys(files)
       setContentsNames(files2)
-    };
-    
-    loadFiles();
-  },[]);
+    }
+
+    loadFiles()
+  }, [])
 
   console.log(contentsNames)
 
@@ -47,11 +46,18 @@ export function AppContextProvider({ children }: AppContextProviderProps) {
     } else {
       setThemeValue(currentTheme)
     }
-
   }, [])
 
   return (
-    <AppContext.Provider value={{ themeValue, setThemeValue, contentsNames, clickedContent, setClickedContent }}>
+    <AppContext.Provider
+      value={{
+        themeValue,
+        setThemeValue,
+        contentsNames,
+        clickedContent,
+        setClickedContent,
+      }}
+    >
       {children}
     </AppContext.Provider>
   )

@@ -22,7 +22,7 @@ export const StyledAccordion = styled(Accordion)`
 export const ItemBody = styled(AccordionItem)<ThemeProps>`
   width: 100%;
   max-width: 500px;
-  transition: .3s;
+  transition: 0.3s;
 `
 
 export const Trigger = styled(AccordionTrigger)<ThemeProps>`
@@ -50,13 +50,14 @@ export const Trigger = styled(AccordionTrigger)<ThemeProps>`
 
   &:focus {
     color: ${(props) => props.theme['blue-emerald']};
+    box-shadow: 0 0 5px 2px;
   }
 `
 
 export const Content = styled(AccordionContent)`
-  margin: .5rem;
+  margin: 0.5rem;
   overflow: hidden;
-  
+
   &[data-state='open'] {
     animation: slideDown 500ms ease-in-out;
   }
@@ -82,7 +83,6 @@ export const Content = styled(AccordionContent)`
       height: 0;
     }
   }
-
 `
 
 export const TitleAccord = styled.h2`

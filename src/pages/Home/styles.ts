@@ -12,7 +12,7 @@ export const MainContainer = styled.main<ThemeProps>`
 
   height: auto;
   background: ${(props) =>
-    props.variant === 'light' ? props.theme['gray-100'] : props.theme.black};
+    props.variant === 'light' ? props.theme.offwhite : props.theme.black};
 
   border-bottom: 1px solid
     ${(props) =>
@@ -70,12 +70,11 @@ export const CardsMainContentOne = styled.div`
     width: 25rem;
     height: 25rem;
     border-radius: 6px;
-
   }
 `
 
 export const MainContentTwo = styled.main`
-  display: flex; 
+  display: flex;
   flex-direction: row;
 
   @media (max-width: 700px) {
@@ -90,6 +89,7 @@ export const ContentTwoCard = styled.div`
 
   h3 {
     margin-bottom: 1rem;
-    color: ${props => props.theme['strong-orange']}
+    color: ${(props) => props.theme['strong-orange']};
+    text-shadow: 0 0 2px ;
   }
 `
