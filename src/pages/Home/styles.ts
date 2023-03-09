@@ -71,9 +71,6 @@ export const CardsMainContentOne = styled.div`
     height: 25rem;
     border-radius: 6px;
 
-    p {
-      backdrop-filter: blur(2px);
-    }
   }
 `
 

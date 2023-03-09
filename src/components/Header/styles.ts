@@ -21,6 +21,13 @@ export const HeaderContainer = styled.header<ThemeProps>`
     height: 2.5rem;
     margin-left: 1.5rem;
   }
+
+  @media (max-width: 700px) {
+    img {
+      width: 0;
+    }
+    
+  }
 `
 
 export const HeaderSideRight = styled.div`

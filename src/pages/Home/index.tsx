@@ -5,7 +5,7 @@ import { CardsMainContentOne, ContentTwoCard, MainContainer, MainContentOne, Mai
 
 export function Home() {
   document.title = 'OpenXBI | Home'
-  const { themeValue } = useContext(AppContext)
+  const { themeValue, contentsNames } = useContext(AppContext)
 
   return (
     <MainContainer variant={themeValue}>
@@ -18,7 +18,7 @@ export function Home() {
         </strong>
         <CardsMainContentOne>
           <div>
-            <iframe src="src\components\@Contents\card-detailed.html" frameBorder={0} height={300}></iframe>
+            <iframe src={contentsNames[0]} frameBorder={0} height={300}></iframe>
           </div>
           <div>
             

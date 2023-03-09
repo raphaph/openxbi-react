@@ -1,5 +1,6 @@
 export const defaultTheme = {
   white: '#fff',
+  offwhite: '#f5f5f5',
 
   // principal color
   'blue-turq': '#29ABE2',
