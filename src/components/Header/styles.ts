@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+
 interface ThemeProps {
   variant?: 'light' | 'dark' | null
 }
@@ -10,16 +11,12 @@ export const HeaderContainer = styled.header<ThemeProps>`
 
   height: 100px;
   width: 100%;
-
-  border-bottom: 1px solid
-    ${(props) =>
-      props.variant === 'light'
-        ? props.theme['gray-100']
-        : props.theme['gray-900']};
+  background: ${(props) =>
+    props.variant === 'light' ? props.theme.offwhite : props.theme.black};
 
   img {
     height: 2.5rem;
-    margin-left: 1.5rem;    
+    margin-left: 1.5rem;
   }
 
   @media (max-width: 700px) {
@@ -50,7 +47,7 @@ export const HeaderSideRight = styled.div`
     &.active {
       color: ${(props) => props.theme['blue-turq']};
       font-weight: 500;
-      text-shadow: 0 0 10px ;
+      text-shadow: 0 0 10px;
     }
   }
 
@@ -70,6 +67,6 @@ export const SeparatorRightSide = styled.div<ThemeProps>`
   background-color: ${(props) =>
     props.variant === 'light'
       ? props.theme['gray-100']
-      : props.theme['gray-600']};
+      : props.theme['gray-900']};
   color: transparent;
 `

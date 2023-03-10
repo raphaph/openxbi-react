@@ -4,9 +4,12 @@ import { AppContext } from '../../context/AppContext'
 import {
   CardsMainContentOne,
   ContentTwoCard,
+  ImageCodes,
   MainContainer,
   MainContentOne,
   MainContentTwo,
+  MainFooterContent,
+  MidContent,
 } from './styles'
 
 export function Home() {
@@ -30,16 +33,20 @@ export function Home() {
               height={300}
             ></iframe>
           </div>
-          <div><iframe
+          <div>
+            <iframe
               src={contentsNames[1]}
               frameBorder={0}
               height={300}
-            ></iframe></div>
-          <div><iframe
+            ></iframe>
+          </div>
+          <div>
+            <iframe
               src={contentsNames[0]}
               frameBorder={0}
               height={300}
-            ></iframe></div>
+            ></iframe>
+          </div>
         </CardsMainContentOne>
         <MainContentTwo>
           <ContentTwoCard>
@@ -66,14 +73,47 @@ export function Home() {
             </p>
           </ContentTwoCard>
         </MainContentTwo>
-        <h1>#FREE  #UX #BI</h1>
-        <MyAccordion />
-        <div>
-          <h2>Experimente</h2>
-          <p>Pratique com os componentes prontos, substitua os valores  <br />com variáveis,
-          experimente criar seus próprios componentes. </p>
-        </div>
-        
+        <MidContent>
+          <MyAccordion />
+          <h1>#FREE #UX #BI</h1>
+        </MidContent>
+        <MainFooterContent>
+          <div>
+            <h2>Experimente</h2>
+            <p>
+              Pratique com nossos componentes prontos é #free, substitua os
+              valores <br />
+              com variáveis, experimente criar seus próprios componentes,
+              descubra novas possibilidas.{' '}
+            </p>
+          </div>
+          <ImageCodes>
+            <div>
+              <h3>Código comentado para auxiliar novos usuários</h3>
+              <img
+                src={
+                  themeValue === 'light'
+                    ? 'src/assets/code-light.png'
+                    : 'src/assets/code-dark.png'
+                }
+                alt=""
+              />
+            </div>
+            <div>
+              <h3>
+                Utilize variáveis e medidas DAX dentro do código, é simples
+              </h3>
+              <img
+                src={
+                  themeValue === 'light'
+                    ? 'src/assets/dax-light.png'
+                    : 'src/assets/dax-dark.png'
+                }
+                alt=""
+              />
+            </div>
+          </ImageCodes>
+        </MainFooterContent>
       </MainContentOne>
     </MainContainer>
   )

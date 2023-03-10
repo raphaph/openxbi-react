@@ -16,7 +16,6 @@ export const StyledAccordion = styled(Accordion)`
   align-items: flex-start;
   max-width: 600px;
   width: 100%;
-  margin: 5rem 0;
 `
 
 export const ItemBody = styled(AccordionItem)<ThemeProps>`

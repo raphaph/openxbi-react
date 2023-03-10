@@ -1,14 +1,20 @@
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter'
-import styled from "styled-components";
+import styled from 'styled-components'
 
 interface ThemeProps {
-    variant?: 'light' | 'dark' | null
-  }
+  variant?: 'light' | 'dark' | null
+}
 
 export const ClickedBodyContainer = styled.main<ThemeProps>`
   background: ${(props) =>
     props.variant === 'light' ? props.theme['gray-100'] : props.theme.black};
 
+  border-top: 1px solid
+    ${(props) =>
+      props.variant === 'light'
+        ? props.theme['gray-100']
+        : props.theme['gray-900']};
+  
   border-bottom: 1px solid
     ${(props) =>
       props.variant === 'light'
@@ -20,7 +26,6 @@ export const ClickedBodyContainer = styled.main<ThemeProps>`
 
 export const ClickedMainContent = styled.div<ThemeProps>`
   display: flex;
-  
 
   @media (max-width: 700px) {
     display: flex;
@@ -31,10 +36,10 @@ export const ClickedMainContent = styled.div<ThemeProps>`
 export const SingleComponentContainer = styled.div<ThemeProps>`
   display: flex;
   flex-direction: column;
-  padding: 2rem 0 2rem 2rem ;
+  padding: 2rem 0 2rem 2rem;
 
   h2 {
-    margin-bottom: .5rem;
+    margin-bottom: 0.5rem;
   }
 
   div {
@@ -59,7 +64,7 @@ export const SyntaxContainer = styled.div`
     display: flex;
     justify-content: space-between;
     align-items: center;
-    
+
     button {
       cursor: pointer;
       color: inherit;
@@ -71,7 +76,7 @@ export const SyntaxContainer = styled.div`
       }
 
       &:active {
-        color: ${props => props.theme['blue-emerald']}
+        color: ${(props) => props.theme['blue-emerald']};
       }
     }
   }
@@ -86,30 +91,28 @@ export const SyntaxHighlighterStyle = styled(SyntaxHighlighter)<ThemeProps>`
   font-family: 'JetBrains Mono', monospace !important;
 
   background: ${(props) =>
-      props.variant === 'light'
-        ? props.theme.offwhite
-        : props.theme.offblack} !important;
+    props.variant === 'light'
+      ? props.theme.offwhite
+      : props.theme.offblack} !important;
 
   border-radius: 10px 0 0 10px;
   overflow-x: hidden;
-  
+
   &::-webkit-scrollbar {
-      width: .6rem;
+    width: 0.6rem;
   }
 
   &::-webkit-scrollbar:horizontal {
     display: none;
   }
 
-
   &::-webkit-scrollbar-track {
-      background: rgba(255,255,255,0.3);
+    background: rgba(255, 255, 255, 0.3);
   }
 
   &::-webkit-scrollbar-thumb {
-    background: rgba(0,0,0,0.3);
+    background: rgba(0, 0, 0, 0.3);
   }
-
 `
 
 export const ClickedContentSupport = styled.details`
@@ -120,7 +123,7 @@ export const ClickedContentSupport = styled.details`
     font-size: 1.2rem;
     font-weight: bold;
     margin-bottom: 1rem;
-    width: 180px
+    width: 180px;
   }
 
   div {
@@ -132,11 +135,11 @@ export const ClickedContentSupport = styled.details`
   }
 
   code {
-    padding: .2rem;
+    padding: 0.2rem;
 
-    color: ${props => props.theme.white};
+    color: ${(props) => props.theme.white};
     font-weight: bold;
-    background: rgba(222,111,22,0.55);
+    background: rgba(222, 111, 22, 0.55);
 
     border-radius: 3px;
   }
@@ -146,24 +149,23 @@ export const SupportButton = styled.div`
   display: flex;
   flex-direction: column;
   margin: 2rem;
-  
+
   button {
     cursor: pointer;
-    margin: .5rem 0;
-    padding: .2rem;
-    
+    margin: 0.5rem 0;
+    padding: 0.2rem;
+
     width: 7rem;
     height: 2rem;
     border: 0;
 
-
-    background: ${props => props.theme['offblack']};
-    color: ${props => props.theme.white};
+    background: ${(props) => props.theme.offblack};
+    color: ${(props) => props.theme.white};
 
     font-size: 0.875rem;
     border-radius: 6px;
 
-    transition: .4s;
+    transition: 0.4s;
 
     &:hover {
       opacity: 0.8;
@@ -171,7 +173,7 @@ export const SupportButton = styled.div`
 
     &:active {
       transform: scale(1.05);
-      transition: .3s ease-in;
+      transition: 0.3s ease-in;
       opacity: 1;
     }
   }

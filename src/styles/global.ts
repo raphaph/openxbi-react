@@ -35,11 +35,15 @@ export const GlobalStyle = createGlobalStyle<ThemeProps>`
     }
 
     body::-webkit-scrollbar-track {
-        background: rgba(255,255,255,0.3);
+        background: ${(props) =>
+          props.variant === 'light' ? props.theme.white : props.theme.offblack};
     }
 
     body::-webkit-scrollbar-thumb {
-      background: rgba(0,0,0,0.3);
+      background: ${(props) =>
+        props.variant === 'light'
+          ? props.theme['gray-300']
+          : props.theme['gray-700']};
     }
 
 

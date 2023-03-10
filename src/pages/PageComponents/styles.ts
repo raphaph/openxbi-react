@@ -9,8 +9,14 @@ export const HeaderContentsContainer = styled.header<ThemeProps>`
   justify-content: center;
   align-items: center;
 
+  border-top: 1px solid
+    ${(props) =>
+      props.variant === 'light'
+        ? props.theme['gray-100']
+        : props.theme['gray-900']};
+
   background: ${(props) =>
-    props.variant === 'light' ? props.theme['gray-100'] : props.theme.black};
+    props.variant === 'light' ? props.theme.offwhite : props.theme.black};
 
   div {
     max-width: 1660px;
@@ -29,7 +35,7 @@ export const ComponentsContainer = styled.div<ThemeProps>`
   width: 100%;
 
   background: ${(props) =>
-    props.variant === 'light' ? props.theme['gray-100'] : props.theme.black};
+    props.variant === 'light' ? props.theme.offwhite : props.theme.black};
 
   border-bottom: 1px solid
     ${(props) =>
@@ -58,8 +64,6 @@ export const ComponentsContainer = styled.div<ThemeProps>`
     border-radius: 6px 6px 0 0;
   }
 `
-
-
 
 export const FooterCardContent = styled.footer<ThemeProps>`
   display: flex;

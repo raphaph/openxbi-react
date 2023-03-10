@@ -9,7 +9,8 @@ import {
 
 export function PageComponents() {
   document.title = 'OpenXBI | All components'
-  const { themeValue, contentsNames, clickedContent, setClickedContent } = useContext(AppContext)
+  const { themeValue, contentsNames, clickedContent, setClickedContent } =
+    useContext(AppContext)
 
   return (
     <>
@@ -29,7 +30,9 @@ export function PageComponents() {
                 <strong>
                   {content.slice(0, -5).split('/src/components/@Contents/')}
                 </strong>
-                <button onClick={() => localStorage.setItem('lastClicked', content)}>
+                <button
+                  onClick={() => localStorage.setItem('lastClicked', content)}
+                >
                   <NavLink to="/componentCode" title="services">
                     <span>HTML</span> & <span>CSS</span>
                   </NavLink>

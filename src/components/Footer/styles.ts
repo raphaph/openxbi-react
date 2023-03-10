@@ -11,7 +11,7 @@ export const FooterContainer = styled.footer<ThemeProps>`
   justify-content: space-between;
 
   height: 18rem;
-  margin: 2rem 1rem;
+  padding: 2rem 1rem;
 
   p {
     color: ${(props) => props.theme['gray-500']};
