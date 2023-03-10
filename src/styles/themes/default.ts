@@ -24,6 +24,7 @@ export const defaultTheme = {
   'purple-god': '#3416e3', // rgba(52,	22,	227,1)
 
   // gray's
+  'gray-000': '#FAFAEA',
   'gray-100': '#E1E1E6',
   'gray-300': '#C4C4CC',
   'gray-400': '#8D8D99',

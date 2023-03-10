@@ -10,6 +10,9 @@ export const FooterContainer = styled.footer<ThemeProps>`
   align-items: center;
   justify-content: space-between;
 
+  position: relative;
+  z-index: 2;
+
   height: 18rem;
   padding: 2rem 1rem;
 

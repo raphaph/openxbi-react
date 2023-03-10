@@ -2,10 +2,11 @@ import { useContext, useEffect, useState } from 'react'
 import { AppContext } from '../../context/AppContext'
 import {
   ClickedBodyContainer,
-  ClickedContentSupport,
   ClickedMainContent,
+  DetailsSupport,
   SingleComponentContainer,
   SupportButton,
+  SupportContainer,
   SyntaxContainer,
   SyntaxHighlighterStyle,
 } from './styles'
@@ -72,48 +73,50 @@ export function ClickedComponent() {
           </SyntaxHighlighterStyle>
         </SyntaxContainer>
       </ClickedMainContent>
-      <ClickedContentSupport>
-        <summary>Como utilizar</summary>
-        <div>
-          <p>
-            1. Copie o código, e cole em uma medida DAX dentro de aspas duplas
-            (" ")
-          </p>
-          <p>
-            {' '}
-            <strong>
-              Exemplo <ArrowRight />
-            </strong>{' '}
-            <code>{`medida = "<div></div>"`}</code>{' '}
-          </p>
-        </div>
-        <div>
-          <p>
-            2. Incorpore o código HTML e CSS com medidas e variáveis DAX
-            utilizando a seguinte sintaxe: "&variavel/medida&"
-          </p>
-          <p>
-            {' '}
-            <strong>
-              Exemplo <ArrowRight />
-            </strong>{' '}
-            <code>{`"<p> "&variavel/medida&" </p>"`}</code>
-          </p>
-        </div>
-        <div>
-          <p>
-            3. Quanto mais incorporar seu código com variáveis que se adaptam
-            conforme os dados mudam no seu dashboard, <br />
-            mais interessante ficarão os componentes
-          </p>
-        </div>
-        <SupportButton>
-          <strong>
-            Caso queira ver um exemplo mais prático, clique abaixo!
-          </strong>
-          <button>HowToUse</button>
-        </SupportButton>
-      </ClickedContentSupport>
+      <SupportContainer>
+        <DetailsSupport>
+            <summary>Como utilizar</summary>
+            <div>
+              <p>
+                1. Copie o código, e cole em uma medida DAX dentro de aspas duplas
+                (" ")
+              </p>
+              <p>
+                {' '}
+                <strong>
+                  Exemplo <ArrowRight />
+                </strong>{' '}
+                <code>{`medida = "<div></div>"`}</code>{' '}
+              </p>
+            </div>
+            <div>
+              <p>
+                2. Incorpore o código HTML e CSS com medidas e variáveis DAX
+                utilizando a seguinte sintaxe: "&variavel/medida&"
+              </p>
+              <p>
+                {' '}
+                <strong>
+                  Exemplo <ArrowRight />
+                </strong>{' '}
+                <code>{`"<p> "&variavel/medida&" </p>"`}</code>
+              </p>
+            </div>
+            <div>
+              <p>
+                3. Quanto mais incorporar seu código com variáveis que se adaptam
+                conforme os dados mudam no seu dashboard, <br />
+                mais interessante ficarão os componentes
+              </p>
+            </div>
+            <SupportButton>
+              <strong>
+                Caso queira ver um exemplo mais prático, clique abaixo!
+              </strong>
+              <button>HowToUse</button>
+            </SupportButton>
+        </DetailsSupport>
+      </SupportContainer>
     </ClickedBodyContainer>
   )
 }

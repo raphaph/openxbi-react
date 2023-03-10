@@ -31,6 +31,20 @@ export const ComponentsContainer = styled.div<ThemeProps>`
   flex-wrap: wrap;
   padding-left: 2rem;
   padding-bottom: 10rem;
+  z-index: 0;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('src/assets/mesh.svg');
+    z-index: -1;
+    opacity: 0.2;
+    /* Aplica um filtro de desfoque */
+  }
 
   width: 100%;
 

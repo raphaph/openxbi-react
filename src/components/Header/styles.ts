@@ -9,6 +9,8 @@ export const HeaderContainer = styled.header<ThemeProps>`
   align-items: center;
   justify-content: space-between;
 
+  z-index: 2;
+
   height: 100px;
   width: 100%;
   background: ${(props) =>

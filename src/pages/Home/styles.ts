@@ -32,7 +32,7 @@ export const MainContainer = styled.main<ThemeProps>`
     height: 100%;
     background-image: url('src/assets/mesh.svg');
     z-index: -1;
-    opacity: 0.25;
+    opacity: 0.2;
     /* Aplica um filtro de desfoque */
   }
 `

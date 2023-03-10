@@ -101,7 +101,7 @@ export function Home() {
             </div>
             <div>
               <h3>
-                Utilize variáveis e medidas DAX dentro do código, é simples
+                Utilize variáveis e medidas DAX dentro do código
               </h3>
               <img
                 src={

@@ -6,8 +6,14 @@ interface ThemeProps {
 }
 
 export const ClickedBodyContainer = styled.main<ThemeProps>`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  z-index: 1;
+
   background: ${(props) =>
-    props.variant === 'light' ? props.theme['gray-100'] : props.theme.black};
+    props.variant === 'light' ? props.theme.offwhite : props.theme.black};
 
   border-top: 1px solid
     ${(props) =>
@@ -22,6 +28,19 @@ export const ClickedBodyContainer = styled.main<ThemeProps>`
         : props.theme['gray-900']};
 
   padding: 2rem 0;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('src/assets/mesh.svg');
+    z-index: -1;
+    opacity: 0.2;
+    /* Aplica um filtro de desfoque */
+  }
 `
 
 export const ClickedMainContent = styled.div<ThemeProps>`
@@ -36,7 +55,9 @@ export const ClickedMainContent = styled.div<ThemeProps>`
 export const SingleComponentContainer = styled.div<ThemeProps>`
   display: flex;
   flex-direction: column;
-  padding: 2rem 0 2rem 2rem;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 2rem 2rem 2rem;
 
   h2 {
     margin-bottom: 0.5rem;
@@ -60,6 +81,8 @@ export const SingleComponentContainer = styled.div<ThemeProps>`
   }
 `
 export const SyntaxContainer = styled.div`
+  width: 100%;
+
   div {
     display: flex;
     justify-content: space-between;
@@ -85,14 +108,17 @@ export const SyntaxContainer = styled.div`
 `
 
 export const SyntaxHighlighterStyle = styled(SyntaxHighlighter)<ThemeProps>`
-  max-width: 1600px;
   width: 100%;
+
+  @media (max-width: 700px) {
+    width: 450px;
+  }
+  
   height: 400px;
-  font-family: 'JetBrains Mono', monospace !important;
 
   background: ${(props) =>
     props.variant === 'light'
-      ? props.theme.offwhite
+      ? props.theme.white
       : props.theme.offblack} !important;
 
   border-radius: 10px 0 0 10px;
@@ -115,8 +141,17 @@ export const SyntaxHighlighterStyle = styled(SyntaxHighlighter)<ThemeProps>`
   }
 `
 
-export const ClickedContentSupport = styled.details`
-  margin: 2rem 2rem 14rem 2rem;
+export const SupportContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  max-width: 1345px;
+  width: 100%;
+`
+
+export const DetailsSupport = styled.details`
+  margin: 2rem 2rem 10rem 2rem;
 
   summary {
     cursor: pointer;
@@ -148,7 +183,7 @@ export const ClickedContentSupport = styled.details`
 export const SupportButton = styled.div`
   display: flex;
   flex-direction: column;
-  margin: 2rem;
+  margin: 2rem 0;
 
   button {
     cursor: pointer;
@@ -159,8 +194,8 @@ export const SupportButton = styled.div`
     height: 2rem;
     border: 0;
 
-    background: ${(props) => props.theme.offblack};
-    color: ${(props) => props.theme.white};
+    background: ${(props) => props.theme['strong-orange']};
+    color: ${(props) => props.theme.black};
 
     font-size: 0.875rem;
     border-radius: 6px;
@@ -168,7 +203,7 @@ export const SupportButton = styled.div`
     transition: 0.4s;
 
     &:hover {
-      opacity: 0.8;
+      opacity: 0.5;
     }
 
     &:active {
