@@ -25,7 +25,7 @@ export function Home() {
         <CardsMainContentOne>
           <div>
             <iframe
-              src={contentsNames[0]}
+              src={contentsNames[2]}
               frameBorder={0}
               height={300}
             ></iframe>
@@ -35,7 +35,11 @@ export function Home() {
               frameBorder={0}
               height={300}
             ></iframe></div>
-          <div></div>
+          <div><iframe
+              src={contentsNames[0]}
+              frameBorder={0}
+              height={300}
+            ></iframe></div>
         </CardsMainContentOne>
         <MainContentTwo>
           <ContentTwoCard>
@@ -64,6 +68,11 @@ export function Home() {
         </MainContentTwo>
         <h1>#FREE  #UX #BI</h1>
         <MyAccordion />
+        <div>
+          <h2>Experimente</h2>
+          <p>Pratique com os componentes prontos, substitua os valores  <br />com variáveis,
+          experimente criar seus próprios componentes. </p>
+        </div>
         
       </MainContentOne>
     </MainContainer>

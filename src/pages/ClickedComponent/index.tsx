@@ -2,10 +2,13 @@ import { useContext, useEffect, useState } from "react"
 import { AppContext } from "../../context/AppContext"
 import { ClickedBodyContainer, ClickedContentSupport, ClickedMainContent, SingleComponentContainer, SupportButton, SyntaxContainer, SyntaxHighlighterStyle } from "./styles"
 import { coldarkDark, coldarkCold } from 'react-syntax-highlighter/dist/esm/styles/prism'
-import { ArrowArcRight, ArrowLeft, ArrowRight, Copy, Copyright, CopySimple } from "phosphor-react"
+import { ArrowRight, CopySimple } from "phosphor-react"
 
 export function ClickedComponent() {
+
   const lastClicked: any = localStorage.getItem('lastClicked')
+
+  document.title = `OpenXBI | ${lastClicked.slice(0, -5).split('/src/components/@Contents/')}`
 
   const { themeValue } = useContext(AppContext)
 
@@ -14,9 +17,9 @@ export function ClickedComponent() {
   useEffect(() => {
     async function buscarCodigo() {
       const resposta = await fetch(lastClicked);
-      const texto = await (await (await (await resposta.text())
+      const texto = await (await resposta.text())
       .replace(/<script.*RefreshRuntime.*<\/script>/s, "")
-      .replace(/<script.*src="\/@vite\/client"><\/script>/s, "")));
+      .replace(/<script.*src="\/@vite\/client"><\/script>/s, "");
       setCodigo(texto); 
     }
     buscarCodigo();

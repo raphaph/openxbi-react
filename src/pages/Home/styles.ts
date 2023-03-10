@@ -70,6 +70,11 @@ export const CardsMainContentOne = styled.div`
     width: 25rem;
     height: 25rem;
     border-radius: 6px;
+    transition: 300ms ;
+
+    &:hover {
+      transform: scale(1.05);
+    }
   }
 `
 
