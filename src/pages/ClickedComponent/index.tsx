@@ -113,7 +113,7 @@ export function ClickedComponent() {
               <strong>
                 Caso queira ver um exemplo mais prático, clique abaixo!
               </strong>
-              <button>HowToUse</button>
+              <button>Documentation</button>
             </SupportButton>
         </DetailsSupport>
       </SupportContainer>

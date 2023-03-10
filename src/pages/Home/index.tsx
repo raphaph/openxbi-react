@@ -81,10 +81,10 @@ export function Home() {
           <div>
             <h2>Experimente</h2>
             <p>
-              Pratique com nossos componentes prontos é #free, substitua os
+              Pratique com nossos componentes prontos e #free, substitua os
               valores <br />
               com variáveis, experimente criar seus próprios componentes,
-              descubra novas possibilidas.{' '}
+              descubra novas possibilidades.{' '}
             </p>
           </div>
           <ImageCodes>

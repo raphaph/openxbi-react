@@ -1,3 +1,4 @@
+import { Code, CodeSimple } from 'phosphor-react'
 import { useContext } from 'react'
 import { NavLink } from 'react-router-dom'
 import { AppContext } from '../../context/AppContext'
@@ -28,15 +29,15 @@ export function PageComponents() {
               </div>
               <FooterCardContent variant={themeValue}>
                 <strong>
-                  {content.slice(0, -5).split('/src/components/@Contents/')}
+                  {content.slice(0, -5).split('/src/components/@Contents/')} 
                 </strong>
                 <button
                   onClick={() => localStorage.setItem('lastClicked', content)}
                 >
                   <NavLink to="/componentCode" title="services">
-                    <span>HTML</span> & <span>CSS</span>
+                    <Code size={15} color="orange" weight='bold'/><p>HTML & CSS</p> 
                   </NavLink>
-                </button>
+                </button> 
               </FooterCardContent>
             </main>
           )

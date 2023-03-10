@@ -96,6 +96,7 @@ export const FooterCardContent = styled.footer<ThemeProps>`
 
     font-size: 0.875rem;
     font-weight: 500;
+    text-align: center;
 
     padding: 0.25rem;
 
@@ -116,6 +117,13 @@ export const FooterCardContent = styled.footer<ThemeProps>`
     a {
       text-decoration: none;
       color: inherit;
+      
+      display: flex;
+      align-items: center;
+
+      p {
+        padding-left: .3rem;
+      }
     }
   }
 `
