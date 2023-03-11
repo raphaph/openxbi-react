@@ -20,7 +20,7 @@ export const ClickedBodyContainer = styled.main<ThemeProps>`
       props.variant === 'light'
         ? props.theme['gray-100']
         : props.theme['gray-900']};
-  
+
   border-bottom: 1px solid
     ${(props) =>
       props.variant === 'light'
@@ -55,8 +55,7 @@ export const ClickedMainContent = styled.div<ThemeProps>`
 export const SingleComponentContainer = styled.div<ThemeProps>`
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  align-items: flex-start;
   padding: 2rem 2rem 2rem 2rem;
 
   h2 {
@@ -77,6 +76,20 @@ export const SingleComponentContainer = styled.div<ThemeProps>`
 
     width: 25rem;
     height: 25rem;
+    border-radius: 6px;
+  }
+
+  small {
+    position: relative;
+    bottom: 25px;
+    left: 11px;
+  }
+
+  p {
+    font-size: 0.875rem;
+    padding: 0.8rem;
+    background: ${(props) =>
+      props.variant === 'light' ? props.theme.white : props.theme.offblack};
     border-radius: 6px;
   }
 `
@@ -104,7 +117,7 @@ export const SyntaxContainer = styled.div`
     }
   }
 
-  padding: 2rem 1rem 0 1rem;
+  padding: 2rem 1rem;
 `
 
 export const SyntaxHighlighterStyle = styled(SyntaxHighlighter)<ThemeProps>`
@@ -113,8 +126,8 @@ export const SyntaxHighlighterStyle = styled(SyntaxHighlighter)<ThemeProps>`
   @media (max-width: 700px) {
     width: 450px;
   }
-  
-  height: 400px;
+
+  max-height: 600px;
 
   background: ${(props) =>
     props.variant === 'light'
@@ -186,30 +199,28 @@ export const SupportButton = styled.div`
   margin: 2rem 0;
 
   button {
+    display: flex;
+    align-items: center;
+    width: 150px;
+    justify-content: space-between;
     cursor: pointer;
-    margin: 0.5rem 0;
-    padding: 0.2rem;
-
-    width: 7rem;
-    height: 2rem;
     border: 0;
-
-    background: ${(props) => props.theme['strong-orange']};
-    color: ${(props) => props.theme.black};
-
-    font-size: 0.875rem;
     border-radius: 6px;
+    transition: all 0.2s;
 
-    transition: 0.4s;
+    margin-top: 0.7rem;
+    padding: 0.5rem;
+    background: ${(props) => props.theme['strong-orange']};
 
     &:hover {
-      opacity: 0.5;
+      opacity: 0.7;
+      box-shadow: 0 0 5px 1px ${(props) => props.theme['strong-orange']};
     }
 
     &:active {
-      transform: scale(1.05);
-      transition: 0.3s ease-in;
       opacity: 1;
+      transform: scale(0.97);
+      box-shadow: 0 0 7px 1px ${(props) => props.theme['strong-orange']};
     }
   }
 `

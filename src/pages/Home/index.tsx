@@ -28,13 +28,6 @@ export function Home() {
         <CardsMainContentOne>
           <div>
             <iframe
-              src={contentsNames[2]}
-              frameBorder={0}
-              height={300}
-            ></iframe>
-          </div>
-          <div>
-            <iframe
               src={contentsNames[1]}
               frameBorder={0}
               height={300}
@@ -42,7 +35,14 @@ export function Home() {
           </div>
           <div>
             <iframe
-              src={contentsNames[0]}
+              src={contentsNames[3]}
+              frameBorder={0}
+              height={300}
+            ></iframe>
+          </div>
+          <div>
+            <iframe
+              src={contentsNames[2]}
               frameBorder={0}
               height={300}
             ></iframe>
@@ -100,9 +100,7 @@ export function Home() {
               />
             </div>
             <div>
-              <h3>
-                Utilize variáveis e medidas DAX dentro do código
-              </h3>
+              <h3>Utilize variáveis e medidas DAX dentro do código</h3>
               <img
                 src={
                   themeValue === 'light'

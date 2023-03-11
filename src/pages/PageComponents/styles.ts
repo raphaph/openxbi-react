@@ -37,8 +37,8 @@ export const PageComponentsContainer = styled.main<ThemeProps>`
 export const HeaderContentsContainer = styled.header`
   display: flex;
   justify-content: flex-start;
-  align-items: flex-start; 
-  
+  align-items: flex-start;
+
   max-width: 1800px;
   width: 100%;
 
@@ -60,7 +60,7 @@ export const ComponentsContainer = styled.div<ThemeProps>`
   flex-wrap: wrap;
   padding-left: 2rem;
   padding-bottom: 10rem;
-  
+
   max-width: 1800px;
   width: 100%;
 
@@ -94,7 +94,7 @@ export const FooterCardContent = styled.footer<ThemeProps>`
   border-radius: 0 0 6px 6px;
 
   background: ${(props) =>
-    props.variant === 'light' ? props.theme.offwhite : props.theme.offblack};
+    props.variant === 'light' ? props.theme.white : props.theme.offblack};
 
   button {
     cursor: pointer;
@@ -124,12 +124,12 @@ export const FooterCardContent = styled.footer<ThemeProps>`
     a {
       text-decoration: none;
       color: inherit;
-      
+
       display: flex;
       align-items: center;
 
       p {
-        padding-left: .3rem;
+        padding-left: 0.3rem;
       }
     }
   }

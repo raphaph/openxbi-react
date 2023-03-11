@@ -12,6 +12,8 @@ dist
 dist-ssr
 *.local
 .env
+exp-server.js
+content-list.json
 
 # Editor directories and files
 .vscode/*

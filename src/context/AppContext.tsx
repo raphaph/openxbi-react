@@ -14,10 +14,6 @@ interface AppContextProviderProps {
   children: ReactNode
 }
 
-interface ContentsNameProps {
-  contentsNames: []
-}
-
 export const AppContext = createContext({} as AppContextType)
 
 export function AppContextProvider({ children }: AppContextProviderProps) {

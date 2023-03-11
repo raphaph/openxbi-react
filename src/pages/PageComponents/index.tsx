@@ -11,8 +11,7 @@ import {
 
 export function PageComponents() {
   document.title = 'OpenXBI | All components'
-  const { themeValue, contentsNames } =
-    useContext(AppContext)
+  const { themeValue, contentsNames } = useContext(AppContext)
 
   return (
     <PageComponentsContainer variant={themeValue}>
@@ -24,21 +23,22 @@ export function PageComponents() {
       <ComponentsContainer variant={themeValue}>
         {contentsNames.map((content) => {
           return (
-            <main>
+            <main key={content}>
               <div>
                 <iframe src={content} frameBorder={0} height={300}></iframe>
               </div>
               <FooterCardContent variant={themeValue}>
                 <strong>
-                  {content.slice(0, -5).split('/src/components/@Contents/')} 
+                  {content.slice(0, -5).split('/src/components/@Contents/')}
                 </strong>
                 <button
                   onClick={() => localStorage.setItem('lastClicked', content)}
                 >
                   <NavLink to="/componentCode" title="services">
-                    <Code size={15} color="orange" weight='bold'/><p>HTML & CSS</p> 
+                    <Code size={15} color="orange" weight="bold" />
+                    <p>HTML & CSS</p>
                   </NavLink>
-                </button> 
+                </button>
               </FooterCardContent>
             </main>
           )
