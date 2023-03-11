@@ -1,4 +1,4 @@
-import { Code, CodeSimple } from 'phosphor-react'
+import { Code } from 'phosphor-react'
 import { useContext } from 'react'
 import { NavLink } from 'react-router-dom'
 import { AppContext } from '../../context/AppContext'
@@ -6,16 +6,17 @@ import {
   ComponentsContainer,
   FooterCardContent,
   HeaderContentsContainer,
+  PageComponentsContainer,
 } from './styles'
 
 export function PageComponents() {
   document.title = 'OpenXBI | All components'
-  const { themeValue, contentsNames, clickedContent, setClickedContent } =
+  const { themeValue, contentsNames } =
     useContext(AppContext)
 
   return (
-    <>
-      <HeaderContentsContainer variant={themeValue}>
+    <PageComponentsContainer variant={themeValue}>
+      <HeaderContentsContainer>
         <div>
           <h2>Componentes</h2>
         </div>
@@ -43,6 +44,6 @@ export function PageComponents() {
           )
         })}
       </ComponentsContainer>
-    </>
+    </PageComponentsContainer>
   )
 }

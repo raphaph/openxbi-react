@@ -1,50 +1,60 @@
-<div class="chart-container">
-    <div class="chart-content">
-        <strong>Peak hour</strong>
-        <div class="hour-card">
-            <div class="hour">10:00</div> <!-- HORA -->
-            <div class="quantity10">101</div>  <!-- VALOR -->
+<!-- Componente OpenXBI, ajude-nos compartilhando nossa plataforma -->
+<!-- https://openxbi.com.br -->
+<div class='chart-container'>
+    <link rel='stylesheet' href='https://fonts.googleapis.com/icon?family=Material+Icons:FILL'>
+    
+    <div class='chart-content'>
+        <div class="title">
+            <!-- Visite https://fonts.google.com/icons?icon.set=Material+Icons para trocar icones no código -->
+            <span class='material-icons' style='font-size:1rem; font-weight: bold;'>timeline</span>
+            <strong>Peak hour</strong>
         </div>
-        <div class="hour-card">
-            <div class="hour">11:00</div>
-            <div class="quantity11">90</div>  
+        
+        <div class='hour-card'>
+            <div class='hour'>08:00</div> <!-- HORA -->
+            <div class='quantity8h'>101</div>  <!-- VALOR -->
         </div>
-        <div class="hour-card">
-            <div class="hour">12:00</div>
-            <div class="quantity12">89</div> 
+        <div class='hour-card'>
+            <div class='hour'>09:00</div>
+            <div class='quantity9h'>90</div>  
         </div>
-        <div class="hour-card">
-            <div class="hour">13:00</div>
-            <div class="quantity13">103</div> 
+        <div class='hour-card'>
+            <div class='hour'>11:00</div>
+            <div class='quantity10h'>89</div> 
         </div>
-        <div class="hour-card">
-            <div class="hour">14:00</div>
-            <div class="quantity14">83</div> 
+        <div class='hour-card'>
+            <div class='hour'>11:00</div>
+            <div class='quantity11h'>103</div> 
         </div>
-        <div class="hour-card">
-            <div class="hour">15:00</div>
-            <div class="quantity15">102</div> 
+        <div class='hour-card'>
+            <div class='hour'>12:00</div>
+            <div class='quantity12h'>83</div> 
         </div>
-        <div class="hour-card">
-            <div class="hour">16:00</div>
-            <div class="quantity16">77</div> 
+        <div class='hour-card'>
+            <div class='hour'>13:00</div>
+            <div class='quantity13h'>102</div> 
         </div>
-        <div class="hour-card">
-            <div class="hour">17:00</div>
-            <div class="quantity17">74</div> 
+        <div class='hour-card'>
+            <div class='hour'>14:00</div>
+            <div class='quantity14h'>77</div> 
         </div>
-        <div class="hour-card">
-            <div class="hour">18:00</div>
-            <div class="quantity18">93</div> 
+        <div class='hour-card'>
+            <div class='hour'>15:00</div>
+            <div class='quantity15h'>74</div> 
         </div>
-        <div class="hour-card">
-            <div class="hour">19:00</div>
-            <div class="quantity19">113</div> 
+        <div class='hour-card'>
+            <div class='hour'>16:00</div>
+            <div class='quantity16h'>93</div> 
         </div>
-        <div class="hour-card">
-            <div class="hour">20:00</div>
-            <div class="quantity20">75</div> 
+        <div class='hour-card'>
+            <div class='hour'>17:00</div>
+            <div class='quantity17h'>113</div> 
         </div>
+        <div class='hour-card'>
+            <div class='hour'>18:00</div>
+            <div class='quantity18h'>75</div> 
+        </div>
+        <small>hourly sales</small>
     </div>
 </div>
     
@@ -63,7 +73,6 @@
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
-    padding: 1rem;
 } 
 
 .chart-content {
@@ -71,14 +80,13 @@
     width: 250px;
     padding: 1rem;
     border-radius: 11px; /* Raio da borda */
-border: 1px solid rgba(136, 136, 136, 0.1);
-box-shadow: 1px 1px 2px 1px rgba(133, 133, 133, 0.1);
+    border: 1px solid rgba(136, 136, 136, 0.1);
+    box-shadow: 1px 1px 2px 1px rgba(133, 133, 133, 0.1);
 }
 
 body::-webkit-scrollbar {
     width: 0;
 }
-
 
 .hour-card {
     display: flex;
@@ -90,40 +98,70 @@ body::-webkit-scrollbar {
 .hour {
     width: 3rem;
 }
-
-.quantity10,
-.quantity11,
-.quantity12,
-.quantity13,
-.quantity14,
-.quantity15,
-.quantity16,
-.quantity17,
-.quantity18,
-.quantity19,
-.quantity20 {
+.quantity8h,
+.quantity9h,
+.quantity10h,
+.quantity11h,
+.quantity12h,
+.quantity13h,
+.quantity14h,
+.quantity15h,
+.quantity16h,
+.quantity17h,
+.quantity18h {
     font-size: 0.7rem;
     background: black;
     color: white;
 
-    padding: .1rem;
-    border-radius: 5px;
+    padding: .1rem .2rem;
+    border-radius: 9px;
 
     text-align: right;
 
+    box-shadow: 0 0 2px 1px rgb(219, 219, 219);
+
+}
+/* Use condicional IF para modificar a cor com DAX 
+ * As cores são duplicadas para que você possa usar condicionais 
+ * Poderiamos deixar o código mais otimiazado, porém essa estrutura pode ser mais intuitiva
+ * se necessário faça uma divisão para valores maiores que a area, veja exemplo usando calc() abaixo */
+.quantity8h { animation: anim1 1s forwards ; background: #000;}  /* #b4b7bb cinza claro (opcional)*/
+@keyframes anim1 { 0%{width: 0;} 100% {width: calc( 0.99 * 101px )}} /* Width representa o valor das 10horas */ 
+
+
+.quantity9h { animation: anim2 1s forwards ; background: #000;} /* 8h */
+@keyframes anim2 { 0%{width: 0;} 100% {width: 90px}}
+
+.quantity10h { animation: anim3 1s forwards ; background: #000;} /* 9h */
+@keyframes anim3 { 0%{width: 0;} 100% {width: 89px}}
+
+.quantity11h { animation: anim4 1s forwards ; background: #000;} /* 11h */
+@keyframes anim4 { 0%{width: 0;} 100% {width: 103px}}
+
+.quantity12h { animation: anim5 1s forwards ; background: #000;} /* 12h */
+@keyframes anim5 { 0%{width: 0;} 100% {width: 83px}}
+
+.quantity13h { animation: anim6 1s forwards ; background: #000;} /* 13h */
+@keyframes anim6 { 0%{width: 0;} 100% {width: 102px}}
+
+.quantity14h { animation: anim7 1s forwards ; background: #000;} /* 14h */
+@keyframes anim7 { 0%{width: 0;} 100% {width: 77px}}
+
+.quantity15h { animation: anim8 1s forwards ; background: #000;} /* 15h */
+@keyframes anim8 { 0%{width: 0;} 100% {width: 74px}}
+
+.quantity16h { animation: anim9 1s forwards ; background: #000;} /* 16h */
+@keyframes anim9 { 0%{width: 0;} 100% {width: 93px}}
+
+.quantity17h { animation: anim10 1s forwards ; background: #00dd88; } /* 17h */
+@keyframes anim10 { 0%{width: 0;} 100% {width: 113px}}
+.quantity17h::before {
+    content: 'peak ';
 }
 
-.quantity10 { width: 101 ; background: #000;} /* Use condicional IF para modificar a cor com DAX */
-.quantity11 { width: 90 ; background: #000;} 
-.quantity12 { width: 89 ; background: #000;} 
-.quantity13 { width: 103 ; background: #000;} 
-.quantity14 { width: 83 ; background: #000;} 
-.quantity15 { width: 102 ; background: #000;} 
-.quantity16 { width: 77 ; background: #000;} 
-.quantity17 { width: 74 ; background: #000;} 
-.quantity18 { width: 93 ; background: #000;} 
-.quantity19 { width: 113 ; background: #FF8C00;} 
-.quantity20 { width: 75 ; background: #000;} 
+.quantity18h { animation: anim11 1s forwards ; background: #000;} /* 18h */
+@keyframes anim11 { 0%{width: 0;} 100% {width: 75px}}
+
 
 </style>
 

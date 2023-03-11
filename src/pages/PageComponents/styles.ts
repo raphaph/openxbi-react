@@ -4,11 +4,11 @@ interface ThemeProps {
   variant?: 'light' | 'dark' | null
 }
 
-export const HeaderContentsContainer = styled.header<ThemeProps>`
+export const PageComponentsContainer = styled.main<ThemeProps>`
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
-
+  justify-content: center;
   border-top: 1px solid
     ${(props) =>
       props.variant === 'light'
@@ -18,19 +18,6 @@ export const HeaderContentsContainer = styled.header<ThemeProps>`
   background: ${(props) =>
     props.variant === 'light' ? props.theme.offwhite : props.theme.black};
 
-  div {
-    max-width: 1660px;
-    width: 100%;
-    margin: 2rem;
-  }
-`
-
-export const ComponentsContainer = styled.div<ThemeProps>`
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  padding-left: 2rem;
-  padding-bottom: 10rem;
   z-index: 0;
 
   &::before {
@@ -45,17 +32,37 @@ export const ComponentsContainer = styled.div<ThemeProps>`
     opacity: 0.2;
     /* Aplica um filtro de desfoque */
   }
+`
 
+export const HeaderContentsContainer = styled.header`
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start; 
+  
+  max-width: 1800px;
   width: 100%;
 
-  background: ${(props) =>
-    props.variant === 'light' ? props.theme.offwhite : props.theme.black};
+  div {
+    max-width: 1660px;
+    width: 100%;
+    margin: 2rem;
+    text-align: left;
 
-  border-bottom: 1px solid
-    ${(props) =>
-      props.variant === 'light'
-        ? props.theme['gray-100']
-        : props.theme['gray-900']};
+    h2 {
+      margin-left: 1rem;
+    }
+  }
+`
+
+export const ComponentsContainer = styled.div<ThemeProps>`
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  padding-left: 2rem;
+  padding-bottom: 10rem;
+  
+  max-width: 1800px;
+  width: 100%;
 
   main {
     margin: 1rem;
