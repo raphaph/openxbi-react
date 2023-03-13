@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Camada_2" data-name="Camada 2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 145 162">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #ff931e;
+        filter: url(#drop-shadow-2);
+      }
+
+      .cls-2 {
+        fill: #fff;
+        filter: url(#drop-shadow-1);
+      }
+    </style>
+    <filter id="drop-shadow-1" filterUnits="userSpaceOnUse">
+      <feOffset dx="0" dy="0"/>
+      <feGaussianBlur result="blur" stdDeviation="4"/>
+      <feFlood flood-color="#eaeaea" flood-opacity=".8"/>
+      <feComposite in2="blur" operator="in"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="drop-shadow-2" filterUnits="userSpaceOnUse">
+      <feOffset dx="0" dy="0"/>
+      <feGaussianBlur result="blur-2" stdDeviation="4"/>
+      <feFlood flood-color="#ff8c00" flood-opacity=".8"/>
+      <feComposite in2="blur-2" operator="in"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g id="Camada_1-2" data-name="Camada 1">
+    <g>
+      <path class="cls-2" d="M73.24,101.35l-31.32,47.85c-.2,.31-.55,.5-.92,.5H14c-.87,0-1.4-.97-.92-1.7L58.08,79.4c.24-.37,.24-.84,0-1.2L15.98,13.88c-.48-.73,.05-1.7,.92-1.7h26.82c.37,0,.72,.19,.92,.5l27.66,42.26c.43,.66,1.4,.66,1.84,0L101.85,12.68c.2-.31,.55-.5,.92-.5h26.98c.79,0,1.26,.88,.83,1.54l-42.63,65.14-14.72,22.5Z"/>
+      <path class="cls-1" d="M92.81,86.27l38.86,59.37c1.14,1.75-.11,4.07-2.2,4.07h-23.16c-.89,0-1.71-.45-2.2-1.19l-26.55-40.56c-.23-.35-.23-.81,0-1.16l13.49-20.53c.42-.64,1.35-.63,1.76,0Z"/>
+    </g>
+  </g>
+</svg>

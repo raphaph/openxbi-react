@@ -40,7 +40,7 @@ export const ContactInfo = styled.div`
   }
 
   a {
-    color: ${(props) => props.theme['blue-turq']};
+    color: ${(props) => props.theme.primary};
     text-decoration: none;
 
     margin: 0.5rem 0;
@@ -65,7 +65,7 @@ export const RightSideContent = styled.div`
 
     a {
       text-decoration: none;
-      color: ${(props) => props.theme['blue-turq']};
+      color: ${(props) => props.theme.primary};
     }
   }
 `

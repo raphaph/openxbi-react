@@ -18,21 +18,21 @@ export const StyledAccordion = styled(Accordion)`
   width: 100%;
 `
 
-export const ItemBody = styled(AccordionItem)<ThemeProps>`
+export const ItemBody = styled(AccordionItem) <ThemeProps>`
   width: 100%;
   max-width: 500px;
   transition: 0.3s;
 `
 
-export const Trigger = styled(AccordionTrigger)<ThemeProps>`
+export const Trigger = styled(AccordionTrigger) <ThemeProps>`
   font-weight: bold;
   width: 100%;
   text-align: left;
   border: 1px solid
     ${(props) =>
-      props.variant === 'light'
-        ? props.theme['gray-100']
-        : props.theme['gray-900']};
+    props.variant === 'light'
+      ? props.theme['gray-100']
+      : props.theme['gray-900']};
   padding: 0.5rem;
   background: ${(props) =>
     props.variant === 'light' ? props.theme.white : props.theme.offblack};
@@ -48,7 +48,7 @@ export const Trigger = styled(AccordionTrigger)<ThemeProps>`
     props.variant === 'light' ? props.theme.offblack : props.theme.white};
 
   &:focus {
-    color: ${(props) => props.theme['blue-emerald']};
+    color: ${(props) => props.theme.secondary};
     box-shadow: 0 0 5px 2px;
   }
 `

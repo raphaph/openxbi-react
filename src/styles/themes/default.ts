@@ -1,7 +1,9 @@
 export const defaultTheme = {
   white: '#fff',
   offwhite: '#f5f5f5',
-
+  primary: '#ff8c00',
+  secondary: '#9d1fff',
+  tertiary: '#2ac6ff',
   // principal color
   'blue-turq': '#29ABE2',
   'bturq-100': '#ABECF4',

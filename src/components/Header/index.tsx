@@ -21,9 +21,8 @@ export function Header() {
     <HeaderContainer variant={themeValue}>
       <NavLink to="/">
         <img
-          src={`./src/assets/${
-            themeValue === 'dark' ? 'logo-dark' : 'logo-light'
-          }.svg`}
+          src={`./src/assets/${themeValue === 'dark' ? 'logo-dark2' : 'logo-light2'
+            }.svg`}
           alt=""
         />
       </NavLink>

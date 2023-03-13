@@ -47,7 +47,7 @@ export const HeaderSideRight = styled.div`
     gap: 1rem;
 
     &.active {
-      color: ${(props) => props.theme['blue-turq']};
+      color: ${(props) => props.theme.primary};
       font-weight: 500;
       text-shadow: 0 0 10px;
     }
