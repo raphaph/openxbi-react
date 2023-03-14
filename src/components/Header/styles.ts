@@ -8,7 +8,7 @@ export const HeaderContainer = styled.header<ThemeProps>`
   display: flex;
   align-items: center;
   justify-content: space-between; 
-  transition: all 300ms;
+  transition: background 300ms;
   z-index: 2;
 
   height: 100px;

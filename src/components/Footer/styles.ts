@@ -30,7 +30,7 @@ export const FooterContents = styled.div`
   justify-content: space-between;
 `
 
-export const ContactInfo = styled.div`
+export const ContactInfo = styled.div<ThemeProps>`
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -39,8 +39,17 @@ export const ContactInfo = styled.div`
     margin: 0.5rem 0;
   }
 
+  svg {
+    height: 25px;
+    margin-right: .2rem;
+    fill: ${(props) =>
+    props.variant === 'light' ? props.theme.offblack : props.theme.white};
+    border-radius: 6px;
+  }
+
   a {
-    color: ${(props) => props.theme.primary};
+    color: ${(props) =>
+    props.variant === 'light' ? props.theme.offblack : props.theme.white};
     text-decoration: none;
 
     margin: 0.5rem 0;
@@ -49,23 +58,45 @@ export const ContactInfo = styled.div`
 
     font-size: 14px;
     font-weight: bold;
+    
+    transition: all 300ms;
+
+    &:hover {
+      transform: scale(1.2);
+      text-shadow: 0 0 1px;
+    }
+
+    &:hover > svg {
+      filter: drop-shadow(0px 0px 2px rgb(0 0 0 / 0.4));
+    }
   }
+
+  
 `
 
-export const RightSideContent = styled.div`
+export const RightSideContent = styled.div<ThemeProps>`
   button {
-    padding: 0.3rem;
+    padding: 0.5rem;
     margin-bottom: 1rem;
-
+    border-radius: 5px;
     font-size: 14px;
     font-weight: bold;
 
     border: 0;
-    background: transparent;
+    background: ${(props) =>
+    props.variant === 'light' ? props.theme.offblack : props.theme.offwhite};
 
     a {
       text-decoration: none;
-      color: ${(props) => props.theme.primary};
+      color: ${(props) =>
+    props.variant === 'light' ? props.theme.white : props.theme.black};
+    }
+    
+    transition: all 300ms;
+
+    &:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 4px 1px;
     }
   }
 `

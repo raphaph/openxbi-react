@@ -21,13 +21,15 @@ export const GlobalStyle = createGlobalStyle<ThemeProps>`
 
     body {
         background: ${(props) =>
-          props.variant === 'light' ? props.theme.white : props.theme.offblack};
+    props.variant === 'light' ? props.theme.white : props.theme.offblack};
         color: ${(props) =>
-          props.variant === 'light' ? props.theme.offblack : props.theme.white};
+    props.variant === 'light' ? props.theme.offblack : props.theme.white};
         
         scroll-behavior: smooth;
 
         -webkit-font-smoothing: antialiased; 
+
+        
     }
 
     body::-webkit-scrollbar {
@@ -36,14 +38,14 @@ export const GlobalStyle = createGlobalStyle<ThemeProps>`
 
     body::-webkit-scrollbar-track {
         background: ${(props) =>
-          props.variant === 'light' ? props.theme.white : props.theme.offblack};
+    props.variant === 'light' ? props.theme.white : props.theme.offblack};
     }
 
     body::-webkit-scrollbar-thumb {
       background: ${(props) =>
-        props.variant === 'light'
-          ? props.theme['gray-300']
-          : props.theme['gray-700']};
+    props.variant === 'light'
+      ? props.theme['gray-300']
+      : props.theme['gray-700']};
     }
 
 

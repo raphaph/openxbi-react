@@ -14,15 +14,15 @@ export const FrameContainer = styled.main<ThemeProps>`
 
   border-top: 1px solid
     ${(props) =>
-      props.variant === 'light'
-        ? props.theme['gray-100']
-        : props.theme['gray-900']};
+    props.variant === 'light'
+      ? props.theme['gray-100']
+      : props.theme['gray-900']};
 
   border-bottom: 1px solid
     ${(props) =>
-      props.variant === 'light'
-        ? props.theme['gray-100']
-        : props.theme['gray-900']};
+    props.variant === 'light'
+      ? props.theme['gray-100']
+      : props.theme['gray-900']};
 
   background: ${(props) =>
     props.variant === 'light' ? props.theme.offwhite : props.theme.black};
@@ -42,17 +42,19 @@ export const FrameContainer = styled.main<ThemeProps>`
     /* Aplica um filtro de desfoque */
   }
 
+  div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+    
+  }
+
   iframe {
     border-radius: 10px;
     margin: 1rem;
     width: 1200px;
     height: 720px;
-  }
-
-  div {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
   }
 
   small {

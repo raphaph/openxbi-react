@@ -1,5 +1,5 @@
 import { ArrowUp, DownloadSimple } from 'phosphor-react'
-import { useContext } from 'react'
+import { useContext, useState } from 'react'
 import { AppContext } from '../../context/AppContext'
 import { FrameContainer, HeaderFrame } from './styles'
 

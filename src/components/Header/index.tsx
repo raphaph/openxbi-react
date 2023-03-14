@@ -5,15 +5,15 @@ import { AppContext } from '../../context/AppContext'
 import { HeaderContainer, HeaderSideRight, SeparatorRightSide } from './styles'
 
 export function Header() {
-  window.addEventListener('scroll', function () {
-    const headerPosition: any = document.querySelector('header')
+  // window.addEventListener('scroll', function () {
+  //   const headerPosition: any = document.querySelector('header')
 
-    if (window.pageYOffset > 400) {
-      headerPosition.style.position = 'fixed'
-    } else if (this.window.pageYOffset < 400) {
-      headerPosition.style.position = 'relative'
-    }
-  })
+  //   if (window.pageYOffset > 400) {
+  //     headerPosition.style.position = 'fixed'
+  //   } else if (this.window.pageYOffset < 400) {
+  //     headerPosition.style.position = 'relative'
+  //   }
+  // })
 
   const { themeValue, setThemeValue } = useContext(AppContext)
 

@@ -11,12 +11,13 @@ export const PageComponentsContainer = styled.main<ThemeProps>`
   justify-content: center;
   border-top: 1px solid
     ${(props) =>
-      props.variant === 'light'
-        ? props.theme['gray-100']
-        : props.theme['gray-900']};
+    props.variant === 'light'
+      ? props.theme['gray-100']
+      : props.theme['gray-900']};
 
   background: ${(props) =>
     props.variant === 'light' ? props.theme.offwhite : props.theme.black};
+  transition: background 300ms;
 
   z-index: 0;
 
@@ -108,10 +109,10 @@ export const FooterCardContent = styled.footer<ThemeProps>`
     padding: 0.25rem;
 
     background: ${(props) =>
-      props.variant === 'light' ? props.theme.offblack : props.theme.white};
+    props.variant === 'light' ? props.theme.offblack : props.theme.white};
 
     color: ${(props) =>
-      props.variant === 'light' ? props.theme.white : props.theme.black};
+    props.variant === 'light' ? props.theme.white : props.theme.black};
 
     transition: all 0.3s;
 

@@ -47,10 +47,6 @@ export const Trigger = styled(AccordionTrigger) <ThemeProps>`
   color: ${(props) =>
     props.variant === 'light' ? props.theme.offblack : props.theme.white};
 
-  &:focus {
-    color: ${(props) => props.theme.secondary};
-    box-shadow: 0 0 5px 2px;
-  }
 `
 
 export const Content = styled(AccordionContent)`

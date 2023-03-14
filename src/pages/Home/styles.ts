@@ -14,6 +14,7 @@ export const MainContainer = styled.main<ThemeProps>`
   position: relative;
   background: ${(props) =>
     props.variant === 'light' ? props.theme.offwhite : props.theme.black};
+  transition: background 300ms;
 
   background-size: 100%;
   border-bottom: 1px solid

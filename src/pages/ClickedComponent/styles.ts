@@ -14,18 +14,19 @@ export const ClickedBodyContainer = styled.main<ThemeProps>`
 
   background: ${(props) =>
     props.variant === 'light' ? props.theme.offwhite : props.theme.black};
+  transition: background 300ms;
 
   border-top: 1px solid
     ${(props) =>
-      props.variant === 'light'
-        ? props.theme['gray-100']
-        : props.theme['gray-900']};
+    props.variant === 'light'
+      ? props.theme['gray-100']
+      : props.theme['gray-900']};
 
   border-bottom: 1px solid
     ${(props) =>
-      props.variant === 'light'
-        ? props.theme['gray-100']
-        : props.theme['gray-900']};
+    props.variant === 'light'
+      ? props.theme['gray-100']
+      : props.theme['gray-900']};
 
   padding: 2rem 0;
 
@@ -89,7 +90,7 @@ export const SingleComponentContainer = styled.div<ThemeProps>`
     font-size: 0.875rem;
     padding: 0.8rem;
     background: ${(props) =>
-      props.variant === 'light' ? props.theme.white : props.theme.offblack};
+    props.variant === 'light' ? props.theme.white : props.theme.offblack};
     border-radius: 6px;
   }
 `
@@ -120,7 +121,7 @@ export const SyntaxContainer = styled.div`
   padding: 2rem 1rem;
 `
 
-export const SyntaxHighlighterStyle = styled(SyntaxHighlighter)<ThemeProps>`
+export const SyntaxHighlighterStyle = styled(SyntaxHighlighter) <ThemeProps>`
   width: 100%;
 
   @media (max-width: 700px) {
