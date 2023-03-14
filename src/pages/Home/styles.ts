@@ -18,9 +18,9 @@ export const MainContainer = styled.main<ThemeProps>`
   background-size: 100%;
   border-bottom: 1px solid
     ${(props) =>
-      props.variant === 'light'
-        ? props.theme['gray-100']
-        : props.theme['gray-900']};
+    props.variant === 'light'
+      ? props.theme['gray-100']
+      : props.theme['gray-900']};
   z-index: 0;
 
   &::before {
@@ -130,40 +130,16 @@ export const MidContent = styled.div`
 
 export const MainFooterContent = styled.div`
   margin-bottom: 10rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-
+  
   h2 {
-    margin-bottom: 1rem;
+    margin: 1rem 0;
   }
 
-  img {
-    position: relative;
-  }
-`
-
-export const ImageCodes = styled.div`
-  margin-top: 2rem;
-  display: flex;
-
-  @media (max-width: 700px) {
-    display: flex;
-    flex-direction: column;
+  p {
+    margin: .5rem 0;
   }
 
-  div {
-    margin: 2rem 0;
-  }
-
-  img {
-    border-radius: 8px;
-    width: 95%;
-    margin-top: 1rem;
-    transition: 500ms;
-
-    &:hover {
-      transform: scale(1.05);
-    }
+  h3 {
+    margin-top: 3rem;
   }
 `

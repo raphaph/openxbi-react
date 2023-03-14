@@ -7,14 +7,16 @@ interface ThemeProps {
 export const HeaderContainer = styled.header<ThemeProps>`
   display: flex;
   align-items: center;
-  justify-content: space-between;
-
+  justify-content: space-between; 
+  transition: all 300ms;
   z-index: 2;
 
   height: 100px;
   width: 100%;
   background: ${(props) =>
     props.variant === 'light' ? props.theme.offwhite : props.theme.black};
+  opacity: 0.95;
+  
 
   img {
     height: 2.5rem;

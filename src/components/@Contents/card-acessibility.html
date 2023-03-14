@@ -1,13 +1,13 @@
-<body>
-    <div class='align-card'>
-        <div class='card-acessibility'>
-            <div class='card-info-hover'>
-                <strong>Net value</strong> <!-- Título -->
-                <p>$ 1.456.234,09</p> <!-- Valor -->
-            </div>
+<!-- Componente OpenXBI, ajude-nos compartilhando nossa plataforma -->
+<!-- https://openxbi.com.br -->
+<div class='align-card'>
+    <div class='card-acessibility'>
+        <div class='card-info-hover'>
+            <strong>Net value</strong> <!-- Título -->
+            <p>$ 1.456.234,09</p> <!-- Valor -->
         </div>
     </div>
-</body>
+</div>
 <style>
     @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap');
     
@@ -27,10 +27,11 @@
     .card-acessibility {
         flex-direction: column;
         
-        height: 120px;
-        width: 100%;
-        max-width: 200px;
-        margin-top: 1rem;
+        height: 120px; /* Altura do card */
+        max-width: 200px; /* Largura máxima do card */
+        width: 100%; /* largura automática */
+         
+        margin-top: 1rem; /* Margem top */
         
         background: white; /* Cor de fundo do card */
         
@@ -42,7 +43,7 @@
     }
 
     .card-acessibility p {
-        margin-top: .8rem;
+        margin-top: .8rem; /* Margin do top do texto */
     }
 
     .card-info-hover {
