@@ -26,12 +26,12 @@ export const MainContainer = styled.main<ThemeProps>`
 
   &::before {
     content: '';
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
-    width: 100%;
+    width: 100vw;
     height: 100%;
-    background-image: url('src/assets/mesh.svg');
+    background: url('src/assets/mesh.svg') no-repeat;
     z-index: -1;
     /* Aplica um filtro de desfoque */
     opacity: 0.2;
@@ -40,7 +40,7 @@ export const MainContainer = styled.main<ThemeProps>`
 
     @keyframes movement {
       0%{transform: scale(1); opacity: 0.2;}
-      50%{transform: scale(.95); opacity: 0.4;}
+      50%{transform: scale(.90); opacity: 0.4;}
       100%{transform: scale(1); opacity: 0.2;}
     }
   }

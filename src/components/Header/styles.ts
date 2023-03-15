@@ -51,7 +51,7 @@ export const HeaderSideRight = styled.div`
     &.active {
       color: ${(props) => props.theme.primary};
       font-weight: 500;
-      text-shadow: 0 0 10px;
+      text-shadow: 0 0 2px;
     }
   }
 
