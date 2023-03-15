@@ -144,3 +144,48 @@ export const MainFooterContent = styled.div`
     margin-top: 3rem;
   }
 `
+
+export const ContentFooter = styled.div<ThemeProps>`
+  display: flex;
+  align-items: center;
+  margin-top: 8rem;
+  img {
+    width: 100px;
+  }
+
+  h2 {
+    margin-right: 1rem;
+  }
+
+  nav {
+    display: flex;
+    flex-direction: column;
+
+    a {
+      display: flex;
+      align-items: center;
+
+      width: 150px;
+      text-decoration: none;
+      color: ${(props) =>
+    props.variant === 'light' ? props.theme.white : props.theme.offblack};;
+      margin: .5rem 1rem;
+      background: ${(props) =>
+    props.variant === 'light' ? props.theme.offblack : props.theme.white};
+      padding: .5rem;
+      border-radius: 5px;
+      box-shadow: 0 0 3px 1px ${(props) =>
+    props.variant === 'light' ? props.theme.offblack : props.theme.white};;
+      transition: 300ms;
+
+      svg {
+        margin-right: .5rem;
+      }
+
+      &:hover {
+        transform: scale(1.05);
+      }
+    }
+  }
+
+`

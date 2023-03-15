@@ -32,7 +32,7 @@ export function Header() {
       <NavLink to="/">
         <img
           src={`./src/assets/${themeValue === 'dark' ?
-            'logo-dark2' : 'logo-light2'}.svg`}
+            'logo-dark' : 'logo-light'}.svg`}
           alt=""
         />
       </NavLink>

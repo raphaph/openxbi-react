@@ -1,10 +1,11 @@
-import { useContext } from 'react'
+import { useContext, useEffect } from 'react'
 import { MyAccordion } from '../../components/Accordion'
 import { Principles } from '../../components/Principles'
 import { AppContext } from '../../context/AppContext'
 import { SyntaxHighlighterStyle } from '../ClickedComponent/styles'
 import {
   CardsMainContentOne,
+  ContentFooter,
   ContentTwoCard,
   MainContainer,
   MainContentOne,
@@ -16,10 +17,16 @@ import {
   coldarkDark,
   coldarkCold,
 } from 'react-syntax-highlighter/dist/esm/styles/prism'
+import boxDark from '../../assets/box-dark.svg'
+import boxLight from '../../assets/box-light.svg'
+import { NavLink } from 'react-router-dom'
+import { Cube, PresentationChart } from 'phosphor-react'
+import { CookiesModal } from '../../components/CookiesModal'
+
 
 export function Home() {
   document.title = 'OpenXBI | Home'
-  const { themeValue, contentsNames } = useContext(AppContext)
+  const { themeValue, contentsNames, cookiesAccept, setCookiesAccept } = useContext(AppContext)
 
   const daxCode = `measure_received_gross = 
 
@@ -233,9 +240,17 @@ export function Home() {
   
   </style>`
 
+  useEffect(() => {
+    const cookies = localStorage.getItem('cookies-accept')
+    if (cookies === null) {
+      setCookiesAccept(null)
+    }
+  })
 
   return (
+
     <MainContainer variant={themeValue}>
+      {cookiesAccept === null ? <CookiesModal /> : null}
       <MainContentOne>
         <h1>Inteligência aplicada a componentes para BI</h1>
         <strong>
@@ -328,6 +343,16 @@ export function Home() {
             {daxCode}
           </SyntaxHighlighterStyle>
 
+          <ContentFooter variant={themeValue}>
+            <h2>Explore</h2>
+            <img
+              src={themeValue === 'light' ? boxLight : boxDark}
+              alt="" />
+            <nav>
+              <NavLink to={"/components"}><Cube weight='bold' /> Components</NavLink>
+              <NavLink to={"/templates"}><PresentationChart weight='bold' /> Templates</NavLink>
+            </nav>
+          </ContentFooter>
         </MainFooterContent>
       </MainContentOne>
     </MainContainer>

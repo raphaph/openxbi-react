@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Camada_2" data-name="Camada 2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 127 143">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #ffbf29;
+      }
+
+      .cls-2 {
+        fill: #cc8322;
+      }
+
+      .cls-3 {
+        stroke: #ff931e;
+        stroke-width: 3px;
+      }
+
+      .cls-3, .cls-4 {
+        fill: none;
+        stroke-miterlimit: 10;
+      }
+
+      .cls-5 {
+        fill: #ffa32a;
+      }
+
+      .cls-4 {
+        filter: url(#drop-shadow-1);
+        stroke: #000;
+        stroke-width: 8px;
+      }
+    </style>
+    <filter id="drop-shadow-1" filterUnits="userSpaceOnUse">
+      <feOffset dx="0" dy="0"/>
+      <feGaussianBlur result="blur" stdDeviation="4"/>
+      <feFlood flood-color="#000" flood-opacity=".8"/>
+      <feComposite in2="blur" operator="in"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g id="Camada_1-2" data-name="Camada 1">
+    <g id="black">
+      <polygon class="cls-1" points="110 46 64 69 16 45 64 17 110 46"/>
+      <polygon class="cls-5" points="110 96 64 122 64 69 110 46 110 96"/>
+      <polygon class="cls-2" points="63 125 16 97 16 45 63 68 63 125"/>
+      <line class="cls-3" x1="63.2" y1="67.7" x2="16.2" y2="44.7"/>
+      <line class="cls-3" x1="110" y1="44.9" x2="63" y2="67.9"/>
+      <line class="cls-3" x1="63.4" y1="127" x2="63.4" y2="68"/>
+      <polygon class="cls-4" points="110.71 98.75 63.5 126.01 16.29 98.75 16.29 44.25 63.5 16.99 110.71 44.25 110.71 98.75"/>
+    </g>
+  </g>
+</svg>

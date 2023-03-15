@@ -1,6 +1,7 @@
 import { Code } from 'phosphor-react'
-import { useContext } from 'react'
+import { useContext, useEffect } from 'react'
 import { NavLink } from 'react-router-dom'
+import { CookiesModal } from '../../components/CookiesModal'
 import { AppContext } from '../../context/AppContext'
 import {
   ComponentsContainer,
@@ -11,10 +12,19 @@ import {
 
 export function PageComponents() {
   document.title = 'OpenXBI | All components'
-  const { themeValue, contentsNames } = useContext(AppContext)
+  const { themeValue, contentsNames, cookiesAccept, setCookiesAccept } = useContext(AppContext)
+
+  useEffect(() => {
+    const cookies = localStorage.getItem('cookies-accept')
+    if (cookies === null) {
+      setCookiesAccept(null)
+    }
+  })
+
 
   return (
     <PageComponentsContainer variant={themeValue}>
+      {cookiesAccept === null ? <CookiesModal /> : null}
       <HeaderContentsContainer>
         <div>
           <h2>Componentes</h2>

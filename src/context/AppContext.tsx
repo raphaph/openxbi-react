@@ -8,6 +8,8 @@ interface AppContextType {
   setThemeValue: any
   clickedContent: string
   setClickedContent: any
+  cookiesAccept: string
+  setCookiesAccept: any
 }
 
 interface AppContextProviderProps {
@@ -16,10 +18,12 @@ interface AppContextProviderProps {
 
 export const AppContext = createContext({} as AppContextType)
 
+
 export function AppContextProvider({ children }: AppContextProviderProps) {
   const [themeValue, setThemeValue] = useState<themeValueType>(null)
   const [contentsNames, setContentsNames] = useState<string[]>([])
   const [clickedContent, setClickedContent] = useState('')
+  const [cookiesAccept, setCookiesAccept] = useState('')
 
   useEffect(() => {
     const loadFiles = async () => {
@@ -52,6 +56,8 @@ export function AppContextProvider({ children }: AppContextProviderProps) {
         contentsNames,
         clickedContent,
         setClickedContent,
+        cookiesAccept,
+        setCookiesAccept
       }}
     >
       {children}

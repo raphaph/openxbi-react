@@ -78,12 +78,8 @@ export const SingleComponentContainer = styled.div<ThemeProps>`
     width: 25rem;
     height: 25rem;
     border-radius: 6px;
-  }
+    margin-bottom: .5rem;
 
-  small {
-    position: relative;
-    bottom: 25px;
-    left: 11px;
   }
 
   p {
@@ -94,6 +90,33 @@ export const SingleComponentContainer = styled.div<ThemeProps>`
     border-radius: 6px;
   }
 `
+
+export const CreatorInfoImg = styled.article<ThemeProps>`
+    display: flex;
+    align-items: center;
+    margin: .5rem 0;
+    width: 100%;
+    
+    left: 11px;
+    background: ${(props) =>
+    props.variant === 'light' ? props.theme.white : props.theme.offblack};
+    padding: .2rem .4rem;
+    border-radius: 6px;
+
+    img {
+      width: 40px;
+      border-radius: 50%;
+      margin: .2rem;
+      margin-right: .8rem;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+`
+
+
 export const SyntaxContainer = styled.div`
   width: 100%;
 

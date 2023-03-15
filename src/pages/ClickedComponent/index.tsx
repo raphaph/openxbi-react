@@ -3,6 +3,7 @@ import { AppContext } from '../../context/AppContext'
 import {
   ClickedBodyContainer,
   ClickedMainContent,
+  CreatorInfoImg,
   DetailsSupport,
   SingleComponentContainer,
   SupportButton,
@@ -29,6 +30,7 @@ interface ContentDataProps {
 }
 
 export function ClickedComponent() {
+
   const [contentData, setContentData] = useState<ContentDataProps>({
     id: '',
     name: '',
@@ -38,16 +40,9 @@ export function ClickedComponent() {
     description: '',
   })
 
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-
   const lastClicked: any = localStorage.getItem('lastClicked')
-
-  document.title = `OpenXBI | ${contentData.name}`
-
   const { themeValue } = useContext(AppContext)
-
   const apiKey = import.meta.env.AUTH_KEY
-
   const [codigo, setCodigo] = useState('')
 
   useEffect(() => {
@@ -79,6 +74,8 @@ export function ClickedComponent() {
     FetchContents()
   }, [lastClicked, apiKey])
 
+  document.title = `OpenXBI | ${contentData.name}`
+
   function CopyCode() {
     navigator.clipboard.writeText(codigo)
     alert('Código copiado para sua área de transferência!')
@@ -92,8 +89,11 @@ export function ClickedComponent() {
           <div>
             <iframe src={lastClicked} frameBorder={0} height={300}></iframe>
           </div>
-          <small>@{contentData.creator}</small>
           <p>{contentData.description}</p>
+          <CreatorInfoImg variant={themeValue}>
+            <img src={`https://github.com/${contentData.creator}.png`} alt="" width={10} />
+            <a href={`https://github.com/${contentData.creator}`} target={'_blank'}><small>Criado por <br />@{contentData.creator}</small></a>
+          </CreatorInfoImg>
         </SingleComponentContainer>
         <SyntaxContainer>
           <div>

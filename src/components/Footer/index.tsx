@@ -4,8 +4,8 @@ import {
   FooterContents,
   RightSideContent,
 } from './styles'
-import logoDark from '../../assets/logo-dark2.svg'
-import logoLight from '../../assets/logo-light2.svg'
+import logoDark from '../../assets/logo-dark.svg'
+import logoLight from '../../assets/logo-light.svg'
 import {
   CaretUp
 } from 'phosphor-react'
