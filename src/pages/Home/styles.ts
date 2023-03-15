@@ -33,8 +33,16 @@ export const MainContainer = styled.main<ThemeProps>`
     height: 100%;
     background-image: url('src/assets/mesh.svg');
     z-index: -1;
-    opacity: 0.2;
     /* Aplica um filtro de desfoque */
+    opacity: 0.2;
+    
+    animation: movement 15s infinite;
+
+    @keyframes movement {
+      0%{transform: scale(1); opacity: 0.2;}
+      50%{transform: scale(.95); opacity: 0.4;}
+      100%{transform: scale(1); opacity: 0.2;}
+    }
   }
 `
 

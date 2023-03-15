@@ -1,0 +1,69 @@
+<div class="card-developer">
+    <link rel='stylesheet' href='https://fonts.googleapis.com/icon?family=Material+Icons:FILL'>
+    <div class="info">
+        <strong class="name">Jhon Doe</strong> <!-- Nome do desenvolvedor -->
+        <p class="sector">Data Analyst - Customer Experience</p> <!-- Função e Squad -->
+    </div>
+    <div class="contact">
+        <div class="redirect">
+            <span class="material-icons">email</span> <!-- Icone de email - Meterial Icons Google -->
+            <a href="mailto: example@example.com" title="example@example.com">Email</a>
+            <!-- Substitua o email após mailto: e em title pelo email do desenvolvedor -->            
+        </div>
+        <div class="redirect">
+            <span class="material-icons">call</span>
+            <a href="tel: 012 123456789" title="012 123456789">Phone</a>
+            <!-- Substitua ambos Telefones pelo do desenvolvedor -->
+        </div>
+    </div>
+</div>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap');
+
+* {
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.card-developer {
+    background: #FDFDFD;
+    padding: .5rem;
+    border-radius: 7px;
+    margin-top: .5rem;
+}
+
+.contact {
+    padding-top: .5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin-top: .5rem;
+    border-top: 1px solid whitesmoke ;
+}
+
+.info {
+    margin-left: .5rem;
+}
+
+.info p {
+    font-size: small;
+    margin: .2rem 0 .6rem 0;
+}
+
+.info strong {
+    color: blue;
+}
+
+.redirect {
+    display: flex;
+    align-items: center;
+}
+a {
+    text-decoration: none;
+    margin-left: .4rem;
+    color: black;
+}
+
+</style>

@@ -44,9 +44,9 @@ export function Header() {
           <NavLink to="/templates" title="templates">
             Templates
           </NavLink>
-          <NavLink to="/services" title="services">
+          {/* <NavLink to="/services" title="services">
             Services
-          </NavLink>
+          </NavLink> */}
           <NavLink to="/documentations" title="docs">
             Docs
           </NavLink>
