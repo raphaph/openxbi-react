@@ -16,39 +16,58 @@ import {
 import {
   coldarkDark,
   coldarkCold,
+  duotoneDark,
+  duotoneLight
 } from 'react-syntax-highlighter/dist/esm/styles/prism'
 
 import { BookBookmark, CopySimple } from 'phosphor-react'
 import axios from 'axios'
 
+interface ContentDataProps {
+  id: string
+  name: string
+  path: string
+  type: string
+  creator: string
+  description: string
+}
+
 
 
 export function ClickedComponent() {
   const lastClicked: any = localStorage.getItem('lastClicked')
-  const { themeValue, contentData, setContentData } = useContext(AppContext)
+  const { themeValue } = useContext(AppContext)
   const apiKey = import.meta.env.AUTH_KEY
   const [codigo, setCodigo] = useState('')
+
+  const [contentData, setContentData] = useState<ContentDataProps>({
+    id: '',
+    name: '',
+    path: '',
+    type: '',
+    creator: '',
+    description: '',
+  })
 
   useEffect(() => {
 
     // API de inicio, traz os detalhes sobre os cards
-    async function FetchClickedComponent() {
-
-      await axios.get(`https://uxbi.com.br/api/contents/search/
-      ${lastClicked
+    function FetchComponent() {
+      axios
+        .get(`https://uxbi.com.br/api/contents/search/${lastClicked
           .slice(26, -5)
           .split('/src/components/@Contents/')}`,
-        {
-          headers: {
-            Authorization: `Bearer ${apiKey}`,
+          {
+            headers: {
+              Authorization: `Bearer ${apiKey}`,
+            },
           },
-        },
-      )
+        )
         .then((response) => response.data)
         .then((data) => setContentData(data))
     }
 
-    FetchClickedComponent()
+    FetchComponent()
 
     // Code
     async function buscarCodigo() {

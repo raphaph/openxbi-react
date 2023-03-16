@@ -23,7 +23,8 @@ export const TemplatesContainer = styled.main<ThemeProps>`
     props.variant === 'light'
       ? props.theme['gray-100']
       : props.theme['gray-900']};
-
+  
+  transition: background 300ms;
   background: ${(props) =>
     props.variant === 'light' ? props.theme.offwhite : props.theme.black};
 
@@ -56,11 +57,12 @@ export const TemplatesContents = styled.header`
 `
 
 export const HearderTemplate = styled.header<ThemeProps>`
-
+  --gradient-bg: ${(props) =>
+    props.variant === 'light' ? props.theme['gray-100'] : props.theme.offblack};
   padding: 1rem;
   border-radius: 6px;
-  background: ${(props) =>
-    props.variant === 'light' ? props.theme.offwhite : props.theme.offblack};
+  background: linear-gradient(45deg, var(--gradient-bg) 20%, rgba(214,40,0,0.01)) ;
+  
   p {
     margin-top: .6rem;
   }

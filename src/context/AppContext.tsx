@@ -2,17 +2,6 @@ import { createContext, ReactNode, useEffect, useState } from 'react'
 
 type themeValueType = 'light' | 'dark' | null
 
-
-interface ContentDataProps {
-  id: string
-  name: string
-  path: string
-  type: string
-  creator: string
-  description: string
-}
-
-
 interface AppContextType {
   contentsNames: string[]
   themeValue: themeValueType
@@ -21,18 +10,13 @@ interface AppContextType {
   setClickedContent: any
   cookiesAccept: string
   setCookiesAccept: any
-  contentData: ContentDataProps
-  setContentData: any
 }
 
 interface AppContextProviderProps {
   children: ReactNode
 }
 
-
-
 export const AppContext = createContext({} as AppContextType)
-
 
 export function AppContextProvider({ children }: AppContextProviderProps) {
   const [themeValue, setThemeValue] = useState<themeValueType>(null)
@@ -40,14 +24,6 @@ export function AppContextProvider({ children }: AppContextProviderProps) {
   const [clickedContent, setClickedContent] = useState('')
   const [cookiesAccept, setCookiesAccept] = useState('')
 
-  const [contentData, setContentData] = useState<ContentDataProps>({
-    id: '',
-    name: '',
-    path: '',
-    type: '',
-    creator: '',
-    description: '',
-  })
 
   useEffect(() => {
     const loadFiles = async () => {
@@ -81,9 +57,7 @@ export function AppContextProvider({ children }: AppContextProviderProps) {
         clickedContent,
         setClickedContent,
         cookiesAccept,
-        setCookiesAccept,
-        contentData,
-        setContentData
+        setCookiesAccept
       }}
     >
       {children}

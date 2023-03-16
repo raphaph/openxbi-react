@@ -9,7 +9,7 @@ export function Templates() {
 
   const templates = [{
     id: 1,
-    name: "openxbi-initial-template",
+    name: "openxbi-initial-template", // prefixo openxbi & community
     path: "src/pbix/openxbi-templates.zip",
     download: "openxbi-templates.zip",
     image: "src/assets/templates-image/openxbi-initial-template.png",
@@ -29,7 +29,9 @@ export function Templates() {
           {templates.map(template => {
             return (
               <CardMap key={template.id}>
-                <img src={template.image} alt={template.name} />
+                <a href={template.public} target={'_blank'}>
+                  <img src={template.image} alt={template.name} />
+                </a>
                 <CardFooter>
                   <strong>{template.name}</strong>
                   <button>

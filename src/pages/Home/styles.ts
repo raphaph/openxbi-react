@@ -139,6 +139,8 @@ export const MidContent = styled.div`
 
 export const MainFooterContent = styled.div`
   margin-bottom: 10rem;
+  max-width: 1200px;
+  width: 100%;
   
   h2 {
     margin: 1rem 0;
@@ -154,7 +156,6 @@ export const MainFooterContent = styled.div`
 `
 
 export const ContentFooter = styled.div<ThemeProps>`
-  display: flex;
   align-items: center;
   margin-top: 8rem;
   img {
@@ -203,3 +204,12 @@ export const ContentFooter = styled.div<ThemeProps>`
   }
 
 `
+export const ExploreContent = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  max-width: 1200px;
+  width: 100%;
+  
+  `

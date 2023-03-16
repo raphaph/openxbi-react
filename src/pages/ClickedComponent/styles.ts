@@ -83,6 +83,7 @@ export const SingleComponentContainer = styled.div<ThemeProps>`
   }
 
   p {
+    transition: 300ms;
     font-size: 0.875rem;
     padding: 0.8rem;
     background: ${(props) =>
@@ -96,6 +97,7 @@ export const CreatorInfoImg = styled.article<ThemeProps>`
     align-items: center;
     margin: .5rem 0;
     width: 100%;
+    transition: 300ms;
     
     left: 11px;
     background: ${(props) =>
@@ -147,6 +149,9 @@ export const SyntaxContainer = styled.div`
 
 export const SyntaxHighlighterStyle = styled(SyntaxHighlighter) <ThemeProps>`
   width: 100%;
+  transition: 300ms;
+  background: ${(props) =>
+    props.variant === 'light' ? props.theme['gray-200'] : props.theme.offblack} !important;
 
   span {
     font-family: 'Fira Code', monospace;
@@ -159,10 +164,7 @@ export const SyntaxHighlighterStyle = styled(SyntaxHighlighter) <ThemeProps>`
 
   max-height: 600px;
 
-  background: ${(props) =>
-    props.variant === 'light'
-      ? props.theme.white
-      : props.theme.offblack} !important;
+ ;
 
   border-radius: 10px 0 0 10px;
   overflow-x: hidden;
@@ -258,7 +260,10 @@ export const SupportButton = styled.div`
 
 export const SyntaxHighlighterHowToUse = styled(SyntaxHighlighter) <ThemeProps>`
   width: 100%;
-  
+  transition: 300ms;
+  background: ${(props) =>
+    props.variant === 'light' ? props.theme['gray-200'] : props.theme.offblack} !important;
+
   span {
     font-family: 'Fira Code', monospace;
     font-size: 0.875rem;

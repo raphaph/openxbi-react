@@ -47,7 +47,7 @@ export function Header() {
           {/* <NavLink to="/services" title="services">
             Services
           </NavLink> */}
-          <NavLink to="/documentations" title="docs">
+          <NavLink to="/docs/introduction" title="docs">
             Docs
           </NavLink>
         </nav>

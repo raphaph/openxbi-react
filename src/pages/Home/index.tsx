@@ -7,6 +7,7 @@ import {
   CardsMainContentOne,
   ContentFooter,
   ContentTwoCard,
+  ExploreContent,
   MainContainer,
   MainContentOne,
   MainContentTwo,
@@ -340,14 +341,16 @@ return
           </SyntaxHighlighterStyle>
 
           <ContentFooter variant={themeValue}>
-            <h2>Explore</h2>
-            <img
-              src={boxLight}
-              alt="" />
-            <nav>
-              <NavLink to={"/components"}><Cube weight='bold' /> Components</NavLink>
-              <NavLink to={"/templates"}><PresentationChart weight='bold' /> Templates</NavLink>
-            </nav>
+            <ExploreContent>
+              <h2>Explore</h2>
+              <img
+                src={boxLight}
+                alt="" />
+              <nav>
+                <NavLink to={"/components/"}><Cube weight='bold' /> Components</NavLink>
+                <NavLink to={"/templates/"}><PresentationChart weight='bold' /> Templates</NavLink>
+              </nav>
+            </ExploreContent>
           </ContentFooter>
         </MainFooterContent>
       </MainContentOne>

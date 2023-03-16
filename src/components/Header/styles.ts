@@ -23,7 +23,7 @@ export const HeaderContainer = styled.header<ThemeProps>`
     margin-left: 1.5rem;
   }
 
-  @media (max-width: 700px) {
+  @media (max-width: 500px) {
     img {
       width: 0;
     }
