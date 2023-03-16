@@ -1,4 +1,4 @@
-import { NavDocumentation } from "../../../components/NavDocumentation";
+import { NavDocumentation } from "../../components/NavDocumentation";
 import { GetStartedContainer } from "./styles";
 
 export function GettingStarted() {

@@ -1,12 +1,12 @@
 import { Routes, Route } from 'react-router-dom'
 import { DefaultLayout } from './layouts/DefaultLayout'
 import { ClickedComponent } from './pages/ClickedComponent'
-import { GettingStarted } from './pages/Documentation/2.GettingStarted'
-import { Introduction } from './pages/Documentation/1.Introduction'
 import { Home } from './pages/Home'
 import { PageComponents } from './pages/PageComponents'
 import { Templates } from './pages/Templates'
-import { DaxFormating } from './pages/Documentation/DaxFormating'
+import { DaxFormating } from './pages/@docs-3-DaxFormating'
+import { GettingStarted } from './pages/@docs-2-GettingStarted'
+import { Introduction } from './pages/@docs-1-Introduction'
 
 export function Router() {
   return (
