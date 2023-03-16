@@ -21,32 +21,36 @@ import {
 import { BookBookmark, CopySimple } from 'phosphor-react'
 import axios from 'axios'
 
-interface ContentDataProps {
-  id: string
-  name: string
-  path: string
-  type: string
-  creator: string
-  description: string
-}
+
 
 export function ClickedComponent() {
-
-  const [contentData, setContentData] = useState<ContentDataProps>({
-    id: '',
-    name: '',
-    path: '',
-    type: '',
-    creator: '',
-    description: '',
-  })
-
   const lastClicked: any = localStorage.getItem('lastClicked')
-  const { themeValue } = useContext(AppContext)
+  const { themeValue, contentData, setContentData } = useContext(AppContext)
   const apiKey = import.meta.env.AUTH_KEY
   const [codigo, setCodigo] = useState('')
 
   useEffect(() => {
+
+    // API de inicio, traz os detalhes sobre os cards
+    async function FetchClickedComponent() {
+
+      await axios.get(`https://uxbi.com.br/api/contents/search/
+      ${lastClicked
+          .slice(26, -5)
+          .split('/src/components/@Contents/')}`,
+        {
+          headers: {
+            Authorization: `Bearer ${apiKey}`,
+          },
+        },
+      )
+        .then((response) => response.data)
+        .then((data) => setContentData(data))
+    }
+
+    FetchClickedComponent()
+
+    // Code
     async function buscarCodigo() {
       const response = await fetch(lastClicked)
       const html = await (await response.text())
@@ -56,23 +60,7 @@ export function ClickedComponent() {
     }
     buscarCodigo()
 
-    // API de inicio, traz os detalhes sobre os cards
-    async function FetchContents() {
-      await axios
-        .get(
-          `https://uxbi.com.br/api/contents/search/${lastClicked
-            .slice(26, -5)
-            .split('/src/components/@Contents/')}`,
-          {
-            headers: {
-              Authorization: `Bearer ${apiKey}`,
-            },
-          },
-        )
-        .then((response) => response.data)
-        .then((data) => setContentData(data))
-    }
-    FetchContents()
+
   }, [lastClicked, apiKey])
 
   document.title = `OpenXBI | ${contentData.name}`

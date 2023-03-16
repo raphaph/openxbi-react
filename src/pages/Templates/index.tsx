@@ -12,7 +12,8 @@ export function Templates() {
     name: "openxbi-initial-template",
     path: "src/pbix/openxbi-templates.zip",
     download: "openxbi-templates.zip",
-    image: "src/assets/templates-image/openxbi-initial-template.png"
+    image: "src/assets/templates-image/openxbi-initial-template.png",
+    public: "https://app.powerbi.com/view?r=eyJrIjoiMDhmZjhhNTEtZDU1Ny00YjM3LTk2MGMtMGU2OGQxYzJhMGY3IiwidCI6IjBhODViZGRhLTVhN2YtNGIyZS04Y2FmLTcyMDRmMGU1NTM2MSJ9"
   }
   ]
 
@@ -21,7 +22,7 @@ export function Templates() {
       <TemplatesContents>
         <HearderTemplate variant={themeValue}>
           <h2>Templates</h2>
-          <p>Templates <strong>OpenXBI</strong> possum componentes já configurados e com algumas medidas ou variáveis DAX incorporadas.</p>
+          <p>Templates <strong>OpenXBI</strong> possuem componentes já configurados e com algumas medidas ou variáveis DAX incorporadas.</p>
           <p>Há também templates da comunidade disponíveis com prefixo <strong>community</strong>, e podem ou não ter componentes já configurados e incorporado DAX.</p>
         </HearderTemplate>
         <TemplatesMap>

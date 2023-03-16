@@ -9,12 +9,37 @@ import {
   HeaderContentsContainer,
   PageComponentsContainer,
 } from './styles'
+import axios from 'axios';
+
 
 export function PageComponents() {
   document.title = 'OpenXBI | All components'
-  const { themeValue, contentsNames, cookiesAccept, setCookiesAccept } = useContext(AppContext)
+  const {
+    themeValue,
+    contentsNames,
+    cookiesAccept,
+    setCookiesAccept,
+    setContentData,
+    contentData
+  } = useContext(AppContext)
+  const apiKey = import.meta.env.AUTH_KEY
 
   useEffect(() => {
+
+    async function FetchContents() {
+      await axios
+        .get("https://uxbi.com.br/api/contents/",
+          {
+            headers: {
+              Authorization: `Bearer ${apiKey}`,
+            },
+          },
+        )
+        .then((response) => response.data)
+        .then((data) => setContentData(data))
+    }
+    FetchContents()
+
     const cookies = localStorage.getItem('cookies-accept')
     if (cookies === null) {
       setCookiesAccept(null)
