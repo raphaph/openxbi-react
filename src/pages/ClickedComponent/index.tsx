@@ -9,6 +9,7 @@ import {
   SupportButton,
   SupportContainer,
   SyntaxContainer,
+  SyntaxHighlighterHowToUse,
   SyntaxHighlighterStyle,
 } from './styles'
 
@@ -17,7 +18,7 @@ import {
   coldarkCold,
 } from 'react-syntax-highlighter/dist/esm/styles/prism'
 
-import { ArrowRight, BookBookmark, CopySimple } from 'phosphor-react'
+import { BookBookmark, CopySimple } from 'phosphor-react'
 import axios from 'axios'
 
 interface ContentDataProps {
@@ -102,14 +103,12 @@ export function ClickedComponent() {
               Copy Code <CopySimple weight="fill" />
             </button>
           </div>
-
           <SyntaxHighlighterStyle
             variant={themeValue}
             language="html"
             style={themeValue === 'light' ? coldarkCold : coldarkDark}
             showLineNumbers
-            wrapLines
-          >
+            wrapLines>
             {codigo}
           </SyntaxHighlighterStyle>
         </SyntaxContainer>
@@ -118,44 +117,48 @@ export function ClickedComponent() {
             <summary>Como utilizar</summary>
             <div>
               <p>
-                1. Copie o código, e cole em uma medida DAX dentro de aspas
-                duplas
+                1. Copie o código, e cole em uma medida DAX dentro de aspas duplas
               </p>
-              <p>
-                {' '}
-                <strong>
-                  Exemplo <ArrowRight />
-                </strong>{' '}
-                <code>{`medida = "<div></div>"`}</code>{' '}
-              </p>
+              <SyntaxHighlighterHowToUse
+                variant={themeValue}
+                language="dax"
+                style={themeValue === 'light' ? coldarkCold : coldarkDark}
+                wrapLines>
+                {`medida = "<h1 class='title'>Hello</h1>"`}
+              </SyntaxHighlighterHowToUse>
             </div>
             <div>
               <p>
-                2. Incorpore o código HTML e CSS com medidas e variáveis DAX
-                utilizando a seguinte sintaxe: &variavel/medida&
+                2. Incorpore o código HTML e CSS com medidas e variáveis DAX utilizando a seguinte sintaxe:
               </p>
-              <p>
-                {' '}
-                <strong>
-                  Exemplo <ArrowRight />
-                </strong>{' '}
-                <code>{`"<p> "&variavel/medida&" </p>"`}</code>
-              </p>
+              <SyntaxHighlighterHowToUse
+                variant={themeValue}
+                language="dax"
+                style={themeValue === 'light' ? coldarkCold : coldarkDark}
+                wrapLines>
+                {`medida = 
+var greetings = "Hello"
+return
+"<h1>"&greetings&"</h1>"`}
+              </SyntaxHighlighterHowToUse>
+
             </div>
             <div>
               <p>
                 3. Quanto mais incorporar seu código com variáveis que se
-                adaptam conforme os dados mudam no seu dashboard, <br />
-                mais interessante ficarão os componentes
+                adaptam conforme os dados mudam no seu dashboard,
+                mais inteligentes ficarão os componentes.
               </p>
             </div>
             <SupportButton>
               <strong>
-                Caso queira ver um exemplo mais prático, clique abaixo!
+                Caso tenha dúvidas acesse a documentação.
               </strong>
               <button>
-                <BookBookmark />
-                Documentation
+                <a href="/documentation">
+                  <BookBookmark />
+                  Documentação
+                </a>
               </button>
             </SupportButton>
           </DetailsSupport>

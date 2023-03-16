@@ -28,6 +28,7 @@ export function PageComponents() {
       <HeaderContentsContainer>
         <div>
           <h2>Componentes</h2>
+          <p>Os componentes são HTML e CSS puro, caso queira experiementar os componentes com a linguagem DAX incorporada, baixe nossos <NavLink to="/templates"><strong>templates</strong></NavLink>. </p>
         </div>
       </HeaderContentsContainer>
       <ComponentsContainer variant={themeValue}>

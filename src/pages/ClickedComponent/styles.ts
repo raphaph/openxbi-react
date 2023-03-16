@@ -118,6 +118,7 @@ export const CreatorInfoImg = styled.article<ThemeProps>`
 
 
 export const SyntaxContainer = styled.div`
+  max-width: 1000px;
   width: 100%;
 
   div {
@@ -146,6 +147,11 @@ export const SyntaxContainer = styled.div`
 
 export const SyntaxHighlighterStyle = styled(SyntaxHighlighter) <ThemeProps>`
   width: 100%;
+
+  span {
+    font-family: 'Fira Code', monospace;
+    font-size: 0.875rem;
+  }
 
   @media (max-width: 700px) {
     width: 450px;
@@ -183,11 +189,12 @@ export const SupportContainer = styled.div`
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start;
+  
   max-width: 1345px;
   width: 100%;
 `
 
-export const DetailsSupport = styled.details`
+export const DetailsSupport = styled.div`
   margin: 2rem 2rem 10rem 2rem;
 
   summary {
@@ -206,15 +213,6 @@ export const DetailsSupport = styled.details`
     line-height: 1.6;
   }
 
-  code {
-    padding: 0.2rem;
-
-    color: ${(props) => props.theme.white};
-    font-weight: bold;
-    background: rgba(222, 111, 22, 0.55);
-
-    border-radius: 3px;
-  }
 `
 
 export const SupportButton = styled.div`
@@ -246,5 +244,42 @@ export const SupportButton = styled.div`
       transform: scale(0.97);
       box-shadow: 0 0 7px 1px ${(props) => props.theme['strong-orange']};
     }
+
+    a {
+      display: flex;
+      align-items: center;
+      width: 185px;
+      justify-content: space-between;
+      text-decoration: none;
+      color: black;
+    }
+  }
+`
+
+export const SyntaxHighlighterHowToUse = styled(SyntaxHighlighter) <ThemeProps>`
+  width: 100%;
+  
+  span {
+    font-family: 'Fira Code', monospace;
+    font-size: 0.875rem;
+  }
+
+  border-radius: 6px;
+  overflow-x: hidden;
+
+  &::-webkit-scrollbar {
+    width: 0.6rem;
+  }
+
+  &::-webkit-scrollbar:horizontal {
+    display: none;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.3);
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.3);
   }
 `

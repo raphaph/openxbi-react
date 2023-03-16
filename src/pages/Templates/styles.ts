@@ -4,13 +4,13 @@ interface ThemeProps {
   variant?: 'light' | 'dark' | null
 }
 
-export const FrameContainer = styled.main<ThemeProps>`
+export const TemplatesContainer = styled.main<ThemeProps>`
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
 
-  padding-bottom: 6rem;
+  padding-bottom: 11rem;
 
   border-top: 1px solid
     ${(props) =>
@@ -41,29 +41,11 @@ export const FrameContainer = styled.main<ThemeProps>`
     opacity: 0.2;
     /* Aplica um filtro de desfoque */
   }
-
-  div {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    
-    
-  }
-
-  iframe {
-    border-radius: 10px;
-    margin: 1rem;
-    width: 1200px;
-    height: 720px;
-  }
-
-  small {
-    text-shadow: 0 0 2px white;
-  }
 `
 
-export const HeaderFrame = styled.header`
+export const TemplatesContents = styled.header`
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
 
   max-width: 1200px;
@@ -71,15 +53,77 @@ export const HeaderFrame = styled.header`
 
   margin: 2rem 0 0 0;
 
+`
+
+export const HearderTemplate = styled.header<ThemeProps>`
+
+  padding: 1rem;
+  border-radius: 6px;
+  background: ${(props) =>
+    props.variant === 'light' ? props.theme.offwhite : props.theme.offblack};
+  p {
+    margin-top: .6rem;
+  }
+`
+
+export const TemplatesMap = styled.main`
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+
+  flex-wrap: wrap;
+`
+
+export const CardMap = styled.div`
+
+  padding: 1rem;
+  margin: 2rem .5rem 0 0;
+  background: linear-gradient(
+      -15deg,
+      rgba(52, 22, 227, 0.1),
+      rgba(255, 140, 0, 0.1),
+      rgba(41, 171, 226, 0.1)
+    );  border-radius: 6px;
+
+  img {
+    cursor: pointer;
+    width: 550px;
+    box-shadow: 0 0 2px 1px #aaaaaa;
+    border-radius: 6px;
+    transition: all 500ms;
+
+    &:hover {
+      transform: scale(1.5);
+    }
+  }
+`
+
+export const CardFooter = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+
+  margin-top: .6rem;
+
+  strong {
+    font-size: 1.2rem;
+  }
+
   button {
-    display: flex;
-    align-items: center;
-    width: 200px;
-    justify-content: space-between;
     cursor: pointer;
     border: 0;
     border-radius: 6px;
     transition: all 0.3s;
+
+    a {
+      display: flex;
+      align-items: center;
+      width: 100px;
+      justify-content: space-between;
+      text-decoration: none;
+      color: black;
+    }
 
     padding: 0.5rem;
     background: ${(props) => props.theme['strong-orange']};

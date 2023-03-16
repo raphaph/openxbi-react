@@ -44,14 +44,25 @@ export const HeaderSideRight = styled.div`
     text-decoration: none;
     font-weight: 500;
 
+    padding: 2.45rem 0;
+
+    border-top: 2px solid transparent;
+    border-bottom: 2px solid transparent;
+
     color: ${(props) => props.theme['gray-500']};
-    border: 1px solid transparent;
     gap: 1rem;
+
+    &:hover {
+      color: inherit;
+      transition: 300ms;
+    }
 
     &.active {
       color: ${(props) => props.theme.primary};
       font-weight: 500;
       text-shadow: 0 0 2px;
+      border-top: 2px solid transparent;
+      border-bottom: 2px solid ${(props) => props.theme.primary};
     }
   }
 

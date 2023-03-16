@@ -49,8 +49,14 @@ export const HeaderContentsContainer = styled.header`
     margin: 2rem;
     text-align: left;
 
-    h2 {
+    h2, p {
       margin-left: 1rem;
+      margin-top: .5rem;
+
+      a {
+        text-decoration: underline;
+        color: inherit;
+      }
     }
   }
 `

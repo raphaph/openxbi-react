@@ -1,31 +1,46 @@
-import { ArrowUp, DownloadSimple } from 'phosphor-react'
-import { useContext, useState } from 'react'
+import { DownloadSimple } from 'phosphor-react'
+import { useContext } from 'react'
 import { AppContext } from '../../context/AppContext'
-import { FrameContainer, HeaderFrame } from './styles'
+import { CardFooter, CardMap, HearderTemplate, TemplatesContainer, TemplatesContents, TemplatesMap } from './styles'
 
 export function Templates() {
   document.title = 'OpenXBI | Templates'
   const { themeValue } = useContext(AppContext)
 
+  const templates = [{
+    id: 1,
+    name: "openxbi-initial-template",
+    path: "src/pbix/openxbi-templates.zip",
+    download: "openxbi-templates.zip",
+    image: "src/assets/templates-image/openxbi-initial-template.png"
+  }
+  ]
+
   return (
-    <FrameContainer variant={themeValue}>
-      <HeaderFrame>
-        <h2>Templates</h2>
-        <button>
-          <DownloadSimple />
-          Download Templates
-        </button>
-      </HeaderFrame>
-      <div>
-        <iframe
-          title="Report Section"
-          src="https://app.powerbi.com/view?r=eyJrIjoiZjYwYTFkMTctNjhjNC00NDVlLWEzOGYtZGNiOTg2ZDZlOTYyIiwidCI6IjBhODViZGRhLTVhN2YtNGIyZS04Y2FmLTcyMDRmMGU1NTM2MSJ9&pageName=ReportSection"
-          frameBorder={0}
-          allowFullScreen={true}
-        ></iframe>
-        <ArrowUp />
-        <small>Navegue pelos templates</small>
-      </div>
-    </FrameContainer>
+    <TemplatesContainer variant={themeValue}>
+      <TemplatesContents>
+        <HearderTemplate variant={themeValue}>
+          <h2>Templates</h2>
+          <p>Templates <strong>OpenXBI</strong> possum componentes já configurados e com algumas medidas ou variáveis DAX incorporadas.</p>
+          <p>Há também templates da comunidade disponíveis com prefixo <strong>community</strong>, e podem ou não ter componentes já configurados e incorporado DAX.</p>
+        </HearderTemplate>
+        <TemplatesMap>
+          {templates.map(template => {
+            return (
+              <CardMap key={template.id}>
+                <img src={template.image} alt={template.name} />
+                <CardFooter>
+                  <strong>{template.name}</strong>
+                  <button>
+                    <a href="src/pbix/openxbi-templates.zip" download={"openxbi-templates.zip"}><DownloadSimple />
+                      Download</a>
+                  </button>
+                </CardFooter>
+              </CardMap>
+            )
+          })}
+        </TemplatesMap>
+      </TemplatesContents>
+    </TemplatesContainer>
   )
 }

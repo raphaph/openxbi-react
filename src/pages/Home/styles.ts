@@ -40,7 +40,7 @@ export const MainContainer = styled.main<ThemeProps>`
 
     @keyframes movement {
       0%{transform: scale(1); opacity: 0.2;}
-      50%{transform: scale(.90); opacity: 0.4;}
+      50%{transform: scale(.90); opacity: 0.3;}
       100%{transform: scale(1); opacity: 0.2;}
     }
   }
@@ -170,21 +170,25 @@ export const ContentFooter = styled.div<ThemeProps>`
     flex-direction: column;
 
     a {
+      color: inherit;
+      text-decoration: none;
       display: flex;
       align-items: center;
-
       width: 150px;
-      text-decoration: none;
-      color: ${(props) =>
-    props.variant === 'light' ? props.theme.white : props.theme.offblack};;
-      margin: .5rem 1rem;
-      background: ${(props) =>
-    props.variant === 'light' ? props.theme.offblack : props.theme.white};
-      padding: .5rem;
-      border-radius: 5px;
-      box-shadow: 0 0 3px 1px ${(props) =>
-    props.variant === 'light' ? props.theme.offblack : props.theme.white};;
-      transition: 300ms;
+      cursor: pointer;
+      border: 0;
+      border-radius: 6px;
+      transition: all 0.2s;
+      margin-top: 0.7rem;
+      padding: 0.5rem;
+      
+
+      &:active {
+        opacity: 1;
+        transform: scale(0.97);
+        text-shadow: 0 0 7px 1px ${(props) => props.theme['strong-orange']};
+      }
+        transition: 300ms;
 
       svg {
         margin-right: .5rem;
@@ -192,6 +196,8 @@ export const ContentFooter = styled.div<ThemeProps>`
 
       &:hover {
         transform: scale(1.05);
+        text-shadow: 0 0 5px inherit;
+        font-weight: bold;
       }
     }
   }
