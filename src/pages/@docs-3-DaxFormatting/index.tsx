@@ -1,20 +1,18 @@
 import { NavDocumentation } from "../../components/NavDocumentation";
 import { AppContext } from "../../context/AppContext";
-import { DaxContent, DaxFormatingContainer, DaxText, SyntaxHighlighterDAX } from "./styles";
+import { DaxContent, DaxFormattingContainer, DaxText, SyntaxHighlighterDAX } from "./styles";
 import { useContext } from "react";
-import { SyntaxHighlighterStyle } from "../ClickedComponent/styles";
 import {
     coldarkDark,
     coldarkCold,
 } from 'react-syntax-highlighter/dist/esm/styles/prism'
 
-export function DaxFormating() {
-
+export function DaxFormatting() {
+    document.title = 'OpenXBI | Dax Formatting'
     const { themeValue } = useContext(AppContext)
 
     return (
-        <DaxFormatingContainer variant={themeValue}>
-
+        <DaxFormattingContainer variant={themeValue}>
             <NavDocumentation />
             <DaxContent>
                 <DaxText>
@@ -108,7 +106,7 @@ FORMAT( dt"2020-12-15T12:30:59", "mm/dd/yyyy", "pt-BR" ) `}
                     </SyntaxHighlighterDAX>
                     <small>resultado 1: 12/15/2020 12:30:59</small><br />
                     <small>resultado 2: 15/12/2020 12:30:59</small><br />
-                    <small>resultado 3: 12/15/2020 12:30:59 AM</small><br />
+                    <small>resultado 3: 15/12/2020 12:30:59 AM</small><br />
                     <small>resultado 4: 12/15/2020 12:30:59</small>
 
                     {/* Short Date */}
@@ -141,6 +139,6 @@ FORMAT( dt"2020-12-15T12:30:59", "mm/dd/yyyy", "pt-BR" ) `}
             </DaxContent>
 
 
-        </DaxFormatingContainer>
+        </DaxFormattingContainer>
     )
 }

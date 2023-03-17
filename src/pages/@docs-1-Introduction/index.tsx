@@ -6,7 +6,7 @@ import { useContext } from "react";
 import { DiscordLogo } from "phosphor-react";
 
 export function Introduction() {
-
+    document.title = 'OpenXBI | Introduction'
     const { themeValue } = useContext(AppContext)
 
     return (

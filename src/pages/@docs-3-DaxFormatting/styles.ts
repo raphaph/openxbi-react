@@ -4,7 +4,7 @@ interface ThemeProps {
     variant?: 'light' | 'dark' | null
 }
 
-export const DaxFormatingContainer = styled.main<ThemeProps>`
+export const DaxFormattingContainer = styled.main<ThemeProps>`
     display: flex;
 
     @media (max-width: 800px) {

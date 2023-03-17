@@ -16,8 +16,6 @@ import {
 import {
   coldarkDark,
   coldarkCold,
-  duotoneDark,
-  duotoneLight
 } from 'react-syntax-highlighter/dist/esm/styles/prism'
 
 import { BookBookmark, CopySimple } from 'phosphor-react'
@@ -93,7 +91,9 @@ export function ClickedComponent() {
     <ClickedBodyContainer variant={themeValue}>
       <ClickedMainContent>
         <SingleComponentContainer variant={themeValue}>
-          <h2>{contentData.name}</h2>
+          <h2>{`${lastClicked
+            .slice(26, -5)
+            .split('/src/components/@Contents/')}`}</h2>
           <div>
             <iframe src={lastClicked} frameBorder={0} height={300}></iframe>
           </div>

@@ -1,0 +1,115 @@
+<!-- Componente OpenXBI, ajude-nos compartilhando nossa plataforma -->
+<!-- https://openxbi.com.br -->
+<div class='list'>
+    <table>
+        <thead>
+          <tr> <!-- Colunas - cada th representa uma coluna-->
+            <th>Tarefa</th>
+            <th>Duração</th>
+            <th>Início</th>
+            <th>Custo</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody>
+            <tr> <!-- Grupo de linhas 1 - cada tr é um grupo com td sendo cada linha -->
+                <td><strong>dev</strong></td>
+                <td>1 mês</td>
+                <td>01/fev</td>
+                <td>R$400,00</td>
+                <td>🟢 <span style='color: rgb(0, 138, 0);'>Concluído</span></td>
+                <!-- Trabalhe condicional nas cores e status se necessário-->
+            </tr>
+            <tr> <!-- Grupo de linhas 2 - cada tr é um grupo com td sendo cada linha -->
+                <td><strong>prod</strong></td>
+                <td>1 semana</td>
+                <td>01/fev</td>
+                <td>R$400,00</td>
+                <td>🟠 <span style='color: rgb(185, 121, 0);'>Em andamento</span></td>
+            </tr>
+            <tr>
+                <td><strong>deploy</strong></td>
+                <td>1 semana</td>
+                <td>08/fev</td>
+                <td>R$400,00</td>
+                <td>🔵 <span style='color: rgb(0, 120, 219);'>Aguardando</span></td>
+            </tr>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap');
+
+* {
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+}
+
+*::-webkit-scrollbar {
+    height: 6px;
+    background: rgb(221, 221, 221);
+}
+
+*::-webkit-scrollbar-thumb {
+    background: rgb(175, 175, 175);
+    border-radius: 5px;
+}
+
+.list {
+    flex: 1;
+    overflow: auto;
+    margin-top: 2rem;
+}
+
+table { 
+    width: 600px; /* Largura da tabela, modifque conforme número de colunas */ 
+    border-collapse: collapse;
+}
+
+th { /* th - é o header da tabela */
+    background-color: white; /* Cor do cabeçalho */
+    padding: 1rem;
+    text-align: left;
+    color: black; /* Cor do texto do cabeçalho */
+    font-size: 0.875rem;
+    line-height: 1.6;
+    width: auto;
+}
+
+th:first-child {
+    border-top-left-radius: 8px;
+    padding-left: 1.5rem;
+}
+
+th:last-child {
+    border-top-right-radius: 8px;
+    padding-right: 1.5rem;
+}
+
+td { /* td - são as linhas da tabela */
+    cursor: pointer;
+    background-color: rgb(243, 243, 243); /* Cor das linhas */
+    border-top: 1px solid rgb(221, 221, 221);  /* Cor das linhas separadoras*/
+    padding: 1rem;
+    font-size: 0.875rem;
+    line-height: 1.6;
+    width: auto;
+}
+
+td:first-child {
+    padding-left: 1.5rem;
+}
+
+td:last-child {
+    padding-right: 1.5rem;
+}
+
+td:hover {
+    background: rgb(219, 219, 219); /* Cor ao passar o mouse */
+    z-index: 1;
+    transition: 300ms; /* Tempo para esmaecer */
+}
+
+</style>
