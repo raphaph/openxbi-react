@@ -34,8 +34,12 @@ export const Trigger = styled(AccordionTrigger) <ThemeProps>`
       ? props.theme['gray-100']
       : props.theme['gray-900']};
   padding: 0.5rem;
-  background: ${(props) =>
-    props.variant === 'light' ? props.theme.white : props.theme.offblack};
+  background: linear-gradient(
+        10deg,
+        rgba(52, 22, 227, 0.1),
+        rgba(255, 140, 0, 0.1),
+        rgba(41, 171, 226, 0.1)
+            );
   border-radius: 5px;
   margin: 0.1rem;
   cursor: pointer;

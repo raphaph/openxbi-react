@@ -28,7 +28,7 @@ export const TemplatesContainer = styled.main<ThemeProps>`
   background: ${(props) =>
     props.variant === 'light' ? props.theme.offwhite : props.theme.black};
 
-  z-index: 0;
+  z-index: 1;
 
   &::before {
     content: '';

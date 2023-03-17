@@ -5,15 +5,6 @@ import { AppContext } from '../../context/AppContext'
 import { HeaderContainer, HeaderSideRight, SeparatorRightSide } from './styles'
 
 export function Header() {
-  // window.addEventListener('scroll', function () {
-  //   const headerPosition: any = document.querySelector('header')
-
-  //   if (window.pageYOffset > 400) {
-  //     headerPosition.style.position = 'fixed'
-  //   } else if (this.window.pageYOffset < 400) {
-  //     headerPosition.style.position = 'relative'
-  //   }
-  // })
 
   const { themeValue, setThemeValue } = useContext(AppContext)
 
@@ -31,7 +22,7 @@ export function Header() {
     <HeaderContainer variant={themeValue}>
       <NavLink to="/">
         <img
-          src={`./src/assets/${themeValue === 'dark' ?
+          src={`/src/assets/${themeValue === 'dark' ?
             'logo-dark' : 'logo-light'}.svg`}
           alt=""
         />
@@ -44,9 +35,6 @@ export function Header() {
           <NavLink to="/templates" title="templates">
             Templates
           </NavLink>
-          {/* <NavLink to="/services" title="services">
-            Services
-          </NavLink> */}
           <NavLink to="/docs/introduction" title="docs">
             Docs
           </NavLink>

@@ -25,7 +25,6 @@ export const FooterContainer = styled.footer<ThemeProps>`
 export const FooterContents = styled.div`
   width: 100%;
   max-width: 800px;
-
   display: flex;
   justify-content: space-between;
 `
@@ -95,7 +94,7 @@ export const RightSideContent = styled.div<ThemeProps>`
     transition: all 300ms;
 
     &:hover {
-      transform: scale(1.05);
+      transform: scale(0.98);
       box-shadow: 0 0 4px 1px;
     }
   }

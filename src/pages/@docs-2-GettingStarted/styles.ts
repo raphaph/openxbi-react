@@ -5,12 +5,7 @@ interface ThemeProps {
 }
 
 export const GetStartedContainer = styled.main<ThemeProps>`
-
     display: flex;
-
-    @media (max-width: 1000px) {
-        flex-direction: column;
-    }
 
     background: ${(props) =>
         props.variant === 'light' ? props.theme.offwhite : props.theme.black};

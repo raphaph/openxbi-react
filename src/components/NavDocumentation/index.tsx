@@ -6,7 +6,7 @@ export function NavDocumentation() {
         <NavigationContainer>
             <strong>Visão Geral</strong>
             <nav>
-                <NavLink to={"/docs/introduction"}>Introduction</NavLink>
+                <NavLink to={"/docs/introduction"}>Introdução</NavLink>
                 <NavLink to={"/docs/getting-started"}>Primeiros Passos</NavLink>
                 <NavLink to={"/docs/dax-formating"}>Formatação DAX</NavLink>
             </nav>

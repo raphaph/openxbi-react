@@ -10,22 +10,24 @@ export const HeaderContainer = styled.header<ThemeProps>`
   justify-content: space-between; 
   transition: background 300ms;
   z-index: 2;
-
   height: 100px;
   width: 100%;
   background: ${(props) =>
-    props.variant === 'light' ? props.theme.offwhite : props.theme.black};
-  opacity: 0.95;
-  
+    props.variant === 'light' ? props.theme.offwhite : props.theme.black};  
 
-  img {
+  a {
+    img {
     height: 2.5rem;
     margin-left: 1.5rem;
   }
+  }
+  
 
-  @media (max-width: 500px) {
-    img {
+  @media (max-width: 800px) {
+    a {
+      img {
       width: 0;
+    }
     }
   }
 `

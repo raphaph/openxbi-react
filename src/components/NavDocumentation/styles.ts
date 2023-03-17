@@ -4,20 +4,18 @@ import styled from "styled-components";
 export const NavigationContainer = styled.aside`
     display: flex;
     flex-direction: column;
-    padding: 1.5rem;
+    margin: 3rem 1.5rem;
     position: relative;
-    right: 0;
-    top: 0;
+
 
     nav {
         display: flex;
         flex-direction: column;
         margin: 1rem 0 5rem;
-        
 
         a {
             margin: .4rem .1rem;
-            padding: .5rem .6rem;
+            padding: .5rem 1rem;
             color: inherit;
             text-decoration: none;
             border-radius: 20px;
