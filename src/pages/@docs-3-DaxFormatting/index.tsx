@@ -1,6 +1,6 @@
 import { NavDocumentation } from "../../components/NavDocumentation";
 import { AppContext } from "../../context/AppContext";
-import { DaxContent, DaxFormattingContainer, DaxText, SyntaxHighlighterDAX } from "./styles";
+import { DaxContent, DaxFormattingContainer, DaxText, SyntaxHighlighterDAX, TableContainer } from "./styles";
 import { useContext } from "react";
 import {
     coldarkDark,
@@ -20,8 +20,72 @@ export function DaxFormatting() {
                     <p>Quando importamos um componente e atribuimos valores de medidas e variáveis DAX a ele, podemos nos deparar com erro de exibição, seja trabalhando com porcentagem, moedas ou decimais, exemplo: ponto e vírgulas invertidos, simbolo da moeda inadequado a região, etc.</p>
                     <p>Para resolvermos essa questão, é importante conhecermos e sabermos como aplicar a função <strong>FORMAT</strong> da linguagem DAX, ela nos permite formatar nossas variáveis para que seja exibida como deveriam.</p>
                     <p><strong>{`FORMAT(<value>, <format_string> [, <locale_name>])`}</strong> - Converte um valor em texto de acordo com o formato especificado.</p>
+
+                    <TableContainer variant={themeValue}>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Não formatado</th>
+                                    <th>Formato</th>
+                                    <th>Formatado</th>
+                                    <th>Região</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>12345.67</td>
+                                    <td>Currency</td>
+                                    <td>$12,345.67</td>
+                                    <td>en-US</td>
+                                </tr>
+                                <tr>
+                                    <td>12345.67</td>
+                                    <td>Currency</td>
+                                    <td>R$ 12.345,67</td>
+                                    <td>pt-BR</td>
+                                </tr>
+                                <tr>
+                                    <td>2020-12-15T12:30:59</td>
+                                    <td>BLANK()</td>
+                                    <td>12/15/2020 12:30:59</td>
+                                    <td>en-US</td>
+                                </tr>
+                                <tr>
+                                    <td>2020-12-15T12:30:59</td>
+                                    <td>BLANK()</td>
+                                    <td>15/12/2020 12:30:59</td>
+                                    <td>pt-BR</td>
+                                </tr>
+                                <tr>
+                                    <td>0.67</td>
+                                    <td>Percent</td>
+                                    <td>67%</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>2020-12-15T12:30:59</td>
+                                    <td>Long Time</td>
+                                    <td>12:30:59 AM</td>
+                                    <td>pt-BR</td>
+                                </tr>
+                                <tr>
+                                    <td>2020-12-15T12:30:59</td>
+                                    <td>Short Date</td>
+                                    <td>15/12/2020</td>
+                                    <td>pt-BR</td>
+                                </tr>
+                                <tr>
+                                    <td>12345.67</td>
+                                    <td>Scientific</td>
+                                    <td>1.23E+04</td>
+                                    <td></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </TableContainer>
+
                     <hr></hr>
-                    <h3>Veja abaixo exemplos de formatação:</h3>
+                    <h3>Veja abaixo exemplos práticos:</h3>
 
                     {/* General Number */}
                     <p><strong>General Number</strong> (exibe um número sem formatação)</p>
