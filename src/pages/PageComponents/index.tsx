@@ -22,6 +22,8 @@ export function PageComponents() {
 
   useEffect(() => {
 
+    window.scrollTo(0, 0);
+
     const cookies = localStorage.getItem('cookies-accept')
     if (cookies === null) {
       setCookiesAccept(null)

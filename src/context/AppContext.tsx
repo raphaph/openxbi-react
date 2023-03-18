@@ -35,8 +35,6 @@ export function AppContextProvider({ children }: AppContextProviderProps) {
     loadFiles()
   }, [])
 
-  console.log(contentsNames)
-
   useEffect(() => {
     const currentTheme: any = localStorage.getItem('theme')
 

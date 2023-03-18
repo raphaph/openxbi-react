@@ -2,12 +2,16 @@ import { NavDocumentation } from "../../components/NavDocumentation";
 import { IntroductionContainer, IntroductionContent, IntroText } from "./styles";
 
 import { AppContext } from "../../context/AppContext";
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { DiscordLogo } from "phosphor-react";
 
 export function Introduction() {
     document.title = 'OpenXBI | Introduction'
     const { themeValue } = useContext(AppContext)
+
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
 
     return (
         <IntroductionContainer variant={themeValue}>

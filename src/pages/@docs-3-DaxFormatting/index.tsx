@@ -1,7 +1,7 @@
 import { NavDocumentation } from "../../components/NavDocumentation";
 import { AppContext } from "../../context/AppContext";
 import { DaxContent, DaxFormattingContainer, DaxText, SyntaxHighlighterDAX, TableContainer } from "./styles";
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import {
     coldarkDark,
     coldarkCold,
@@ -10,6 +10,10 @@ import {
 export function DaxFormatting() {
     document.title = 'OpenXBI | Dax Formatting'
     const { themeValue } = useContext(AppContext)
+
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
 
     return (
         <DaxFormattingContainer variant={themeValue}>

@@ -1,5 +1,3 @@
-import { useContext, useEffect, useState } from 'react'
-import { AppContext } from '../../context/AppContext'
 import {
   ClickedBodyContainer,
   ClickedMainContent,
@@ -12,14 +10,13 @@ import {
   SyntaxHighlighterHowToUse,
   SyntaxHighlighterStyle,
 } from './styles'
-
-import {
-  coldarkDark,
-  coldarkCold,
-} from 'react-syntax-highlighter/dist/esm/styles/prism'
-
+import { useContext, useEffect, useState } from 'react'
+import { AppContext } from '../../context/AppContext'
+import { coldarkDark, coldarkCold } from 'react-syntax-highlighter/dist/esm/styles/prism'
 import { BookBookmark, CopySimple } from 'phosphor-react'
+import { NavLink } from 'react-router-dom'
 import axios from 'axios'
+
 
 interface ContentDataProps {
   id: string
@@ -30,13 +27,17 @@ interface ContentDataProps {
   description: string
 }
 
-
-
 export function ClickedComponent() {
+
   const lastClicked: any = localStorage.getItem('lastClicked')
   const { themeValue } = useContext(AppContext)
   const apiKey = import.meta.env.AUTH_KEY
   const [codigo, setCodigo] = useState('')
+  const clickedName = lastClicked
+    .slice(26, -5)
+    .split('/src/components/@Contents/')
+
+  document.title = `OpenXBI | ${clickedName}`
 
   const [contentData, setContentData] = useState<ContentDataProps>({
     id: '',
@@ -47,40 +48,38 @@ export function ClickedComponent() {
     description: '',
   })
 
+  async function FetchComponent() {
+    await axios.get(`https://uxbi.com.br/api/contents/search/${clickedName}`, {
+      headers: {
+        Authorization: `Bearer ${apiKey}`,
+      },
+    })
+      .then((response) => response.data)
+      .then((data) => setContentData(data))
+  }
+
   useEffect(() => {
-
-    // API de inicio, traz os detalhes sobre os cards
-    function FetchComponent() {
-      axios
-        .get(`https://uxbi.com.br/api/contents/search/${lastClicked
-          .slice(26, -5)
-          .split('/src/components/@Contents/')}`,
-          {
-            headers: {
-              Authorization: `Bearer ${apiKey}`,
-            },
-          },
-        )
-        .then((response) => response.data)
-        .then((data) => setContentData(data))
-    }
-
-    FetchComponent()
+    window.scrollTo(0, 0);
 
     // Code
     async function buscarCodigo() {
-      const response = await fetch(lastClicked)
-      const html = await (await response.text())
+      const [response, text] = await Promise.all([
+        fetch(lastClicked),
+        fetch(lastClicked).then(response => response.text())
+      ]);
+
+      const html = text
         .replace(/<script.*RefreshRuntime.*<\/script>/s, '')
-        .replace(/<script.*src="\/@vite\/client"><\/script>/s, '')
-      setCodigo(html)
+        .replace(/<script.*src="\/@vite\/client"><\/script>/s, '');
+
+      setCodigo(html);
     }
     buscarCodigo()
 
+    // API de inicio, traz os detalhes sobre os cards
+    FetchComponent()
 
   }, [lastClicked, apiKey])
-
-  document.title = `OpenXBI | ${contentData.name}`
 
   function CopyCode() {
     navigator.clipboard.writeText(codigo)
@@ -162,10 +161,10 @@ return
                 Caso tenha dúvidas acesse a documentação.
               </strong>
               <button>
-                <a href="/documentation">
+                <NavLink to="/docs/introduction">
                   <BookBookmark />
                   Documentação
-                </a>
+                </NavLink>
               </button>
             </SupportButton>
           </DetailsSupport>

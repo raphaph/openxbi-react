@@ -20,7 +20,7 @@ import {
 } from 'react-syntax-highlighter/dist/esm/styles/prism'
 import boxLight from '../../assets/box-light.svg'
 import { NavLink } from 'react-router-dom'
-import { Cube, PresentationChart } from 'phosphor-react'
+import { BookOpen, Cube, PresentationChart } from 'phosphor-react'
 import { CookiesModal } from '../../components/CookiesModal'
 
 
@@ -349,6 +349,7 @@ return
               <nav>
                 <NavLink to={"/components/"}><Cube weight='bold' /> Components</NavLink>
                 <NavLink to={"/templates/"}><PresentationChart weight='bold' /> Templates</NavLink>
+                <NavLink to={"/docs/introduction"}><BookOpen weight='bold' /> Docs</NavLink>
               </nav>
             </ExploreContent>
           </ContentFooter>

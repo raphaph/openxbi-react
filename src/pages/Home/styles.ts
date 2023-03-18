@@ -208,8 +208,13 @@ export const ExploreContent = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  
+  transition: 300ms;
   max-width: 1200px;
   width: 100%;
   
-  `
+  &:hover {
+    
+    transform: scale(1.5);
+  }
+
+`

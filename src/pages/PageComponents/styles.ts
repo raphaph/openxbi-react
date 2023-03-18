@@ -123,7 +123,7 @@ export const FooterCardContent = styled.footer<ThemeProps>`
     transition: all 0.3s;
 
     &:hover {
-      transform: scale(1.05);
+      transform: scale(0.98);
       transition: all 0.3s;
       box-shadow: 0 0 5px 1px black;
     }
