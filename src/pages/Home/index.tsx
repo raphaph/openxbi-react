@@ -254,9 +254,9 @@ return
       <MainContentOne>
         <h1>Inteligência aplicada a componentes para BI</h1>
         <strong>
-          Nós criamos componentes estilizados em HTML e CSS, incorporando
+          Criamos componentes estilizados em HTML e CSS, incorporando
           variáveis e medidas DAX, <br />
-          para melhorar a experiência dos usuários, e oferecer novas possibilidades aos analistas de dados.
+          para melhorar a experiência dos usuários de dashboards, e oferecer novas possibilidades aos analistas de dados.
         </strong>
         <CardsMainContentOne>
           <div>

@@ -24,7 +24,7 @@ export const FooterContainer = styled.footer<ThemeProps>`
 
 export const FooterContents = styled.div`
   width: 100%;
-  max-width: 800px;
+  max-width: 1000px;
   display: flex;
   justify-content: space-between;
 `
@@ -56,13 +56,14 @@ export const ContactInfo = styled.div<ThemeProps>`
     align-items: center;
 
     font-size: 14px;
-    font-weight: bold;
+    font-weight: 400;
     
     transition: all 300ms;
 
     &:hover {
       transform: scale(1.2);
       text-shadow: 0 0 1px;
+      font-weight: 700;
     }
 
     &:hover > svg {
@@ -81,21 +82,29 @@ export const RightSideContent = styled.div<ThemeProps>`
     font-size: 14px;
     font-weight: bold;
 
+    transition: all 300ms;
+    cursor: pointer;
+
     border: 0;
     background: ${(props) =>
     props.variant === 'light' ? props.theme.offblack : props.theme.offwhite};
 
-    a {
-      text-decoration: none;
-      color: ${(props) =>
+    color: ${(props) =>
     props.variant === 'light' ? props.theme.white : props.theme.black};
+    
+    &:hover {
+      transform: scale(0.96);
+      box-shadow: 0 0 4px 1px gray;
     }
     
-    transition: all 300ms;
-
-    &:hover {
-      transform: scale(0.98);
-      box-shadow: 0 0 4px 1px;
-    }
   }
+
+  a {
+    text-decoration: none;
+    
+  }
+    
+    
+
+    
 `

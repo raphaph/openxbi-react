@@ -49,11 +49,13 @@ export function Footer() {
           </a>
         </ContactInfo>
         <RightSideContent variant={themeValue}>
-          <button>
-            <a href="#" aria-label="Subir até o topo da página">
+
+          <a href="#" aria-label="Subir até o topo da página">
+            <button>
               Back to Top <CaretUp size={15} weight="bold" />
-            </a>
-          </button>
+            </button>
+          </a>
+
           <img src={themeValue === 'light' ? logoLight : logoDark} alt="logo" />
         </RightSideContent>
       </FooterContents>

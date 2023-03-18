@@ -1,46 +1,46 @@
 <!-- Componente OpenXBI, ajude-nos compartilhando nossa plataforma -->
 <!-- https://openxbi.com.br -->
 <div class='list'>
+    <link rel='stylesheet' href='https://fonts.googleapis.com/icon?family=Material+Icons:FILL'>
     <table>
         <thead>
           <tr> <!-- Colunas - tr é nosso cabeçalho, sendo cada th uma coluna-->
-            <th>Tarefa</th>
-            <th>Duração</th>
-            <th>Início</th>
-            <th>Custo</th>
-            <th>Status</th>
+            <th>Cloud</th>
+            <th>Cost</th>
+            <th>Budget</th>
           </tr>
         </thead>
         <tbody>
             <tr> <!-- Grupo de linhas 1 - cada tr é um grupo com td sendo cada linha -->
-                <td><strong>dev</strong></td>
-                <td>1 mês</td>
-                <td>01/fev</td>
-                <td>R$400,00</td>
-                <td>🟢 <span style='color: rgb(0, 138, 0);'>Concluído</span></td>
+                <td><img src='https://logos-world.net/wp-content/uploads/2021/03/Azure-Logo-2020-present.png' width='40px' alt='Azure'></td>
+                <td>$99.345</td>
+                <td>
+                    <span class='material-icons' style='color: rgb(0, 138, 0);'>
+                        arrow_drop_down
+                        </span>
+                    <p style='color: rgb(0, 138, 0);'>-12%</p>
+                </td>
                 <!-- Trabalhe condicional nas cores e status se necessário-->
             </tr>
             <tr> <!-- Grupo de linhas 2 - cada tr é um grupo com td sendo cada linha -->
-                <td><strong>prod</strong></td>
-                <td>1 semana</td>
-                <td>01/fev</td>
-                <td>R$400,00</td>
-                <td>🟠 <span style='color: rgb(185, 121, 0);'>Em andamento</span></td>
+                <td><img src='https://logos-world.net/wp-content/uploads/2021/08/Amazon-Web-Services-AWS-Logo-700x394.png' width='40px' alt='Amazon Web Services'></td>
+                <td>$121.234</td>
+                <td>
+                    <span class='material-icons' style='color: rgb(185, 59, 0)'>
+                        arrow_drop_up
+                        </span>
+                    <span style='color: rgb(185, 59, 0);'>5%</span>
+                </td>
             </tr>
-            <tr>
-                <td><strong>deploy</strong></td>
-                <td>1 semana</td>
-                <td>08/fev</td>
-                <td>R$400,00</td>
-                <td>🔵 <span style='color: rgb(0, 120, 219);'>Aguardando</span></td>
-            </tr>
-            <tr>
-                <td><strong>maintenance</strong></td>
-                <td>-</td>
-                <td>08/fev</td>
-                <td>R$150,00</td>
-                <td>🟣 <span style='color: rgb(144, 13, 252);'>Stand-by</span></td>
-            </tr>
+            <tr class='curved-border'>
+                <td><img src='https://logos-world.net/wp-content/uploads/2021/02/Google-Cloud-Emblem-700x394.png' width='40px' alt='Google Cloud'></td>
+                <td>$55.345</td>
+                <td>
+                    <span class='material-icons' style='color: rgb(185, 59, 0);'>
+                        arrow_drop_up
+                        </span>
+                    <span style='color: rgb(185, 59, 0);'>4%</span>
+                </td>
             </tr>
         </tbody>
     </table>
@@ -71,7 +71,7 @@
 }
 
 table { 
-    width: 600px; /* Largura da tabela, modifque conforme número de colunas */ 
+    width: auto; /* Largura da tabela, modifque conforme número de colunas */ 
     border-collapse: collapse;
 }
 
@@ -82,7 +82,7 @@ th { /* th - é o header da tabela */
     color: black; /* Cor do texto do cabeçalho */
     font-size: 0.875rem;
     line-height: 1.2;
-    width: auto;
+    width: 190px;
 }
 
 th:first-child {
@@ -94,6 +94,7 @@ th:last-child {
     border-top-right-radius: 8px;
     padding-right: 1.5rem;
 }
+
 
 td { /* td - são as linhas da tabela */
     cursor: pointer;
@@ -111,11 +112,12 @@ td:first-child {
 
 td:last-child {
     padding-right: 1.5rem;
+    display: flex;
+    align-items: center;
 }
 
 td:hover {
     background: rgb(219, 219, 219); /* Cor ao passar o mouse */
-    z-index: 1;
     transition: 300ms; /* Tempo para esmaecer */
 }
 

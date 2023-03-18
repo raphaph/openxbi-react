@@ -44,6 +44,7 @@ export const MainContainer = styled.main<ThemeProps>`
       100%{transform: scale(1); opacity: 0.2;}
     }
   }
+
 `
 
 export const MainContentOne = styled.div`
@@ -60,15 +61,19 @@ export const MainContentOne = styled.div`
   h1 {
     margin: 5rem 0 1rem 0;
     width: 60%;
-
     text-align: left;
     font-size: 4rem;
     text-shadow: 0px 0px 2px ${(props) => props.theme['gray-500']};
+
   }
 
-  strong:first-of-type {
-    color: ${(props) => props.theme['gray-500']};
-    font-weight: 500;
+  strong:nth-child(2) {
+    color: ${props => props.theme['gray-500']};
+    font-weight: 300;
+  }
+
+  strong {
+    font-weight: 600;
     margin-bottom: 2rem;
   }
 `
@@ -213,8 +218,18 @@ export const ExploreContent = styled.div`
   width: 100%;
   
   &:hover {
-    
     transform: scale(1.5);
   }
 
+  &:hover img {
+    animation: wave 3s infinite;
+    animation-delay: .5s;
+
+    @keyframes wave {
+       0% { transform: rotateZ(0deg)}
+       25% { transform: rotateZ(7deg)}
+       75% { transform: rotateZ(-7deg)}
+       100% { transform: rotateZ(360deg); filter: brightness(100%)}
+    }
+  }
 `
