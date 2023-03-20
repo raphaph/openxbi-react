@@ -160,13 +160,9 @@ export const SyntaxHighlighterStyle = styled(SyntaxHighlighter) <ThemeProps>`
     font-size: 0.875rem;
   }
 
-  @media (max-width: 700px) {
-    width: 450px;
-  }
+  
 
   max-height: 600px;
-
- ;
 
   border-radius: 10px 0 0 10px;
   overflow-x: hidden;
@@ -185,6 +181,11 @@ export const SyntaxHighlighterStyle = styled(SyntaxHighlighter) <ThemeProps>`
 
   &::-webkit-scrollbar-thumb {
     background: rgba(0, 0, 0, 0.3);
+  }
+
+  @media (max-width: 700px) {
+    max-width: 460px;
+    width: 100%;
   }
 `
 

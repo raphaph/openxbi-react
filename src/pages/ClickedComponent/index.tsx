@@ -18,19 +18,10 @@ import { NavLink } from 'react-router-dom'
 import axios from 'axios'
 
 
-interface ContentDataProps {
-  id: string
-  name: string
-  path: string
-  type: string
-  creator: string
-  description: string
-}
-
 export function ClickedComponent() {
 
   const lastClicked: any = localStorage.getItem('lastClicked')
-  const { themeValue } = useContext(AppContext)
+  const { themeValue, contentData, setContentData } = useContext(AppContext)
   const apiKey = import.meta.env.AUTH_KEY
   const [codigo, setCodigo] = useState('')
   const clickedName = lastClicked
@@ -39,14 +30,7 @@ export function ClickedComponent() {
 
   document.title = `OpenXBI | ${clickedName}`
 
-  const [contentData, setContentData] = useState<ContentDataProps>({
-    id: '',
-    name: '',
-    path: '',
-    type: '',
-    creator: '',
-    description: '',
-  })
+
 
   async function FetchComponent() {
     await axios.get(`https://uxbi.com.br/api/contents/search/${clickedName}`, {

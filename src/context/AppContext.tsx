@@ -1,6 +1,15 @@
 import { createContext, ReactNode, useEffect, useState } from 'react'
-
 type themeValueType = 'light' | 'dark' | null
+
+
+interface ContentDataProps {
+  id: string
+  name: string
+  path: string
+  type: string
+  creator: string
+  description: string
+}
 
 interface AppContextType {
   contentsNames: string[]
@@ -10,7 +19,11 @@ interface AppContextType {
   setClickedContent: any
   cookiesAccept: string
   setCookiesAccept: any
+  contentData: ContentDataProps
+  setContentData: any
 }
+
+
 
 interface AppContextProviderProps {
   children: ReactNode
@@ -23,17 +36,15 @@ export function AppContextProvider({ children }: AppContextProviderProps) {
   const [contentsNames, setContentsNames] = useState<string[]>([])
   const [clickedContent, setClickedContent] = useState('')
   const [cookiesAccept, setCookiesAccept] = useState('')
+  const [contentData, setContentData] = useState<ContentDataProps>({
+    id: '',
+    name: '',
+    path: '',
+    type: '',
+    creator: '',
+    description: '',
+  })
 
-
-  useEffect(() => {
-    const loadFiles = async () => {
-      const files = await import.meta.glob('/src/components/@Contents/*.html')
-      const files2 = Object.keys(files)
-      setContentsNames(files2)
-    }
-
-    loadFiles()
-  }, [])
 
   useEffect(() => {
     const currentTheme: any = localStorage.getItem('theme')
@@ -44,6 +55,14 @@ export function AppContextProvider({ children }: AppContextProviderProps) {
     } else {
       setThemeValue(currentTheme)
     }
+
+    const loadFiles = async () => {
+      const files = await import.meta.glob('/src/components/@Contents/*.html')
+      const all_files = Object.keys(files)
+      setContentsNames(all_files)
+    }
+
+    loadFiles()
   }, [])
 
   return (
@@ -55,7 +74,9 @@ export function AppContextProvider({ children }: AppContextProviderProps) {
         clickedContent,
         setClickedContent,
         cookiesAccept,
-        setCookiesAccept
+        setCookiesAccept,
+        contentData,
+        setContentData
       }}
     >
       {children}

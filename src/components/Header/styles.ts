@@ -26,8 +26,8 @@ export const HeaderContainer = styled.header<ThemeProps>`
   @media (max-width: 800px) {
     a {
       img {
-      width: 0;
-    }
+        width: 0;
+      }
     }
   }
 `

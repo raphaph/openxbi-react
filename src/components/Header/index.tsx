@@ -18,12 +18,25 @@ export function Header() {
     }
   }
 
+  // Teste para colocar a logo Box quando width for menor que 600
+  // function getPageWidth() {
+  //   return document.documentElement.clientWidth;
+  // }
+
+  // window.addEventListener("resize", function () {
+  //   var larguraPagina = getPageWidth();
+  //   return larguraPagina;
+  // });
+
+
+
+
   return (
     <HeaderContainer variant={themeValue}>
       <NavLink to="/">
         <img
           src={`/src/assets/${themeValue === 'dark' ?
-            'logo-dark' : 'logo-light'}.svg`}
+            'logo-dark.svg' : 'logo-light.svg'}`}
           alt=""
         />
       </NavLink>
