@@ -16,17 +16,26 @@ export const HeaderContainer = styled.header<ThemeProps>`
     props.variant === 'light' ? props.theme.offwhite : props.theme.black};  
 
   a {
-    img {
-    height: 2.5rem;
-    margin-left: 1.5rem;
-  }
+    img:nth-child(1) {
+      width: 7.5rem;
+      margin-left: 1.5rem;
+    }
+
+    img:nth-child(2) {
+      width: 0;
+      margin-left: 1.5rem;
+    }
   }
   
 
   @media (max-width: 800px) {
     a {
-      img {
+      img:nth-child(1) {
         width: 0;
+      }
+      img:nth-child(2) {
+        width: 3rem;
+        margin-left: .5rem;
       }
     }
   }

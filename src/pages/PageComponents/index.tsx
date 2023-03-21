@@ -5,12 +5,13 @@ import { CookiesModal } from '../../components/CookiesModal'
 import { AppContext } from '../../context/AppContext'
 import {
   ComponentsContainer,
+  FilterSection,
   FooterCardContent,
   HeaderContentsContainer,
   PageComponentsContainer,
 } from './styles'
 import axios from 'axios'
-
+import * as RadioGroup from '@radix-ui/react-radio-group';
 interface ContentDataProps {
   id: string
   name: string
@@ -77,14 +78,20 @@ export function PageComponents() {
         <div>
           <h2>Componentes</h2>
           <p>Os componentes são HTML e CSS puro, caso queira experiementar os componentes com a linguagem DAX incorporada, baixe nossos <NavLink to="/templates"><strong>templates</strong></NavLink>. </p>
-          <section>
-            <button onClick={() => setFiltered('all')}>All</button>
-            <button onClick={() => setFiltered('card')}>Card</button>
-            <button onClick={() => setFiltered('chart')}>Chart</button>
-            <button onClick={() => setFiltered('table')}>Table</button>
-          </section>
+          <FilterSection variant={themeValue}>
+            <form action="">
+              <input type="radio" value={'all'} name={`all`} id={"1"} onChange={() => setFiltered('all')} defaultChecked />
+              <label htmlFor="1">All</label>
+              <input type="radio" value={'all'} name={`all`} id={"2"} onChange={() => setFiltered('card')} />
+              <label htmlFor="2">Cards</label>
+              <input type="radio" value={'all'} name={`all`} id={"3"} onChange={() => setFiltered('chart')} />
+              <label htmlFor="3">Charts</label>
+              <input type="radio" value={'all'} name={`all`} id={"4"} onChange={() => setFiltered('table')} />
+              <label htmlFor="4">Tables</label>
+            </form>
+          </FilterSection>
         </div>
-      </HeaderContentsContainer>
+      </HeaderContentsContainer >
       <ComponentsContainer variant={themeValue}>
         {filteredData.map(content => {
           return (
@@ -109,6 +116,6 @@ export function PageComponents() {
           )
         })}
       </ComponentsContainer>
-    </PageComponentsContainer>
+    </PageComponentsContainer >
   )
 }

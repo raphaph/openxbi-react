@@ -4,9 +4,10 @@ import { ClickedComponent } from './pages/ClickedComponent'
 import { Home } from './pages/Home'
 import { PageComponents } from './pages/PageComponents'
 import { Templates } from './pages/Templates'
-import { DaxFormatting } from './pages/@docs-3-DaxFormatting'
-import { GettingStarted } from './pages/@docs-2-GettingStarted'
 import { Introduction } from './pages/@docs-1-Introduction'
+import { GettingStarted } from './pages/@docs-2-GettingStarted'
+import { EmbeddingDax } from './pages/@docs-3-EmbeddingDax'
+import { DaxFormatting } from './pages/@docs-4-DaxFormatting'
 
 export function Router() {
   return (
@@ -18,6 +19,7 @@ export function Router() {
         <Route path="/templates" element={<Templates />} />
         <Route path="/docs/introduction" element={<Introduction />} />
         <Route path="/docs/getting-started" element={<GettingStarted />} />
+        <Route path="/docs/embedding-dax" element={<EmbeddingDax />} />
         <Route path="/docs/dax-formating" element={<DaxFormatting />} />
       </Route>
     </Routes>

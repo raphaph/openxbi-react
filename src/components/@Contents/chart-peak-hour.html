@@ -131,12 +131,10 @@ body::-webkit-scrollbar {
 
     text-align: right;
 
-    box-shadow: 0 0 2px 1px rgb(219, 219, 219);
-
-    --bar-color: #a8a8a8; /* Variavel que armazena cor das barras */
+    --bar-color: #c9c9c9; /* Variavel que armazena cor das barras */
     --bar-peak-value: #FF8C00 /* Variavel que armazena a cor da barra com maior valor */
 }
-/* Use condicional IF para modificar a cor com DAX ex: "&IF(var = x, #ff8c00, #a8a8a8 )&"
+/* Use condicional IF para modificar a cor com DAX ex: "&IF(var = x, #ff8c00, #c9c9c9 )&"
  * adapte o valor para ficar menor que 150 com divisão, veja exemplo usando calc() abaixo */
 .quantity8h { animation: anim1 1s forwards ; background: var(--bar-color);} 
 @keyframes anim1 { 0%{width: 0;} 100% {width: calc( 0.99 * 101px )}} /* Width representa o valor das 10horas */ 

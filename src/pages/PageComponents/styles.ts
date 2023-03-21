@@ -61,6 +61,93 @@ export const HeaderContentsContainer = styled.header`
   }
 `
 
+export const FilterSection = styled.section<ThemeProps>`
+  margin-left: 1rem;
+  margin-top: .5rem;
+
+  max-width: 500px;
+
+  --gradient-bg: ${(props) =>
+    props.variant === 'light' ? props.theme['gray-100'] : props.theme.offblack};
+  padding: 1rem;
+  border-radius: 6px;
+  background: linear-gradient(
+      -45deg,
+      rgba(0,0,0,0.01),
+      rgba(52, 22, 227, 0.1),
+      rgba(255, 140, 0, 0.1),
+      rgba(41, 171, 226, 0.1)
+    );
+  
+  form {
+
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    gap: .2rem;
+
+    label {
+      cursor: pointer;
+      border: 2px solid transparent;
+      transition: 100ms;
+      width: 100px;
+      text-align: center;
+      font-weight: 500;
+
+      padding: .5rem;
+      margin: .2rem;
+      border-radius: 10px;
+      &:hover {
+        background: rgba(200,200,200,0.2);
+      }
+    }
+    
+    input[type="radio"]:nth-child(1) {
+      width: 0;
+      height: 0;
+      box-shadow: none;
+
+      &:checked ~ label:nth-child(2) {
+        background:  linear-gradient(-15deg, #cc8322 0%, #ffbf29 66%,#fda22a 100%);  
+        border: 2px solid ${props => props.variant === 'light' ? props.theme.black : props.theme.white};           
+      }
+    }
+
+    input[type="radio"]:nth-child(3) {
+      width: 0;
+      height: 0;
+      box-shadow: none;
+      
+      &:checked ~ label:nth-child(4) {
+        background:  linear-gradient(-15deg, #cc8322,#ffbf29,#fda22a);  
+        border: 2px solid ${props => props.variant === 'light' ? props.theme.black : props.theme.white};             
+      }
+    }
+
+    input[type="radio"]:nth-child(5) {
+      width: 0;
+      height: 0;
+      box-shadow: none;
+
+      &:checked ~ label:nth-child(6) {
+        background:  linear-gradient(-15deg, #cc8322,#ffbf29,#fda22a);  
+        border: 2px solid ${props => props.variant === 'light' ? props.theme.black : props.theme.white};              
+      }
+    }
+    
+    input[type="radio"]:nth-child(7) {
+      width: 0;
+      height: 0;
+      box-shadow: none;
+
+      &:checked ~ label:nth-child(8) {
+        background:  linear-gradient(-15deg, #cc8322,#ffbf29,#fda22a);  
+        border: 2px solid ${props => props.variant === 'light' ? props.theme.black : props.theme.white}; 
+      }
+    }
+  }
+  
+`
+
 export const ComponentsContainer = styled.div<ThemeProps>`
   display: flex;
   justify-content: flex-start;

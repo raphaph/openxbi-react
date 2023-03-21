@@ -39,6 +39,11 @@ export function Header() {
             'logo-dark.svg' : 'logo-light.svg'}`}
           alt=""
         />
+        <img
+          src={`/src/assets/${themeValue === 'dark' ?
+            'box-dark.svg' : 'box-light.svg'}`}
+          alt=""
+        />
       </NavLink>
       <HeaderSideRight>
         <nav>

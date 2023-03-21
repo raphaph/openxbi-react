@@ -59,8 +59,6 @@ export const SingleComponentContainer = styled.div<ThemeProps>`
   align-items: flex-start;
   margin: 2rem .2rem 0 2rem;
 
-  max-width: auto;
-
   h2 {
     margin-bottom: 0.5rem;
   }

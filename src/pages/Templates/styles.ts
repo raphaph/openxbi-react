@@ -61,7 +61,13 @@ export const HearderTemplate = styled.header<ThemeProps>`
     props.variant === 'light' ? props.theme['gray-100'] : props.theme.offblack};
   padding: 1rem;
   border-radius: 6px;
-  background: linear-gradient(45deg, var(--gradient-bg) 20%, rgba(214,40,0,0.01)) ;
+  background: linear-gradient(
+      -45deg,
+      rgba(0,0,0,0.01),
+      rgba(52, 22, 227, 0.1),
+      rgba(255, 140, 0, 0.1),
+      rgba(41, 171, 226, 0.1)
+    );
   
   p {
     margin-top: .6rem;
@@ -74,6 +80,10 @@ export const TemplatesMap = styled.main`
   justify-content: flex-start;
 
   flex-wrap: wrap;
+
+  @media (max-width: 800px) {
+    justify-content: center;
+  }
 `
 
 export const CardMap = styled.div`
@@ -85,7 +95,8 @@ export const CardMap = styled.div`
       rgba(52, 22, 227, 0.1),
       rgba(255, 140, 0, 0.1),
       rgba(41, 171, 226, 0.1)
-    );  border-radius: 6px;
+    );
+    border-radius: 6px;
 
   img {
     cursor: pointer;
@@ -97,6 +108,14 @@ export const CardMap = styled.div`
     &:hover {
       transform: scale(1.5);
     }
+  }
+
+  @media (max-width: 800px) {
+
+    img {
+      width: 400px;
+    }
+    
   }
 `
 
