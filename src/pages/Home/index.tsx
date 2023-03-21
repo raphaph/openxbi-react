@@ -298,8 +298,8 @@ return
             <h3>Compartilhando</h3>
             <p>
               Estamos empenhados em entregar componentes e templates prontos para uso,
-              oferecendo suporte e recursos comentados, para que possam aproveitar o máximo a plataforma. Com uma
-              abordagem diferente para BI, bsucamos inovar o design de interfaces em BI.
+              oferecendo suporte e recursos comentados, para que usuários possam aproveitar o máximo a plataforma. Com uma
+              abordagem diferente para BI, buscamos inovar e facilitar o design de interfaces em BI.
             </p>
           </ContentTwoCard>
         </MainContentTwo>

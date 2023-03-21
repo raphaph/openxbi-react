@@ -187,14 +187,14 @@ export const ContentFooter = styled.div<ThemeProps>`
       transition: all 0.2s;
       margin-top: 0.7rem;
       padding: 0.5rem;
-      
+      transition: 100ms;
 
       &:active {
         opacity: 1;
         transform: scale(0.97);
         text-shadow: 0 0 7px 1px ${(props) => props.theme['strong-orange']};
       }
-        transition: 300ms;
+        
 
       svg {
         margin-right: .5rem;
@@ -206,6 +206,11 @@ export const ContentFooter = styled.div<ThemeProps>`
         font-weight: bold;
       }
     }
+
+    a:nth-child(2) {
+      transform: translateX(8px);
+    }
+    
   }
 
 `
@@ -213,7 +218,7 @@ export const ExploreContent = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: 300ms;
+  transition: 200ms;
   max-width: 1200px;
   width: 100%;
   

@@ -17,7 +17,7 @@ export const HeaderContainer = styled.header<ThemeProps>`
 
   a {
     img:nth-child(1) {
-      width: 7.5rem;
+      width: 8.5rem;
       margin-left: 1.5rem;
     }
 

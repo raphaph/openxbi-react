@@ -20,7 +20,7 @@ export function DaxFormatting() {
             <NavDocumentation />
             <DaxContent>
                 <DaxText>
-                    <h1>Formatação DAX</h1>
+                    <h1>Formatando valores</h1>
                     <p>Quando importamos um componente e atribuimos valores de medidas e variáveis DAX a ele, podemos nos deparar com erro de exibição, seja trabalhando com porcentagem, moedas ou decimais, exemplo: ponto e vírgulas invertidos, simbolo da moeda inadequado a região, etc.</p>
                     <p>Para resolvermos essa questão, é importante conhecermos e sabermos como aplicar a função <strong>FORMAT</strong> da linguagem DAX, ela nos permite formatar nossas variáveis para que seja exibida como deveriam.</p>
                     <p><strong>{`FORMAT(<value>, <format_string> [, <locale_name>])`}</strong> - Converte um valor em texto de acordo com o formato especificado.</p>

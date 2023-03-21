@@ -7,6 +7,10 @@ interface ThemeProps {
 export const EmbeddingDaxContainer = styled.main<ThemeProps>`
     display: flex;
 
+    @media (max-width: 800px) {
+        flex-direction: column;
+    }
+
     background: ${(props) =>
         props.variant === 'light' ? props.theme.offwhite : props.theme.black};
     transition: background 300ms;

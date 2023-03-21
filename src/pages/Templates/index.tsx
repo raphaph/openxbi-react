@@ -13,7 +13,8 @@ export function Templates() {
     path: "src/pbix/openxbi-templates.zip",
     download: "openxbi-templates.zip",
     image: "src/assets/templates-image/openxbi-initial-template.png",
-    public: "https://app.powerbi.com/view?r=eyJrIjoiMDhmZjhhNTEtZDU1Ny00YjM3LTk2MGMtMGU2OGQxYzJhMGY3IiwidCI6IjBhODViZGRhLTVhN2YtNGIyZS04Y2FmLTcyMDRmMGU1NTM2MSJ9"
+    public: "https://app.powerbi.com/view?r=eyJrIjoiMDhmZjhhNTEtZDU1Ny00YjM3LTk2MGMtMGU2OGQxYzJhMGY3IiwidCI6IjBhODViZGRhLTVhN2YtNGIyZS04Y2FmLTcyMDRmMGU1NTM2MSJ9",
+    creator: "raphaph"
   }
   ]
 

@@ -107,7 +107,7 @@ export const FilterSection = styled.section<ThemeProps>`
       box-shadow: none;
 
       &:checked ~ label:nth-child(2) {
-        background:  linear-gradient(-15deg, #cc8322 0%, #ffbf29 66%,#fda22a 100%);  
+        background:  ${props => props.theme['strong-orange']}; 
         border: 2px solid ${props => props.variant === 'light' ? props.theme.black : props.theme.white};           
       }
     }
@@ -118,7 +118,7 @@ export const FilterSection = styled.section<ThemeProps>`
       box-shadow: none;
       
       &:checked ~ label:nth-child(4) {
-        background:  linear-gradient(-15deg, #cc8322,#ffbf29,#fda22a);  
+        background:  ${props => props.theme['strong-orange']}; 
         border: 2px solid ${props => props.variant === 'light' ? props.theme.black : props.theme.white};             
       }
     }
@@ -129,7 +129,7 @@ export const FilterSection = styled.section<ThemeProps>`
       box-shadow: none;
 
       &:checked ~ label:nth-child(6) {
-        background:  linear-gradient(-15deg, #cc8322,#ffbf29,#fda22a);  
+        background:  ${props => props.theme['strong-orange']};   
         border: 2px solid ${props => props.variant === 'light' ? props.theme.black : props.theme.white};              
       }
     }
@@ -140,7 +140,7 @@ export const FilterSection = styled.section<ThemeProps>`
       box-shadow: none;
 
       &:checked ~ label:nth-child(8) {
-        background:  linear-gradient(-15deg, #cc8322,#ffbf29,#fda22a);  
+        background:  ${props => props.theme['strong-orange']};   
         border: 2px solid ${props => props.variant === 'light' ? props.theme.black : props.theme.white}; 
       }
     }

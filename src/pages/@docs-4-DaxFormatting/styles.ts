@@ -175,14 +175,5 @@ table {
         transition: 300ms; /* Tempo para esmaecer */
     }
 }
-
-
-
 }
-
-
-
-
-
-
 `

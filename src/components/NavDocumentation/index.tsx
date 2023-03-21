@@ -8,8 +8,8 @@ export function NavDocumentation() {
             <nav>
                 <NavLink to={"/docs/introduction"}>Introdução</NavLink>
                 <NavLink to={"/docs/getting-started"}>Primeiros Passos</NavLink>
-                <NavLink to={"/docs/embedding-dax"}>Incorporando DAX</NavLink>
-                <NavLink to={"/docs/dax-formating"}>Formatação DAX</NavLink>
+                <NavLink to={"/docs/embedding-dax"}>Incorporando DAX ao código</NavLink>
+                <NavLink to={"/docs/dax-formating"}>Formatando valores</NavLink>
             </nav>
         </NavigationContainer>
 
