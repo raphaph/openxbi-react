@@ -268,14 +268,14 @@ return
           </div>
           <div>
             <iframe
-              src={contentsNames[4]}
+              src={contentsNames[8]}
               frameBorder={0}
               height={300}
             ></iframe>
           </div>
           <div>
             <iframe
-              src={contentsNames[2]}
+              src={contentsNames[11]}
               frameBorder={0}
               height={300}
             ></iframe>
