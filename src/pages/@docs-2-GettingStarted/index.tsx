@@ -147,11 +147,11 @@ export function GettingStarted() {
             <StartedContent>
                 <StartedText>
                     <h1>Primeiros passos</h1>
-                    <strong>Um rápido tutorial de como utilizar componentes da OpenXBI.</strong>
+                    <strong>Tutorial completo de como utilizar componentes da OpenXBI.</strong>
                     <p>Conhecimentos em medidas DAX, HTML e CSS podem ser opcionais para utilização dos componentes, porém a modificação e adaptação para o seu dashboard, pode ser necessário conhecimentos mais avançados, lembrando que comentamos pontos principais dos componentes para auxiliar a edição.</p>
-                    <h3>Vamos la?</h3>
+                    <h3>Vamos lá?</h3>
 
-                    <p>1. Copie o código de um componente a sua escolha em <NavLink to={"/components"}>Componentes</NavLink>.</p>
+                    <p><strong>1ª etapa</strong> - Copie o código de um componente a sua escolha em <NavLink to={"/components"}>Componentes</NavLink>.</p>
                     <strong>Neste tutorial utilizamos o componente card-acessibility:</strong>
 
                     <SyntaxHighlighterStarted
@@ -165,12 +165,12 @@ export function GettingStarted() {
                     </SyntaxHighlighterStarted>
 
                     <hr />
-                    <p>2. Após copiar o código, no seu PowerBI Desktop, na aba Página inicial, clique para adicionar uma <strong>Nova Medida</strong>.</p>
+                    <p><strong>2ª etapa</strong> - Após copiar o código, no seu PowerBI Desktop, na aba Página inicial, clique para adicionar uma <strong>Nova Medida</strong>.</p>
                     <img src={started1} alt="" width="300" />
                     <p color="purple">(É necessário ter uma tabela criada ou importada no seu dashboard, para que Nova Medida esteja disponível, a nova medida criada será adicionada a sua tabela selecionada)</p>
 
                     <hr />
-                    <p>3. Com o editor da nova medida aberto, substitua "Medida" pelo nome desejado para o componente, e entre aspas duplas cole o código do componente copiado. </p>
+                    <p><strong>3ª etapa</strong> - Com o editor da nova medida aberto, substitua "Medida" pelo nome desejado para o componente, e entre aspas duplas cole o código do componente copiado. </p>
 
                     <SyntaxHighlighterStarted
                         variant={themeValue}
@@ -183,21 +183,21 @@ export function GettingStarted() {
                     </SyntaxHighlighterStarted>
 
                     <hr />
-                    <p>4. Para visualizarmos o componente importado, será necessário importar o visual <strong><a href="https://appsource.microsoft.com/en-us/product/power-bi-visuals/WA200001930?exp=ubp8" target={"_blank"}>HTML Content</a></strong> do App Source.</p>
+                    <p><strong>4ª etapa</strong> - Para visualizar o componente importado, será necessário importar o visual <strong><a href="https://appsource.microsoft.com/en-us/product/power-bi-visuals/WA200001930?exp=ubp8" target={"_blank"}>HTML Content</a></strong> do App Source.</p>
                     <p>Na aba vertical <strong>Visualizações</strong>, clique nos 3 pontos e em “Obter mais visuais”</p>
                     <img src={started2} alt="" width="300" />
 
                     <p>Procure pelo visual "HTML Content" e clique em “Adicionar”.</p>
                     <img src={started3} alt="" width="450" />
 
-                    <p>O novo visual estará disponível para utilização na barra inferior de visualizações.</p>
+                    <p>O novo visual estará disponível para utilização na barra inferior de Visualizações.</p>
                     <img src={started4} alt="" width="150" />
 
                     <hr />
-                    <p>5. Exibindo o componente no dashboard.</p>
-                    <p>Com o visual HTML importado, de um clique único nele, um quadro com algumas informações sobre o visual aparecerá na área de exibição do seu dashboard.</p>
+                    <p><strong>5ª etapa</strong> - Exibindo o componente no dashboard.</p>
+                    <p>Com o visual HTML importado, de um clique em uma área em branco do dashboard e depois único no visual HTML Content, um quadro com algumas informações sobre o visual aparecerá na área de exibição do seu dashboard.</p>
                     <img src={started5} alt="" width="300" />
-                    <p>Ainda na aba vertical de Visualizações, adicione em "Values" a medida que criamos para o componente nas primeiras etapas.</p>
+                    <p>Ainda na aba vertical de Visualizações, adicione em "Values" a medida criada para o componente nas primeiras etapas.</p>
                     <img src={started6} alt="" width="200" />
 
                     <p>🎉 Pronto, componente importado.</p>

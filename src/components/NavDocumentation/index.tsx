@@ -10,10 +10,11 @@ export function NavDocumentation() {
                 <NavLink to={"/docs/getting-started"}>Primeiros Passos</NavLink>
 
             </nav>
-            <strong>Inteligência com DAX</strong>
+            <strong>Aplicando Inteligência</strong>
             <nav>
                 <NavLink to={"/docs/embedding-dax"}>Incorporando DAX</NavLink>
                 <NavLink to={"/docs/dax-formating"}>Formatando valores</NavLink>
+                <NavLink to={"/docs/conditional-in-code"}>Utilizando Condicionais</NavLink>
                 <NavLink to={"/docs/iterating-with-dax"}>Iterando com DAX</NavLink>
             </nav>
 

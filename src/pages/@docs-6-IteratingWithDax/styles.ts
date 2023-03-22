@@ -1,11 +1,10 @@
 import styled from "styled-components";
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter'
-
 interface ThemeProps {
     variant?: 'light' | 'dark' | null
 }
 
-export const EmbeddingDaxContainer = styled.main<ThemeProps>`
+export const IteratingDaxContainer = styled.main<ThemeProps>`
     display: flex;
 
     @media (max-width: 800px) {
@@ -30,7 +29,7 @@ export const EmbeddingDaxContainer = styled.main<ThemeProps>`
             : props.theme['gray-900']};
 `
 
-export const EmbeddingContent = styled.div`
+export const IterationContent = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -39,7 +38,7 @@ export const EmbeddingContent = styled.div`
     width: 100%;
 `
 
-export const EmbeddingText = styled.div`
+export const IteratingText = styled.div`
     max-width: 900px;
     width: 100%;
     padding: 3.5rem 2rem;
@@ -74,7 +73,7 @@ export const EmbeddingText = styled.div`
     }
 `
 
-export const SyntaxHighlighterEmbedding = styled(SyntaxHighlighter) <ThemeProps>`
+export const SyntaxHighlighterIterating = styled(SyntaxHighlighter) <ThemeProps>`
 
     max-width: 1000px;
     width: 100%;
@@ -114,3 +113,4 @@ export const SyntaxHighlighterEmbedding = styled(SyntaxHighlighter) <ThemeProps>
         background: rgba(0, 0, 0, 0.3);
     }
 `
+

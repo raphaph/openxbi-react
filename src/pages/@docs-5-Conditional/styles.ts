@@ -1,10 +1,11 @@
 import styled from "styled-components";
+import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter'
 
 interface ThemeProps {
     variant?: 'light' | 'dark' | null
 }
 
-export const IteratingDaxContainer = styled.main<ThemeProps>`
+export const ConditionalDaxContainer = styled.main<ThemeProps>`
     display: flex;
 
     @media (max-width: 800px) {
@@ -29,7 +30,7 @@ export const IteratingDaxContainer = styled.main<ThemeProps>`
             : props.theme['gray-900']};
 `
 
-export const IterationContent = styled.div`
+export const ConditionalContent = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -38,7 +39,7 @@ export const IterationContent = styled.div`
     width: 100%;
 `
 
-export const IteratingText = styled.div`
+export const ConditionalText = styled.div`
     max-width: 900px;
     width: 100%;
     padding: 3.5rem 2rem;
@@ -70,5 +71,46 @@ export const IteratingText = styled.div`
 
     a {
         color: inherit;
+    }
+`
+
+export const SyntaxHighlighterConditional = styled(SyntaxHighlighter) <ThemeProps>`
+
+    max-width: 1000px;
+    width: 100%;
+    height: auto;
+
+    margin-top: 1rem !important;
+
+    transition: 300ms;
+    background: ${(props) =>
+        props.variant === 'light' ? props.theme['gray-200'] : props.theme.offblack};
+
+    span {
+        font-family: 'Fira Code', monospace;
+        font-size: 0.875rem;
+    }
+
+    @media(max-width: 800px) {
+        width: 100%;
+    }
+
+    border-radius: 10px;
+    overflow-x: hidden;
+
+    &::-webkit-scrollbar {
+        width: 0.6rem;
+    }
+
+    &::-webkit-scrollbar:horizontal {
+        display: none;
+    }
+
+    &::-webkit-scrollbar-track {
+        background: rgba(255, 255, 255, 0.3);
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background: rgba(0, 0, 0, 0.3);
     }
 `
