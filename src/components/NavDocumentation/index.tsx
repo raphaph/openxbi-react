@@ -8,9 +8,15 @@ export function NavDocumentation() {
             <nav>
                 <NavLink to={"/docs/introduction"}>Introdução</NavLink>
                 <NavLink to={"/docs/getting-started"}>Primeiros Passos</NavLink>
-                <NavLink to={"/docs/embedding-dax"}>Incorporando DAX ao código</NavLink>
-                <NavLink to={"/docs/dax-formating"}>Formatando valores</NavLink>
+
             </nav>
+            <strong>Inteligência com DAX</strong>
+            <nav>
+                <NavLink to={"/docs/embedding-dax"}>Incorporando DAX</NavLink>
+                <NavLink to={"/docs/dax-formating"}>Formatando valores</NavLink>
+                <NavLink to={"/docs/iterating-with-dax"}>Iterando com DAX</NavLink>
+            </nav>
+
         </NavigationContainer>
 
     )

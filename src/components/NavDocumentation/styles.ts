@@ -11,7 +11,7 @@ export const NavigationContainer = styled.aside`
     nav {
         display: flex;
         flex-direction: column;
-        margin: 1rem 0 5rem;
+        margin: 1rem 0 2rem;
 
         a {
             margin: .4rem .1rem;

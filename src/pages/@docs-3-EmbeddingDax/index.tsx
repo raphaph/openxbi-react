@@ -2,10 +2,10 @@ import { NavDocumentation } from "../../components/NavDocumentation";
 
 import { AppContext } from "../../context/AppContext";
 import { useContext, useEffect } from 'react'
-import { EmbeddingDaxContainer } from "./styles";
+import { EmbeddingContent, EmbeddingDaxContainer, EmbeddingText } from "./styles";
 
 export function EmbeddingDax() {
-    document.title = 'OpenXBI | Use Dax'
+    document.title = 'OpenXBI | Embedding Dax'
     const { themeValue } = useContext(AppContext)
 
     useEffect(() => {
@@ -15,7 +15,11 @@ export function EmbeddingDax() {
     return (
         <EmbeddingDaxContainer variant={themeValue}>
             <NavDocumentation />
-            <div></div>
+            <EmbeddingContent>
+                <EmbeddingText>
+                    <h1>Incorporando DAX ao código</h1>
+                </EmbeddingText>
+            </EmbeddingContent>
         </EmbeddingDaxContainer>
     )
 }

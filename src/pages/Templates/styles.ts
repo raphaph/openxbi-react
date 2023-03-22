@@ -53,7 +53,6 @@ export const TemplatesContents = styled.header`
   width: 100%;
 
   margin: 2rem 0 0 0;
-
 `
 
 export const HearderTemplate = styled.header<ThemeProps>`
@@ -75,21 +74,27 @@ export const HearderTemplate = styled.header<ThemeProps>`
 `
 
 export const TemplatesMap = styled.main`
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+
+  @media (max-width: 700px) {
+    justify-content: center;
+    display: flex;
+    flex-wrap: wrap;
+  }
+
   align-items: center;
   justify-content: flex-start;
-
-  flex-wrap: wrap;
-
-  @media (max-width: 800px) {
-    justify-content: center;
-  }
 `
 
 export const CardMap = styled.div`
+  display:flex;
+  flex-direction: column;
+  align-items: center;
 
   padding: 1rem;
-  margin: 2rem .5rem 0 0;
+  margin: 1rem 0;
   background: linear-gradient(
       -15deg,
       rgba(52, 22, 227, 0.1),
@@ -100,10 +105,10 @@ export const CardMap = styled.div`
 
   img {
     cursor: pointer;
-    width: 550px;
+    width: 540px;
     box-shadow: 0 0 2px 1px #aaaaaa;
     border-radius: 6px;
-    transition: all 500ms;
+    transition: all 500ms;    
 
     &:hover {
       transform: scale(1.5);
@@ -111,7 +116,6 @@ export const CardMap = styled.div`
   }
 
   @media (max-width: 800px) {
-
     img {
       width: 400px;
     }
@@ -121,9 +125,10 @@ export const CardMap = styled.div`
 
 export const CardFooter = styled.div`
   display: flex;
-  flex-direction: row;
   align-items: center;
   justify-content: space-between;
+
+  width: 95%;
 
   margin-top: .6rem;
 

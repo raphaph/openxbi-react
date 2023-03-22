@@ -194,7 +194,7 @@ export function GettingStarted() {
                     <img src={started4} alt="" width="150" />
 
                     <hr />
-                    <p>5. Exibindo o componente no dashboard</p>
+                    <p>5. Exibindo o componente no dashboard.</p>
                     <p>Com o visual HTML importado, de um clique único nele, um quadro com algumas informações sobre o visual aparecerá na área de exibição do seu dashboard.</p>
                     <img src={started5} alt="" width="300" />
                     <p>Ainda na aba vertical de Visualizações, adicione em "Values" a medida que criamos para o componente nas primeiras etapas.</p>

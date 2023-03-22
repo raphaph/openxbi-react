@@ -15,6 +15,15 @@ export function Templates() {
     image: "src/assets/templates-image/openxbi-initial-template.png",
     public: "https://app.powerbi.com/view?r=eyJrIjoiMDhmZjhhNTEtZDU1Ny00YjM3LTk2MGMtMGU2OGQxYzJhMGY3IiwidCI6IjBhODViZGRhLTVhN2YtNGIyZS04Y2FmLTcyMDRmMGU1NTM2MSJ9",
     creator: "raphaph"
+  },
+  {
+    id: 2,
+    name: "openxbi-cloud-costs", // prefixo openxbi & community
+    path: "src/pbix/openxbi-cloud-costs.zip",
+    download: "openxbi-cloud-costs.zip",
+    image: "src/assets/templates-image/openxbi-cloud-costs.png",
+    public: "https://app.powerbi.com/view?r=eyJrIjoiNWNmYjZjMTAtMjUwMy00MmUxLWEzN2EtN2MxOGE1MDQ4NWQ2IiwidCI6IjBhODViZGRhLTVhN2YtNGIyZS04Y2FmLTcyMDRmMGU1NTM2MSJ9",
+    creator: "raphaph"
   }
   ]
 

@@ -50,7 +50,7 @@ export const HeaderContentsContainer = styled.header`
     text-align: left;
 
     h2, p {
-      margin-left: 1rem;
+      margin-left: .4rem;
       margin-top: .5rem;
 
       a {
@@ -62,14 +62,15 @@ export const HeaderContentsContainer = styled.header`
 `
 
 export const FilterSection = styled.section<ThemeProps>`
-  margin-left: 1rem;
-  margin-top: .5rem;
+  margin-left: .4rem;
+  margin-top: 1rem;
 
   max-width: 500px;
+  width: 100%;
 
   --gradient-bg: ${(props) =>
     props.variant === 'light' ? props.theme['gray-100'] : props.theme.offblack};
-  padding: 1rem;
+  padding: .6rem;
   border-radius: 6px;
   background: linear-gradient(
       -45deg,
@@ -83,13 +84,12 @@ export const FilterSection = styled.section<ThemeProps>`
 
     display: grid;
     grid-template-columns: repeat(8, 1fr);
-    gap: .2rem;
+    gap: .1rem;
 
     label {
       cursor: pointer;
-      border: 2px solid transparent;
-      transition: 100ms;
-      width: 100px;
+      transition: 300ms;
+      width: 90px;
       text-align: center;
       font-weight: 500;
 
@@ -98,62 +98,61 @@ export const FilterSection = styled.section<ThemeProps>`
       border-radius: 10px;
       &:hover {
         background: rgba(200,200,200,0.2);
+        transform: scale(1.05);
       }
     }
-    
-    input[type="radio"]:nth-child(1) {
+
+    input[type="radio"]:nth-child(odd) {
       width: 0;
       height: 0;
       box-shadow: none;
+    }
 
+    input[type="radio"]:nth-child(1) {
       &:checked ~ label:nth-child(2) {
-        background:  ${props => props.theme['strong-orange']}; 
-        border: 2px solid ${props => props.variant === 'light' ? props.theme.black : props.theme.white};           
+        background:  linear-gradient(-15deg, #19d0ff, #29b0e3);
+        box-shadow: 0 0 5px 0px #19d0ff;
       }
     }
 
     input[type="radio"]:nth-child(3) {
-      width: 0;
-      height: 0;
-      box-shadow: none;
-      
       &:checked ~ label:nth-child(4) {
-        background:  ${props => props.theme['strong-orange']}; 
-        border: 2px solid ${props => props.variant === 'light' ? props.theme.black : props.theme.white};             
+        background:  linear-gradient(-15deg, #19d0ff, #29b0e3);
+        box-shadow: 0 0 5px 0px #19d0ff;          
       }
     }
 
     input[type="radio"]:nth-child(5) {
-      width: 0;
-      height: 0;
-      box-shadow: none;
-
       &:checked ~ label:nth-child(6) {
-        background:  ${props => props.theme['strong-orange']};   
-        border: 2px solid ${props => props.variant === 'light' ? props.theme.black : props.theme.white};              
+        background:  linear-gradient(-15deg, #19d0ff, #29b0e3);
+        box-shadow: 0 0 5px 0px #19d0ff;            
       }
     }
     
     input[type="radio"]:nth-child(7) {
-      width: 0;
-      height: 0;
-      box-shadow: none;
-
       &:checked ~ label:nth-child(8) {
-        background:  ${props => props.theme['strong-orange']};   
-        border: 2px solid ${props => props.variant === 'light' ? props.theme.black : props.theme.white}; 
+        background:  linear-gradient(-15deg, #19d0ff, #29b0e3);
+        box-shadow: 0 0 5px 0px #19d0ff;  
       }
     }
   }
-  
 `
 
 export const ComponentsContainer = styled.div<ThemeProps>`
-  display: flex;
-  justify-content: flex-start;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
   padding-left: 2rem;
   padding-bottom: 10rem;
+
+  @media (max-width: 1400px) {
+    display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  }
+
+  @media (max-width: 800px) {
+    display: flex;
+    flex-wrap: wrap;
+  }
 
   max-width: 1800px;
   width: 100%;
