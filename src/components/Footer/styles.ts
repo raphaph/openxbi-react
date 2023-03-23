@@ -78,7 +78,7 @@ export const RightSideContent = styled.div<ThemeProps>`
   button {
     padding: 0.5rem;
     margin-bottom: 1rem;
-    border-radius: 5px;
+    border-radius: 6px;
     font-size: 14px;
     font-weight: bold;
 

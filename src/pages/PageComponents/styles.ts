@@ -95,7 +95,7 @@ export const FilterSection = styled.section<ThemeProps>`
 
       padding: .5rem;
       margin: .2rem;
-      border-radius: 10px;
+      border-radius: 6px;
       &:hover {
         background: rgba(200,200,200,0.2);
         transform: scale(1.05);

@@ -45,7 +45,7 @@ export function Templates() {
                 <CardFooter>
                   <strong>{template.name}</strong>
                   <button>
-                    <a href="src/pbix/openxbi-templates.zip" download={"openxbi-templates.zip"}><DownloadSimple />
+                    <a href={template.path} download={template.download}><DownloadSimple />
                       Download</a>
                   </button>
                 </CardFooter>

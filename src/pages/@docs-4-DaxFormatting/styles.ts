@@ -119,61 +119,61 @@ export const TableContainer = styled.div<ThemeProps>`
     margin-top: 2rem;
 
 
-table { 
-    max-width: 700px;
-    width: auto; /* Largura da tabela, modifque conforme número de colunas */ 
-    border-collapse: collapse;
+    table { 
+        max-width: 700px;
+        width: auto; /* Largura da tabela, modifque conforme número de colunas */ 
+        border-collapse: collapse;
 
-    th { /* th - é o header da tabela */
-    background-color: ${(props) =>
+        th { /* th - é o header da tabela */
+        background-color: ${(props) =>
         props.variant === 'light' ? props.theme['gray-200'] : props.theme.offblack}; /* Cor do cabeçalho */
-    padding: 1rem;
-    text-align: left;
-    color: ${(props) =>
+        padding: 1rem;
+        text-align: left;
+        color: ${(props) =>
         props.variant === 'light' ? props.theme.offblack : props.theme['gray-200']};
-    font-size: 0.875rem;
-    line-height: 1.6;
-    width: auto;
+        font-size: 0.875rem;
+        line-height: 1.6;
+        width: auto;
 
-    &:first-child {
-    border-top-left-radius: 8px;
-    padding-left: 1.5rem;
+        &:first-child {
+        border-top-left-radius: 8px;
+        padding-left: 1.5rem;
 
-}
-
-    &:last-child {
-        border-top-right-radius: 8px;
-        padding-right: 1.5rem;
-    }
     }
 
-    td { /* td - são as linhas da tabela */
-    
-    cursor: pointer;
-    background-color: ${(props) =>
+        &:last-child {
+            border-top-right-radius: 8px;
+            padding-right: 1.5rem;
+        }
+        }
+
+        td { /* td - são as linhas da tabela */
+        
+        cursor: pointer;
+        background-color: ${(props) =>
         props.variant === 'light' ? props.theme['gray-200'] : props.theme.black}; /* Cor das linhas */
-    color: ${(props) =>
+        color: ${(props) =>
         props.variant === 'light' ? props.theme.black : props.theme.white};
-    border-top: 1px solid ${(props) =>
+        border-top: 1px solid ${(props) =>
         props.variant === 'light' ? props.theme['gray-300'] : props.theme["gray-900"]};  /* Cor das linhas separadoras*/
-    padding: 0.7rem;
-    font-size: 1rem;
-    line-height: 1.2;
-    width: auto;
+        padding: 0.7rem;
+        font-size: 1rem;
+        line-height: 1.2;
+        width: auto;
 
-    &:first-child {
-    padding-left: 1.5rem;
-    }
+        &:first-child {
+        padding-left: 1.5rem;
+        }
 
-    &:last-child {
-        padding-right: 1.5rem;
-    }
+        &:last-child {
+            padding-right: 1.5rem;
+        }
 
-    &:hover {
-        background: rgb(219, 219, 219); /* Cor ao passar o mouse */
-        z-index: 1;
-        transition: 300ms; /* Tempo para esmaecer */
+        &:hover {
+            background: rgb(219, 219, 219); /* Cor ao passar o mouse */
+            z-index: 1;
+            transition: 300ms; /* Tempo para esmaecer */
+        }
     }
-}
 }
 `

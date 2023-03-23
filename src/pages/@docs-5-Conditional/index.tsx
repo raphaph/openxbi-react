@@ -36,7 +36,7 @@ export function ConditionalDax() {
                     >
                         {`"<p style='color: " & IF( [Value] < 50000, "green", "red") & ";'></p>"`}
                     </SyntaxHighlighterConditional>
-                    <p>Observe que, a condicional está dentro do código HTML substituindo a cor conforme o valor de [Value]. </p>
+                    <p>Observe que a condicional está dentro do código HTML substituindo a cor conforme o valor de [Value]. </p>
 
                     <p>Também podemos utilizar esta mesma condicional dentro de style.</p>
                     <SyntaxHighlighterConditional

@@ -15,7 +15,7 @@ export function NavDocumentation() {
                 <NavLink to={"/docs/embedding-dax"}>Incorporando DAX</NavLink>
                 <NavLink to={"/docs/dax-formating"}>Formatando valores</NavLink>
                 <NavLink to={"/docs/conditional-in-code"}>Utilizando Condicionais</NavLink>
-                <NavLink to={"/docs/iterating-with-dax"}>Iterando com DAX</NavLink>
+                <NavLink to={"/docs/iterating-with-dax"}>Iterar uma tabela</NavLink>
             </nav>
 
         </NavigationContainer>

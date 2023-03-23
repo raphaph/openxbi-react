@@ -175,6 +175,10 @@ export const ContentFooter = styled.div<ThemeProps>`
     display: flex;
     flex-direction: column;
 
+    a:nth-child(2) {
+      transform: translateX(6px);
+    }
+
     a {
       color: inherit;
       text-decoration: none;
@@ -191,7 +195,7 @@ export const ContentFooter = styled.div<ThemeProps>`
 
       &:active {
         opacity: 1;
-        transform: scale(0.97);
+        transform: scale(0.98);
         text-shadow: 0 0 7px 1px ${(props) => props.theme['strong-orange']};
       }
         
@@ -205,10 +209,6 @@ export const ContentFooter = styled.div<ThemeProps>`
         text-shadow: 0 0 5px inherit;
         font-weight: bold;
       }
-    }
-
-    a:nth-child(2) {
-      transform: translateX(8px);
     }
     
   }

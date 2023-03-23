@@ -71,6 +71,11 @@ export const IteratingText = styled.div`
     a {
         color: inherit;
     }
+
+    img {
+        border-radius: 6px;
+        box-shadow: 0 0 2px -1px lightslategray;
+    }
 `
 
 export const SyntaxHighlighterIterating = styled(SyntaxHighlighter) <ThemeProps>`
