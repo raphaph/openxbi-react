@@ -5,7 +5,11 @@ export const NavigationContainer = styled.aside`
     display: flex;
     flex-direction: column;
     margin: 3rem 1.5rem;
-    position: relative;
+    position: fixed;
+
+    @media (max-width: 700px) {
+        position: relative;
+    }
 
     nav {
         display: flex;

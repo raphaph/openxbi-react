@@ -32,8 +32,8 @@ export const EmbeddingDaxContainer = styled.main<ThemeProps>`
 
 export const EmbeddingContent = styled.div`
     display: flex;
-    flex-direction: column;
     align-items: center;
+    justify-content: flex-end;
 
     max-width: 1200px;
     width: 100%;

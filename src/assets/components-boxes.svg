@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Camada_2" data-name="Camada 2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 242 241">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #ffbf29;
+      }
+
+      .cls-2 {
+        fill: #ab1eff;
+      }
+
+      .cls-3 {
+        fill: #37d3ff;
+      }
+
+      .cls-4 {
+        stroke: #901eff;
+      }
+
+      .cls-4, .cls-5, .cls-6, .cls-7, .cls-8, .cls-9 {
+        fill: none;
+        stroke-miterlimit: 10;
+      }
+
+      .cls-4, .cls-6, .cls-7 {
+        stroke-width: 3px;
+      }
+
+      .cls-5 {
+        filter: url(#drop-shadow-3);
+      }
+
+      .cls-5, .cls-8, .cls-9 {
+        stroke: #000;
+        stroke-width: 8px;
+      }
+
+      .cls-10 {
+        fill: #c4a2ff;
+      }
+
+      .cls-11 {
+        fill: #cc8322;
+      }
+
+      .cls-12 {
+        fill: #7e19cc;
+      }
+
+      .cls-6 {
+        stroke: #21aaff;
+      }
+
+      .cls-7 {
+        stroke: #ff931e;
+      }
+
+      .cls-8 {
+        filter: url(#drop-shadow-2);
+      }
+
+      .cls-13 {
+        fill: #ffa32a;
+      }
+
+      .cls-14 {
+        fill: #2f98d8;
+      }
+
+      .cls-15 {
+        fill: #2fb3d8;
+      }
+
+      .cls-9 {
+        filter: url(#drop-shadow-1);
+      }
+    </style>
+    <filter id="drop-shadow-1" filterUnits="userSpaceOnUse">
+      <feOffset dx="0" dy="0"/>
+      <feGaussianBlur result="blur" stdDeviation="4"/>
+      <feFlood flood-color="#000" flood-opacity=".8"/>
+      <feComposite in2="blur" operator="in"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="drop-shadow-2" filterUnits="userSpaceOnUse">
+      <feOffset dx="0" dy="0"/>
+      <feGaussianBlur result="blur-2" stdDeviation="4"/>
+      <feFlood flood-color="#000" flood-opacity=".8"/>
+      <feComposite in2="blur-2" operator="in"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="drop-shadow-3" filterUnits="userSpaceOnUse">
+      <feOffset dx="0" dy="0"/>
+      <feGaussianBlur result="blur-3" stdDeviation="4"/>
+      <feFlood flood-color="#000" flood-opacity=".8"/>
+      <feComposite in2="blur-3" operator="in"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g id="Camada_1-2" data-name="Camada 1">
+    <g id="black">
+      <polygon class="cls-10" points="225 144 179 167 131 143 179 115 225 144"/>
+      <polygon class="cls-2" points="225 194 179 220 179 167 225 144 225 194"/>
+      <polygon class="cls-12" points="178 223 131 195 131 143 178 166 178 223"/>
+      <line class="cls-4" x1="178.2" y1="165.7" x2="131.2" y2="142.7"/>
+      <line class="cls-4" x1="225" y1="142.9" x2="178" y2="165.9"/>
+      <line class="cls-4" x1="178.4" y1="225" x2="178.4" y2="166"/>
+      <polygon class="cls-9" points="225.71 196.75 178.5 224.01 131.29 196.75 131.29 142.25 178.5 114.99 225.71 142.25 225.71 196.75"/>
+    </g>
+    <g id="black-2" data-name="black">
+      <polygon class="cls-1" points="166.79 46.32 120.79 69.32 72.79 45.32 120.79 17.32 166.79 46.32"/>
+      <polygon class="cls-13" points="166.79 96.32 120.79 122.32 120.79 69.32 166.79 46.32 166.79 96.32"/>
+      <polygon class="cls-11" points="119.79 125.32 72.79 97.32 72.79 45.32 119.79 68.32 119.79 125.32"/>
+      <line class="cls-7" x1="119.99" y1="68.02" x2="72.99" y2="45.02"/>
+      <line class="cls-7" x1="166.79" y1="45.22" x2="119.79" y2="68.22"/>
+      <line class="cls-7" x1="120.19" y1="127.32" x2="120.19" y2="68.32"/>
+      <polygon class="cls-8" points="167.49 99.08 120.29 126.33 73.08 99.08 73.08 44.57 120.29 17.31 167.49 44.57 167.49 99.08"/>
+    </g>
+    <g id="black-3" data-name="black">
+      <polygon class="cls-3" points="109.78 143.32 63.78 166.32 15.78 142.32 63.78 114.32 109.78 143.32"/>
+      <polygon class="cls-15" points="109.78 193.32 63.78 219.32 63.78 166.32 109.78 143.32 109.78 193.32"/>
+      <polygon class="cls-14" points="62.78 222.32 15.78 194.32 15.78 142.32 62.78 165.32 62.78 222.32"/>
+      <line class="cls-6" x1="62.98" y1="165.02" x2="15.98" y2="142.02"/>
+      <line class="cls-6" x1="109.78" y1="142.22" x2="62.78" y2="165.22"/>
+      <line class="cls-6" x1="63.18" y1="224.32" x2="63.18" y2="165.32"/>
+      <polygon class="cls-5" points="110.48 196.08 63.28 223.33 16.07 196.08 16.07 141.57 63.28 114.32 110.48 141.57 110.48 196.08"/>
+    </g>
+  </g>
+</svg>

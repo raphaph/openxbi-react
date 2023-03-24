@@ -86,17 +86,14 @@ export const RightSideContent = styled.div<ThemeProps>`
     cursor: pointer;
 
     border: 0;
-    background: ${(props) =>
-    props.variant === 'light' ? props.theme.offblack : props.theme.offwhite};
+    background: #1e2021;
 
-    color: ${(props) =>
-    props.variant === 'light' ? props.theme.white : props.theme.black};
+    color: white;
     
     &:hover {
       transform: scale(0.96);
       box-shadow: 0 0 4px 1px gray;
     }
-    
   }
 
   a {

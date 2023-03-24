@@ -16,7 +16,7 @@ export const PageComponentsContainer = styled.main<ThemeProps>`
       : props.theme['gray-900']};
 
   background: ${(props) =>
-    props.variant === 'light' ? props.theme.offwhite : props.theme.black};
+    props.variant === 'light' ? props.theme.offwhite : props.theme['bg-gray']};
   transition: background 300ms;
 
   z-index: 0;

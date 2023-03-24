@@ -26,7 +26,8 @@ export function IteratingDax() {
                     <h1>Iterando uma tabela com DAX</h1>
                     <strong>Este tutorial ensina como repetir uma linhas, iterando uma tebela utilizando CONCATENATEX.</strong>
 
-                    <p>Iterar uma tabela e retornar linhas html pode ser utilizado em diversos casos, como reproduzir uma tabela com muitas linhas em html sem ter que escrever cada linha manualmente, repetir cards para cada título e valor, criar barras laterais ou colunas, e mais conforme necessidade.  </p>
+                    <p>Iterar uma tabela e retornar linhas html pode ser utilizado em diversos casos, como reproduzir uma tabela com muitas linhas em html sem ter que escrever cada linha manualmente,
+                        repetir cards para cada título e valor, criar barras laterais ou colunas, repetir objetos dentro de uma tag svg, e muito mais necessidade e criatividade.  </p>
 
                     <p>Sintaxe do <strong>CONCATENATEX</strong>, que iremos utilizar:</p>
                     <SyntaxHighlighterIterating

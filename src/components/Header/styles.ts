@@ -13,7 +13,7 @@ export const HeaderContainer = styled.header<ThemeProps>`
   height: 100px;
   width: 100%;
   background: ${(props) =>
-    props.variant === 'light' ? props.theme.offwhite : props.theme.black};  
+    props.variant === 'light' ? props.theme.offwhite : props.theme['bg-gray']};  
 
   a {
     img:nth-child(1) {

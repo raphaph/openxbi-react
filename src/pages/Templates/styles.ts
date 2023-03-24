@@ -26,7 +26,7 @@ export const TemplatesContainer = styled.main<ThemeProps>`
   
   transition: background 300ms;
   background: ${(props) =>
-    props.variant === 'light' ? props.theme.offwhite : props.theme.black};
+    props.variant === 'light' ? props.theme.offwhite : props.theme['bg-gray']};
 
   z-index: 1;
 

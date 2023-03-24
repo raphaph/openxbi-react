@@ -13,7 +13,7 @@ export const MainContainer = styled.main<ThemeProps>`
   height: auto;
   position: relative;
   background: ${(props) =>
-    props.variant === 'light' ? props.theme.offwhite : props.theme.black};
+    props.variant === 'light' ? props.theme.offwhite : props.theme['bg-gray']};
   transition: background 300ms;
 
   background-size: 100%;
@@ -44,7 +44,6 @@ export const MainContainer = styled.main<ThemeProps>`
       100%{transform: scale(1); opacity: 0.2;}
     }
   }
-
 `
 
 export const MainContentOne = styled.div`

@@ -22,7 +22,7 @@ import boxLight from '../../assets/box-light.svg'
 import { NavLink } from 'react-router-dom'
 import { BookOpen, Cube, PresentationChart } from 'phosphor-react'
 import { CookiesModal } from '../../components/CookiesModal'
-
+import boxes from '../../assets/components-boxes.svg'
 
 export function Home() {
   document.title = 'OpenXBI | Home'
@@ -295,11 +295,11 @@ return
             </p>
           </ContentTwoCard>
           <ContentTwoCard>
-            <h3>Compartilhando</h3>
+            <h3>Conhecimento compartilhado</h3>
             <p>
               Estamos empenhados em entregar componentes e templates prontos para uso,
-              oferecendo suporte e recursos comentados, para que usuários possam aproveitar o máximo a plataforma. Com uma
-              abordagem diferente para BI, buscamos inovar e facilitar o design de interfaces em BI.
+              oferecendo suporte e recursos comentados, para que usuários possam aproveitar o máximo a plataforma,
+              utilizando os componentes não somente para sua finalidade visual, mas também como forma de conhecimento.
             </p>
           </ContentTwoCard>
         </MainContentTwo>
