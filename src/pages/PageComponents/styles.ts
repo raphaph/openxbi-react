@@ -173,7 +173,8 @@ export const ComponentsContainer = styled.div<ThemeProps>`
       rgba(41, 171, 226, 0.1)
     );
 
-    width: 25rem;
+    min-width: 25rem;
+    width: 100%;
     height: 25rem;
     border-radius: 6px 6px 0 0;
   }

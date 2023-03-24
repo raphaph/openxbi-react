@@ -80,7 +80,7 @@ export function ClickedComponent() {
           <div>
             <iframe src={lastClicked} frameBorder={0} height={300}></iframe>
           </div>
-          <p>{contentData.description}</p>
+          {/* <p>{contentData.description}</p> */}
           <CreatorInfoImg variant={themeValue}>
             <img src={`https://github.com/${contentData.creator}.png`} alt="" width={10} />
             <a href={`https://github.com/${contentData.creator}`} target={'_blank'}><small>Criado por <br />@{contentData.creator}</small></a>
