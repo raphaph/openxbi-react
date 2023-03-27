@@ -69,6 +69,7 @@ export const MainContentOne = styled.div`
   strong:nth-child(2) {
     color: ${props => props.theme['gray-500']};
     font-weight: 300;
+    line-height: 1.5;
   }
 
   strong {
@@ -113,6 +114,10 @@ export const MainContentTwo = styled.main`
     display: flex;
     flex-direction: column;
   }
+
+  p {
+    line-height: 1.6;
+  }
 `
 
 export const ContentTwoCard = styled.div`
@@ -150,6 +155,7 @@ export const MainFooterContent = styled.div`
 
   p {
     margin: .5rem 0;
+    line-height: 1.6;
   }
 
   h3 {

@@ -8,8 +8,6 @@ export const PrinciplesContainer = styled.main`
     display: flex;
     margin-bottom: 8rem;
     flex-direction: column;
-
-    max-width: 1300px;
     width: 100%;
 `
 export const PrinciplesTitle = styled.div`
@@ -21,19 +19,23 @@ export const PrinciplesTitle = styled.div`
 
     p {
         margin: 1rem 0;
+        line-height: 1.6;
     }
 
 `
 
 export const PrinciplesContent = styled.div<ThemeProps>`
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
     
+    @media (max-width: 700px) {
+        display: flex;
+        flex-wrap: wrap;
+    }
 
     div {
         cursor: pointer;
-        max-width: 360px;
-        margin: 2rem 1.5rem 0 0;
         background: ${props => props.theme["linear-card-dark"]};
     
         transition: 300ms;
@@ -44,7 +46,11 @@ export const PrinciplesContent = styled.div<ThemeProps>`
             display: flex;
             align-items: center;
             justify-content: space-between;
-            margin-bottom: 1rem;
+            margin-bottom: .2rem;
+        }
+        
+        p {
+            line-height: 1.6;
         }
         
         &:hover {

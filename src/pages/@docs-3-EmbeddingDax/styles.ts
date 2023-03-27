@@ -66,7 +66,10 @@ export const EmbeddingText = styled.div`
     }
 
     hr {
-        margin-top: 1rem;
+        margin-top: 2rem;
+        height: 50px;
+        background-color: rgba(120,120,120,0.1);
+        border: 0;
     }
 
     a {
