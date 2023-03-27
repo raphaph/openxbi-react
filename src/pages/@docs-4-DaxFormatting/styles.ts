@@ -82,8 +82,7 @@ export const SyntaxHighlighterDAX = styled(SyntaxHighlighter) <ThemeProps>`
     margin-top: 1rem !important;
 
     transition: 300ms;
-    background: ${(props) =>
-        props.variant === 'light' ? props.theme['gray-200'] : props.theme.offblack};
+    background: rgba(52, 22, 227, 0.1) !important;
 
     span {
         font-family: 'Fira Code', monospace;

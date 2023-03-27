@@ -39,7 +39,7 @@ export const TemplatesContainer = styled.main<ThemeProps>`
     height: 100%;
     background-image: url('src/assets/mesh.svg');
     z-index: -1;
-    opacity: 0.2;
+    opacity: 0.1;
     /* Aplica um filtro de desfoque */
   }
 `
@@ -48,35 +48,28 @@ export const TemplatesContents = styled.header`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-
-  max-width: 1200px;
   width: 100%;
-
-  margin: 2rem 0 0 0;
 `
 
 export const HearderTemplate = styled.header<ThemeProps>`
   --gradient-bg: ${(props) =>
     props.variant === 'light' ? props.theme['gray-100'] : props.theme.offblack};
-  padding: 1rem;
-  border-radius: 6px;
-  background: linear-gradient(
-      -45deg,
-      rgba(0,0,0,0.01),
-      rgba(52, 22, 227, 0.1),
-      rgba(255, 140, 0, 0.1),
-      rgba(41, 171, 226, 0.1)
-    );
+  
+  background: ${props => props.theme['linear-card-dark']};
+  padding: 2rem;
   
   p {
     margin-top: .6rem;
   }
+
+  width: 100%;
 `
 
 export const TemplatesMap = styled.main`
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 1rem;
+  margin: 1rem 0.5rem;
 
   @media (max-width: 700px) {
     justify-content: center;
@@ -84,24 +77,23 @@ export const TemplatesMap = styled.main`
     flex-wrap: wrap;
   }
 
+  max-width: 1200px;
+  width: 100%;
+
   align-items: center;
-  justify-content: flex-start;
+  justify-content: center;
 `
 
-export const CardMap = styled.div`
+export const CardMap = styled.div<ThemeProps>`
   display:flex;
   flex-direction: column;
   align-items: center;
 
   padding: 1rem;
-  margin: 1rem 0;
-  background: linear-gradient(
-      -15deg,
-      rgba(52, 22, 227, 0.1),
-      rgba(255, 140, 0, 0.1),
-      rgba(41, 171, 226, 0.1)
-    );
-    border-radius: 6px;
+  background: ${props => props.theme['linear-card-dark']};
+  border: 1px solid ${(props) =>
+    props.variant === 'light' ? props.theme['border-light'] : props.theme['border-dark']};
+  border-radius: 6px;
 
   img {
     cursor: pointer;

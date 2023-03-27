@@ -11,7 +11,6 @@ import {
   PageComponentsContainer,
 } from './styles'
 import axios from 'axios'
-import * as RadioGroup from '@radix-ui/react-radio-group';
 interface ContentDataProps {
   id: string
   name: string
@@ -74,7 +73,7 @@ export function PageComponents() {
   return (
     <PageComponentsContainer variant={themeValue}>
       {cookiesAccept === null ? <CookiesModal /> : null}
-      <HeaderContentsContainer>
+      <HeaderContentsContainer variant={themeValue}>
         <div>
           <h2>Componentes</h2>
           <p>Os componentes são HTML e CSS puro, caso queira experiementar os componentes com a linguagem DAX incorporada, baixe nossos <NavLink to="/templates"><strong>templates</strong></NavLink>. </p>
@@ -107,8 +106,8 @@ export function PageComponents() {
                   onClick={() => localStorage.setItem('lastClicked', content.path)}
                 >
                   <NavLink to="/componentCode" title="services">
-                    <Code size={15} color="orange" weight="bold" />
-                    <p>HTML & CSS</p>
+                    <Code size={15} color="black" weight="bold" />
+                    <p>Code</p>
                   </NavLink>
                 </button>
               </FooterCardContent>

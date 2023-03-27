@@ -1,7 +1,7 @@
 import {
   ClickedBodyContainer,
   ClickedMainContent,
-  CreatorInfoImg,
+  CreatorInfoLike,
   DetailsSupport,
   SingleComponentContainer,
   SupportButton,
@@ -13,10 +13,9 @@ import {
 import { useContext, useEffect, useState } from 'react'
 import { AppContext } from '../../context/AppContext'
 import { coldarkDark, coldarkCold } from 'react-syntax-highlighter/dist/esm/styles/prism'
-import { BookBookmark, CopySimple } from 'phosphor-react'
+import { BookBookmark, CopySimple, Heart } from 'phosphor-react'
 import { NavLink } from 'react-router-dom'
 import axios from 'axios'
-
 
 export function ClickedComponent() {
 
@@ -81,10 +80,16 @@ export function ClickedComponent() {
             <iframe src={lastClicked} frameBorder={0} height={300}></iframe>
           </div>
           {/* <p>{contentData.description}</p> */}
-          <CreatorInfoImg variant={themeValue}>
-            <img src={`https://github.com/${contentData.creator}.png`} alt="" width={10} />
-            <a href={`https://github.com/${contentData.creator}`} target={'_blank'}><small>Criado por <br />@{contentData.creator}</small></a>
-          </CreatorInfoImg>
+          <CreatorInfoLike variant={themeValue}>
+            <section>
+              <img src={`https://github.com/${contentData.creator}.png`} alt="" width={10} />
+              <a href={`https://github.com/${contentData.creator}`} target={'_blank'}><small>{contentData.creator}</small></a>
+            </section>
+            <button onClick={() => alert('Soon / Em breve!')}>
+              1 <Heart size={16} />
+            </button>
+
+          </CreatorInfoLike>
         </SingleComponentContainer>
         <SyntaxContainer>
           <div>

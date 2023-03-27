@@ -39,7 +39,7 @@ export const ClickedBodyContainer = styled.main<ThemeProps>`
     height: 100%;
     background-image: url('src/assets/mesh.svg');
     z-index: -1;
-    opacity: 0.2;
+    opacity: 0.1;
     /* Aplica um filtro de desfoque */
   }
 `
@@ -68,17 +68,11 @@ export const SingleComponentContainer = styled.div<ThemeProps>`
     align-items: center;
     justify-content: center;
 
-    background: linear-gradient(
-      -15deg,
-      rgba(52, 22, 227, 0.1),
-      rgba(255, 140, 0, 0.1),
-      rgba(41, 171, 226, 0.1)
-    );
+    background: ${props => props.theme['linear-card-dark']};
 
     width: 25rem;
     height: 25rem;
-    border-radius: 6px;
-    margin-bottom: .5rem;
+    border-radius: 6px 6px 0 0;
 
   }
 
@@ -92,22 +86,40 @@ export const SingleComponentContainer = styled.div<ThemeProps>`
   }
 `
 
-export const CreatorInfoImg = styled.article<ThemeProps>`
+export const CreatorInfoLike = styled.article<ThemeProps>`
     display: flex;
     align-items: center;
-    margin: .5rem 0;
+    justify-content: space-between;
+    
+    max-width: 400px;
     width: 100%;
     transition: 300ms;
     
-    left: 11px;
     background: ${(props) =>
     props.variant === 'light' ? props.theme.white : props.theme.offblack};
-    padding: .2rem .4rem;
-    border-radius: 6px;
+    padding: .2rem .6rem;
+    border-radius: 0 0 6px 6px;
+
+    section {
+      display: flex;
+      align-items: center;
+    }
+
+    button {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      cursor: pointer;
+      background: none;
+      border: none;
+      outline: 0;
+      color: inherit;
+    }
 
     img {
       width: 40px;
       border-radius: 50%;
+      border: black 2px solid;
       margin: .2rem;
       margin-right: .8rem;
     }
@@ -115,6 +127,8 @@ export const CreatorInfoImg = styled.article<ThemeProps>`
     a {
       text-decoration: none;
       color: inherit;
+      font-size: 1.2rem;
+      font-weight: 600;
     }
 `
 
@@ -150,15 +164,12 @@ export const SyntaxContainer = styled.div`
 export const SyntaxHighlighterStyle = styled(SyntaxHighlighter) <ThemeProps>`
   width: 100%;
   transition: 300ms;
-  background: ${(props) =>
-    props.variant === 'light' ? props.theme['gray-200'] : props.theme.offblack} !important;
+  background: ${props => props.theme['linear-card-dark']} !important;
 
   span {
     font-family: 'Fira Code', monospace;
     font-size: 0.875rem;
-  }
-
-  
+  }  
 
   max-height: 600px;
 

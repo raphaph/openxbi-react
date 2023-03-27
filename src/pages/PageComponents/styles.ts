@@ -30,17 +30,21 @@ export const PageComponentsContainer = styled.main<ThemeProps>`
     height: 100%;
     background: url('src/assets/mesh.svg') no-repeat;
     z-index: -1;
-    opacity: 0.2;
+    opacity: 0.1;
     /* Aplica um filtro de desfoque */
   }
 `
 
-export const HeaderContentsContainer = styled.header`
+export const HeaderContentsContainer = styled.header<ThemeProps>`
   display: flex;
   justify-content: flex-start;
   align-items: flex-start;
 
-  max-width: 1800px;
+  --gradient-bg: ${(props) =>
+    props.variant === 'light' ? props.theme['gray-100'] : props.theme.offblack};
+
+  background: ${props => props.theme['linear-card-dark']};
+
   width: 100%;
 
   div {
@@ -49,20 +53,14 @@ export const HeaderContentsContainer = styled.header`
     margin: 2rem;
     text-align: left;
 
-    h2, p {
-      margin-left: .4rem;
-      margin-top: .5rem;
-
       a {
         text-decoration: underline;
         color: inherit;
       }
     }
-  }
 `
 
 export const FilterSection = styled.section<ThemeProps>`
-  margin-left: .4rem;
   margin-top: 1rem;
 
   max-width: 500px;
@@ -72,13 +70,7 @@ export const FilterSection = styled.section<ThemeProps>`
     props.variant === 'light' ? props.theme['gray-100'] : props.theme.offblack};
   padding: .6rem;
   border-radius: 6px;
-  background: linear-gradient(
-      -45deg,
-      rgba(0,0,0,0.01),
-      rgba(52, 22, 227, 0.1),
-      rgba(255, 140, 0, 0.1),
-      rgba(41, 171, 226, 0.1)
-    );
+  background: ${props => props.theme["linear-card-dark"]};
   
   form {
 
@@ -110,29 +102,33 @@ export const FilterSection = styled.section<ThemeProps>`
 
     input[type="radio"]:nth-child(1) {
       &:checked ~ label:nth-child(2) {
-        background:  linear-gradient(-15deg, #19d0ff, #29b0e3);
-        box-shadow: 0 0 5px 0px #19d0ff;
+        background:  ${props => props.variant === 'light' ? props.theme.primary : props.theme.secondary};
+        box-shadow: 0 0 5px 0px ${props => props.variant === 'light' ? props.theme['strong-orange'] : props.theme['purple-god']};
+        color: ${props => props.variant === 'light' ? props.theme.black : props.theme.white}
       }
     }
 
     input[type="radio"]:nth-child(3) {
       &:checked ~ label:nth-child(4) {
-        background:  linear-gradient(-15deg, #19d0ff, #29b0e3);
-        box-shadow: 0 0 5px 0px #19d0ff;          
+        background:  ${props => props.variant === 'light' ? props.theme.primary : props.theme.secondary};
+        box-shadow: 0 0 5px 0px ${props => props.variant === 'light' ? props.theme['strong-orange'] : props.theme['purple-god']};
+        color: ${props => props.variant === 'light' ? props.theme.black : props.theme.white}         
       }
     }
 
     input[type="radio"]:nth-child(5) {
       &:checked ~ label:nth-child(6) {
-        background:  linear-gradient(-15deg, #19d0ff, #29b0e3);
-        box-shadow: 0 0 5px 0px #19d0ff;            
+        background:  ${props => props.variant === 'light' ? props.theme.primary : props.theme.secondary};
+        box-shadow: 0 0 5px 0px ${props => props.variant === 'light' ? props.theme['strong-orange'] : props.theme['purple-god']};
+        color: ${props => props.variant === 'light' ? props.theme.black : props.theme.white}            
       }
     }
     
     input[type="radio"]:nth-child(7) {
       &:checked ~ label:nth-child(8) {
-        background:  linear-gradient(-15deg, #19d0ff, #29b0e3);
-        box-shadow: 0 0 5px 0px #19d0ff;  
+        background:  ${props => props.variant === 'light' ? props.theme.primary : props.theme.secondary};
+        box-shadow: 0 0 5px 0px ${props => props.variant === 'light' ? props.theme['strong-orange'] : props.theme['purple-god']};
+        color: ${props => props.variant === 'light' ? props.theme.black : props.theme.white}  
       }
     }
   }
@@ -141,7 +137,6 @@ export const FilterSection = styled.section<ThemeProps>`
 export const ComponentsContainer = styled.div<ThemeProps>`
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  padding-left: 2rem;
   padding-bottom: 10rem;
 
   @media (max-width: 1400px) {
@@ -151,6 +146,7 @@ export const ComponentsContainer = styled.div<ThemeProps>`
 
   @media (max-width: 800px) {
     display: flex;
+    justify-content: center;
     flex-wrap: wrap;
   }
 
@@ -165,13 +161,10 @@ export const ComponentsContainer = styled.div<ThemeProps>`
     display: flex;
     align-items: center;
     justify-content: center;
-
-    background: linear-gradient(
-      -15deg,
-      rgba(52, 22, 227, 0.1),
-      rgba(255, 140, 0, 0.1),
-      rgba(41, 171, 226, 0.1)
-    );
+    border: 1px solid ${(props) =>
+    props.variant === 'light' ? props.theme['border-light'] : props.theme['border-dark']};
+    border-bottom: none;
+    background: ${props => props.theme["linear-card-dark"]};
 
     min-width: 25rem;
     width: 100%;
@@ -183,8 +176,10 @@ export const ComponentsContainer = styled.div<ThemeProps>`
 export const FooterCardContent = styled.footer<ThemeProps>`
   display: flex;
   justify-content: space-between;
-
-  padding: 0.5rem;
+  border: 1px solid ${(props) =>
+    props.variant === 'light' ? props.theme['border-light'] : props.theme['border-dark']};
+  border-top: none;
+  padding: 0.5rem .8rem;
   border-radius: 0 0 6px 6px;
 
   background: ${(props) =>
@@ -201,8 +196,8 @@ export const FooterCardContent = styled.footer<ThemeProps>`
 
     padding: 0.25rem;
 
-    background: ${(props) =>
-    props.variant === 'light' ? props.theme.offblack : props.theme.white};
+    background: ${(props) => props.theme.primary};
+    box-shadow: 0 0 5px 0px;
 
     color: ${(props) =>
     props.variant === 'light' ? props.theme.white : props.theme.black};
@@ -210,14 +205,19 @@ export const FooterCardContent = styled.footer<ThemeProps>`
     transition: all 0.3s;
 
     &:hover {
-      transform: scale(0.98);
-      transition: all 0.3s;
-      box-shadow: 0 0 5px 1px black;
+      opacity: 0.7;
+      box-shadow: 0 0 5px 1px ${(props) => props.theme['strong-orange']};
+    }
+
+    &:active {
+      opacity: 1;
+      transform: scale(0.97);
+      box-shadow: 0 0 7px 1px ${(props) => props.theme['strong-orange']};
     }
 
     a {
       text-decoration: none;
-      color: inherit;
+      color: black;
 
       display: flex;
       align-items: center;

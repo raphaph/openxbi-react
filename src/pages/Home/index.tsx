@@ -22,7 +22,6 @@ import boxLight from '../../assets/box-light.svg'
 import { NavLink } from 'react-router-dom'
 import { BookOpen, Cube, PresentationChart } from 'phosphor-react'
 import { CookiesModal } from '../../components/CookiesModal'
-import boxes from '../../assets/components-boxes.svg'
 
 export function Home() {
   document.title = 'OpenXBI | Home'

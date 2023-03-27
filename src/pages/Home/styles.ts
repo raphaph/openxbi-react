@@ -34,13 +34,13 @@ export const MainContainer = styled.main<ThemeProps>`
     background: url('src/assets/mesh.svg') no-repeat;
     z-index: -1;
     /* Aplica um filtro de desfoque */
-    opacity: 0.2;
+    opacity: 0.1;
     
     animation: movement 15s infinite;
 
     @keyframes movement {
-      0%{transform: scale(1); opacity: 0.2;}
-      50%{transform: scale(.90); opacity: 0.3;}
+      0%{transform: scale(1); opacity: 0.05;}
+      50%{transform: scale(.90); opacity: 0.1;}
       100%{transform: scale(1); opacity: 0.2;}
     }
   }
@@ -90,11 +90,9 @@ export const CardsMainContentOne = styled.div`
     justify-content: center;
 
     background: linear-gradient(
-      -15deg,
-      rgba(52, 22, 227, 0.1),
-      rgba(255, 140, 0, 0.1),
-      rgba(41, 171, 226, 0.1)
-    );
+                -15deg,
+                rgba(52, 22, 227, 0.1) 60%,
+                rgba(255, 140, 0, 0.1)) 40%;
 
     width: 25rem;
     height: 25rem;
@@ -162,6 +160,7 @@ export const MainFooterContent = styled.div`
 export const ContentFooter = styled.div<ThemeProps>`
   align-items: center;
   margin-top: 8rem;
+  
   img {
     width: 100px;
   }
@@ -197,7 +196,6 @@ export const ContentFooter = styled.div<ThemeProps>`
         transform: scale(0.98);
         text-shadow: 0 0 7px 1px ${(props) => props.theme['strong-orange']};
       }
-        
 
       svg {
         margin-right: .5rem;
@@ -207,7 +205,9 @@ export const ContentFooter = styled.div<ThemeProps>`
         transform: scale(1.05);
         text-shadow: 0 0 5px inherit;
         font-weight: bold;
+        transform: translateX(12px);
       }
+
     }
     
   }

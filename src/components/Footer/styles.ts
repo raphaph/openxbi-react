@@ -70,8 +70,6 @@ export const ContactInfo = styled.div<ThemeProps>`
       filter: drop-shadow(0px 0px 2px rgb(0 0 0 / 0.4));
     }
   }
-
-  
 `
 
 export const RightSideContent = styled.div<ThemeProps>`
@@ -86,22 +84,17 @@ export const RightSideContent = styled.div<ThemeProps>`
     cursor: pointer;
 
     border: 0;
-    background: #1e2021;
-
-    color: white;
+    background:  ${props => props.variant === 'light' ? props.theme.primary : props.theme.secondary};
+    color: ${props => props.variant === 'light' ? props.theme.black : props.theme.white}; 
     
     &:hover {
       transform: scale(0.96);
-      box-shadow: 0 0 4px 1px gray;
+      box-shadow: 0 0 4px 1px ${props => props.variant === 'light' ? props.theme.primary : props.theme.secondary};
     }
   }
 
   a {
     text-decoration: none;
     
-  }
-    
-    
-
-    
+  }   
 `

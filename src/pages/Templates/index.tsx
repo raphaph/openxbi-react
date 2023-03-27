@@ -38,7 +38,7 @@ export function Templates() {
         <TemplatesMap>
           {templates.map(template => {
             return (
-              <CardMap key={template.id}>
+              <CardMap key={template.id} variant={themeValue}>
                 <a href={template.public} target={'_blank'}>
                   <img src={template.image} alt={template.name} />
                 </a>

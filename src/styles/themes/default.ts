@@ -2,7 +2,7 @@ export const defaultTheme = {
   white: '#fff',
   offwhite: '#f5f5f5',
   primary: '#ff8c00',
-  secondary: '#9d1fff',
+  secondary: '#3e00b6',
   tertiary: '#2ac6ff',
   // principal color
   'blue-turq': '#29ABE2',
@@ -39,4 +39,9 @@ export const defaultTheme = {
   'bg-gray': '#050506',
   offblack: '#080808',
   black: '#000',
+  'border-light': 'rgb(220,220,220)',
+  'border-dark': 'rgb(22,22,22)',
+  'linear-card-dark': 'linear-gradient(-45deg, rgba(0, 50, 200, 0.1), rgba(120, 0, 239, 0.1))',
+  'linear-card-light': 'linear-gradient(-15deg, rgba(52, 22, 227, 0.1), rgba(255, 140, 0, 0.1))'
+
 } as const
