@@ -28,7 +28,24 @@ export function ClickedComponent() {
     .split('/src/components/@Contents/')
 
   document.title = `OpenXBI | ${clickedName}`
+  const [likeComponent, setLikeComponent] = useState<number | null>(null)
 
+  async function LikeLike(id: string, newlike: number) {
+    fetch(`https://uxbi.com.br/api/contents/${id}`, {
+      method: 'PUT',
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${apiKey}`,
+      },
+      body: JSON.stringify({
+        likes: newlike
+      })
+    })
+      .then(response => response.json())
+      .then(content => console.log(content))
+      .catch(error => console.error(error));
+    setLikeComponent(newlike)
+  }
 
 
   async function FetchComponent() {
@@ -38,7 +55,11 @@ export function ClickedComponent() {
       },
     })
       .then((response) => response.data)
-      .then((data) => setContentData(data))
+      .then((data) => {
+        setContentData(data)
+        setLikeComponent(data.likes)
+      })
+
   }
 
   useEffect(() => {
@@ -85,8 +106,8 @@ export function ClickedComponent() {
               <img src={`https://github.com/${contentData.creator}.png`} alt="" width={10} />
               <a href={`https://github.com/${contentData.creator}`} target={'_blank'}><small>{contentData.creator}</small></a>
             </section>
-            <button onClick={() => alert('Soon / Em breve!')}>
-              1 <Heart size={20} weight="fill" color='red' />
+            <button onClick={() => LikeLike(contentData.id, contentData.likes + 1)}>
+              {likeComponent} <Heart size={20} weight="fill" color='red' />
             </button>
 
           </CreatorInfoLike>

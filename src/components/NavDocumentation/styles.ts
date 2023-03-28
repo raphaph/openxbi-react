@@ -8,6 +8,7 @@ export const NavigationContainer = styled.aside`
     border-radius: 0 6px 6px 0;
 
     position: fixed;
+    top: 7.6rem;
 
     background: ${props => props.theme["linear-card-dark"]};
 

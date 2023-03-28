@@ -7,7 +7,8 @@ interface ContentDataProps {
   name: string
   path: string
   type: string
-  creator: string
+  creator: string,
+  likes: number,
   description: string
 }
 
@@ -42,6 +43,7 @@ export function AppContextProvider({ children }: AppContextProviderProps) {
     path: '',
     type: '',
     creator: '',
+    likes: 0,
     description: '',
   })
 
