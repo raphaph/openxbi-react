@@ -166,9 +166,10 @@ export const MainFooterContent = styled.div`
 export const ContentFooter = styled.div<ThemeProps>`
   align-items: center;
   margin-top: 8rem;
-  
+
   img {
     width: 100px;
+    filter: drop-shadow(0px 0px 1px rgb(35 35 35))
   }
 
   h2 {
@@ -232,14 +233,13 @@ export const ExploreContent = styled.div`
   }
 
   &:hover img {
-    animation: wave 3s infinite;
-    animation-delay: .5s;
+    animation: wave 4s infinite;
+    animation-delay: .2s;
 
     @keyframes wave {
-       0% { transform: rotateZ(0deg)}
-       25% { transform: rotateZ(7deg)}
-       75% { transform: rotateZ(-7deg)}
-       100% { transform: rotateZ(360deg); filter: brightness(100%)}
+       0% { transform: scale(1)}
+       50% {transform: scale(1.05); filter: drop-shadow(0px 0px 2px rgb(255 85 0))} 
+       100% { transform: scale(1)}
     }
   }
 `

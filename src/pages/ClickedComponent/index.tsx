@@ -86,7 +86,7 @@ export function ClickedComponent() {
               <a href={`https://github.com/${contentData.creator}`} target={'_blank'}><small>{contentData.creator}</small></a>
             </section>
             <button onClick={() => alert('Soon / Em breve!')}>
-              1 <Heart size={16} />
+              1 <Heart size={20} weight="fill" color='red' />
             </button>
 
           </CreatorInfoLike>

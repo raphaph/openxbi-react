@@ -52,6 +52,7 @@ export const Trigger = styled(AccordionTrigger) <ThemeProps>`
 export const Content = styled(AccordionContent)`
   margin: 0.5rem;
   overflow: hidden;
+  line-height: 1.6;
 
   &[data-state='open'] {
     animation: slideDown 500ms ease-in-out;

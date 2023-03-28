@@ -97,7 +97,7 @@ export const CreatorInfoLike = styled.article<ThemeProps>`
     
     background: ${(props) =>
     props.variant === 'light' ? props.theme.white : props.theme.offblack};
-    padding: .2rem .6rem;
+    padding: .2rem 1rem .2rem .6rem;
     border-radius: 0 0 6px 6px;
 
     section {
@@ -119,7 +119,7 @@ export const CreatorInfoLike = styled.article<ThemeProps>`
     img {
       width: 40px;
       border-radius: 50%;
-      border: black 2px solid;
+      border: 2px solid #ff8c00;
       margin: .2rem;
       margin-right: .8rem;
     }

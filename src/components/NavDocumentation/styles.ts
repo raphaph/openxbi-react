@@ -4,8 +4,12 @@ import styled from "styled-components";
 export const NavigationContainer = styled.aside`
     display: flex;
     flex-direction: column;
-    margin: 3rem 1.5rem;
+    padding: 2rem 1.5rem;
+    border-radius: 0 6px 6px 0;
+
     position: fixed;
+
+    background: ${props => props.theme["linear-card-dark"]};
 
     @media (max-width: 700px) {
         position: relative;

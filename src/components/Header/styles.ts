@@ -44,11 +44,17 @@ export const HeaderContainer = styled.header<ThemeProps>`
 export const HeaderSideRight = styled.div`
   display: flex;
   align-items: center;
+  justify-content: flex-end;
 
   nav {
     display: flex;
     gap: 1rem;
     margin-right: 2rem;
+
+    @media (max-width: 600px) {
+      width: 0;
+      visibility: hidden;
+    }
   }
 
   a {
@@ -84,12 +90,100 @@ export const HeaderSideRight = styled.div`
     margin: 0 2rem;
     line-height: 0;
   }
+  
+`
+
+export const MenuButton = styled.button`
+  @media (min-width: 600px) {
+    position: absolute;
+    visibility: hidden;
+    width: 0;
+  }
+`
+
+export const SunButton = styled.button`
+  @media (max-width: 600px) {
+    visibility: hidden;
+    width: 0;
+  }
+`
+
+export const MenuVertical = styled.div<ThemeProps>`
+  position: absolute;
+  top: 110px;
+  right: 10px;
+
+  button {
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: bold;
+
+    transition: all 300ms;
+    cursor: pointer;
+
+    border: 0;
+    background:  ${props => props.variant === 'light' ? props.theme.primary : props.theme.secondary};
+    color: ${props => props.variant === 'light' ? props.theme.black : props.theme.white}; 
+    
+    &:hover {
+      transform: scale(0.96);
+      box-shadow: 0 0 4px 1px ${props => props.variant === 'light' ? props.theme.primary : props.theme.secondary};
+    }
+  }
+
+
+  nav {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    
+    background:  ${(props) =>
+    props.variant === 'light' ? props.theme.offwhite : props.theme['bg-gray']};  
+
+    width: 200px;
+
+    padding: 1rem;
+    gap: 1rem;
+    
+    border-radius: 6px;
+    border: 1px solid ${(props) =>
+    props.variant === 'light' ? props.theme['border-light'] : props.theme['border-dark']};
+
+    a {
+      text-decoration: none;
+      color: ${(props) => props.theme['gray-500']};
+      
+      &:hover {
+        color: inherit;
+        transition: 300ms;
+    }
+   }
+  }
 `
 
 export const SeparatorRightSide = styled.div<ThemeProps>`
   content: '';
   height: 4rem;
   width: 1px;
+  background-color: ${(props) =>
+    props.variant === 'light'
+      ? props.theme['gray-100']
+      : props.theme['gray-900']};
+  color: transparent;
+
+  @media (max-width: 600px) {
+      visibility: hidden;
+      width: 0;
+    }
+`
+
+export const SeparatorHorizontal = styled.div<ThemeProps>`
+  content: '';
+  margin: .5rem 0;
+  height: 1px;
+  width: auto;
   background-color: ${(props) =>
     props.variant === 'light'
       ? props.theme['gray-100']

@@ -23,6 +23,7 @@ import { NavLink } from 'react-router-dom'
 import { BookOpen, Cube, PresentationChart } from 'phosphor-react'
 import { CookiesModal } from '../../components/CookiesModal'
 
+
 export function Home() {
   document.title = 'OpenXBI | Home'
   const { themeValue, contentsNames, cookiesAccept, setCookiesAccept } = useContext(AppContext)
@@ -249,6 +250,7 @@ return
   return (
 
     <MainContainer variant={themeValue}>
+
       {cookiesAccept === null ? <CookiesModal /> : null}
       <MainContentOne>
         <h1>Inteligência aplicada a componentes para BI</h1>
