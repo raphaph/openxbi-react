@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components'
 
 
 export const NavigationContainer = styled.aside`
@@ -10,7 +10,7 @@ export const NavigationContainer = styled.aside`
     position: fixed;
     top: 7.6rem;
 
-    background: ${props => props.theme["linear-card-dark"]};
+    background: ${props => props.theme['linear-card-dark']};
 
     @media (max-width: 700px) {
         position: relative;

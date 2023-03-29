@@ -43,7 +43,7 @@ export function ClickedComponent() {
     })
       .then(response => response.json())
       .then(content => console.log(content))
-      .catch(error => console.error(error));
+      .catch(error => console.error(error))
     setLikeComponent(newlike)
   }
 
@@ -63,20 +63,20 @@ export function ClickedComponent() {
   }
 
   useEffect(() => {
-    window.scrollTo(0, 0);
+    window.scrollTo(0, 0)
 
     // Code
     async function buscarCodigo() {
       const [response, text] = await Promise.all([
         fetch(lastClicked),
         fetch(lastClicked).then(response => response.text())
-      ]);
+      ])
 
       const html = text
         .replace(/<script.*RefreshRuntime.*<\/script>/s, '')
-        .replace(/<script.*src="\/@vite\/client"><\/script>/s, '');
+        .replace(/<script.*src="\/@vite\/client"><\/script>/s, '')
 
-      setCodigo(html);
+      setCodigo(html)
     }
     buscarCodigo()
 
@@ -104,7 +104,7 @@ export function ClickedComponent() {
           <CreatorInfoLike variant={themeValue}>
             <section>
               <img src={`https://github.com/${contentData.creator}.png`} alt="" width={10} />
-              <a href={`https://github.com/${contentData.creator}`} target={'_blank'}><small>{contentData.creator}</small></a>
+              <a href={`https://github.com/${contentData.creator}`} target={'_blank'} rel="noreferrer"><small>{contentData.creator}</small></a>
             </section>
             <button onClick={() => LikeLike(contentData.id, contentData.likes + 1)}>
               {likeComponent} <Heart size={20} weight="fill" color='red' />
@@ -140,7 +140,7 @@ export function ClickedComponent() {
                 language="dax"
                 style={themeValue === 'light' ? coldarkCold : coldarkDark}
                 wrapLines>
-                {`medida = "<h1 class='title'>Hello</h1>"`}
+                {'medida = "<h1 class=\'title\'>Hello</h1>"'}
               </SyntaxHighlighterHowToUse>
             </div>
             <div>

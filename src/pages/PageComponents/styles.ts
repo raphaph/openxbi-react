@@ -70,7 +70,7 @@ export const FilterSection = styled.section<ThemeProps>`
     props.variant === 'light' ? props.theme['gray-100'] : props.theme.offblack};
   padding: .6rem;
   border-radius: 6px;
-  background: ${props => props.theme["linear-card-dark"]};
+  background: ${props => props.theme['linear-card-dark']};
   
   form {
 
@@ -164,7 +164,7 @@ export const ComponentsContainer = styled.div<ThemeProps>`
     border: 1px solid ${(props) =>
     props.variant === 'light' ? props.theme['border-light'] : props.theme['border-dark']};
     border-bottom: none;
-    background: ${props => props.theme["linear-card-dark"]};
+    background: ${props => props.theme['linear-card-dark']};
 
     min-width: 25rem;
     width: 100%;

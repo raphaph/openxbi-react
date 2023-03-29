@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components'
 
 interface ThemeProps {
     variant?: 'light' | 'dark' | null

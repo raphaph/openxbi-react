@@ -1,12 +1,12 @@
-import { NavDocumentation } from "../../components/NavDocumentation";
+import { NavDocumentation } from '../../components/NavDocumentation'
 import {
     coldarkDark,
     coldarkCold,
 } from 'react-syntax-highlighter/dist/esm/styles/prism'
-import { AppContext } from "../../context/AppContext";
+import { AppContext } from '../../context/AppContext'
 import { useContext, useEffect } from 'react'
-import { IteratingDaxContainer, IteratingText, IterationContent, SyntaxHighlighterIterating } from "./styles";
-import { TableContainer } from "../@docs-4-DaxFormatting/styles";
+import { IteratingDaxContainer, IteratingText, IterationContent, SyntaxHighlighterIterating } from './styles'
+import { TableContainer } from '../@docs-4-DaxFormatting/styles'
 import result from '../../assets/iterating/1.png'
 
 
@@ -15,8 +15,8 @@ export function IteratingDax() {
     const { themeValue } = useContext(AppContext)
 
     useEffect(() => {
-        window.scrollTo(0, 0);
-    }, []);
+        window.scrollTo(0, 0)
+    }, [])
 
     return (
         <IteratingDaxContainer variant={themeValue}>
@@ -37,7 +37,7 @@ export function IteratingDax() {
                         showLineNumbers
                         wrapLines
                     >
-                        {`CONCATENATEX(<table>, <expression>)`}
+                        {'CONCATENATEX(<table>, <expression>)'}
                     </SyntaxHighlighterIterating>
 
                     <p>Tabela simples utilizada no exemplo:</p>
@@ -149,7 +149,7 @@ p {
 "`}
                     </SyntaxHighlighterIterating>
                     <p>Neste tutorial você aprendeu uma forma de iterar tabela e html dentro da linguagem DAX.</p>
-                    <p>Caso queira acessar a documentação completa sobre <strong>CONCATENATEX</strong>, <a href="https://learn.microsoft.com/pt-br/dax/concatenatex-function-dax" target={"_blank"}>clique aqui</a></p>
+                    <p>Caso queira acessar a documentação completa sobre <strong>CONCATENATEX</strong>, <a href="https://learn.microsoft.com/pt-br/dax/concatenatex-function-dax" target={'_blank'} rel="noreferrer">clique aqui</a></p>
                 </IteratingText>
             </IterationContent>
         </IteratingDaxContainer>

@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components'
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter'
 interface ThemeProps {
     variant?: 'light' | 'dark' | null
@@ -157,7 +157,7 @@ export const TableContainer = styled.div<ThemeProps>`
         color: ${(props) =>
         props.variant === 'light' ? props.theme.black : props.theme.white};
         border-top: 1px solid ${(props) =>
-        props.variant === 'light' ? props.theme['gray-300'] : props.theme["gray-900"]};  /* Cor das linhas separadoras*/
+        props.variant === 'light' ? props.theme['gray-300'] : props.theme['gray-900']};  /* Cor das linhas separadoras*/
         padding: 0.7rem;
         font-size: 1rem;
         line-height: 1.2;

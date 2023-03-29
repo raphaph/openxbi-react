@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components'
 
 interface ThemeProps {
     variant?: 'light' | 'dark' | null
@@ -14,7 +14,7 @@ export const PrinciplesTitle = styled.div`
     margin-bottom: 2rem ;
     h2 {
         margin: 1rem 0;
-        color: ${props => props.theme["strong-orange"]}
+        color: ${props => props.theme['strong-orange']}
     }
 
     p {
@@ -36,7 +36,7 @@ export const PrinciplesContent = styled.div<ThemeProps>`
 
     div {
         cursor: pointer;
-        background: ${props => props.theme["linear-card-dark"]};
+        background: ${props => props.theme['linear-card-dark']};
     
         transition: 300ms;
         padding: 2rem;

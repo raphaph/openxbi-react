@@ -1,7 +1,7 @@
-import { NavDocumentation } from "../../components/NavDocumentation";
-import { AppContext } from "../../context/AppContext";
+import { NavDocumentation } from '../../components/NavDocumentation'
+import { AppContext } from '../../context/AppContext'
 import { useContext, useEffect } from 'react'
-import { EmbeddingContent, EmbeddingDaxContainer, EmbeddingText, SyntaxHighlighterEmbedding } from "./styles";
+import { EmbeddingContent, EmbeddingDaxContainer, EmbeddingText, SyntaxHighlighterEmbedding } from './styles'
 import {
     coldarkDark,
     coldarkCold,
@@ -66,8 +66,8 @@ export function EmbeddingDax() {
     const { themeValue } = useContext(AppContext)
 
     useEffect(() => {
-        window.scrollTo(0, 0);
-    }, []);
+        window.scrollTo(0, 0)
+    }, [])
 
     return (
         <EmbeddingDaxContainer variant={themeValue}>
@@ -87,7 +87,7 @@ export function EmbeddingDax() {
                         showLineNumbers
                         wrapLines
                     >
-                        {`var var_nome = "valor de retorno"`}
+                        {'var var_nome = "valor de retorno"'}
                     </SyntaxHighlighterEmbedding>
                     <p>Com as variáveis criadas a medida do seu componente deverá ficar assim:</p>
                     <SyntaxHighlighterEmbedding
@@ -111,7 +111,7 @@ export function EmbeddingDax() {
                         showLineNumbers
                         wrapLines
                     >
-                        {`" & var_nome & "`}
+                        {'" & var_nome & "'}
                     </SyntaxHighlighterEmbedding>
 
                     <p>Código com as variáveis:</p>
@@ -125,7 +125,7 @@ export function EmbeddingDax() {
                         {code_card_blur2}
                     </SyntaxHighlighterEmbedding>
                     <p><strong>Para caso de uso de medidas, apenas substitua a variável pela medida dentro da sintaxe.</strong></p>
-                    <p>{`Repare que, substituimos nome dos cards dentro da tag <strong> manualmente, e dentro da tag <p> onde continham os valores fixos, substituimos pelas variáveis, "& security &", " & storage & " e "& network &", todas dentro de "& &".`}</p>
+                    <p>{'Repare que, substituimos nome dos cards dentro da tag <strong> manualmente, e dentro da tag <p> onde continham os valores fixos, substituimos pelas variáveis, "& security &", " & storage & " e "& network &", todas dentro de "& &".'}</p>
 
                     <p><strong>E é isso, seu componente agora possui variáveis e medidas DAX incorporada.</strong></p>
                 </EmbeddingText>

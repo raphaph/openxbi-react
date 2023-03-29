@@ -9,21 +9,21 @@ export function Templates() {
 
   const templates = [{
     id: 1,
-    name: "openxbi-initial-template", // prefixo openxbi & community
-    path: "src/pbix/openxbi-templates.zip",
-    download: "openxbi-templates.zip",
-    image: "src/assets/templates-image/openxbi-initial-template.png",
-    public: "https://app.powerbi.com/view?r=eyJrIjoiMDhmZjhhNTEtZDU1Ny00YjM3LTk2MGMtMGU2OGQxYzJhMGY3IiwidCI6IjBhODViZGRhLTVhN2YtNGIyZS04Y2FmLTcyMDRmMGU1NTM2MSJ9",
-    creator: "raphaph"
+    name: 'openxbi-initial-template', // prefixo openxbi & community
+    path: 'src/pbix/openxbi-templates.zip',
+    download: 'openxbi-templates.zip',
+    image: 'src/assets/templates-image/openxbi-initial-template.png',
+    public: 'https://app.powerbi.com/view?r=eyJrIjoiMDhmZjhhNTEtZDU1Ny00YjM3LTk2MGMtMGU2OGQxYzJhMGY3IiwidCI6IjBhODViZGRhLTVhN2YtNGIyZS04Y2FmLTcyMDRmMGU1NTM2MSJ9',
+    creator: 'raphaph'
   },
   {
     id: 2,
-    name: "openxbi-cloud-costs", // prefixo openxbi & community
-    path: "src/pbix/openxbi-cloud-costs.zip",
-    download: "openxbi-cloud-costs.zip",
-    image: "src/assets/templates-image/openxbi-cloud-costs.png",
-    public: "https://app.powerbi.com/view?r=eyJrIjoiNWNmYjZjMTAtMjUwMy00MmUxLWEzN2EtN2MxOGE1MDQ4NWQ2IiwidCI6IjBhODViZGRhLTVhN2YtNGIyZS04Y2FmLTcyMDRmMGU1NTM2MSJ9",
-    creator: "raphaph"
+    name: 'openxbi-cloud-costs', // prefixo openxbi & community
+    path: 'src/pbix/openxbi-cloud-costs.zip',
+    download: 'openxbi-cloud-costs.zip',
+    image: 'src/assets/templates-image/openxbi-cloud-costs.png',
+    public: 'https://app.powerbi.com/view?r=eyJrIjoiNWNmYjZjMTAtMjUwMy00MmUxLWEzN2EtN2MxOGE1MDQ4NWQ2IiwidCI6IjBhODViZGRhLTVhN2YtNGIyZS04Y2FmLTcyMDRmMGU1NTM2MSJ9',
+    creator: 'raphaph'
   }
   ]
 
@@ -39,7 +39,7 @@ export function Templates() {
           {templates.map(template => {
             return (
               <CardMap key={template.id} variant={themeValue}>
-                <a href={template.public} target={'_blank'}>
+                <a href={template.public} target={'_blank'} rel="noreferrer">
                   <img src={template.image} alt={template.name} />
                 </a>
                 <CardFooter>

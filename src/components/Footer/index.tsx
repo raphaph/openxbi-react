@@ -49,7 +49,7 @@ export function Footer() {
             Discord
           </a>
         </ContactInfo>
-        <a href="https://www.buymeacoffee.com/raphaph" target={'_blank'}><img src="https://img.buymeacoffee.com/button-api/?text=Buy me a coffee&emoji=&slug=raphaph&button_colour=FF8C00&font_colour=000000&font_family=Inter&outline_colour=000000&coffee_colour=ffffff" /></a>
+        <a href="https://www.buymeacoffee.com/raphaph" target={'_blank'} rel="noreferrer"><img src="https://img.buymeacoffee.com/button-api/?text=Buy me a coffee&emoji=&slug=raphaph&button_colour=FF8C00&font_colour=000000&font_family=Inter&outline_colour=000000&coffee_colour=ffffff" /></a>
         <RightSideContent variant={themeValue}>
 
           <a href="#" aria-label="Subir até o topo da página">

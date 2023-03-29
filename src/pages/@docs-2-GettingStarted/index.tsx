@@ -1,10 +1,10 @@
-import { NavDocumentation } from "../../components/NavDocumentation";
-import { GetStartedContainer, StartedContent, StartedText, SyntaxHighlighterStarted } from "./styles";
+import { NavDocumentation } from '../../components/NavDocumentation'
+import { GetStartedContainer, StartedContent, StartedText, SyntaxHighlighterStarted } from './styles'
 import {
     coldarkDark,
     coldarkCold,
 } from 'react-syntax-highlighter/dist/esm/styles/prism'
-import { AppContext } from "../../context/AppContext";
+import { AppContext } from '../../context/AppContext'
 import { useContext, useEffect } from 'react'
 
 const card_code = `<div class='align-card'>
@@ -131,15 +131,15 @@ import started4 from '../../assets/getting-started/4.png'
 import started5 from '../../assets/getting-started/5.png'
 import started6 from '../../assets/getting-started/6.png'
 import started7 from '../../assets/getting-started/7.png'
-import { NavLink } from "react-router-dom";
+import { NavLink } from 'react-router-dom'
 
 export function GettingStarted() {
     document.title = 'OpenXBI | GettingStarted'
     const { themeValue } = useContext(AppContext)
 
     useEffect(() => {
-        window.scrollTo(0, 0);
-    }, []);
+        window.scrollTo(0, 0)
+    }, [])
 
     return (
         <GetStartedContainer variant={themeValue}>
@@ -151,7 +151,7 @@ export function GettingStarted() {
                     <p>Conhecimentos em medidas DAX, HTML e CSS podem ser opcionais para utilização dos componentes, porém a modificação e adaptação para o seu dashboard, pode ser necessário conhecimentos mais avançados, lembrando que comentamos pontos principais dos componentes para auxiliar a edição.</p>
                     <h3>Vamos lá?</h3>
 
-                    <p><strong>1ª etapa</strong> - Copie o código de um componente a sua escolha em <NavLink to={"/components"}>Componentes</NavLink>.</p>
+                    <p><strong>1ª etapa</strong> - Copie o código de um componente a sua escolha em <NavLink to={'/components'}>Componentes</NavLink>.</p>
                     <strong>Neste tutorial utilizamos o componente card-acessibility:</strong>
 
                     <SyntaxHighlighterStarted
@@ -183,7 +183,7 @@ export function GettingStarted() {
                     </SyntaxHighlighterStarted>
 
                     <hr />
-                    <p><strong>4ª etapa</strong> - Para visualizar o componente importado, será necessário importar o visual <strong><a href="https://appsource.microsoft.com/en-us/product/power-bi-visuals/WA200001930?exp=ubp8" target={"_blank"}>HTML Content</a></strong> do App Source.</p>
+                    <p><strong>4ª etapa</strong> - Para visualizar o componente importado, será necessário importar o visual <strong><a href="https://appsource.microsoft.com/en-us/product/power-bi-visuals/WA200001930?exp=ubp8" target={'_blank'} rel="noreferrer">HTML Content</a></strong> do App Source.</p>
                     <p>Na aba vertical <strong>Visualizações</strong>, clique nos 3 pontos e em “Obter mais visuais”</p>
                     <img src={started2} alt="" width="300" />
 

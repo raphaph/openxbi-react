@@ -1,5 +1,5 @@
-import { UserFocus, Cube, Faders, ChartBar, TreeStructure, ArrowsClockwise, BoundingBox, LockKey, Cursor } from "phosphor-react";
-import { PrinciplesContainer, PrinciplesContent, PrinciplesTitle } from "./styles";
+import { UserFocus, Cube, Faders, ChartBar, TreeStructure, ArrowsClockwise, BoundingBox, LockKey, Cursor } from 'phosphor-react'
+import { PrinciplesContainer, PrinciplesContent, PrinciplesTitle } from './styles'
 
 interface ThemeProps {
     variant?: 'light' | 'dark' | null

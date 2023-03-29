@@ -1,7 +1,7 @@
-import { NavDocumentation } from "../../components/NavDocumentation";
-import { AppContext } from "../../context/AppContext";
-import { DaxContent, DaxFormattingContainer, DaxText, SyntaxHighlighterDAX, TableContainer } from "./styles";
-import { useContext, useEffect } from "react";
+import { NavDocumentation } from '../../components/NavDocumentation'
+import { AppContext } from '../../context/AppContext'
+import { DaxContent, DaxFormattingContainer, DaxText, SyntaxHighlighterDAX, TableContainer } from './styles'
+import { useContext, useEffect } from 'react'
 import {
     coldarkDark,
     coldarkCold,
@@ -12,8 +12,8 @@ export function DaxFormatting() {
     const { themeValue } = useContext(AppContext)
 
     useEffect(() => {
-        window.scrollTo(0, 0);
-    }, []);
+        window.scrollTo(0, 0)
+    }, [])
 
     return (
         <DaxFormattingContainer variant={themeValue}>
@@ -23,7 +23,7 @@ export function DaxFormatting() {
                     <h1>Formatando valores</h1>
                     <p>Quando importamos um componente e atribuimos valores de medidas e variáveis DAX a ele, podemos nos deparar com erro de exibição, seja trabalhando com porcentagem, moedas ou decimais, exemplo: ponto e vírgulas invertidos, simbolo da moeda inadequado a região, etc.</p>
                     <p>Para resolvermos essa questão, é importante conhecermos e sabermos como aplicar a função <strong>FORMAT</strong> da linguagem DAX, ela nos permite formatar nossas variáveis para que seja exibida como deveriam.</p>
-                    <p><strong>{`FORMAT(<value>, <format_string> [, <locale_name>])`}</strong> - Converte um valor em texto de acordo com o formato especificado.</p>
+                    <p><strong>{'FORMAT(<value>, <format_string> [, <locale_name>])'}</strong> - Converte um valor em texto de acordo com o formato especificado.</p>
 
                     <TableContainer variant={themeValue}>
                         <table>
@@ -100,7 +100,7 @@ export function DaxFormatting() {
                         showLineNumbers
                         wrapLines
                     >
-                        {`FORMAT( 12345.67, "General Number")`}
+                        {'FORMAT( 12345.67, "General Number")'}
                     </SyntaxHighlighterDAX>
                     <small>resultado: 12345.67</small>
 
@@ -128,7 +128,7 @@ FORMAT( 12345.67, "Currency", "en-US")`}
                         showLineNumbers
                         wrapLines
                     >
-                        {`FORMAT( 12345.67, "Standard", "pt-BR")`}
+                        {'FORMAT( 12345.67, "Standard", "pt-BR")'}
                     </SyntaxHighlighterDAX>
                     <small>resultado: 12.345,67</small>
 
@@ -141,7 +141,7 @@ FORMAT( 12345.67, "Currency", "en-US")`}
                         showLineNumbers
                         wrapLines
                     >
-                        {`FORMAT( 0.67, "Percent")`}
+                        {'FORMAT( 0.67, "Percent")'}
                     </SyntaxHighlighterDAX>
                     <small>resultado: 67%</small>
 
@@ -154,7 +154,7 @@ FORMAT( 12345.67, "Currency", "en-US")`}
                         showLineNumbers
                         wrapLines
                     >
-                        {`FORMAT( 12345.67, "Scientific")`}
+                        {'FORMAT( 12345.67, "Scientific")'}
                     </SyntaxHighlighterDAX>
                     <small>resultado: 1.23E+04</small>
 
@@ -186,7 +186,7 @@ FORMAT( dt"2020-12-15T12:30:59", "mm/dd/yyyy", "pt-BR" ) `}
                         showLineNumbers
                         wrapLines
                     >
-                        {`FORMAT( dt"2020-12-15T12:30:59", "Short Date", "pt-BR")`}
+                        {'FORMAT( dt"2020-12-15T12:30:59", "Short Date", "pt-BR")'}
                     </SyntaxHighlighterDAX>
                     <small>resultado: 15-12-2020 </small>
 
@@ -199,10 +199,10 @@ FORMAT( dt"2020-12-15T12:30:59", "mm/dd/yyyy", "pt-BR" ) `}
                         showLineNumbers
                         wrapLines
                     >
-                        {`FORMAT( dt"2020-12-15T12:30:59", "Long Time", "pt-BR")`}
+                        {'FORMAT( dt"2020-12-15T12:30:59", "Long Time", "pt-BR")'}
                     </SyntaxHighlighterDAX>
                     <small>resultado: 12:30:59 PM </small>
-                    <p>Caso queria acessar a documentação completa <a href="https://learn.microsoft.com/pt-br/dax/format-function-dax" target={"_blank"}>clique aqui</a>. </p>
+                    <p>Caso queria acessar a documentação completa <a href="https://learn.microsoft.com/pt-br/dax/format-function-dax" target={'_blank'} rel="noreferrer">clique aqui</a>. </p>
                 </DaxText>
             </DaxContent>
 

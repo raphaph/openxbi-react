@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components'
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter'
 
 interface ThemeProps {

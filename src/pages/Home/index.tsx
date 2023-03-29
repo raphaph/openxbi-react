@@ -240,7 +240,17 @@ return
 
 </style>`
 
-  const [randomNumbers, setRandomsNumber] = useState<[]>([])
+  const [randomNumbers, setRandomsNumber] = useState([])
+  function generateRandomNumbers() {
+    const numbers: any = []
+    while (numbers.length < 3) {
+      const randomNumber = Math.floor(Math.random() * 15)
+      if (!numbers.includes(randomNumber)) {
+        numbers.push(randomNumber)
+      }
+    }
+    setRandomsNumber(numbers)
+  }
 
   useEffect(() => {
     const cookies = localStorage.getItem('cookies-accept')
@@ -248,16 +258,6 @@ return
       setCookiesAccept(null)
     }
 
-    function generateRandomNumbers() {
-      const numbers: any = []
-      while (numbers.length < 3) {
-        const randomNumber = Math.floor(Math.random() * 15)
-        if (!numbers.includes(randomNumber)) {
-          numbers.push(randomNumber)
-        }
-      }
-      setRandomsNumber(numbers)
-    }
     generateRandomNumbers()
   }, [])
   console.log(randomNumbers)

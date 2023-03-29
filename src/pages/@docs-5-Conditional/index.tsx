@@ -1,19 +1,19 @@
-import { NavDocumentation } from "../../components/NavDocumentation";
+import { NavDocumentation } from '../../components/NavDocumentation'
 import {
     coldarkDark,
     coldarkCold,
 } from 'react-syntax-highlighter/dist/esm/styles/prism'
-import { AppContext } from "../../context/AppContext";
+import { AppContext } from '../../context/AppContext'
 import { useContext, useEffect } from 'react'
-import { ConditionalContent, ConditionalDaxContainer, ConditionalText, SyntaxHighlighterConditional } from "./styles";
+import { ConditionalContent, ConditionalDaxContainer, ConditionalText, SyntaxHighlighterConditional } from './styles'
 
 export function ConditionalDax() {
     document.title = 'OpenXBI | Conditionals In Code'
     const { themeValue } = useContext(AppContext)
 
     useEffect(() => {
-        window.scrollTo(0, 0);
-    }, []);
+        window.scrollTo(0, 0)
+    }, [])
 
     return (
         <ConditionalDaxContainer variant={themeValue}>
@@ -34,7 +34,7 @@ export function ConditionalDax() {
                         showLineNumbers
                         wrapLines
                     >
-                        {`"<p style='color: " & IF( [Value] < 50000, "green", "red") & ";'></p>"`}
+                        {'"<p style=\'color: " & IF( [Value] < 50000, "green", "red") & ";\'></p>"'}
                     </SyntaxHighlighterConditional>
                     <p>Observe que a condicional está dentro do código HTML substituindo a cor conforme o valor de [Value]. </p>
 
@@ -91,7 +91,7 @@ p {
 "
                         `}
                     </SyntaxHighlighterConditional>
-                    <p>{`Observe que, definimos a condicional fora do código e utilizamos posteriormente dentro do style da tag <p>.`}</p>
+                    <p>{'Observe que, definimos a condicional fora do código e utilizamos posteriormente dentro do style da tag <p>.'}</p>
                     <p><strong>Estas são duas opções de uso de condicionais que você pode aplicar dentro dos componentes.</strong></p>
                 </ConditionalText>
             </ConditionalContent>

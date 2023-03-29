@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components'
 
 export const CookiesContainer = styled.div`
     position: fixed;
@@ -19,7 +19,7 @@ export const CookiesContainer = styled.div`
 
     p {
         margin: .5rem 0;
-        color: ${props => props.theme["gray-600"]}
+        color: ${props => props.theme['gray-600']}
     }
 
     li {
