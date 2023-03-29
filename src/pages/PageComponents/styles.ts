@@ -185,46 +185,42 @@ export const FooterCardContent = styled.footer<ThemeProps>`
   background: ${(props) =>
     props.variant === 'light' ? props.theme.white : props.theme.offblack};
 
-  button {
-    cursor: pointer;
-    border: 0;
-    border-radius: 6px;
 
-    font-size: 0.875rem;
-    font-weight: 500;
-    text-align: center;
+  a {
+    text-decoration: none;
 
-    padding: 0.25rem;
-
-    background: ${(props) => props.theme.primary};
-    box-shadow: 0 0 5px 0px;
-
-    color: ${(props) =>
-    props.variant === 'light' ? props.theme.white : props.theme.black};
-
-    transition: all 0.3s;
-
-    &:hover {
-      opacity: 0.7;
-      box-shadow: 0 0 5px 1px ${(props) => props.theme['strong-orange']};
-    }
-
-    &:active {
-      opacity: 1;
-      transform: scale(0.97);
-      box-shadow: 0 0 7px 1px ${(props) => props.theme['strong-orange']};
-    }
-
-    a {
-      text-decoration: none;
+    button {
+      cursor: pointer;
       color: black;
-
+      width: 65px;
       display: flex;
       align-items: center;
+      justify-content: space-between;
+      
+      border: 0;
+      border-radius: 6px;
 
-      p {
-        padding-left: 0.3rem;
+      font-size: 0.875rem;
+      font-weight: 600;
+      text-align: center;
+
+      padding: 0.25rem;
+
+      background: ${(props) => props.theme.primary};
+
+      transition: all 0.3s;
+
+      &:hover {
+        opacity: 0.7;
+        box-shadow: 0 0 5px 1px ${(props) => props.theme['strong-orange']};
+      }
+
+      &:active {
+        opacity: 1;
+        transform: scale(0.97);
+        box-shadow: 0 0 7px 1px ${(props) => props.theme['strong-orange']};
       }
     }
   }
+  
 `

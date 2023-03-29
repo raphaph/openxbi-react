@@ -218,14 +218,13 @@ export const ContentFooter = styled.div<ThemeProps>`
     }
     
   }
-
 `
 export const ExploreContent = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
   transition: 200ms;
-  max-width: 1200px;
+  
   width: 100%;
   
   &:hover {
@@ -238,7 +237,7 @@ export const ExploreContent = styled.div`
 
     @keyframes wave {
        0% { transform: scale(1)}
-       50% {transform: scale(1.05); filter: drop-shadow(0px 0px 2px rgb(255 85 0))} 
+       50% {transform: scale(1.05)} 
        100% { transform: scale(1)}
     }
   }

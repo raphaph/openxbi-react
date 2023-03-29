@@ -1,4 +1,4 @@
-import { useContext, useEffect } from 'react'
+import { useContext, useEffect, useState } from 'react'
 import { MyAccordion } from '../../components/Accordion'
 import { Principles } from '../../components/Principles'
 import { AppContext } from '../../context/AppContext'
@@ -23,10 +23,10 @@ import { NavLink } from 'react-router-dom'
 import { BookOpen, Cube, PresentationChart } from 'phosphor-react'
 import { CookiesModal } from '../../components/CookiesModal'
 
-
 export function Home() {
   document.title = 'OpenXBI | Home'
-  const { themeValue, contentsNames, cookiesAccept, setCookiesAccept } = useContext(AppContext)
+  const { themeValue, contentsNames, cookiesAccept, setCookiesAccept } =
+    useContext(AppContext)
 
   const daxCode = `measure_received_gross = 
 
@@ -240,43 +240,56 @@ return
 
 </style>`
 
+  const [randomNumbers, setRandomsNumber] = useState<[]>([])
+
   useEffect(() => {
     const cookies = localStorage.getItem('cookies-accept')
     if (cookies === null) {
       setCookiesAccept(null)
     }
-  })
 
+    function generateRandomNumbers() {
+      const numbers: any = []
+      while (numbers.length < 3) {
+        const randomNumber = Math.floor(Math.random() * 15)
+        if (!numbers.includes(randomNumber)) {
+          numbers.push(randomNumber)
+        }
+      }
+      setRandomsNumber(numbers)
+    }
+    generateRandomNumbers()
+  }, [])
+  console.log(randomNumbers)
   return (
-
     <MainContainer variant={themeValue}>
-
       {cookiesAccept === null ? <CookiesModal /> : null}
       <MainContentOne>
         <h1>Inteligência aplicada a componentes para BI</h1>
         <strong>
-          Criamos componentes estilizados em HTML e CSS, incorporando
-          variáveis e medidas DAX, <br />
-          para melhorar a experiência dos usuários de dashboards, e oferecer novas possibilidades aos analistas de dados.
+          Criamos componentes estilizados em HTML e CSS, incorporando variáveis
+          e medidas DAX, <br />
+          para melhorar a experiência dos usuários de dashboards, e oferecer
+          novas possibilidades aos analistas de dados.
         </strong>
         <CardsMainContentOne>
           <div>
             <iframe
-              src={contentsNames[0]}
+              src={contentsNames[randomNumbers[0]]}
               frameBorder={0}
               height={300}
             ></iframe>
           </div>
           <div>
             <iframe
-              src={contentsNames[8]}
+              src={contentsNames[randomNumbers[1]]}
               frameBorder={0}
               height={300}
             ></iframe>
           </div>
           <div>
             <iframe
-              src={contentsNames[12]}
+              src={contentsNames[randomNumbers[2]]}
               frameBorder={0}
               height={300}
             ></iframe>
@@ -298,9 +311,11 @@ return
           <ContentTwoCard>
             <h3>Conhecimento compartilhado</h3>
             <p>
-              Estamos empenhados em entregar componentes e templates prontos para uso,
-              oferecendo suporte e recursos comentados, para que usuários possam aproveitar o máximo a plataforma,
-              utilizando os componentes não somente para sua finalidade visual, mas também como forma de conhecimento.
+              Estamos empenhados em entregar componentes e templates prontos
+              para uso, oferecendo suporte e recursos comentados, para que
+              usuários possam aproveitar o máximo a plataforma, utilizando os
+              componentes não somente para sua finalidade visual, mas também
+              como forma de conhecimento.
             </p>
           </ContentTwoCard>
         </MainContentTwo>
@@ -314,11 +329,13 @@ return
         <MainFooterContent>
           <div>
             <h2>Experimente</h2>
-
           </div>
 
           <h3>Código comentado</h3>
-          <p>Os componentes são comentados para auxiliar novos usuários na personalização e aprendizagem.</p>
+          <p>
+            Os componentes são comentados para auxiliar novos usuários na
+            personalização e aprendizagem.
+          </p>
           <SyntaxHighlighterStyle
             variant={themeValue}
             language="html"
@@ -344,13 +361,17 @@ return
           <ContentFooter variant={themeValue}>
             <ExploreContent>
               <h2>Explore</h2>
-              <img
-                src={boxLight}
-                alt="" />
+              <img src={boxLight} alt="" />
               <nav>
-                <NavLink to={"/components/"}><Cube weight='bold' /> Components</NavLink>
-                <NavLink to={"/templates/"}><PresentationChart weight='bold' /> Templates</NavLink>
-                <NavLink to={"/docs/introduction"}><BookOpen weight='bold' /> Docs</NavLink>
+                <NavLink to={'/components/'}>
+                  <Cube weight="bold" /> Components
+                </NavLink>
+                <NavLink to={'/templates/'}>
+                  <PresentationChart weight="bold" /> Templates
+                </NavLink>
+                <NavLink to={'/docs/introduction'}>
+                  <BookOpen weight="bold" /> Docs
+                </NavLink>
               </nav>
             </ExploreContent>
           </ContentFooter>

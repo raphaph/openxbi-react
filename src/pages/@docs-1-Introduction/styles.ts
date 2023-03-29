@@ -60,29 +60,37 @@ export const IntroText = styled.div`
         margin-top: 4rem;
     }
 
-    button {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        width: 230px;
+    a {
+        text-decoration: none;
 
-        margin: 2rem 0;
-        padding: .6rem;
-        border: 0;
-        border-radius: 20px;
-        
-        background: ${props => props.theme.secondary};
-        transition: all 300ms;
-        
-        &:hover {
-            opacity: 0.8;
-            box-shadow: 0 0 5px 1px #777;
-            transform: scale(0.98);
-        }
-
-        a {
+        button {
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 240px;
             color: white;
-            text-decoration: none;
+
+            margin: 2rem 0;
+            padding: .6rem;
+            border: 0;
+            border-radius: 20px;
+            
+            background: ${props => props.theme.secondary};
+            transition: all 300ms;
+            
+            &:hover {
+                opacity: 0.8;
+                box-shadow: 0 0 5px 1px #777;
+                transform: scale(0.98);
+            }
+        }
+    }
+
+    a:last-child {
+        
+        button {
+            background: #0768be;
         }
     }
 `

@@ -1,4 +1,4 @@
-import { Code } from 'phosphor-react'
+import { CodeSimple } from 'phosphor-react'
 import { useContext, useEffect, useState } from 'react'
 import { NavLink } from 'react-router-dom'
 import { CookiesModal } from '../../components/CookiesModal'
@@ -36,7 +36,7 @@ export function PageComponents() {
 
   async function FetchFilteredContent(all: string, filter: string) {
     if (all === 'all') {
-      await axios.get(`https://uxbi.com.br/api/contents`, {
+      await axios.get('https://uxbi.com.br/api/contents', {
         headers: {
           Authorization: `Bearer ${apiKey}`,
         },
@@ -59,7 +59,7 @@ export function PageComponents() {
   }
 
   useEffect(() => {
-    window.scrollTo(0, 0);
+    window.scrollTo(0, 0)
 
     FetchFilteredContent(filtered, filtered)
     const cookies = localStorage.getItem('cookies-accept')
@@ -67,7 +67,7 @@ export function PageComponents() {
       setCookiesAccept(null)
     }
 
-  }, [filtered])
+  }, [filtered, FetchFilteredContent, setCookiesAccept])
 
 
   return (
@@ -79,13 +79,13 @@ export function PageComponents() {
           <p>Os componentes são HTML e CSS puro, caso queira experiementar os componentes com a linguagem DAX incorporada, baixe nossos <NavLink to="/templates"><strong>templates</strong></NavLink>. </p>
           <FilterSection variant={themeValue}>
             <form action="">
-              <input type="radio" value={'all'} name={`all`} id={"1"} onChange={() => setFiltered('all')} defaultChecked />
+              <input type="radio" value={'all'} name={'all'} id={'1'} onChange={() => setFiltered('all')} defaultChecked />
               <label htmlFor="1">All</label>
-              <input type="radio" value={'all'} name={`all`} id={"2"} onChange={() => setFiltered('card')} />
+              <input type="radio" value={'all'} name={'all'} id={'2'} onChange={() => setFiltered('card')} />
               <label htmlFor="2">Cards</label>
-              <input type="radio" value={'all'} name={`all`} id={"3"} onChange={() => setFiltered('chart')} />
+              <input type="radio" value={'all'} name={'all'} id={'3'} onChange={() => setFiltered('chart')} />
               <label htmlFor="3">Charts</label>
-              <input type="radio" value={'all'} name={`all`} id={"4"} onChange={() => setFiltered('table')} />
+              <input type="radio" value={'all'} name={'all'} id={'4'} onChange={() => setFiltered('table')} />
               <label htmlFor="4">Tables</label>
             </form>
           </FilterSection>
@@ -102,14 +102,13 @@ export function PageComponents() {
                 <strong>
                   {content.name}
                 </strong>
-                <button
-                  onClick={() => localStorage.setItem('lastClicked', content.path)}
-                >
-                  <NavLink to="/componentCode" title="services">
-                    <Code size={15} color="black" weight="bold" />
-                    <p>Code</p>
-                  </NavLink>
-                </button>
+                <NavLink to="/componentCode" title="services">
+                  <button onClick={() => localStorage.setItem('lastClicked', content.path)}>
+                    Code
+                    <CodeSimple size={15} weight="fill" />
+                  </button>
+
+                </NavLink>
               </FooterCardContent>
             </main>
           )

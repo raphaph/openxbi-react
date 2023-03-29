@@ -1,0 +1,124 @@
+<!-- Componente OpenXBI, ajude-nos compartilhando nossa plataforma -->
+<!-- https://openxbi.com.br -->
+<div class='chart-bar'>
+    <link rel='stylesheet' href='https://fonts.googleapis.com/icon?family=Material+Icons:FILL'>
+    <strong class='title'>Users by gender identity</strong> <!-- Título do gráfico -->
+    <div class='mid'>
+        <div class='y-axis'>
+            <!-- Valores do eixo vertical Y -->
+            <small>100%</small>
+            <small>50%</small>
+            <small>0%</small>
+        </div>
+        <div class='chart-area'>
+            <div class='bar' id='bar1' style='height: calc(185px * 0.59)'> <!-- 0.59 altura da barra 1 -->
+                <p>59%</p> <!-- Texto de exibição na barra 1 -->
+                
+            </div>
+            <div class='bar' id='bar2' style='height: calc(185px * 0.41)'>  <!-- 0.41 altura da barra 2-->
+                <p>41%</p> <!-- Texto de exibição na barra 2 -->
+                
+            </div>
+        </div>
+    </div>
+    <div class='footer'>
+        <p title='female' ><span class='material-icons' style='font-size:1.2rem; font-weight: bold;'>female</span></p>
+        <p title='male'><span class='material-icons' style='font-size:1.2rem; font-weight: bold;'>male</span></p>
+    </div>
+</div>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap');
+
+* {
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    box-sizing: border-box;
+    --height-area-chart: 185px; /* Altura do gráfico todo */
+    --wdt-distance: 35px; /* Largura do eixo Y vertical */
+    --width-chart: 290px; /* Largura do gráfico todo */
+    --width-chart-area: calc(var(--width-chart) - 80px) /* Largura da área de exibição das barras no gráfico */
+}
+
+.title {
+    font-size: 1rem; /* Tamanho da font do título */
+    margin-bottom: 1rem; /* espaço entre título e início da área centrarl */
+}
+
+.chart-bar {
+    padding: 1rem;
+    margin: .2rem;
+
+    background: white;
+    box-shadow: 0 0 2px 1px gainsboro; /* Sombra do gráfico todo */
+    width: var(--width-chart);
+    border-radius: 6px; /* Raio da borda do gráfico todo */
+}
+
+.chart-bar, .y-axis {
+    display: flex; 
+    flex-direction: column;
+}
+
+.y-axis {
+    height: 100%;
+    width: 40px; /* Largura dos valores do eixo Y */
+    justify-content: space-between; /* define o espaçamento entre os valores do eixo y */
+    text-align: center;
+}
+
+.mid {
+    display: flex;
+    height: var(--height-area-chart); /* altura da área de exibição do gráfico, usa variável definida no inicio */
+}
+
+.chart-area {
+    align-items: end;
+    width: var(--width-chart-area);
+    border-bottom: 1px solid gainsboro;
+    border-left: 1px solid gainsboro;
+}
+
+.bar {
+    width: var(--wdt-distance);
+    border-radius: 7px 7px 0 0;
+    box-shadow: 0 -1px 2px 1px rgb(216, 216, 216);
+}
+
+.bar p {
+    margin-top: .2rem;
+    color: white; /* cor da porcentagem das barras */
+    font-weight: 500; /* peso das fontes */
+    font-size: .75rem;  /* tamanho das fontes */
+    text-align: center;
+}
+
+#bar1 {
+    background: linear-gradient(#c42c96, #fA54a6); /* cor da barra 1 */
+}
+
+#bar2 {
+    background: linear-gradient(#3f17b1, #5f27f8); /* cor da barra 2 */
+}
+
+.chart-area, .footer {
+    display: flex;
+    justify-content: space-around;
+}
+
+.footer {
+    font-weight: 500;
+    margin-top: .5rem;
+    margin-left: calc(var(--wdt-distance) + 5px);
+    width: var(--width-chart-area);
+}
+
+.footer p:first-child {
+    color: #c42c96; /* cor do icone de genero 1 */
+}
+
+.footer p:last-child {
+    color: #3f17b1; /* cor do icone de genero 2 */
+}
+
+</style>
