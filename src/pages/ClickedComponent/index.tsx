@@ -20,7 +20,7 @@ import axios from 'axios'
 export function ClickedComponent() {
 
   const lastClicked: any = localStorage.getItem('lastClicked')
-  const { themeValue, contentData, setContentData } = useContext(AppContext)
+  const { themeValue, contentData, setContentData, user } = useContext(AppContext)
   const apiKey = import.meta.env.AUTH_KEY
   const [codigo, setCodigo] = useState('')
   const clickedName = lastClicked
@@ -31,20 +31,25 @@ export function ClickedComponent() {
   const [likeComponent, setLikeComponent] = useState<number | null>(null)
 
   async function LikeLike(id: string, newlike: number) {
-    fetch(`https://uxbi.com.br/api/contents/${id}`, {
-      method: 'PUT',
-      headers: {
-        'Content-Type': 'application/json',
-        'Authorization': `Bearer ${apiKey}`,
-      },
-      body: JSON.stringify({
-        likes: newlike
+    if (user === null) {
+      alert('Acesse sua conta para poder curtir! 😁')
+    } else {
+      fetch(`https://uxbi.com.br/api/contents/${id}`, {
+        method: 'PUT',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${apiKey}`,
+        },
+        body: JSON.stringify({
+          likes: newlike
+        })
       })
-    })
-      .then(response => response.json())
-      .then(content => console.log(content))
-      .catch(error => console.error(error))
-    setLikeComponent(newlike)
+        .then(response => response.json())
+        .then(content => console.log(content))
+        .catch(error => console.error(error))
+      setLikeComponent(newlike)
+    }
+
   }
 
 

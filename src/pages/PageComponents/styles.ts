@@ -20,19 +20,12 @@ export const PageComponentsContainer = styled.main<ThemeProps>`
   transition: background 300ms;
 
   z-index: 0;
+  border-bottom: 1px solid
+    ${(props) =>
+    props.variant === 'light'
+      ? props.theme['gray-100']
+      : props.theme['gray-900']};
 
-  &::before {
-    content: '';
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: url('src/assets/mesh.svg') no-repeat;
-    z-index: -1;
-    opacity: 0.1;
-    /* Aplica um filtro de desfoque */
-  }
 `
 
 export const HeaderContentsContainer = styled.header<ThemeProps>`

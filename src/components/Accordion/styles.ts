@@ -31,8 +31,8 @@ export const Trigger = styled(AccordionTrigger) <ThemeProps>`
   border: 1px solid
     ${(props) =>
     props.variant === 'light'
-      ? props.theme['gray-100']
-      : props.theme['gray-900']};
+      ? props.theme['border-light']
+      : props.theme['border-dark']};
   padding: 0.5rem;
   background:  ${props => props.theme['linear-card-dark']};;
 

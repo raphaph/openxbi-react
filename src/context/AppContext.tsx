@@ -1,6 +1,6 @@
 import { createContext, ReactNode, useEffect, useState } from 'react'
 type themeValueType = 'light' | 'dark' | null
-
+import { User } from 'firebase/auth'
 
 interface ContentDataProps {
   id: string
@@ -22,6 +22,10 @@ interface AppContextType {
   setCookiesAccept: any
   contentData: ContentDataProps
   setContentData: any
+  user: User | null
+  setUser: any
+  providerName: string | null
+  setProvider: any
 }
 
 
@@ -37,6 +41,8 @@ export function AppContextProvider({ children }: AppContextProviderProps) {
   const [contentsNames, setContentsNames] = useState<string[]>([])
   const [clickedContent, setClickedContent] = useState('')
   const [cookiesAccept, setCookiesAccept] = useState('')
+  const [user, setUser] = useState<User | null>(null);
+  const [providerName, setProvider] = useState<string | null>(null)
   const [contentData, setContentData] = useState<ContentDataProps>({
     id: '',
     name: '',
@@ -78,7 +84,11 @@ export function AppContextProvider({ children }: AppContextProviderProps) {
         cookiesAccept,
         setCookiesAccept,
         contentData,
-        setContentData
+        setContentData,
+        user,
+        setUser,
+        providerName,
+        setProvider
       }}
     >
       {children}

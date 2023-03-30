@@ -190,3 +190,89 @@ export const SeparatorHorizontal = styled.div<ThemeProps>`
       : props.theme['gray-900']};
   color: transparent;
 `
+
+export const UserAvatarName = styled.div`
+
+  button {
+    cursor: pointer;
+
+    display: flex;
+    align-items: center;
+
+    color: inherit;
+    margin: 0;
+
+    &:hover {
+      transform: scale(0.95);
+      transition: 300ms;
+    }
+  }
+
+  strong, img {
+    margin-right: 1rem;
+  }
+
+  img {
+    border-radius: 50%;
+    border: 2px solid ${props => props.theme.primary};
+  }
+
+`
+
+export const ProfileModal = styled.div<ThemeProps>`
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+
+  width: auto;
+  
+  background: ${(props) =>
+    props.variant === 'light' ? props.theme.offwhite : props.theme['bg-gray']};
+
+  border: 1px solid ${(props) =>
+    props.variant === 'light' ? props.theme['border-light'] : props.theme['border-dark']};
+  border-radius: 6px;  
+
+  right: 0;
+  top: 80px;
+  
+  margin: 1rem;
+  padding: 1rem;
+
+  a {
+    background: ${props => props.theme.secondary};
+    color: white;
+    padding: .5rem;
+    border-radius: 20px;
+    text-align: center;
+    text-decoration: none;
+    margin-bottom: 1rem;
+
+    &:hover {
+      transform: scale(0.95);
+      transition: 350ms;
+    }
+  }
+
+  button {
+    display: flex;
+    align-items: center;
+    margin: .7rem 0;
+    cursor: pointer;
+    border: 0;
+    background: none;
+    color: #717a8a;
+  
+    &:hover {
+      color: inherit;
+      transition: 300ms;
+    }
+  
+  p {
+    margin-left: .5rem;
+  }
+  
+  }
+
+  
+`

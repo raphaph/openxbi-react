@@ -7,7 +7,6 @@ import {
   CardsMainContentOne,
   ContentFooter,
   ContentTwoCard,
-  ExploreContent,
   MainContainer,
   MainContentOne,
   MainContentTwo,
@@ -18,9 +17,6 @@ import {
   coldarkDark,
   coldarkCold,
 } from 'react-syntax-highlighter/dist/esm/styles/prism'
-import boxLight from '../../assets/box-light.svg'
-import { NavLink } from 'react-router-dom'
-import { BookOpen, Cube, PresentationChart } from 'phosphor-react'
 import { CookiesModal } from '../../components/CookiesModal'
 
 export function Home() {
@@ -240,31 +236,18 @@ return
 
 </style>`
 
-  const [randomNumbers, setRandomsNumber] = useState([])
-  function generateRandomNumbers() {
-    const numbers: any = []
-    while (numbers.length < 3) {
-      const randomNumber = Math.floor(Math.random() * 15)
-      if (!numbers.includes(randomNumber)) {
-        numbers.push(randomNumber)
-      }
-    }
-    setRandomsNumber(numbers)
-  }
-
   useEffect(() => {
     const cookies = localStorage.getItem('cookies-accept')
     if (cookies === null) {
       setCookiesAccept(null)
     }
-
-    generateRandomNumbers()
   }, [])
-  console.log(randomNumbers)
+
   return (
     <MainContainer variant={themeValue}>
       {cookiesAccept === null ? <CookiesModal /> : null}
       <MainContentOne>
+
         <h1>Inteligência aplicada a componentes para BI</h1>
         <strong>
           Criamos componentes estilizados em HTML e CSS, incorporando variáveis
@@ -275,21 +258,21 @@ return
         <CardsMainContentOne>
           <div>
             <iframe
-              src={contentsNames[randomNumbers[0]]}
+              src={contentsNames[0]}
               frameBorder={0}
               height={300}
             ></iframe>
           </div>
           <div>
             <iframe
-              src={contentsNames[randomNumbers[1]]}
+              src={contentsNames[8]}
               frameBorder={0}
               height={300}
             ></iframe>
           </div>
           <div>
             <iframe
-              src={contentsNames[randomNumbers[2]]}
+              src={contentsNames[13]}
               frameBorder={0}
               height={300}
             ></iframe>
@@ -359,21 +342,6 @@ return
           </SyntaxHighlighterStyle>
 
           <ContentFooter variant={themeValue}>
-            <ExploreContent>
-              <h2>Explore</h2>
-              <img src={boxLight} alt="" />
-              <nav>
-                <NavLink to={'/components/'}>
-                  <Cube weight="bold" /> Components
-                </NavLink>
-                <NavLink to={'/templates/'}>
-                  <PresentationChart weight="bold" /> Templates
-                </NavLink>
-                <NavLink to={'/docs/introduction'}>
-                  <BookOpen weight="bold" /> Docs
-                </NavLink>
-              </nav>
-            </ExploreContent>
           </ContentFooter>
         </MainFooterContent>
       </MainContentOne>

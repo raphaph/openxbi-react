@@ -23,27 +23,6 @@ export const MainContainer = styled.main<ThemeProps>`
       ? props.theme['gray-100']
       : props.theme['gray-900']};
   z-index: 0;
-
-  &::before {
-    content: '';
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100%;
-    background: url('src/assets/mesh.svg') no-repeat;
-    z-index: -1;
-    /* Aplica um filtro de desfoque */
-    opacity: 0.1;
-    
-    animation: movement 15s infinite;
-
-    @keyframes movement {
-      0%{transform: scale(1); opacity: 0.05;}
-      50%{transform: scale(.90); opacity: 0.1;}
-      100%{transform: scale(1); opacity: 0.2;}
-    }
-  }
 `
 
 export const MainContentOne = styled.div`
@@ -76,6 +55,7 @@ export const MainContentOne = styled.div`
     font-weight: 600;
     margin-bottom: 2rem;
   }
+
 `
 
 export const CardsMainContentOne = styled.div`
@@ -217,28 +197,5 @@ export const ContentFooter = styled.div<ThemeProps>`
 
     }
     
-  }
-`
-export const ExploreContent = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: 200ms;
-  
-  width: 100%;
-  
-  &:hover {
-    transform: scale(1.5);
-  }
-
-  &:hover img {
-    animation: wave 4s infinite;
-    animation-delay: .2s;
-
-    @keyframes wave {
-       0% { transform: scale(1)}
-       50% {transform: scale(1.05)} 
-       100% { transform: scale(1)}
-    }
   }
 `

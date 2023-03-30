@@ -41,20 +41,19 @@ export function PageComponents() {
           Authorization: `Bearer ${apiKey}`,
         },
       })
-        .then((response) => response.data.contents)
-        .then((data) => {
-          setFilteredData(data)
-        })
+        .then((response) => response.data.contents.sort())
+        .then((data) => data.sort(() => Math.random() - 0.5))
+        .then((final) => setFilteredData(final))
+
     } else {
       await axios.get(`https://uxbi.com.br/api/contents/type/${filter}`, {
         headers: {
           Authorization: `Bearer ${apiKey}`,
         },
       })
-        .then((response) => response.data)
-        .then((data) => {
-          setFilteredData(data)
-        })
+        .then((response) => response.data.sort())
+        .then((data) => data.sort(() => Math.random() - 0.5))
+        .then((final) => setFilteredData(final))
     }
   }
 
@@ -67,7 +66,7 @@ export function PageComponents() {
       setCookiesAccept(null)
     }
 
-  }, [filtered, FetchFilteredContent, setCookiesAccept])
+  }, [filtered])
 
 
   return (
