@@ -33,7 +33,7 @@ export function Profile() {
             <RightSideProfileFavorites variant={themeValue}>
                 <div>
                     <h2>Em breve</h2>
-                    <p>Quando o volume de componentes crescer, iremos disponibilizar esta área para favoritos.</p>
+                    <p>Quando o volume de componentes crescer, iremos disponibilizar esta área para favoritos e outras features.</p>
                     <Heart weight='fill' color='red' size={60} />
                 </div>
             </RightSideProfileFavorites>

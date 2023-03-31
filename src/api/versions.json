@@ -1,0 +1,17 @@
+{
+    "versions" : [
+    {
+        "version": "0.0.1",
+        "release": "3 de Abril, 2023",
+        "description": "Versão inicial! 🎉",
+        "marks": [
+            {
+                "mark": "16 componentes e 2 templates adicionados inicialmente."
+            },
+            {
+                "mark": "Documentação inicial."
+            }
+        ]
+    }
+]
+}

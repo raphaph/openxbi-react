@@ -19,7 +19,7 @@ export const NavigationContainer = styled.aside`
     nav {
         display: flex;
         flex-direction: column;
-        margin: 1rem 0 2rem;
+        margin: 1rem 0;
         transition: 300ms;
 
         a {

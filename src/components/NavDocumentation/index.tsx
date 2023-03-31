@@ -8,7 +8,7 @@ export function NavDocumentation() {
             <nav>
                 <NavLink to={'/docs/introduction'}>Introdução</NavLink>
                 <NavLink to={'/docs/getting-started'}>Primeiros Passos</NavLink>
-
+                <NavLink to={'/docs/releases'}>Releases</NavLink>
             </nav>
             <strong>Aplicando Inteligência</strong>
             <nav>

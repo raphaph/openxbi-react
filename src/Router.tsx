@@ -12,6 +12,7 @@ import { ConditionalDax } from './pages/@docs-5-Conditional'
 import { IteratingDax } from './pages/@docs-6-IteratingWithDax'
 import { SignIn } from './pages/SignIn'
 import { Profile } from './pages/Profile'
+import { Releases } from './pages/@releases'
 
 
 export function Router() {
@@ -24,6 +25,7 @@ export function Router() {
         <Route path="/templates" element={<Templates />} />
         <Route path="/docs/introduction" element={<Introduction />} />
         <Route path="/docs/getting-started" element={<GettingStarted />} />
+        <Route path="/docs/releases" element={<Releases />} />
         <Route path="/docs/embedding-dax" element={<EmbeddingDax />} />
         <Route path="/docs/dax-formating" element={<DaxFormatting />} />
         <Route path="/docs/conditional-in-code" element={<ConditionalDax />} />

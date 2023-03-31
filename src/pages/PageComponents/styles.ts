@@ -134,8 +134,9 @@ export const ComponentsContainer = styled.div<ThemeProps>`
 
   @media (max-width: 1400px) {
     display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  }
+    grid-template-columns: repeat(3, 1fr);
+  
+}
 
   @media (max-width: 800px) {
     display: flex;
@@ -159,7 +160,7 @@ export const ComponentsContainer = styled.div<ThemeProps>`
     border-bottom: none;
     background: ${props => props.theme['linear-card-dark']};
 
-    min-width: 25rem;
+    
     width: 100%;
     height: 25rem;
     border-radius: 6px 6px 0 0;
