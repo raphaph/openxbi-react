@@ -42,7 +42,7 @@ export function PageComponents() {
         },
       })
         .then((response) => response.data.contents.sort())
-        .then((data) => data.sort(() => Math.random() - 0.5))
+        // .then((data) => data.sort(() => Math.random() - 0.5)) RANDOMICO
         .then((final) => setFilteredData(final))
 
     } else {
@@ -52,7 +52,7 @@ export function PageComponents() {
         },
       })
         .then((response) => response.data.sort())
-        .then((data) => data.sort(() => Math.random() - 0.5))
+        // .then((data) => data.sort(() => Math.random() - 0.5)) RANDOMICO
         .then((final) => setFilteredData(final))
     }
   }

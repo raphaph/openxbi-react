@@ -1,6 +1,6 @@
 import { List, MoonStars, SunDim, User, X, SignOut } from 'phosphor-react'
 import { useContext, useState } from 'react'
-import { NavLink } from 'react-router-dom'
+import { NavLink, useNavigate } from 'react-router-dom'
 import { AppContext } from '../../context/AppContext'
 import { HeaderContainer, HeaderSideRight, MenuButton, MenuVertical, ProfileModal, SeparatorHorizontal, SeparatorRightSide, SunButton, UserAvatarName } from './styles'
 import { auth } from '../../services/firebase'
@@ -22,6 +22,7 @@ export function Header() {
     }
   }
 
+  const navigate = useNavigate();
   const gitProvider = new GithubAuthProvider();
   function logoutGitHub() {
     signOut(auth)
@@ -29,6 +30,7 @@ export function Header() {
         alert('Bye 🖐️ see you later!')
         setUser(null)
         setSignOutModal('closed')
+        navigate("/")
       })
       .catch((error) => {
         console.log(error)
@@ -42,6 +44,7 @@ export function Header() {
         alert('Bye 🖐️ see you later!')
         setUser(null)
         setSignOutModal('closed')
+        navigate("/")
       })
       .catch((error) => {
         console.log(error)
@@ -153,11 +156,11 @@ export function Header() {
       </MenuVertical>
       {signOutModal === 'closed' ? null :
         <ProfileModal variant={themeValue}>
-          <a href='https://discord.gg/BTgztvKF7E' target={"_blank"}><p>Discord</p></a>
-          <button onClick={() => alert('Soon, profile 👨‍💻 and favorite 💕!')}>
+          <button><a href='https://discord.gg/BTgztvKF7E' target={"_blank"}>Discord</a></button>
+          <NavLink to={"/profile"} onClick={() => { setSignOutModal('closed') }}>
             <User size={20} weight="fill" />
             <p>Profile</p>
-          </button>
+          </NavLink>
           <button onClick={providerName === 'github.com' ? () => logoutGitHub() : () => logoutGoogle()}>
             <SignOut size={22} weight="fill" />
             <p>Sign Out</p>

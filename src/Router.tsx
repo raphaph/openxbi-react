@@ -11,6 +11,7 @@ import { DaxFormatting } from './pages/@docs-4-DaxFormatting'
 import { ConditionalDax } from './pages/@docs-5-Conditional'
 import { IteratingDax } from './pages/@docs-6-IteratingWithDax'
 import { SignIn } from './pages/SignIn'
+import { Profile } from './pages/Profile'
 
 
 export function Router() {
@@ -27,6 +28,7 @@ export function Router() {
         <Route path="/docs/dax-formating" element={<DaxFormatting />} />
         <Route path="/docs/conditional-in-code" element={<ConditionalDax />} />
         <Route path="/docs/iterating-with-dax" element={<IteratingDax />} />
+        <Route path='/profile' element={<Profile />} />
         <Route path="/sign-in" element={<SignIn />} />
       </Route>
     </Routes>

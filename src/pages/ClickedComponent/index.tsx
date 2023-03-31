@@ -18,7 +18,7 @@ import { NavLink } from 'react-router-dom'
 import axios from 'axios'
 
 export function ClickedComponent() {
-
+  const [data, setData] = useState([]);
   const lastClicked: any = localStorage.getItem('lastClicked')
   const { themeValue, contentData, setContentData, user } = useContext(AppContext)
   const apiKey = import.meta.env.AUTH_KEY
@@ -26,6 +26,7 @@ export function ClickedComponent() {
   const clickedName = lastClicked
     .slice(26, -5)
     .split('/src/components/@Contents/')
+
 
   document.title = `OpenXBI | ${clickedName}`
   const [likeComponent, setLikeComponent] = useState<number | null>(null)
@@ -69,7 +70,6 @@ export function ClickedComponent() {
 
   useEffect(() => {
     window.scrollTo(0, 0)
-
     // Code
     async function buscarCodigo() {
       const [response, text] = await Promise.all([

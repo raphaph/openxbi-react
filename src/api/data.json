@@ -1,0 +1,148 @@
+{
+    "contents": [
+    {
+    "name": "card-detailed",
+    "path": "/src/components/@Contents/card-detailed.html",
+    "type": "card",
+    "creator": "raphaph",
+    "description": "Cartão com ação ao passar o mouse, exibindo um novo card com mais informações.",
+    "likes": 2,
+    "id": "2b248371-d3d9-42b7-b8af-342a14f89f22"
+    },
+    {
+    "name": "card-flipX",
+    "path": "/src/components/@Contents/card-flipX.html",
+    "type": "card",
+    "creator": "raphaph",
+    "description": "Cartão com rotação no eixo Y, exibindo novas informação no verso e um novo cartão menor antes oculto também trazendo novas informações.",
+    "likes": 6,
+    "id": "7c386781-c954-45c7-a224-e8149f39dd86"
+    },
+    {
+    "name": "card-received-category",
+    "path": "/src/components/@Contents/card-received-category.html",
+    "type": "card",
+    "creator": "raphaph",
+    "description": "Cartão com dados de recebimento bruto divididos em duas categorias de produto.",
+    "likes": 5,
+    "id": "9dc61f3c-de65-46b1-a0ad-a0e339f4a225"
+    },
+    {
+    "name": "chart-peak-hour",
+    "path": "/src/components/@Contents/chart-peak-hour.html",
+    "type": "chart",
+    "creator": "raphaph",
+    "description": "Gráfico que exibe horários de pico por horário, com destaque para o valor mais alto.",
+    "likes": 3,
+    "id": "2dcb78d2-ce62-49a7-a56d-c581a082482c"
+    },
+    {
+    "name": "card-acessibility",
+    "path": "/src/components/@Contents/card-acessibility.html",
+    "type": "card",
+    "creator": "raphaph",
+    "description": "Cartão simples com ação ao passar o mouse, exibindo bordas mais espessas para maior acessibilidade.",
+    "likes": 1,
+    "id": "9de40c74-5979-4771-86b9-3cf0de08add6"
+    },
+    {
+    "name": "card-skills",
+    "path": "/src/components/@Contents/card-skills.html",
+    "type": "card",
+    "creator": "raphaph",
+    "description": "Cartão com dados de skills pessoais ou média corporativa, com barras de porcentagem que reflete o nível de conhecimento e valor a frente.",
+    "likes": 3,
+    "id": "f742f70e-4a5a-4890-ac10-241eff5e48e1"
+    },
+    {
+    "name": "card-acessibility-blur",
+    "path": "/src/components/@Contents/card-acessibility-blur.html",
+    "type": "card",
+    "creator": "raphaph",
+    "description": "Três cartões que exibe informações financeiras, com ação ao passar o mouse, aplicando desfoque aos cartões não focados, e dando destaque ao cartão focado com fundo preto.",
+    "likes": 1,
+    "id": "dda0de5c-0ed1-48c5-aeb6-db2cf8b9174f"
+    },
+    {
+    "name": "chart-blocks",
+    "path": "/src/components/@Contents/chart-blocks.html",
+    "type": "chart",
+    "creator": "raphaph",
+    "description": "Gráfico de camadas, que pode ser interpretado como camada de soluções, ou camadas de um serviço de infraestrutura, ao passar o mouse as camadas se destacam, se deslocando pelo eixo X.",
+    "likes": 1,
+    "id": "df20a53c-c759-4b07-bf1e-7ae5ba4553a9"
+    },
+    {
+    "name": "card-developer-contact",
+    "path": "/src/components/@Contents/card-developer-contact.html",
+    "type": "card",
+    "creator": "raphaph",
+    "description": "Cartão que armazena informações de contato como email e documentações do desenvolvedor específico, pode ser utilizado em painéis e relatórios.",
+    "likes": 0,
+    "id": "541dfabe-bedd-4758-be66-509f39996b08"
+    },
+    {
+    "name": "card-sales-growth",
+    "path": "/src/components/@Contents/card-sales-growth.html",
+    "type": "card",
+    "creator": "raphaph",
+    "description": "Cartão que exibe quantidade de vendas e o crescimento em relação ao algum período não especificado, além de uma barra de porcentagem do atingido.",
+    "likes": 1,
+    "id": "ad192f00-7f80-4901-a782-c9d73f50de82"
+    },
+    {
+    "name": "table-customizable",
+    "path": "/src/components/@Contents/table-customizable.html",
+    "type": "table",
+    "creator": "raphaph",
+    "description": "Tabela com dados fictícios de custos com cloud com imagens cloud providers, e porcentagem relacionada ao budget inicial.",
+    "likes": 2,
+    "id": "2d6a2813-15ca-4c65-951f-80f55f0b2107"
+    },
+    {
+    "name": "table-cloud-cost",
+    "path": "/src/components/@Contents/table-cloud-cost.html",
+    "type": "table",
+    "creator": "raphaph",
+    "description": "Tabela para acompanhamento de atividades, com início e duranção da atividade, além do status atual.",
+    "likes": 2,
+    "id": "cd38cae7-0134-4ed2-9a11-51e1238c1bf3"
+    },
+    {
+    "name": "chart-engagement-podium",
+    "path": "/src/components/@Contents/chart-engagement-podium.html",
+    "type": "chart",
+    "creator": "raphaph",
+    "description": "Gráfico de classificação de colaboradores mais engajados do semestre, com avatares flutuantes e colunas relacionas com dimensões referentes a colocação.",
+    "likes": 3,
+    "id": "23ff9479-961b-43bf-bcd3-2eedf9536ab1"
+    },
+    {
+    "name": "chart-dispersion",
+    "path": "/src/components/@Contents/chart-dispersion.html",
+    "type": "chart",
+    "creator": "raphaph",
+    "description": "Gráfico de dispersão com eixo X e Y pré-definidos, e valores dispersos entre os pixels dos eixos.",
+    "likes": 1,
+    "id": "eb58cae7-0130-4ef1-9aa9-51e0ab8c1bf3"
+    },
+    {
+    "name": "chart-users-gender",
+    "path": "/src/components/@Contents/chart-users-gender.html",
+    "type": "chart",
+    "creator": "raphaph",
+    "description": "Gráfico de barras com porcentagem de usuários por identidade de gênero.",
+    "likes": 4,
+    "id": "301b9496-4398-4b0a-8535-a86b2e444e01"
+    },
+    {
+    "name": "chart-vertical-bars",
+    "path": "/src/components/@Contents/chart-vertical-bars.html",
+    "type": "chart",
+    "creator": "raphaph",
+    "description": "Gráfico com barras verticais que exibem porcetagem atiginda da meta de vendas a cada ano.",
+    "likes": 0,
+    "id": "c64b6916-810d-4cc0-9899-3eddf056e78d"
+    }
+]
+}

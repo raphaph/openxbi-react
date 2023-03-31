@@ -2,30 +2,23 @@ import { DownloadSimple } from 'phosphor-react'
 import { useContext } from 'react'
 import { AppContext } from '../../context/AppContext'
 import { CardFooter, CardMap, HearderTemplate, TemplatesContainer, TemplatesContents, TemplatesMap } from './styles'
+import templatesData from '../../api/templates.json'
+
+interface TemplateProps {
+  id: string
+  public: string
+  image: string
+  name: string
+  path: string
+  download: string
+  creator: string
+}
 
 export function Templates() {
   document.title = 'OpenXBI | Templates'
   const { themeValue } = useContext(AppContext)
 
-  const templates = [{
-    id: 1,
-    name: 'openxbi-initial-template', // prefixo openxbi & community
-    path: 'src/pbix/openxbi-templates.zip',
-    download: 'openxbi-templates.zip',
-    image: 'src/assets/templates-image/openxbi-initial-template.png',
-    public: 'https://app.powerbi.com/view?r=eyJrIjoiMDhmZjhhNTEtZDU1Ny00YjM3LTk2MGMtMGU2OGQxYzJhMGY3IiwidCI6IjBhODViZGRhLTVhN2YtNGIyZS04Y2FmLTcyMDRmMGU1NTM2MSJ9',
-    creator: 'raphaph'
-  },
-  {
-    id: 2,
-    name: 'openxbi-cloud-costs', // prefixo openxbi & community
-    path: 'src/pbix/openxbi-cloud-costs.zip',
-    download: 'openxbi-cloud-costs.zip',
-    image: 'src/assets/templates-image/openxbi-cloud-costs.png',
-    public: 'https://app.powerbi.com/view?r=eyJrIjoiNWNmYjZjMTAtMjUwMy00MmUxLWEzN2EtN2MxOGE1MDQ4NWQ2IiwidCI6IjBhODViZGRhLTVhN2YtNGIyZS04Y2FmLTcyMDRmMGU1NTM2MSJ9',
-    creator: 'raphaph'
-  }
-  ]
+  const templates: any = templatesData.templates
 
   return (
     <TemplatesContainer variant={themeValue}>
@@ -36,7 +29,7 @@ export function Templates() {
           <p>Há também templates da comunidade disponíveis com prefixo <strong>community</strong>, e podem ou não ter componentes já configurados e incorporado DAX.</p>
         </HearderTemplate>
         <TemplatesMap>
-          {templates.map(template => {
+          {templates.map((template: TemplateProps) => {
             return (
               <CardMap key={template.id} variant={themeValue}>
                 <a href={template.public} target={'_blank'} rel="noreferrer">

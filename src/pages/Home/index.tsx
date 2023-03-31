@@ -272,7 +272,7 @@ return
           </div>
           <div>
             <iframe
-              src={contentsNames[13]}
+              src={contentsNames[14]}
               frameBorder={0}
               height={300}
             ></iframe>
@@ -306,8 +306,6 @@ return
           <MyAccordion />
           <h1>#FREE #UX #BI</h1>
         </MidContent>
-
-        <Principles />
 
         <MainFooterContent>
           <div>
@@ -345,6 +343,7 @@ return
           </ContentFooter>
         </MainFooterContent>
       </MainContentOne>
+      <Principles />
     </MainContainer>
   )
 }

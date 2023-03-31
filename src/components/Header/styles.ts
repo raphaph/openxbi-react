@@ -239,7 +239,7 @@ export const ProfileModal = styled.div<ThemeProps>`
   margin: 1rem;
   padding: 1rem;
 
-  a {
+  a:first-child {
     background: ${props => props.theme.secondary};
     color: white;
     padding: .5rem;
@@ -247,11 +247,33 @@ export const ProfileModal = styled.div<ThemeProps>`
     text-align: center;
     text-decoration: none;
     margin-bottom: 1rem;
+    width: 100%;
 
     &:hover {
       transform: scale(0.95);
       transition: 350ms;
     }
+  }
+
+  a:nth-child(2) {
+    display: flex;
+    align-items: center;
+    margin: .7rem 0;
+    cursor: pointer;
+    border: 0;
+    background: none;
+    color: #717a8a;
+    text-decoration: none;
+
+    p {
+      margin-left: .5rem;
+    }
+    
+    &:hover {
+      color: inherit;
+      transition: 300ms;
+    }
+
   }
 
   button {

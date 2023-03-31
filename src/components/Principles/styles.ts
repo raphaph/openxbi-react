@@ -6,9 +6,20 @@ interface ThemeProps {
 
 export const PrinciplesContainer = styled.main`
     display: flex;
-    margin-bottom: 8rem;
     flex-direction: column;
+    align-items: center;
     width: 100%;
+    background: linear-gradient(
+                -15deg,
+                rgba(52, 22, 227, 0.1) 60%,
+                rgba(255, 140, 0, 0.1)) 40%;
+
+    padding: 6rem .5rem 8rem .5rem;
+
+    main {
+        max-width: 1500px;
+        width: 100%;
+    }
 `
 export const PrinciplesTitle = styled.div`
     margin-bottom: 2rem ;
@@ -36,11 +47,14 @@ export const PrinciplesContent = styled.div<ThemeProps>`
 
     div {
         cursor: pointer;
-        background: ${props => props.theme['linear-card-dark']};
+        background: ${(props) =>
+        props.variant === 'light' ? props.theme.white : props.theme.black};
     
         transition: 300ms;
         padding: 2rem;
         border-radius: 6px;
+        border: 1px solid ${(props) =>
+        props.variant === 'light' ? props.theme['border-light'] : props.theme['border-dark']};
 
         h3 {
             display: flex;
