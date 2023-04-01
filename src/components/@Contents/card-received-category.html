@@ -6,13 +6,13 @@
             <strong>Received gross</strong>
             <p>$ 25.459.234,00</p> <!-- Valor do recebido bruto -->
         </div>
-        <strong class='strong-only'>Received by category</strong>
+        <strong class='title-about-categorys'>Received by category</strong>
         <div class='category-name-value'>
             <strong>T-shirt</strong>
             <p>$ 10.183.693,60</p> <!-- Valor em T-Shirt -->
         </div>
         <div class='bar-progress1'>
-            <div class='back-bar'>bar-back</div>
+            <div class='back-bar'>_</div>
             <div class='front-bar'>35%</div> <!-- % em T-Shirt -->
         </div>
         <div class='category-name-value'>
@@ -20,7 +20,7 @@
             <p>$ 12.729.617,00</p> <!-- Valor em Pants -->
         </div>
         <div class='bar-progress2'>
-            <div class='back-bar2'>bar-back</div>
+            <div class='back-bar2'>_</div>
             <div class='front-bar2'>50%</div>  <!-- % em Pants -->
         </div>
     </div>
@@ -30,24 +30,26 @@
 
 
 * {
-    font-family: 'Inter', sans-serif;
-    margin: 0;
+    font-family: 'Inter', sans-serif; /* Font do component, remova para usar a font nativa do PBI */
+    margin: 0; /* Remove todas as margens iniciais */
     box-sizing: border-box;
 }
 
 .card-container {
-    display: flex;
     align-items: center;
-    justify-content: center;
-    height: auto;
+    height: auto; /* Altura do card todo */
 }
 
-.card-content {
+.card-container,
+.card-content,
+.received-gross {
     display: flex;
-    flex-direction: column;
     justify-content: center;
+}   
+
+.card-content {   
     align-items: flex;
-    
+    flex-direction: column;
     padding: 1rem;
     margin: .5rem;
     height: auto;
@@ -59,62 +61,61 @@
     border: 1px solid rgba(136, 136, 136, 0.1);
     box-shadow: 1px 1px 2px 1px rgba(133, 133, 133, 0.1);
 }
-/* RECEIVED GROSS STYLES */
+
+/* received gross styles */
 .received-gross {
-    display: flex;
     flex-direction: column;
     justify-content: flex-start;
 }
 
-.received-gross strong {
-    font-size: 1rem;
-}
-
 .received-gross p {
-    margin: .3rem 0 1rem 0;
+    margin: .3rem 0 1rem 0; /* margens em volta do valor de received gross */
 }
 /* Category */
-.strong-only {
-    font-size: .875rem;
+.title-about-categorys {
+    font-size: .875rem; 
     color: rgb(1, 3, 116); /* Cor do Título das categorias */
     margin-bottom: .5rem;
 } 
 
 .category-name-value {
     display: flex;
-    justify-content: space-between;
-    margin-bottom: .5rem;
+    justify-content: space-between; /* Define um espaço entre os dois elementos na tag */
+    margin-bottom: .5rem; /* Margin abaixo do nome da categoria */
 }
 
 .category-name-value p {
-    font-size: 0.875rem;
+    font-size: 0.875rem; /* Tamanho da font do valor a frente da categoria */
 }
 
 .bar-progress1, .bar-progress2 {
     display: flex;
-    margin-bottom: 1rem;
+    margin-bottom: 1rem; /* Margem abaixo de cada barra */
 }
 
+/* barras de fundo */
 .back-bar, 
 .back-bar2 {
     --bar-width: 216px;
     color: transparent;
     background: rgb(255, 237, 237); /* Cor de fundo da barra */
-    max-width: var(--bar-width);
-    width: 100%;
+    max-width: var(--bar-width); /* largura máxima da barra, depende da variavel ali em cima */
+    width: 100%; /* faz com que as barras ocupem 100% do espaço disponivel */
     border-radius: 8px;
 }
 
+/* estiliza as duas barras de valores */
 .front-bar, 
 .front-bar2 {
     position: absolute;
     font-size: .7rem; /* Tamanho da fonte da porcentagem */
-    margin: .2rem;
-    text-align: center;
+    margin: .2rem; /* margem ao redor das barras */
+    text-align: center; /* alinha as % ao centro das barras */
     color: white; /* Cor da porcentagem */
     border-radius: 8px;
-    animation-fill-mode: forwards;
-    animation-delay: 1s;
+    animation-fill-mode: forwards; 
+    /* forwards - define que a animação deve permanecer com a estilização do final da animação */
+    animation-delay: 1s; /* delay para iniciar a animação */
 }
 
 .front-bar {

@@ -9,7 +9,7 @@ export const SignInContainer = styled.main<ThemeProps>`
     align-items: center;
     justify-content: center;
     background: ${(props) =>
-        props.variant === 'light' ? props.theme.offwhite : props.theme["bg-gray"]};
+        props.variant === 'light' ? props.theme['bg-home-light'] : props.theme['bg-home-dark']};
        
     padding: 0rem;
 
@@ -29,15 +29,14 @@ export const SignInContainer = styled.main<ThemeProps>`
 
         box-shadow: 0 0 20px 2px ${(props) =>
         props.variant === 'light' ? props.theme["border-light"] : props.theme.offblack};
-;
     }
 
-    button:nth-child(3) {
+    button:nth-child(4) {
         background: #0061eb;
         color: white;
     }
 
-    button:nth-child(4) {
+    button:nth-child(5) {
         background: ${props => props.theme["bg-gray"]};
         color: white;
     }
@@ -65,5 +64,15 @@ export const SignInContainer = styled.main<ThemeProps>`
     h2 {
         margin: 1rem 0;
     }
+
+    img {
+        margin: 1rem 0;
+    }
+
+    p {
+        text-align: center;
+        margin: 1rem;
+        font-size: 1rem;
+    }   
     
 `

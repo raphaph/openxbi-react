@@ -10,49 +10,60 @@
             <strong>Peak hour</strong>
         </div>
         
-        <div class='hour-card'>
-            <div class='hour'>08:00</div> <!-- HORA -->
-            <div class='quantity8h'></div><small>101</small>  <!-- VALOR -->
+        <div class='hour-card-wrapper'>
+            <div class='hour'>08:00</div> <!-- Hora -->
+            <div class='quantity8h'></div> <!-- Barra -->
+            <small>101</small>  <!-- Valor -->
         </div>
-        <div class='hour-card'>
+        <div class='hour-card-wrapper'> <!-- Repete -->
             <div class='hour'>09:00</div>
-            <div class='quantity9h'></div><small>90</small>
+            <div class='quantity9h'></div>
+            <small>90</small>
         </div>
-        <div class='hour-card'>
+        <div class='hour-card-wrapper'>
             <div class='hour'>11:00</div>
-            <div class='quantity10h'></div><small>89</small> 
+            <div class='quantity10h'></div>
+            <small>89</small> 
         </div>
-        <div class='hour-card'>
+        <div class='hour-card-wrapper'>
             <div class='hour'>11:00</div>
-            <div class='quantity11h'></div><small>103</small>
+            <div class='quantity11h'></div>
+            <small>103</small>
         </div>
-        <div class='hour-card'>
+        <div class='hour-card-wrapper'>
             <div class='hour'>12:00</div>
-            <div class='quantity12h'></div><small>83</small> 
+            <div class='quantity12h'></div>
+            <small>83</small> 
         </div>
-        <div class='hour-card'>
+        <div class='hour-card-wrapper'>
             <div class='hour'>13:00</div>
-            <div class='quantity13h'></div><small>102</small>
+            <div class='quantity13h'></div>
+            <small>102</small>
         </div>
-        <div class='hour-card'>
+        <div class='hour-card-wrapper'>
             <div class='hour'>14:00</div>
-            <div class='quantity14h'></div><small>77</small>
+            <div class='quantity14h'></div>
+            <small>77</small>
         </div>
-        <div class='hour-card'>
+        <div class='hour-card-wrapper'>
             <div class='hour'>15:00</div>
-            <div class='quantity15h'></div><small>74</small>
+            <div class='quantity15h'></div>
+            <small>74</small>
         </div>
-        <div class='hour-card'>
+        <div class='hour-card-wrapper'>
             <div class='hour'>16:00</div>
-            <div class='quantity16h'></div><small>93</small>
+            <div class='quantity16h'></div>
+            <small>93</small>
         </div>
-        <div class='hour-card'>
+        <div class='hour-card-wrapper'>
             <div class='hour'>17:00</div>
-            <div class='quantity17h'></div><small>113</small>
+            <div class='quantity17h'></div>
+            <small>113</small>
         </div>
-        <div class='hour-card'>
+        <div class='hour-card-wrapper'>
             <div class='hour'>18:00</div>
-            <div class='quantity18h'></div><small>75</small>
+            <div class='quantity18h'></div>
+            <small>75</small>
         </div>
         
         <small class='peak'>peak</small>
@@ -62,13 +73,13 @@
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap');
 
-
 * {
-    font-family: 'Inter', sans-serif;
-    margin: 0;
+    font-family: 'Inter', sans-serif; /* Font do card, remova para utilizar a font nativa */
+    margin: 0; /* Remove toda margin inicial */
     box-sizing: border-box;
 }
 
+/* Gráfico todo */
 .chart-container {
     display: flex;
     flex-direction: column;
@@ -76,54 +87,49 @@
     justify-content: flex-start;
 } 
 
+/* Área dos gráficos */
+.chart-content {
+    background: white; /* Cor de fundo do gráfico */
+    width: 250px; /* Largura do gráfico */
+    padding: 1rem; /* Preenchimento do card */
+    border-radius: 11px; /* Raio da borda */
+    box-shadow: 0 0 1px 1px rgba(133, 133, 133, 0.1);
+}
+
+/* Título */
 .title {
     margin-bottom: 1rem;
 }
 
-.peak::before {
-  content: '';
-  display: inline-block;
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  background-color: #FF8C00;
-  margin-right: 8px;
-  margin-top: 10px;
-}
-
-.chart-content {
-    background: white;
-    width: 250px;
-    padding: 1rem;
-    border-radius: 11px; /* Raio da borda */
-    border: 1px solid rgba(136, 136, 136, 0.1);
-    box-shadow: 0 0 1px 1px rgba(133, 133, 133, 0.1);
-}
-
+/* Remove o scroll para exibição no openxbi, pode ser removido */
 body::-webkit-scrollbar {
     width: 0;
 }
 
-.hour-card {
+/* Conjunto de hora, barra e valor */
+.hour-card-wrapper {
     display: flex;
     align-items: center;
     margin: .5rem 0;
     font-size: 0.875rem;
 }
 
-.hour-card small {
+/* Valor em frente a barra */
+.hour-card-wrapper small {
     margin-left: .2rem;
 }
 
+/* Hora */
 .hour {
     width: 3rem;
 }
+
+/* Estiliza todas as barras */
 .quantity8h,.quantity9h,.quantity10h,
 .quantity11h,.quantity12h,.quantity13h,
 .quantity14h,.quantity15h,.quantity16h,
 .quantity17h,.quantity18h {
     font-size: 0.7rem;
-    background: black;
     color: white;
 
     padding: .4rem .2rem;
@@ -170,6 +176,17 @@ body::-webkit-scrollbar {
 .quantity18h { animation: anim11 1s forwards ; background: var(--bar-color);} /* 18h */
 @keyframes anim11 { 0%{width: 0;} 100% {width: 75px}}
 
+/* Legenda */
+.peak::before {
+  content: '';
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #FF8C00;
+  margin-right: 8px;
+  margin-top: 10px;
+}
 
 </style>
 

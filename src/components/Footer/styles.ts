@@ -71,6 +71,23 @@ export const ContactInfo = styled.div<ThemeProps>`
     }
   }
 `
+export const FooterMid = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  a {
+    margin: 1rem;
+    text-decoration: none;
+    color: inherit;
+    font-weight: 600;
+
+    &:hover {
+      color: ${props => props.theme['strong-orange']};
+      transition: 300ms;
+    }
+  }
+`
 
 export const RightSideContent = styled.div<ThemeProps>`
   button {
@@ -95,6 +112,5 @@ export const RightSideContent = styled.div<ThemeProps>`
 
   a {
     text-decoration: none;
-    
   }   
 `

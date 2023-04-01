@@ -5,8 +5,8 @@ import { useNavigate } from 'react-router-dom';
 import { AppContext } from '../../context/AppContext';
 import { auth } from '../../services/firebase'
 import { SignInContainer } from './styles';
-import logoDark from '../../assets/box-dark.svg'
-import logoLight from '../../assets/box-light.svg'
+import logoDark from '../../assets/logo-dark.svg'
+import logoLight from '../../assets/logo-light.svg'
 
 export function SignIn() {
 
@@ -48,8 +48,9 @@ export function SignIn() {
     return (
         <SignInContainer variant={themeValue}>
             <div>
-                <img src={themeValue === 'light' ? logoLight : logoDark} alt="" width={100} />
+                <img src={themeValue === 'light' ? logoLight : logoDark} alt="" width={250} />
                 <h2>Acesse sua conta</h2>
+                <p>Entrar com uma conta social é mais prático e seguro.</p>
                 <button type="button" onClick={handleGoogleSignIn}>
                     <GoogleLogo size={23} weight="bold" />
                     Entrar com Google

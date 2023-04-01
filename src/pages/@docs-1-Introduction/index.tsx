@@ -20,7 +20,7 @@ export function Introduction() {
                     <h1>Introdução</h1>
                     <strong>Biblioteca de componentes para ferramentas compatíveis, e templates para PowerBI.</strong>
 
-                    <p><strong>(OpenXBI) Open New UX for BI -</strong> É um conceito que se refere à criação de experiências de usuário (UX) mais abertas e colaborativas para Business Intelligence (BI). Em outras palavras, significa que os componentes para BI devem ser projetados para permitir uma maior interação e participação dos usuários em todo o processo de análise de dados.</p>
+                    <p><strong>(OpenXBI) Open - New UX for BI -</strong> É um conceito que se refere à criação de experiências de usuário (UX) mais abertas e colaborativas para Business Intelligence (BI). Em outras palavras, significa que os componentes para BI devem ser projetados para permitir uma maior interação e participação dos usuários em todo o processo de análise de dados.</p>
 
                     <h2>Visão</h2>
                     <p>Como uma plataforma de componentes em HTML e CSS, visamos fornecer um conjunto de componentes de interface do usuário (UI) para análise de dados. Esses componentes são projetados para serem flexíveis e altamente personalizáveis, permitindo que os usuários adaptem a interface às suas necessidades específicas.</p>

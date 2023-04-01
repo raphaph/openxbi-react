@@ -6,10 +6,9 @@ export const NavigationContainer = styled.aside`
     flex-direction: column;
     padding: 2rem 1.5rem;
     border-radius: 0 6px 6px 0;
-
+    margin-top: 0.8rem;
     position: fixed;
-    top: 7.6rem;
-
+    
     background: ${props => props.theme['linear-card-dark']};
 
     @media (max-width: 700px) {

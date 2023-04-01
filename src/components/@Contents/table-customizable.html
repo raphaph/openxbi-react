@@ -1,6 +1,6 @@
 <!-- Componente OpenXBI, ajude-nos compartilhando nossa plataforma -->
 <!-- https://openxbi.com.br -->
-<div class='list'>
+<div class='table-activites'>
     <table>
         <thead>
           <tr> <!-- Colunas - tr é nosso cabeçalho, sendo cada th uma coluna-->
@@ -50,10 +50,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap');
 
 * {
-    margin: 0;
-    font-family: 'Inter', sans-serif;
+    margin: 0; /* Remove todas as margens iniciais */
+    font-family: 'Inter', sans-serif; /* Font do component, remova para usar a font nativa do PBI */
 }
 
+/* Barra de rolagem para a Openxbi, podem ser removidas ao utilizar no BI, se não houver rolagem horizontal */
 *::-webkit-scrollbar {
     height: 6px;
     background: rgb(221, 221, 221);
@@ -64,7 +65,8 @@
     border-radius: 5px;
 }
 
-.list {
+/* Tabela toda */
+.table-activites {
     flex: 1;
     overflow: auto;
     margin-top: .2rem;
@@ -89,24 +91,27 @@ th { /* th - é o header da tabela */
     width: auto;
 }
 
+/* Primeiro elemento das colunas */
 th:first-child {
-    border-top-left-radius: 8px;
+    border-top-left-radius: 8px; /* Aplica borda superior esquerdo na primeira coluna */
     padding-left: 1.5rem;
 }
 
+/* Ultimo elemento das colunas */
 th:last-child {
-    border-top-right-radius: 8px;
+    border-top-right-radius: 8px; /* Aplica borda superior direito na ultima coluna */
     padding-right: 1.5rem;
 }
 
-td { /* td - são as linhas da tabela */
+/* td - são as linhas da tabela */
+td {
     cursor: pointer;
     background-color: rgb(243, 243, 243); /* Cor das linhas */
     border-top: 1px solid rgb(221, 221, 221);  /* Cor das linhas separadoras*/
-    padding: 1rem;
-    font-size: 0.875rem;
-    line-height: 1.2;
-    width: auto;
+    padding: 1rem; /* preenchimento ao redor */
+    font-size: 0.875rem; /* font dos textos das linhas */
+    line-height: 1.2; /* Altura dos textos das linhas */
+    width: auto; /* largura automática das linhas */
 }
 
 td:first-child {
@@ -117,6 +122,7 @@ td:last-child {
     padding-right: 1.5rem;
 }
 
+/* Todas linhas - ao passar o mouse */
 td:hover {
     background: rgb(219, 219, 219); /* Cor ao passar o mouse */
     z-index: 1;

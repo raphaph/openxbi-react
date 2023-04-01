@@ -37,11 +37,13 @@ export const defaultTheme = {
   'gray-800': '#202024',
   'gray-900': '#141414',
   'bg-gray': '#050506',
+  'bg-home-dark': 'linear-gradient(-45deg, rgba(120, 0, 239, .5) 10%, #050506 90%)',
+  'bg-home-light': '#f4f4f4',
   offblack: '#080808',
   black: '#000',
   'border-light': 'rgb(220,220,220)',
   'border-dark': 'rgb(22,22,22)',
   'linear-card-dark': 'linear-gradient(-45deg, rgba(0, 50, 200, 0.1), rgba(120, 0, 239, 0.1))',
-  'linear-card-light': 'linear-gradient(-15deg, rgba(52, 22, 227, 0.1), rgba(255, 140, 0, 0.1))'
+  'linear-card-light': 'linear-gradient(-15deg, rgba(52, 22, 227, 0.1), rgba(255, 140, 0, 0.2))'
 
 } as const

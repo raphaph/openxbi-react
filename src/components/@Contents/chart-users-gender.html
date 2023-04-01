@@ -1,29 +1,31 @@
 <!-- Componente OpenXBI, ajude-nos compartilhando nossa plataforma -->
 <!-- https://openxbi.com.br -->
-<div class='chart-bar'>
+<div class='chart-bar-container'>
     <link rel='stylesheet' href='https://fonts.googleapis.com/icon?family=Material+Icons:FILL'>
     <strong class='title'>Users by gender identity</strong> <!-- Título do gráfico -->
-    <div class='mid'>
+    <div class='chart-area-total'>
         <div class='y-axis'>
             <!-- Valores do eixo vertical Y -->
             <small>100%</small>
             <small>50%</small>
             <small>0%</small>
         </div>
-        <div class='chart-area'>
+        <div class='chart-bar-area'>
             <div class='bar' id='bar1' style='height: calc(185px * 0.59)'> <!-- 0.59 altura da barra 1 -->
                 <p>59%</p> <!-- Texto de exibição na barra 1 -->
-                
             </div>
             <div class='bar' id='bar2' style='height: calc(185px * 0.41)'>  <!-- 0.41 altura da barra 2-->
                 <p>41%</p> <!-- Texto de exibição na barra 2 -->
-                
             </div>
         </div>
     </div>
     <div class='footer'>
-        <p title='female' ><span class='material-icons' style='font-size:1.2rem; font-weight: bold;'>female</span></p>
-        <p title='male'><span class='material-icons' style='font-size:1.2rem; font-weight: bold;'>male</span></p>
+        <p title='female'>
+            <span class='material-icons' style='font-size:1.2rem; font-weight: bold;'>female</span>
+        </p>
+        <p title='male'>
+            <span class='material-icons' style='font-size:1.2rem; font-weight: bold;'>male</span>
+        </p>
     </div>
 </div>
 
@@ -45,17 +47,16 @@
     margin-bottom: 1rem; /* espaço entre título e início da área centrarl */
 }
 
-.chart-bar {
+.chart-bar-container {
     padding: 1rem;
     margin: .2rem;
-
     background: white;
     box-shadow: 0 0 2px 1px gainsboro; /* Sombra do gráfico todo */
     width: var(--width-chart);
     border-radius: 6px; /* Raio da borda do gráfico todo */
 }
 
-.chart-bar, .y-axis {
+.chart-bar-container, .y-axis {
     display: flex; 
     flex-direction: column;
 }
@@ -67,12 +68,13 @@
     text-align: center;
 }
 
-.mid {
+.chart-area-total {
     display: flex;
     height: var(--height-area-chart); /* altura da área de exibição do gráfico, usa variável definida no inicio */
 }
 
-.chart-area {
+/* Linha lateral e inferior do gráfico */
+.chart-bar-area {
     align-items: end;
     width: var(--width-chart-area);
     border-bottom: 1px solid gainsboro;
@@ -101,15 +103,14 @@
     background: linear-gradient(#3f17b1, #5f27f8); /* cor da barra 2 */
 }
 
-.chart-area, .footer {
+.chart-bar-area, .footer {
     display: flex;
     justify-content: space-around;
 }
 
 .footer {
-    font-weight: 500;
-    margin-top: .5rem;
-    margin-left: calc(var(--wdt-distance) + 5px);
+    font-weight: 500; /* Peso da font */
+    margin: .5rem calc(var(--wdt-distance) + 5px) 0; /* Margem */
     width: var(--width-chart-area);
 }
 

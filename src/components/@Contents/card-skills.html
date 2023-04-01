@@ -1,30 +1,30 @@
 <!-- Componente OpenXBI, ajude-nos compartilhando nossa plataforma -->
 <!-- https://openxbi.com.br -->
-<div class='card'>
-    <div class='header'>Skills</div>
+<div class='card-skills'>
+    <div class='header'>Skills knowledge</div>
     <div class='body'> <!-- Abaixo a estrutura se repete -->
-      <div class='skill'>
+      <div class='skill-wrapper'>
         <div class='skill-name'>DAX</div> <!--Nome da Skill-->
         <div class='skill-level'> 
           <div class='skill-percent' style='width: 90%'></div> <!-- % de conhecimento barra -->
         </div>
         <div class='skill-percent-number'>90%</div> <!-- % de conhecimento valor de exibição -->
       </div>
-      <div class='skill'>
+      <div class='skill-wrapper'>
         <div class='skill-name'>PQuery M</div>
         <div class='skill-level'>
           <div class='skill-percent' style='width: 80%'></div>
         </div>
         <div class='skill-percent-number'>80%</div>
       </div>
-      <div class='skill'>
+      <div class='skill-wrapper'>
         <div class='skill-name'>HTML</div>
         <div class='skill-level'>
           <div class='skill-percent' style='width: 80%'></div>
         </div>
         <div class='skill-percent-number'>80%</div>
       </div>
-      <div class='skill'>
+      <div class='skill-wrapper'>
         <div class='skill-name'>CSS</div>
         <div class='skill-level'>
           <div class='skill-percent' style='width: 60%'></div>
@@ -36,55 +36,59 @@
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap');
 
-.card {
+.card-skills {
   font-family: 'Inter', sans-serif; /* Font Inter, remova para exibir font nativa do PowerBI - SegoeUI */
-  width: 290px;
-  background-color: #fff;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  width: 290px; /* Largura do card */
+  background-color: #fff; /* Cor de fundo do card */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra do card */
   border-radius: 10px;
   overflow: hidden;
 }
 
 .header {
-  background-color: #f7f7f7;
-  color: #000;
-  padding: 15px;
-  text-align: left;
-  font-size: 16px;
-  font-weight: bold;
+  background-color: #f7f7f7; /* Cor de fundo do cabeçalho */
+  color: #000; /* Cor da font */
+  padding: 1rem; /* Preenchimento ao redor do título */
+  text-align: left; /* Alinha o texto a esquerda */
+  font-size: 1rem; /* Tamanho da font */
+  font-weight: bold; /* Negrito */
 }
 
 .body {
-  padding: 20px;
+  padding: 20px; /* Preenchimento ao redor das barras e skills name*/
 }
 
-.skill {
-  display: flex;
-  align-items: center;
-  margin-bottom: 20px;
+/* Cada conjunto de skills */
+.skill-wrapper {
+  display: flex; 
+  align-items: center; 
+  margin-bottom: 1rem; /* Margem inferior */
 }
 
+/* Nome das skills */
 .skill-name {
   width: 80px;
-  font-size: .875rem;
+  font-size: .875rem; /* Tamanho da font */
 }
 
+/* barras de fundo 100% */
 .skill-level {
-  width: 140px;
-  height: 10px;
-  background-color: #ddd;
-  border-radius: 10px;
+  width: 140px; /* Largura da barra */
+  height: 10px; /* Algura da barra */
+  background-color: #ddd; /* Cor da barra de fundo */
+  border-radius: 10px; /* Raio da borda */
   overflow: hidden;
-  margin-left: 20px;
+  margin-left: 15px; /* Margin esquerda */
 }
 
 .skill-percent {
   background: linear-gradient(45deg, #2fb3d8, #29a2e3);
-  height: 100%;
+  height: 100%; /* altura da barra de skill */
 }
 
+/* valor de % de habilidade exibido */
 .skill-percent-number {
-  margin-left: 20px;
-  font-size: 0.875rem;
+  margin-left: 20px; /* margin esquerda */
+  font-size: 0.875rem; /* tamanho da font */
 }
 </style>

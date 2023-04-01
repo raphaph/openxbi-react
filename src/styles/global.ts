@@ -16,7 +16,7 @@ export const GlobalStyle = createGlobalStyle<ThemeProps>`
 
     :focus {
         outline: 0;
-        box-shadow: 0 0 0 1px ${(props) => props.theme['blue-turq']};
+        /* box-shadow: 0 0 0 1px ${(props) => props.theme['blue-turq']}; */
     }
 
     body {

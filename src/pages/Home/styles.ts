@@ -13,7 +13,7 @@ export const MainContainer = styled.main<ThemeProps>`
   height: auto;
   position: relative;
   background: ${(props) =>
-    props.variant === 'light' ? props.theme.offwhite : props.theme['bg-gray']};
+    props.variant === 'light' ? props.theme['bg-home-light'] : props.theme['bg-home-dark']};
   transition: background 300ms;
 
   background-size: 100%;

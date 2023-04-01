@@ -2,6 +2,7 @@ import {
   ContactInfo,
   FooterContainer,
   FooterContents,
+  FooterMid,
   RightSideContent,
 } from './styles'
 import logoDark from '../../assets/logo-dark.svg'
@@ -49,7 +50,11 @@ export function Footer() {
             Discord
           </a>
         </ContactInfo>
-        <a href="https://www.buymeacoffee.com/raphaph" target={'_blank'} rel="noreferrer"><img src="https://img.buymeacoffee.com/button-api/?text=Buy me a coffee&emoji=&slug=raphaph&button_colour=FF8C00&font_colour=000000&font_family=Inter&outline_colour=000000&coffee_colour=ffffff" /></a>
+        <FooterMid>
+          <a href="https://www.buymeacoffee.com/raphaph" target={'_blank'} rel="noreferrer"><img src="https://img.buymeacoffee.com/button-api/?text=Buy me a coffee&emoji=&slug=raphaph&button_colour=FF8C00&font_colour=000000&font_family=Inter&outline_colour=000000&coffee_colour=ffffff" /></a>
+          <a href="mailto:raphael@openxbi.com.br">Contato</a>
+          <p>Entre em contato para dúvidas, sugestões, bugs, envio ou ideias de componentes.</p>
+        </FooterMid>
         <RightSideContent variant={themeValue}>
 
           <a href="#" aria-label="Subir até o topo da página">

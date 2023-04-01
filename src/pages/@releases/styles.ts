@@ -54,6 +54,8 @@ export const ReleasesText = styled.div`
     p {
         margin-top: 2rem;
         line-height: 1.8;
+        font-size: 1rem;
+        font-weight: 600;
     }
 
     h2 {

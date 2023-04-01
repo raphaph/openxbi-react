@@ -12,8 +12,8 @@ export function Principles() {
         useContext(AppContext)
 
     return (
-        <PrinciplesContainer>
-            <main>
+        <PrinciplesContainer variant={themeValue}>
+            <main >
                 <PrinciplesTitle>
                     <h2>Princípios</h2>
                     <p>Lembre-se que, agregar valor vai muito além da estilização, nossos componentes são opcionais,<br />

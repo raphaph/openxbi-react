@@ -4,7 +4,7 @@ interface ThemeProps {
     variant?: 'light' | 'dark' | null
 }
 
-export const PrinciplesContainer = styled.main`
+export const PrinciplesContainer = styled.main<ThemeProps>`
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -12,9 +12,15 @@ export const PrinciplesContainer = styled.main`
     background: linear-gradient(
                 -15deg,
                 rgba(52, 22, 227, 0.1) 60%,
-                rgba(255, 140, 0, 0.1)) 40%;
+                rgba(255, 140, 0, 0.2)) 40%;
 
     padding: 6rem .5rem 8rem .5rem;
+
+    border-top: 1px solid
+    ${(props) =>
+        props.variant === 'light'
+            ? props.theme['border-light']
+            : props.theme['border-dark']};
 
     main {
         max-width: 1500px;

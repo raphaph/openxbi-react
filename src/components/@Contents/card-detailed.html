@@ -3,23 +3,31 @@
 <div class='card-container'>
     <link rel='stylesheet' href='https://fonts.googleapis.com/icon?family=Material+Icons:FILL'>
     <div class='card-info'>
-        <strong>Amout Received <!-- Título do card -->
+        <strong>
+            Amout Received <!-- Título do card -->
         </strong>
-        <p>$5.689.988,00</p> <!-- Valor total -->
+        <p>
+            $5.689.988,00 <!-- Valor total -->
+        </p> 
         <small>hover me</small>
     </div>
     <div class='card-hidden'>
-        <p><span class='material-icons' style='font-size:1rem; font-weight: bold;'>swap_vert</span>
-            <strong> transactions:</strong> 4569</p>  <!-- Quantidade de transações -->
-        <p><span class='material-icons' style='font-size:1rem; font-weight: bold; color: green'>expand_less</span>
-            <strong> max:</strong> $84.234,09</p> <!-- Valor máximo -->
-        <p><span class='material-icons' style='font-size:1rem; font-weight: bold; color: red'>expand_more</span>
-            <strong> min:</strong> $1.545,00</p> <!-- Valor mínimo -->
-        <p><span class='material-icons' style='font-size:1rem; font-weight: bold;'>percent</span>
-            <strong> annual target:</strong> 59%</p> <!-- Edite a meta -->
-        <p><span class='material-icons' style='font-size:1rem; font-weight: bold;'>calendar_month</span>
-            <strong> last month:</strong> $ 12.589.099,10</p> <!-- Valor mês anterior -->
-    </div>
+        <p><span class='material-icons' style='font-size:1rem; font-weight: bold;'>swap_vert</span> <!--icone-->
+            <strong> transactions:</strong> 4569 <!-- Quantidade de transações -->
+        </p>  
+        <p><span class='material-icons' style='font-size:1rem; font-weight: bold; color: green'>expand_less</span><!--icone-->
+            <strong> max:</strong> $84.234,09 <!-- Valor máximo -->
+        </p> 
+        <p><span class='material-icons' style='font-size:1rem; font-weight: bold; color: red'>expand_more</span><!--icone-->
+            <strong> min:</strong> $1.545,00 <!-- Valor mínimo -->
+        </p> 
+        <p><span class='material-icons' style='font-size:1rem; font-weight: bold;'>percent</span><!--icone-->
+            <strong> annual target:</strong> 59% <!-- Edite a meta -->
+        </p> 
+        <p><span class='material-icons' style='font-size:1rem; font-weight: bold;'>calendar_month</span><!--icone-->
+            <strong> last month:</strong> $ 12.589.099,10 <!-- Valor mês anterior -->
+        </div>
+        </p> 
 </div>
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap');
@@ -63,23 +71,22 @@
 }
 
 .card-hidden {
-    position: absolute;
-    margin: 0;
-    height: auto;
+    position: absolute; /* Position absolute, flexibiliza a posição do card oculto */
+    margin: 0; 
+    height: auto; /* Define a altura do card oculto em automático */
     padding: 0 1.5rem;
 
     flex-direction: column;
     align-items:flex-start;
     justify-content: flex-start;
     
-    opacity: 0;
+    opacity: 0; /* Esconde o card com opacidade 0 */
     
     background: white; /* Background do card tooltip */
-    border-radius: 11px;
+    border-radius: 11px; /* Raio da borda do card oculto */
     border: 1px solid rgba(110, 110, 110, 0.1);
     box-shadow: 1px 1px 2px 1px rgba(110, 110, 110, 0.1);
 
-    transform: translateY(0px);
     transition: 300ms; /* Tempo de transição do card secundário */
 }
 
@@ -92,19 +99,12 @@
     animation-fill-mode: forwards;
 }
 
+/* Animação de entrada do card oculto */
 @keyframes fadeUp {
-    0% {
-        opacity: 0;
-    }
-
-    50% {
-        opacity: 0;
-    }
-
-    100% {
-        opacity: 1;
-        transform: translateY(130px);
-    }
+    0% { opacity: 0 } /* inicia em zero e se mantem até 50% */
+    50% { opacity: 0 }
+    100% { opacity: 1; transform: translateY(130px) } 
+    /* ao final do tempo o card estará deslocado na posição indicada e agora visivel */
 }
 
 </style>

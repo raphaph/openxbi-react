@@ -22,17 +22,19 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    
 }
 
+/* Camadas */
 .input {
     cursor: pointer;
-    width: 150px;
+    width: 150px; /* Largura das camadas */
     height: 40px;
     position: relative;
     padding: 10px;
-    border: 0.1px solid white;
-    font-family: 'Inter', sans-serif;
-    font-weight: 400;
+
+    font-family: 'Inter', sans-serif; /* Font do gráfico */
+    font-weight: 400; /* Peso da font das camadas */
 }
 
 .wrapper {
@@ -67,8 +69,7 @@
 /* Repita o estilo da legenda para cada legenda numerada */
 .legends p:nth-child(1)::before {
     content: '';
-    color: transparent;
-    background: #b26200;
+    background: #b26200; /* Cor da legenda 1, repete abaixo */
     padding: 0 .4rem;
     margin-right: .3rem;
     border-radius: 50%;

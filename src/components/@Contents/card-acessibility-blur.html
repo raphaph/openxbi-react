@@ -1,6 +1,6 @@
-<!-- Componente OpenXBI, ajude-nos compartilhando nossa plataforma -->
+<!-- Componente OpenXBI, ajude-nos a compartilhar conhecimento -->
 <!-- https://openxbi.com.br -->
-<div class='container'>
+<div class='card-container'>
     <div class='card'>
         <strong>Net value</strong>
         <p> $5.958.598,10</p>
@@ -17,7 +17,7 @@
 <style>
 
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap');
-.container {
+.card-container {
   display: flex;
   flex-direction: column; /*Mude aqui para row, ou simplesmente apague esta linha para deixar alinha horizontalmente*/
   align-items: center;
@@ -48,14 +48,14 @@
   margin: auto;
 }
 
-.container:hover .card {
+.card-container:hover .card {
   filter: blur(2px); /* força do ofuscamento */
   opacity: .7; /* opacidade dos cards ofuscados */
   transform: scale(.98);
   box-shadow: none;
 }
 
-.container:hover .card:hover {
+.card-container:hover .card:hover {
   transform: scale(1);
   filter: blur(0px);
   opacity: 1;

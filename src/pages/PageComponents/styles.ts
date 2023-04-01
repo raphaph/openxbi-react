@@ -68,7 +68,7 @@ export const FilterSection = styled.section<ThemeProps>`
   form {
 
     display: grid;
-    grid-template-columns: repeat(8, 1fr);
+    grid-template-columns: repeat(9, 1fr);
     gap: .1rem;
 
     label {
@@ -195,7 +195,7 @@ export const FooterCardContent = styled.footer<ThemeProps>`
       border-radius: 6px;
 
       font-size: 0.875rem;
-      font-weight: 600;
+      font-weight: 500;
       text-align: center;
 
       padding: 0.25rem;
@@ -205,8 +205,9 @@ export const FooterCardContent = styled.footer<ThemeProps>`
       transition: all 0.3s;
 
       &:hover {
-        opacity: 0.7;
-        box-shadow: 0 0 5px 1px ${(props) => props.theme['strong-orange']};
+        opacity: 1;
+        box-shadow: 0 0 2px 1px ${(props) => props.theme['strong-orange']};
+        background: ${props => props.theme.white};
       }
 
       &:active {

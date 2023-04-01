@@ -7,9 +7,10 @@ interface ThemeProps {
 export const ProfileContainer = styled.div<ThemeProps>`
     display: flex;
     height: auto;
-    background: ${props => props.variant === 'light' ? props.theme.offwhite : props.theme.offblack};
+    background: ${(props) =>
+        props.variant === 'light' ? props.theme['bg-home-light'] : props.theme['bg-home-dark']};
     
-
+        
     @media (max-width: 700px) {
         display: flex;
         flex-direction: column;
@@ -21,7 +22,6 @@ export const LeftSideProfileAvatar = styled.div`
 
     img {
         border-radius: 8px;
-        
         box-shadow: 0 0 1px 2px ${props => props.theme.primary};
     }
 

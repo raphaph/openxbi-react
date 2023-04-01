@@ -22,10 +22,6 @@ export const CookiesContainer = styled.div`
         color: ${props => props.theme['gray-600']}
     }
 
-    li {
-        margin-bottom: 2rem;
-    }
-
     button {
         cursor: pointer;
         position: absolute;
