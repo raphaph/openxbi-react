@@ -64,7 +64,6 @@ export function ClickedComponent() {
         setContentData(data)
         setLikeComponent(data.likes)
       })
-
   }
 
   useEffect(() => {
@@ -86,6 +85,8 @@ export function ClickedComponent() {
 
     // API de inicio, traz os detalhes sobre os cards
     FetchComponent()
+
+
 
   }, [lastClicked, apiKey])
 
@@ -113,7 +114,6 @@ export function ClickedComponent() {
             <button onClick={() => LikeLike(contentData.id, contentData.likes + 1)}>
               {likeComponent} <Heart size={20} weight="fill" color='red' />
             </button>
-
           </CreatorInfoLike>
         </SingleComponentContainer>
         <SyntaxContainer>

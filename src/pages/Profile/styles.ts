@@ -58,7 +58,7 @@ export const RightSideProfileFavorites = styled.main<ThemeProps>`
         props.variant === 'light' ? props.theme['border-light'] : props.theme['border-dark']};
         border-radius: 10px;
 
-        box-shadow: inset 0 0 22px 11px #070707;
+        
 
         p {
             margin: 2rem 0;

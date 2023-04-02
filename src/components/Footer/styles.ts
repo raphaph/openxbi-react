@@ -34,7 +34,6 @@ export const FooterContents = styled.div`
 export const ContactInfo = styled.div<ThemeProps>`
   display: flex;
   flex-direction: column;
-  justify-content: center;
 
   strong {
     margin: 0.5rem 0;
@@ -110,20 +109,25 @@ export const RightSideContent = styled.div<ThemeProps>`
     font-size: 14px;
     font-weight: bold;
 
+    a {
+      text-decoration: none;
+    } 
+
+    color: black;
+
     transition: all 300ms;
     cursor: pointer;
-
+    
     border: 0;
     background:  ${props => props.variant === 'light' ? props.theme.primary : props.theme.secondary};
-    color: ${props => props.variant === 'light' ? props.theme.black : props.theme.white}; 
+   
     
     &:hover {
-      transform: scale(0.96);
-      box-shadow: 0 0 4px 1px ${props => props.variant === 'light' ? props.theme.primary : props.theme.secondary};
+      transform: scale(0.98);
+      background: white;
+      box-shadow: 0 0 2px 1px ${props => props.variant === 'light' ? props.theme.primary : props.theme.secondary};
     }
   }
 
-  a {
-    text-decoration: none;
-  }   
+    
 `

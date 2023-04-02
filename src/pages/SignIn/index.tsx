@@ -37,7 +37,7 @@ export function SignIn() {
                             .then(response => {
                                 if (response.data.length !== 1) {
                                     const data = {
-                                        uuid: result.user.uid, // exemplo de UUID
+                                        uuid: result.user.uid,
                                         display_name: result.user.displayName,
                                         email: result.user.email,
                                         provider: result.providerId,
@@ -53,6 +53,9 @@ export function SignIn() {
                                         }
                                     })
                                 }
+                            })
+                            .catch((error) => {
+                                console.log(error)
                             })
 
                         navigate("/");
@@ -88,7 +91,7 @@ export function SignIn() {
                             .then(response => {
                                 if (response.data.length !== 1) {
                                     const data = {
-                                        uuid: result.user.uid, // exemplo de UUID
+                                        uuid: result.user.uid,
                                         display_name: result.user.displayName,
                                         email: result.user.email,
                                         provider: result.providerId,
@@ -97,7 +100,6 @@ export function SignIn() {
                                         created_at: new Date().toISOString()
                                     };
 
-                                    console.log(data)
                                     axios.post('https://uxbi.com.br/api/accounts/', data, {
                                         headers: {
                                             'Content-Type': 'application/json',
@@ -105,6 +107,9 @@ export function SignIn() {
                                         }
                                     })
                                 }
+                            })
+                            .catch((error) => {
+                                console.log(error)
                             })
 
                         navigate("/");

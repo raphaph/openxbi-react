@@ -51,6 +51,7 @@ export function Footer() {
           </a>
         </ContactInfo>
         <FooterMid>
+          <p>Ajude a manter a plataforma ativa, e crescer cada vez mais. 🥰</p>
           <a href="https://www.buymeacoffee.com/raphaph" target={'_blank'} rel="noreferrer"><img src="https://img.buymeacoffee.com/button-api/?text=Buy me a coffee&emoji=&slug=raphaph&button_colour=FF8C00&font_colour=000000&font_family=Inter&outline_colour=000000&coffee_colour=ffffff" /></a>
           <a href="mailto:raphael@openxbi.com.br">Contato <Envelope size={20} weight='fill' /> </a>
           <p>Entre em contato para dúvidas, sugestões, bugs, envio ou ideias de componentes.</p>

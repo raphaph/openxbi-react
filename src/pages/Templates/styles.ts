@@ -29,19 +29,6 @@ export const TemplatesContainer = styled.main<ThemeProps>`
     props.variant === 'light' ? props.theme.offwhite : props.theme['bg-gray']};
 
   z-index: 1;
-
-  &::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-image: url('src/assets/mesh.svg');
-    z-index: -1;
-    opacity: 0.1;
-    /* Aplica um filtro de desfoque */
-  }
 `
 
 export const TemplatesContents = styled.header`
@@ -133,7 +120,8 @@ export const CardFooter = styled.div`
     border: 0;
     border-radius: 6px;
     transition: all 0.3s;
-
+    font-weight: 500;
+    
     a {
       display: flex;
       align-items: center;
@@ -147,7 +135,7 @@ export const CardFooter = styled.div`
     background: ${(props) => props.theme['strong-orange']};
 
     &:hover {
-      opacity: 0.7;
+      background: white;
       box-shadow: 0 0 5px 1px ${(props) => props.theme['strong-orange']};
     }
 

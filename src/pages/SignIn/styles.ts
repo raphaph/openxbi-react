@@ -42,7 +42,7 @@ export const SignInContainer = styled.main<ThemeProps>`
     }
 
     button:nth-child(5) {
-        background: ${props => props.theme["bg-gray"]};
+        background: ${props => props.theme.offblack};
         color: white;
 
         &:hover {

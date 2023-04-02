@@ -29,19 +29,6 @@ export const ClickedBodyContainer = styled.main<ThemeProps>`
       : props.theme['gray-900']};
 
   padding: 2rem 0;
-
-  &::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-image: url('src/assets/mesh.svg');
-    z-index: -1;
-    opacity: 0.1;
-    /* Aplica um filtro de desfoque */
-  }
 `
 
 export const ClickedMainContent = styled.div<ThemeProps>`

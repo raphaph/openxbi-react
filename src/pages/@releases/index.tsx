@@ -23,17 +23,18 @@ export function Releases() {
                 <ReleasesText>
                     <h1>Releases</h1>
                     {versions.map((version) => {
-                        return (<>
-                            <h2>{version.release}</h2>
-                            <p>{version.description} <strong>({version.version})</strong></p>
-                            <ul>
-                                {version.marks.map(mark => {
-                                    return (
-                                        <li>{mark.mark}</li>
-                                    )
-                                })}
-                            </ul>
-                        </>)
+                        return (
+                            <div key={version.version}>
+                                <h2>{version.release}</h2>
+                                <p>{version.description} <strong>({version.version})</strong></p>
+                                <ul>
+                                    {version.marks.map(mark => {
+                                        return (
+                                            <li>{mark.mark}</li>
+                                        )
+                                    })}
+                                </ul>
+                            </div>)
                     })}
                 </ReleasesText>
             </ReleasesContent>
