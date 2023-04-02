@@ -21,21 +21,6 @@ export function Templates() {
 
   const templates: any = templatesData.templates
 
-  function handleDownload(url: string, fileName: string) {
-    fetch(url)
-      .then(response => response.blob())
-      .then(blob => {
-        const href = window.URL.createObjectURL(blob);
-        const link = document.createElement('a');
-        link.href = href;
-        link.download = fileName;
-        document.body.appendChild(link);
-        link.click();
-        document.body.removeChild(link);
-        window.URL.revokeObjectURL(href);
-      });
-  }
-
   return (
     <TemplatesContainer variant={themeValue}>
       <TemplatesContents>
@@ -53,9 +38,10 @@ export function Templates() {
                 </a>
                 <CardFooter>
                   <strong>{template.name}</strong>
-                  <button onClick={() => handleDownload(template.path, template.download)}>
-                    <DownloadSimple />
-                    Download
+                  <button>
+                    <a href={template.download} target={'_blank'}>
+                      <DownloadSimple />
+                      Download</a>
                   </button>
                 </CardFooter>
               </CardMap>
