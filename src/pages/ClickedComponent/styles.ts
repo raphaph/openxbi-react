@@ -7,7 +7,7 @@ interface ThemeProps {
 
 export const ClickedBodyContainer = styled.main<ThemeProps>`
   display: flex;
-  flex-direction: column;
+
   align-items: center;
 
   z-index: 1;

@@ -5,8 +5,10 @@ import { AppContext } from '../../context/AppContext'
 import { HeaderContainer, HeaderSideRight, MenuButton, MenuVertical, ProfileModal, SeparatorHorizontal, SeparatorRightSide, SunButton, UserAvatarName } from './styles'
 import { auth } from '../../services/firebase'
 import { GoogleAuthProvider, GithubAuthProvider, signOut } from 'firebase/auth'
-import boxDark from '../../assets/logo-dark.svg'
-import boxLight from '../../assets/logo-light.svg'
+import logoDark from '../../assets/logo-dark.svg'
+import logoLight from '../../assets/logo-light.svg'
+import boxDark from '../../assets/box-dark.svg'
+import boxLight from '../../assets/box-light.svg'
 
 export function Header() {
 
@@ -68,12 +70,12 @@ export function Header() {
       <NavLink to="/">
         <img
           src={themeValue === 'dark' ?
-            boxDark : boxLight}
+            logoDark : logoLight}
           alt=""
         />
         <img
-          src={`/src/assets/${themeValue === 'dark' ?
-            'box-dark.svg' : 'box-light.svg'}`}
+          src={themeValue === 'dark' ?
+            boxDark : boxLight}
           alt=""
         />
       </NavLink>
