@@ -18,10 +18,9 @@ import { NavLink } from 'react-router-dom'
 import axios from 'axios'
 
 export function ClickedComponent() {
-  const [data, setData] = useState([]);
   const lastClicked: any = localStorage.getItem('lastClicked')
   const { themeValue, contentData, setContentData, user } = useContext(AppContext)
-  const apiKey = import.meta.env.AUTH_KEY
+  const apiKey = import.meta.env.VITE_AUTH_KEY
   const [codigo, setCodigo] = useState('')
   const clickedName = lastClicked
     .slice(26, -5)
@@ -39,7 +38,7 @@ export function ClickedComponent() {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
-          'Authorization': `Bearer ${apiKey}`,
+          'api-key': `${apiKey}`,
         },
         body: JSON.stringify({
           likes: newlike
@@ -57,7 +56,7 @@ export function ClickedComponent() {
   async function FetchComponent() {
     await axios.get(`https://uxbi.com.br/api/contents/search/${clickedName}`, {
       headers: {
-        Authorization: `Bearer ${apiKey}`,
+        'api-key': `${apiKey}`,
       },
     })
       .then((response) => response.data)

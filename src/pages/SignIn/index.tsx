@@ -26,8 +26,14 @@ export function SignIn() {
                         setUser(result.user);
                         setProvider(result.providerId);
 
+                        const apikey = import.meta.env.VITE_AUTH_KEY
 
-                        axios.get(`http://localhost:3333/accounts/${result.user.email}`)
+                        axios.get(`https://uxbi.com.br/api/accounts/${result.user.email}`, {
+                            headers: {
+                                'Content-Type': 'application/json',
+                                "api-key": `${apikey}`,
+                            }
+                        })
                             .then(response => {
                                 if (response.data.length !== 1) {
                                     const data = {
@@ -40,9 +46,10 @@ export function SignIn() {
                                         created_at: new Date().toISOString()
                                     };
 
-                                    axios.post('http://localhost:3333/accounts/', data, {
+                                    axios.post('https://uxbi.com.br/api/accounts/', data, {
                                         headers: {
-                                            'Content-Type': 'application/json'
+                                            'Content-Type': 'application/json',
+                                            "api-key": `${apikey}`,
                                         }
                                     })
                                 }
@@ -71,7 +78,14 @@ export function SignIn() {
                         setUser(result.user);
                         setProvider(result.providerId);
 
-                        axios.get(`http://localhost:3333/accounts/${result.user.email}`)
+                        const apikey = import.meta.env.VITE_AUTH_KEY
+
+                        axios.get(`https://uxbi.com.br/api/accounts/${result.user.email}`, {
+                            headers: {
+                                'Content-Type': 'application/json',
+                                "api-key": `${apikey}`,
+                            }
+                        })
                             .then(response => {
                                 if (response.data.length !== 1) {
                                     const data = {
@@ -84,9 +98,10 @@ export function SignIn() {
                                         created_at: new Date().toISOString()
                                     };
 
-                                    axios.post('http://localhost:3333/accounts/', data, {
+                                    axios.post('https://uxbi.com.br/api/accounts/', data, {
                                         headers: {
-                                            'Content-Type': 'application/json'
+                                            'Content-Type': 'application/json',
+                                            "api-key": `${apikey}`,
                                         }
                                     })
                                 }

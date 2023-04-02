@@ -38,7 +38,7 @@ export function PageComponents() {
     if (all === 'all') {
       await axios.get('https://uxbi.com.br/api/contents', {
         headers: {
-          Authorization: `Bearer ${apiKey}`,
+          "api-key": `${apiKey}`,
         },
       })
         .then((response) => response.data.contents.sort())
@@ -48,7 +48,7 @@ export function PageComponents() {
     } else {
       await axios.get(`https://uxbi.com.br/api/contents/type/${filter}`, {
         headers: {
-          Authorization: `Bearer ${apiKey}`,
+          "api-key": `${apiKey}`,
         },
       })
         .then((response) => response.data.sort())
