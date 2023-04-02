@@ -1,0 +1,166 @@
+<!-- Componente OpenXBI, ajude-nos compartilhando nossa plataforma -->
+<!-- https://openxbi.com.br -->
+<div class='card-container'>
+    <div class='card-content'>
+        <div class='received-gross'> <!-- Título recebido bruto -->
+            <strong>Received gross</strong>
+            <p>$ 25.459.234,00</p> <!-- Valor do recebido bruto -->
+        </div>
+        <strong class='title-about-categorys'>Received by category</strong>
+        <div class='category-name-value'>
+            <strong>T-shirt</strong>
+            <p>$ 10.183.693,60</p> <!-- Valor em T-Shirt -->
+        </div>
+        <div class='bar-progress1'>
+            <div class='back-bar'>_</div>
+            <div class='front-bar'>35%</div> <!-- % em T-Shirt -->
+        </div>
+        <div class='category-name-value'>
+            <strong>Pants</strong>
+            <p>$ 12.729.617,00</p> <!-- Valor em Pants -->
+        </div>
+        <div class='bar-progress2'>
+            <div class='back-bar2'>_</div>
+            <div class='front-bar2'>50%</div>  <!-- % em Pants -->
+        </div>
+    </div>
+</div>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap');
+
+
+* {
+    font-family: 'Inter', sans-serif; /* Font do component, remova para usar a font nativa do PBI */
+    margin: 0; /* Remove todas as margens iniciais */
+    box-sizing: border-box;
+}
+
+
+.card-container {
+    align-items: center;
+    height: auto; /* Altura do card todo */
+}
+
+
+.card-container,
+.card-content,
+.received-gross {
+    display: flex;
+    justify-content: center;
+}
+
+
+.card-content {   
+    align-items: flex;
+    flex-direction: column;
+    padding: 1rem;
+    margin: .5rem;
+    height: auto;
+    width: 250px;
+    
+    background: white; /* Background do card principal */
+    
+    border-radius: 11px; /* Raio da borda */
+    border: 1px solid rgba(136, 136, 136, 0.1);
+    box-shadow: 1px 1px 2px 1px rgba(133, 133, 133, 0.1);
+}
+
+
+/* received gross styles */
+
+
+.received-gross {
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+
+.received-gross p {
+    margin: .3rem 0 1rem 0; /* margens em volta do valor de received gross */
+}
+
+
+/* Category */
+
+
+.title-about-categorys {
+    font-size: .875rem; 
+    color: rgb(1, 3, 116); /* Cor do Título das categorias */
+    margin-bottom: .5rem;
+}
+
+
+.category-name-value {
+    display: flex;
+    justify-content: space-between; /* Define um espaço entre os dois elementos na tag */
+    margin-bottom: .5rem; /* Margin abaixo do nome da categoria */
+}
+
+
+.category-name-value p {
+    font-size: 0.875rem; /* Tamanho da font do valor a frente da categoria */
+}
+
+
+.bar-progress1, .bar-progress2 {
+    display: flex;
+    margin-bottom: 1rem; /* Margem abaixo de cada barra */
+}
+
+
+/* barras de fundo */
+
+
+.back-bar, 
+.back-bar2 {
+    --bar-width: 216px;
+    color: transparent;
+    background: rgb(255, 237, 237); /* Cor de fundo da barra */
+    max-width: var(--bar-width); /* largura máxima da barra, depende da variavel ali em cima */
+    width: 100%; /* faz com que as barras ocupem 100% do espaço disponivel */
+    border-radius: 8px;
+}
+
+
+/* estiliza as duas barras de valores */
+
+
+.front-bar, 
+.front-bar2 {
+    position: absolute;
+    font-size: .7rem; /* Tamanho da fonte da porcentagem */
+    margin: .2rem; /* margem ao redor das barras */
+    text-align: center; /* alinha as % ao centro das barras */
+    color: white; /* Cor da porcentagem */
+    border-radius: 8px;
+    animation-fill-mode: forwards; 
+    /* forwards - define que a animação deve permanecer com a estilização do final da animação */
+    animation-delay: 1s; /* delay para iniciar a animação */
+}
+
+
+.front-bar {
+    animation: anim1 1.5s forwards; /* 1.5s é o tempo da animação */
+    background: #29a2e3; /* Cor da barra 1 */
+}
+
+
+.front-bar2 {
+    animation: anim2 1.5s forwards;
+    background: #FF8C00; /* Cor da barra 2 */
+}
+
+
+@keyframes anim1 {
+    0% { width: 0;}
+    100% { width: calc(0.35 * 210px); } /* Barra 1: Altere o 0.35 pela sua porcentagem */
+}
+
+
+@keyframes anim2 {
+    0% { width: 0;}
+    100% { width: calc(0.5 * 210px); } /* Barra 2: Altere o 0.5 pela sua porcentagem */
+}
+
+
+</style>

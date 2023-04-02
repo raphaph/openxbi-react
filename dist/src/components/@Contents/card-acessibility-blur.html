@@ -1,0 +1,64 @@
+<!-- Componente OpenXBI, ajude-nos a compartilhar conhecimento -->
+<!-- https://openxbi.com.br -->
+<div class='card-container'>
+    <div class='card'>
+        <strong>Net value</strong>
+        <p> $5.958.598,10</p>
+    </div>
+    <div class='card'>
+        <strong>Gross value</strong>
+        <p>$10.244.870,55</p>
+    </div>
+    <div class='card'>
+        <strong>Margin</strong>
+        <p>$500.348,90</p>
+    </div>
+</div>
+<style>
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap');
+.card-container {
+  display: flex;
+  flex-direction: column; /*Mude aqui para row, ou simplesmente apague esta linha para deixar alinha horizontalmente*/
+  align-items: center;
+  justify-content: center;
+  margin: 30px;
+  font-family: 'Inter', sans-serif; /* Font Inter, remova para exibir font nativa do PowerBI - SegoeUI */
+  margin: 0;
+  box-sizing: b;
+}
+.card {
+  margin: 2%;
+  background: #fff;
+  width: 200px; /* Largura dos cards */
+  height: 60px; /* Altura dos cards - TROCAR para 'auto' caso de erro de visualização*/
+  box-shadow: 0 2px 3px 0px rgba(0, 0, 0, 0.25);
+  border-radius: 6px;
+  transition: 200ms all;
+  cursor: pointer;
+  align-items: center;
+  text-align: center;
+  font-size: 16px;
+  padding: 10px;
+}
+.card > strong {
+  display: block;
+  margin: auto;
+}
+.card-container:hover .card {
+  filter: blur(2px); /* força do ofuscamento */
+  opacity: .7; /* opacidade dos cards ofuscados */
+  transform: scale(.98);
+  box-shadow: none;
+}
+.card-container:hover .card:hover {
+  transform: scale(1);
+  filter: blur(0px);
+  opacity: 1;
+  box-shadow: 0 8px 20px 0px rgba(0, 0, 0, 0.125);
+  background: black;
+  color: white;
+  box-shadow: 0 0 10px 1px #0a0a0a;
+}
+
+</style>

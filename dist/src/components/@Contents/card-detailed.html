@@ -1,0 +1,111 @@
+<!-- Componente OpenXBI, ajude-nos compartilhando nossa plataforma -->
+<!-- https://openxbi.com.br -->
+<div class='card-container'>
+    <link rel='stylesheet' href='https://fonts.googleapis.com/icon?family=Material+Icons:FILL'>
+    <div class='card-info'>
+        <strong>
+            Amout Received <!-- Título do card -->
+        </strong>
+        <p>
+            $5.689.988,00 <!-- Valor total -->
+        </p> 
+        <small>hover me</small>
+    </div>
+    <div class='card-hidden'>
+        <p><span class='material-icons' style='font-size:1rem; font-weight: bold;'>swap_vert</span> <!--icone-->
+            <strong> transactions:</strong> 4569 <!-- Quantidade de transações -->
+        </p>  
+        <p><span class='material-icons' style='font-size:1rem; font-weight: bold; color: green'>expand_less</span><!--icone-->
+            <strong> max:</strong> $84.234,09 <!-- Valor máximo -->
+        </p> 
+        <p><span class='material-icons' style='font-size:1rem; font-weight: bold; color: red'>expand_more</span><!--icone-->
+            <strong> min:</strong> $1.545,00 <!-- Valor mínimo -->
+        </p> 
+        <p><span class='material-icons' style='font-size:1rem; font-weight: bold;'>percent</span><!--icone-->
+            <strong> annual target:</strong> 59% <!-- Edite a meta -->
+        </p> 
+        <p><span class='material-icons' style='font-size:1rem; font-weight: bold;'>calendar_month</span><!--icone-->
+            <strong> last month:</strong> $ 12.589.099,10 <!-- Valor mês anterior -->
+        </div>
+        </p> 
+</div>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap');
+
+* {
+    -webkit-font-smoothing: antialiased; /* Font mais suave */
+}
+
+.card-container {
+    font-family: 'Inter', sans-serif;
+    cursor: pointer;
+    color: #111; /* Cor da font valores */
+}
+
+.card-container,
+.card-info,
+.card-hidden {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card-info {
+    flex-direction: column;
+    
+    width: 200px; /* Largura do card */
+    height: 120px; /* altura do card */
+
+    background: white; /* Background do card principal */
+    border-radius: 11px; /* Raio da borda */
+    border: 1px solid rgba(136, 136, 136, 0.1);
+    box-shadow: 1px 1px 2px 1px rgba(133, 133, 133, 0.1);
+}
+
+.card-info p {
+    margin: 0.7rem 0;
+}
+
+.card-info small {
+    color: #2500f7; /* Cor do 'hover me' */
+}
+
+.card-hidden {
+    position: absolute; /* Position absolute, flexibiliza a posição do card oculto */
+    margin: 0; 
+    height: auto; /* Define a altura do card oculto em automático */
+    padding: 0 1.5rem;
+
+    flex-direction: column;
+    align-items:flex-start;
+    justify-content: flex-start;
+    
+    opacity: 0; /* Esconde o card com opacidade 0 */
+    
+    background: white; /* Background do card tooltip */
+    border-radius: 11px; /* Raio da borda do card oculto */
+    border: 1px solid rgba(110, 110, 110, 0.1);
+    box-shadow: 1px 1px 2px 1px rgba(110, 110, 110, 0.1);
+
+    transition: 300ms; /* Tempo de transição do card secundário */
+}
+
+.card-hidden p {
+    margin: .5rem 0;
+}
+
+.card-container:hover>.card-hidden {
+    animation: fadeUp 300ms; /* Tempo de transição do card secundário */
+    animation-fill-mode: forwards;
+}
+
+/* Animação de entrada do card oculto */
+
+@keyframes fadeUp {
+    0% { opacity: 0 } /* inicia em zero e se mantem até 50% */
+    50% { opacity: 0 }
+    100% { opacity: 1; transform: translateY(130px) } 
+    /* ao final do tempo o card estará deslocado na posição indicada e agora visivel */
+}
+
+</style>

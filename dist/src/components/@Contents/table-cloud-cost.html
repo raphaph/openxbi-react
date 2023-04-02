@@ -1,0 +1,133 @@
+<!-- Componente OpenXBI, ajude-nos compartilhando nossa plataforma -->
+<!-- https://openxbi.com.br -->
+<div class='table-area'>
+    <link rel='stylesheet' href='https://fonts.googleapis.com/icon?family=Material+Icons:FILL'>
+    <table>
+        <thead>
+          <tr> <!-- Colunas - tr é nosso cabeçalho, sendo cada th uma coluna-->
+            <th>Cloud</th>
+            <th>Cost</th>
+            <th>Budget</th>
+          </tr>
+        </thead>
+        <tbody>
+            <tr> <!-- Grupo de linhas 1 - cada tr é um grupo com td sendo cada linha -->
+                <td><img src='https://logos-world.net/wp-content/uploads/2021/03/Azure-Logo-2020-present.png' width='40px' alt='Azure'></td>
+                <td>$99.345</td>
+                <td>
+                    <span class='material-icons' style='color: rgb(0, 138, 0);'> <!-- Icone e cor -->
+                        arrow_drop_down
+                        </span>
+                    <p style='color: rgb(0, 138, 0);'>-12%</p> <!-- Valor exibido do budget -->
+                </td>
+                <!-- Trabalhe condicional nas cores e status se necessário-->
+            </tr>
+            <tr> <!-- Grupo de linhas 2 - cada tr é um grupo com td sendo cada linha -->
+                <td><img src='https://logos-world.net/wp-content/uploads/2021/08/Amazon-Web-Services-AWS-Logo-700x394.png' width='40px' alt='Amazon Web Services'></td>
+                <td>$121.234</td>
+                <td>
+                    <span class='material-icons' style='color: rgb(185, 59, 0)'> <!-- Icone e cor -->
+                        arrow_drop_up
+                        </span>
+                    <span style='color: rgb(185, 59, 0);'>5%</span> <!-- Valor exibido do budget -->
+                </td>
+            </tr>
+            <tr class='curved-border'>
+                <td><img src='https://logos-world.net/wp-content/uploads/2021/02/Google-Cloud-Emblem-700x394.png' width='40px' alt='Google Cloud'></td>
+                <td>$55.345</td>
+                <td>
+                    <span class='material-icons' style='color: rgb(185, 59, 0);'> <!-- Icone e cor -->
+                        arrow_drop_up
+                        </span>
+                    <span style='color: rgb(185, 59, 0);'>4%</span> <!-- Valor exibido do budget -->
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap');
+
+* {
+    margin: 0; /* Remove todas as margens iniciais */
+    font-family: 'Inter', sans-serif; /* Font do component, remova para usar a font nativa do PBI */
+    box-sizing: border-box; /* define que a largura e altura dos elementos é calculada contando seu preenchimento(padding) */
+}
+
+/* estiliza toda área da tabela */
+
+.table-area {
+    flex: 1;
+    overflow: auto;
+    margin-top: .2rem;
+}
+
+/* Estiliza a tabela em si */
+
+table { 
+    width: auto; /* Largura da tabela, modifque conforme número de colunas */ 
+    border-collapse: collapse;
+    margin: .2rem;
+    border-radius: 8px 8px 0 0;
+    box-shadow: 0 0 1px 1px rgb(201, 201, 201);
+}
+
+th { /* th - é o header da tabela */
+    background-color: #FFF; /* Cor do cabeçalho */
+    padding: 1rem;
+    text-align: left;
+    color: black; /* Cor do texto do cabeçalho */
+    font-size: 0.875rem;
+    line-height: 1.2;
+    width: 190px;
+}
+
+/* Primeiro elemento das colunas */
+
+th:first-child {
+    border-top-left-radius: 8px; /* Aplica borda superior esquerdo na primeira coluna */
+    padding-left: 1.5rem;
+}
+
+/* Ultimo elemento das colunas */
+
+th:last-child {
+    border-top-right-radius: 8px; /* Aplica borda superior direito na ultima coluna */
+    padding-right: 1.5rem;
+}
+
+/* td - são as linhas da tabela */
+
+td { 
+    cursor: pointer;
+    background-color: #FFF; /* Cor das linhas */
+    border-top: 1px solid rgb(221, 221, 221);  /* Cor das linhas separadoras*/
+    padding: 1rem; /* preenchimento ao redor */
+    font-size: 0.875rem; /* font dos textos das linhas */
+    line-height: 1.2; /* Altura dos textos das linhas */
+    width: auto;
+}
+
+/* Coluna de imagens */
+
+td:first-child {
+    padding-left: 1.5rem;
+}
+
+/* Coluna de valores e icones */
+
+td:last-child {
+    padding-right: 1.5rem;
+    display: flex;
+    align-items: center;
+}
+
+/* Todas linhas - ao passar o mouse */
+
+td:hover {
+    background: rgb(219, 219, 219); /* Cor ao passar o mouse */
+    transition: 300ms; /* Tempo para esmaecer */
+}
+
+</style>

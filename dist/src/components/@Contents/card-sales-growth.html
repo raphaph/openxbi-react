@@ -1,0 +1,80 @@
+<!-- Componente OpenXBI, ajude-nos compartilhando nossa plataforma -->
+<!-- https://openxbi.com.br -->
+<div class='card'>
+    <link rel='stylesheet' href='https://fonts.googleapis.com/icon?family=Material+Icons:FILL'>
+    <div class='title'>
+        <p class='title-text'>
+            Sales <!-- Título -->
+        </p>
+        <p class='percent'>
+            <span class='material-icons'>
+                arrow_drop_up <!-- arrow_drop_down, para condicional negativa -->
+            </span> 20% </p>
+    </div>
+    <div class='data'>
+        <p>$130.599</p> <!-- Valor exibido -->
+        <div class='range'> <!-- Área da barra azul inferior -->
+            <div class='fill' style="width: 76%"><!-- Barra azul -->
+                76% <!-- Valor exibido -->
+            </div>
+        </div>
+    </div>
+</div>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap');
+.card {
+    font-family: 'Inter', sans-serif; /* Font do component, remova para usar a font nativa do PBI */
+    margin: 0; /* Remove todas as margens do card */
+    padding: 1rem; /* Preenchimento envolta do card */
+    background-color: #fff; /* Cor de fundo do card */
+    box-shadow: 0 10px 15px -3px #00000001, 0 4px 6px -2px #00000001;
+    max-width: 250px; /* largura máxima do card */
+    width: 100%; /* Adaptação a larguras menores que 250px definida acima */
+    border-radius: 6px; /* Raio da borda do card */
+    
+}
+/* Estiliza o título e o growth */
+.title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* define um espaço entre os dois elementos do topo */
+}
+/* estiliza título e % */
+.title-text, .percent {
+    margin: 0; /* remove uma margem superior */
+    font-size: 1.2rem; /* Tamanho da font */
+}
+/* Estiliza o título */
+.title-text {
+    color: #374151; /* Cor do título */
+}
+/* Valor de % do card */
+.percent {
+    color: #00b837; /* cor da porcentagem */
+    font-weight: 600; /* peso da font da % */
+    display: flex;
+}
+/* estiliza o valor em moeda */
+.data p {
+    margin: 1.5rem 0;  /* aplica margin superior e inferior */
+    color: #1F2937; /* cor do texto */
+    font-size: 1.4rem; /* tamanho da font */
+    font-weight: 700; /* peso da font do valor em moeda */
+    text-align: right; /* alinha o texto ao lado direito */
+}
+/* estiliza a barra de fundo */
+.range {
+    position: relative;
+    background-color: #E5E7EB; /* cor da barra de fundo */
+    width: 100%; /* largura da barra */
+    height: 1rem; /* altura da barra */
+    border-radius: 0.25rem;
+}
+.range .fill {
+    background-color: #6832ff; /* Cor da barra de 'meta' */
+    border-radius: 3px; /* raio da borda */
+    font-size: .82rem; /* tamanho da font da porcentagem */
+    text-align: center; /* alinha o texto ao centro */
+    color: white; /* cor do texto */
+}
+</style>

@@ -1,0 +1,154 @@
+<!-- Componente OpenXBI, ajude-nos compartilhando nossa plataforma -->
+<!-- https://openxbi.com.br -->
+<div class='chart'>
+    <ul class='wrapper'>
+        <li style='--i:5;'><input class='input' placeholder='Level 1  98%' disabled></li>
+        <li style='--i:4;'><input class='input' placeholder='Level 2  2%' disabled></li>
+        <li style='--i:3;'><input class='input' placeholder='Level 3  0%' disabled></li>
+        <li style='--i:2;'><input class='input' placeholder='Level 4  0%' disabled></li> 
+        <!-- Caso adicione novas linhas, repare que será necessário adicionar linha no css, la para o final-->
+    </ul>
+    <div class='legends'> <!-- Legenda para cada bloco -->
+        <p> Lvl name</p> <!-- legenda 1 -->
+        <p> Lvl name</p>
+        <p> Lvl name</p>
+        <p> Lvl name</p>
+    </div>
+</div>
+  
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap');
+.chart {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+}
+/* Camadas */
+.input {
+    cursor: pointer;
+    width: 150px; /* Largura das camadas */
+    height: 40px;
+    position: relative;
+    padding: 10px;
+
+    font-family: 'Inter', sans-serif; /* Font do gráfico */
+    font-weight: 400; /* Peso da font das camadas */
+}
+.wrapper {
+    position: relative;
+    transform: translateY(50px);
+}
+.wrapper li {
+    display: flex;
+    align-items: center;
+    position: relative;
+    list-style: none;
+    width: 150px;
+    z-index: var(--i);
+    transition: 0.3s;  
+}
+.legends {
+    display: flex;
+    font-size: 0.65rem;
+    position: absolute;
+    bottom: 0;
+    color: initial;
+}
+.legends p { 
+    margin-right: .5rem;
+    font-family: 'Inter', sans-serif;
+    color: rgb(117, 117, 117);
+}
+/* Repita o estilo da legenda para cada legenda numerada */
+.legends p:nth-child(1)::before {
+    content: '';
+    background: #b26200; /* Cor da legenda 1, repete abaixo */
+    padding: 0 .4rem;
+    margin-right: .3rem;
+    border-radius: 50%;
+}
+.legends p:nth-child(2)::before {
+    content: '';
+    color: transparent;
+    background: #d87700;
+    padding: 0 .4rem;
+    margin-right: .3rem;
+    border-radius: 50%;
+}
+.legends p:nth-child(3)::before {
+    content: '';
+    color: transparent;
+    background: #fe8c00;
+    padding: 0 .4rem;
+    margin-right: .3rem;
+    border-radius: 50%;
+}
+.legends p:nth-child(4)::before {
+    content: '';
+    color: transparent;
+    background: #ffae00;
+    padding: 0 .4rem;
+    margin-right: .3rem;
+    border-radius: 50%;
+}
+.wrapper li::before {
+  position: absolute;
+  content: '';
+  top: 0;
+  left: -40px;
+  width: 40px;
+  height: 40px;
+  transform-origin: right;
+  transform: skewY(45deg);
+  transition: 0.3s;
+}
+.wrapper li::after {
+  position: absolute;
+  content: '';
+  width: 150px;
+  height: 40px;
+  top: -40px;
+  left: 0;
+  transform-origin: bottom;
+  transform: skewX(45deg);
+  transition: 0.3s;
+  opacity: 0.8;
+}
+/* Repita para cada bloco, corrija a cor e a númeração */
+.wrapper li:nth-child(1)::after, .wrapper li:nth-child(1)::before {
+  background-color: #b26200;
+}
+.wrapper li:nth-child(2)::after, .wrapper li:nth-child(2)::before {
+  background-color: #d87700;
+}
+.wrapper li:nth-child(3)::after, .wrapper li:nth-child(3)::before {
+  background-color: #fe8c00;
+}
+.wrapper li:nth-child(4)::after, .wrapper li:nth-child(4)::before {
+  background-color: #ffae00;
+}
+li .input {
+  outline: none;
+  border: none;
+}
+li .input::placeholder {
+  color: white;
+}
+/* Repita para cada bloco, corrija a cor e a númeração */
+li:nth-child(1) .input {
+  background: #b26200;
+}
+li:nth-child(2) .input {
+  background: #d87700;
+}
+li:nth-child(3) .input {
+  background: #fe8c00;
+}
+li:nth-child(4) .input {
+  background: #ffae00;
+}
+.wrapper li:hover {
+  transform: translateX(20px);
+}
+</style>

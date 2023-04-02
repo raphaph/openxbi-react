@@ -1,0 +1,58 @@
+<!-- Componente OpenXBI, ajude-nos a compartilhar conhecimento -->
+<!-- https://openxbi.com.br -->
+<div class='card-wrapper'>
+    <div class='card-acessibility'>
+        <div class='card-info-hover'>
+            <strong>Net value</strong> <!-- Título -->
+            <p>$ 1.456.234,09</p> <!-- Valor -->
+        </div>
+    </div>
+</div>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap');
+
+* {
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif; /* Font Inter, remova para exibir font nativa do PowerBI - SegoeUI */
+}
+
+.card-wrapper, .card-acessibility, .card-info-hover {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.card-acessibility {
+    flex-direction: column;
+    
+    height: 120px; /* Altura do card */
+    max-width: 200px; /* Largura máxima do card */
+    width: 100%; /* largura automática */
+    
+    margin-top: 1rem; /* Margem top */
+    
+    background: white; /* Cor de fundo do card */
+    
+    border: 1px solid rgba(136, 136, 136, 0.1);
+    box-shadow: 0px 0px 2px 1px rgba(133, 133, 133, 0.1);
+    border-radius: 11px; /* Raio da borda */
+    
+    transition: .3s ease-in-out;
+}
+
+.card-acessibility p {
+    margin-top: .8rem; /* Margin do top do texto */
+}
+
+.card-info-hover {
+    flex-direction: column;
+}
+
+.card-wrapper:hover .card-acessibility {
+    box-shadow: 0px 0px 0px 2px rgba(0, 0, 0, 1);
+    transform: scale(1.04); /* Tamanho da escala do elemento ao posicionar mouse */
+}
+
+</style>

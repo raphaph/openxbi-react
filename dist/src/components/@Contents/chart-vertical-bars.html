@@ -1,0 +1,173 @@
+<!-- Componente OpenXBI para exibição de metas de vendas em formato de gráfico de barras -->
+<!-- Disponível em https://openxbi.com.br -->
+<div class='card'>
+  <div class='header'>
+    <div>
+      <strong>Meta de vendas</strong>
+      <small>(em milhões)</small>
+    </div>
+    <div> <!-- Legenda -->
+      <span>Meta</span> <!-- Categoria meta -->
+      <span>Valor</span> <!-- Categoria valor -->
+    </div>
+  </div>
+  <div class='body'>
+    <!-- Cada bloco representa uma meta de vendas -->
+    <div class='wrapper'>
+      <p>1M</p>
+      <div class='target-area'>
+        <!-- Barra de progresso que representa o percentual de atingimento da meta -->
+        <div class='hit-target' style='height: 65%'>
+          <p>65%</p>
+        </div>
+      </div>
+      <div class='year'>2019</div> <!-- Ano -->
+    </div>
+    <div class='wrapper'>
+      <p>2.3M</p> <!-- Valor da meta a cima da barra -->
+      <div class='target-area'>
+        <div class='hit-target' style='height: 70%'>
+          <p>70%</p>
+        </div>
+      </div>
+      <div class='year'>2020</div> <!-- Ano -->
+    </div>
+    <div class='wrapper'>
+      <p>2.2M</p> <!-- Valor da meta a cima da barra -->
+      <div class='target-area'>
+        <div class='hit-target' style='height: 80%'>
+          <p>80%</p>
+        </div>
+      </div>
+      <div class='year'>2021</div> 
+    </div>
+    <div class='wrapper'>
+      <p>3M</p>
+      <div class='target-area'>
+        <div class='hit-target' style='height: 100%'>
+          <p>100%</p>
+        </div>
+      </div>
+      <div class='year'>2022</div>
+    </div>
+    <div class='wrapper'>
+      <p>4M</p>
+      <div class='target-area'>
+        <div class='hit-target' style='height: 67%'>
+          <p>67%</p>
+        </div>
+      </div>
+      <div class='year'>2023</div>
+    </div>
+  </div>
+</div>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap');
+
+/* Pode remover as duas estilizações a seguir, utilizado apenas para poder rolar na openxbi */
+
+*::-webkit-scrollbar {
+    height: 6px;
+    background: rgb(221, 221, 221);
+}
+
+*::-webkit-scrollbar-thumb {
+    background: rgb(175, 175, 175);
+    border-radius: 5px;
+}
+
+/* Card todo */
+
+.card {
+  font-family: 'Inter', sans-serif; /* Fonte */
+  width: 400px; /* Largura do componente */
+  background-color: #fff; /* Cor de fundo */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra */
+  border-radius: 10px; /* Borda arredondada */
+  margin: 0;
+}
+
+/* Cabeçalho do componente */
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
+}
+
+/* Estilo dos valores de categoria e valor */
+
+span {
+  margin: 0 .3rem;
+  padding: .3rem .3rem;
+  background-color: #32d16e; /* Cor de fundo da legenda venda */
+  border-radius: 7px;
+  color: white;
+  font-size: 0.7rem;
+}
+
+span:first-child {
+  background-color: #eee;  /* Cor de fundo da legenda meta */
+  color: black;
+}
+
+/* Area das barras */
+
+.body {
+  display: flex;
+  align-items: end;
+  justify-content: space-between; 
+  /* space-between - define que as barras preencham toda horizontal com espaço entre elas calculado */
+  padding: 20px; /* preenchimento em volta da area das barras */
+  height: 185px; /* altura da area das barras */
+}
+
+/* Cada conjunto de barras */
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* toda a área da meta envolvendo a meta atingida */
+
+.target-area {
+  width: 35px; /* largura da area */
+  height: 160px; /* altura barra de meta total */
+  background-color: #eee; /* cor de fundo das barras */
+  border-radius: 7px;
+  overflow: hidden; /* remove a visualização de elementos que extrapole sua área */
+  transform: rotateZ(180deg); /* inversão do gráfico */
+}
+
+/* meta atingida, verde em destaque */
+
+.hit-target {
+  background: linear-gradient(#32d16e, #2dc467); /* Cor gradiente das barras */
+  height: 100%; /* altura 100% do espaço disponivel, não representa a altura da meta atingida */
+  border-radius: 7px; /* raio da borda das barras */
+  
+}
+
+.hit-target p {
+  transform: rotateZ(180deg) translateY(-7px);
+  text-align: center;
+  margin: 0;
+  color: white;
+}
+
+/* textos de meta e meta atingida */
+
+.wrapper p:first-child {
+  font-size: 0.7rem;
+}
+
+/* estiliza o ano */
+
+.year {
+  color: rgb(165, 165, 165);
+  font-size: 0.7rem;
+  margin-top: .3rem;
+}
+</style>

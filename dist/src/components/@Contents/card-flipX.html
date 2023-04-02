@@ -1,0 +1,122 @@
+<!-- Componente OpenXBI, ajude-nos compartilhando nossa plataforma -->
+<!-- https://openxbi.com.br -->
+<div class='card-content'>
+    <div class='flip-card-rotate'>
+        <div class='card-front'>
+            <strong>TPV 2022</strong> <!-- Título card back -->
+            <p class='value'>$ 2,5 BI</p> <!-- valor card back -->
+            <span>jan - dec</span> <!-- tooltip -->
+        </div>
+        <div class='card-back'>
+            <strong>TPV 2023</strong> <!-- Título card front -->
+            <p class='value'>$ 1,7 Bi</p> <!-- valor card front -->
+            <span>until - march-2023</span> <!-- tooltip -->
+        </div>
+    </div>  
+    <div class='target-card'>
+        <p>2023: <strong>68%</strong> of target</p> <!-- card oculto -->
+    </div>
+</div>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap');
+
+* {
+    font-family: 'Inter', sans-serif; /* Font do component, remova para usar a font nativa do PBI */
+    color: #111; /* Cor da font valores */
+    margin: 0; /* Remove todas as margens iniciais */
+    box-sizing: border-box;
+}
+
+.card-content {
+    display: flex; 
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+    cursor: pointer; /* Exibe a mãozinha de clique ao passar o mouse */
+    margin-top: .5rem; /* Um espaço de folga na parte superior */
+}
+
+/* Envolve os dois cards */
+
+.flip-card-rotate {
+    display: flex;
+    justify-content: center;
+    
+    transition: transform 0.4s; /* tempo de transição */
+    transform-style: preserve-3d; /* mantem a transformação relacionada ao elemento pai 'card-content' */
+   
+}
+
+/* Texto dos cards */
+
+.flip-card-rotate p {
+    margin: .75rem 0;
+}
+
+/* Envolve a estilização dos dois componentes ao mesmo tempo */
+
+.card-front, .card-back {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    
+    position: absolute; /* Traz flexibilidade aos dois cards quanto a posições */
+
+    width: 200px; /* Largura do card */
+    height: 120px; /* altura do card */
+    
+    border: 1px solid rgba(136, 136, 136, 0.1);
+    box-shadow: 1px 1px 2px 1px rgba(133, 133, 133, 0.1);
+    border-radius: 11px; /* Raio da borda */
+    
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+
+    background: white; /* cor de fundo do card */
+}
+
+span {
+    font-size: 0.700rem; /* tamanho da font do texto menor */
+    font-weight: 500; /* Peso da font do texto menor */
+    color: #3416e3; /* Cor do texto menor */
+}
+
+/* Body utilizado para capturar a rotação 
+ * body não existe na construção do HTML mas ele é introduzido implícitamente */
+
+body:hover .flip-card-rotate {
+    transform: rotateY(180deg); /* Rotaciona os dois cards */
+}
+
+/* Card front é o que ira vir para frente ao passar o mouse */
+
+.card-front {
+    transform: rotateY(180deg); /* inicia invertido em 180º */
+}
+
+/* Card com o Target - será exibido posteriormente ao passar o mouse na parte inferior externa */
+
+.target-card {
+    font-size: 0.875rem; /* Tamanho da font do card */
+
+    height: auto; /* Altura do card */
+    padding: .5rem 1rem; /* preenchimentos internos do card */
+
+    background: white; /* Cor de fundo do card */
+
+    border: 1px solid rgba(136, 136, 136, 0.1);
+    box-shadow: 1px 1px 2px 1px rgba(133, 133, 133, 0.1);
+    border-radius: 8px; /* Raio da borda */
+    
+    opacity: 0; /* Opacidade inicial */
+    transition: all 200ms; /* Tempo de transição */
+}
+
+body:hover .target-card {
+    opacity: 1; /* Exibe o card ao passar o mouse em cima */
+    transform: translateY(130px); /* Posição final do card */
+}
+</style>
