@@ -4,7 +4,7 @@ import { NavLink, useNavigate } from 'react-router-dom'
 import { AppContext } from '../../context/AppContext'
 import { HeaderContainer, HeaderSideRight, MenuButton, MenuVertical, ProfileModal, SeparatorHorizontal, SeparatorRightSide, SunButton, UserAvatarName } from './styles'
 import { auth } from '../../services/firebase'
-import { GoogleAuthProvider, GithubAuthProvider, signOut } from 'firebase/auth'
+import { GoogleAuthProvider, GithubAuthProvider, signOut, ProviderId } from 'firebase/auth'
 
 export function Header() {
 
@@ -105,8 +105,8 @@ export function Header() {
         <UserAvatarName>
           {user === null ? <nav><NavLink to={"/sign-in"}>Sign In</NavLink></nav> :
             <button onClick={signOutModal === 'closed' ? () => { setSignOutModal('open'); setMenuVertical('closed'); } : () => setSignOutModal('closed')}>
-              <strong>{user.displayName?.split(' ', 1)}</strong>
-              {user.photoURL && <img src={user.photoURL} width={35} />}
+              <strong>{user.providerId === 'google.com' ? user.user?.email?.split('@', 1) : user._tokenResponse?.screenName}</strong>
+              {user.user.photoURL && <img src={user.user.photoURL} width={35} />}
             </button>
           }
         </UserAvatarName>

@@ -22,7 +22,7 @@ interface AppContextType {
   setCookiesAccept: any
   contentData: ContentDataProps
   setContentData: any
-  user: User | null
+  user: any | null
   setUser: any
   providerName: string | null
   setProvider: any
@@ -41,7 +41,7 @@ export function AppContextProvider({ children }: AppContextProviderProps) {
   const [contentsNames, setContentsNames] = useState<string[]>([])
   const [clickedContent, setClickedContent] = useState('')
   const [cookiesAccept, setCookiesAccept] = useState('')
-  const [user, setUser] = useState<User | null>(null);
+  const [user, setUser] = useState(null);
   const [providerName, setProvider] = useState<string | null>(null)
   const [contentData, setContentData] = useState<ContentDataProps>({
     id: '',
