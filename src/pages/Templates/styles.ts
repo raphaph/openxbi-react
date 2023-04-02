@@ -121,13 +121,17 @@ export const CardFooter = styled.div`
     border-radius: 6px;
     transition: all 0.3s;
     font-weight: 500;
-    display: flex;
-    align-items: center;
     width: 115px;
-    justify-content: space-between;
-
     padding: 0.5rem;
     background: ${(props) => props.theme['strong-orange']};
+
+    a {
+      text-decoration: none;
+      color: black;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
 
     &:hover {
       background: white;
