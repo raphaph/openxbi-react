@@ -21,9 +21,19 @@ export function Templates() {
 
   const templates: any = templatesData.templates
 
-  function handleDownload(name: string, path: string) {
-    const file = new File([""], name, { type: "application/octet-stream", lastModified: Date.now() });
-    saveAs(file, path);
+  function handleDownload(url: string, fileName: string) {
+    fetch(url)
+      .then(response => response.blob())
+      .then(blob => {
+        const href = window.URL.createObjectURL(blob);
+        const link = document.createElement('a');
+        link.href = href;
+        link.download = fileName;
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+        window.URL.revokeObjectURL(href);
+      });
   }
 
   return (
@@ -43,9 +53,9 @@ export function Templates() {
                 </a>
                 <CardFooter>
                   <strong>{template.name}</strong>
-                  <button onClick={() => handleDownload(template.name, template.path)}>
-                    <a href={template.path} ><DownloadSimple />
-                      Download</a>
+                  <button onClick={() => handleDownload(template.path, template.download)}>
+                    <DownloadSimple />
+                    Download
                   </button>
                 </CardFooter>
               </CardMap>

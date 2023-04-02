@@ -3,18 +3,18 @@
         {
             "id": 1,
             "name": "openxbi-initial-template", 
-            "path": "src/pbix/openxbi-templates.zip",
-            "download": "openxbi-templates.zip",
-            "image": "https://files.fm/thumb_show.php?i=z7e6ebedu",
+            "path": "src/pbix/openxbi-templates.pbix",
+            "download": "openxbi-templates.pbix",
+            "image": "https://i.imgur.com/ryp8pLx.png",
             "public": "https://app.powerbi.com/view?r=eyJrIjoiMDhmZjhhNTEtZDU1Ny00YjM3LTk2MGMtMGU2OGQxYzJhMGY3IiwidCI6IjBhODViZGRhLTVhN2YtNGIyZS04Y2FmLTcyMDRmMGU1NTM2MSJ9",
             "creator": "raphaph"
         },
         {
             "id": 2,
             "name": "openxbi-cloud-costs",
-            "path": "src/pbix/openxbi-cloud-costs.zip",
-            "download": "openxbi-cloud-costs.zip",
-            "image": "https://files.fm/thumb_show.php?i=tg966n7eq",
+            "path": "src/pbix/openxbi-cloud-costs.pbix",
+            "download": "openxbi-cloud-costs.pbix",
+            "image": "https://i.imgur.com/9IZF64q.png",
             "public": "https://app.powerbi.com/view?r=eyJrIjoiNWNmYjZjMTAtMjUwMy00MmUxLWEzN2EtN2MxOGE1MDQ4NWQ2IiwidCI6IjBhODViZGRhLTVhN2YtNGIyZS04Y2FmLTcyMDRmMGU1NTM2MSJ9",
             "creator": "raphaph"
         }

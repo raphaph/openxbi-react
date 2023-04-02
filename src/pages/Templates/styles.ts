@@ -121,15 +121,10 @@ export const CardFooter = styled.div`
     border-radius: 6px;
     transition: all 0.3s;
     font-weight: 500;
-    
-    a {
-      display: flex;
-      align-items: center;
-      width: 100px;
-      justify-content: space-between;
-      text-decoration: none;
-      color: black;
-    }
+    display: flex;
+    align-items: center;
+    width: 115px;
+    justify-content: space-between;
 
     padding: 0.5rem;
     background: ${(props) => props.theme['strong-orange']};
