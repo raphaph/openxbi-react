@@ -4,7 +4,9 @@ import { NavLink, useNavigate } from 'react-router-dom'
 import { AppContext } from '../../context/AppContext'
 import { HeaderContainer, HeaderSideRight, MenuButton, MenuVertical, ProfileModal, SeparatorHorizontal, SeparatorRightSide, SunButton, UserAvatarName } from './styles'
 import { auth } from '../../services/firebase'
-import { GoogleAuthProvider, GithubAuthProvider, signOut, ProviderId } from 'firebase/auth'
+import { GoogleAuthProvider, GithubAuthProvider, signOut } from 'firebase/auth'
+import boxDark from '../../assets/logo-dark.svg'
+import boxLight from '../../assets/logo-light.svg'
 
 export function Header() {
 
@@ -65,8 +67,8 @@ export function Header() {
     <HeaderContainer variant={themeValue}>
       <NavLink to="/">
         <img
-          src={`/src/assets/${themeValue === 'dark' ?
-            'logo-dark.svg' : 'logo-light.svg'}`}
+          src={themeValue === 'dark' ?
+            boxDark : boxLight}
           alt=""
         />
         <img

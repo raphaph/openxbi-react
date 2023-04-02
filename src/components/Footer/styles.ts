@@ -119,7 +119,7 @@ export const RightSideContent = styled.div<ThemeProps>`
     cursor: pointer;
     
     border: 0;
-    background:  ${props => props.variant === 'light' ? props.theme.primary : props.theme.secondary};
+    background:  ${props => props.theme.primary};
    
     
     &:hover {
