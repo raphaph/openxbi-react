@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg id="Camada_2" data-name="Camada 2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 163 179">
+<svg id="Camada_2" data-name="Camada 2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 127 143">
   <defs>
     <style>
       .cls-1 {
@@ -32,21 +32,21 @@
     </style>
     <filter id="drop-shadow-1" filterUnits="userSpaceOnUse">
       <feOffset dx="0" dy="0"/>
-      <feGaussianBlur result="blur" stdDeviation="10"/>
-      <feFlood flood-color="#cecece" flood-opacity=".8"/>
+      <feGaussianBlur result="blur" stdDeviation="4"/>
+      <feFlood flood-color="#a8a8a8" flood-opacity=".8"/>
       <feComposite in2="blur" operator="in"/>
       <feComposite in="SourceGraphic"/>
     </filter>
   </defs>
   <g id="Camada_1-2" data-name="Camada 1">
     <g>
-      <polygon class="cls-1" points="128.14 63.93 82.14 86.93 34.14 62.93 82.14 34.93 128.14 63.93"/>
-      <polygon class="cls-5" points="128.14 113.93 82.14 139.93 82.14 86.93 128.14 63.93 128.14 113.93"/>
-      <polygon class="cls-4" points="81.14 142.93 34.14 114.93 34.14 62.93 81.14 85.93 81.14 142.93"/>
-      <line class="cls-3" x1="81.34" y1="85.63" x2="34.34" y2="62.63"/>
-      <line class="cls-3" x1="128.14" y1="62.83" x2="81.14" y2="85.83"/>
-      <line class="cls-3" x1="81.54" y1="144.93" x2="81.54" y2="85.93"/>
-      <polygon class="cls-2" points="128.84 116.68 81.64 143.93 34.43 116.68 34.43 62.17 81.64 34.92 128.84 62.17 128.84 116.68"/>
+      <polygon class="cls-1" points="110.14 45.93 64.14 68.93 16.14 44.93 64.14 16.93 110.14 45.93"/>
+      <polygon class="cls-5" points="110.14 95.93 64.14 121.93 64.14 68.93 110.14 45.93 110.14 95.93"/>
+      <polygon class="cls-4" points="63.14 124.93 16.14 96.93 16.14 44.93 63.14 67.93 63.14 124.93"/>
+      <line class="cls-3" x1="63.34" y1="67.63" x2="16.34" y2="44.63"/>
+      <line class="cls-3" x1="110.14" y1="44.83" x2="63.14" y2="67.83"/>
+      <line class="cls-3" x1="63.54" y1="126.93" x2="63.54" y2="67.93"/>
+      <polygon class="cls-2" points="110.84 98.68 63.64 125.93 16.43 98.68 16.43 44.17 63.64 16.92 110.84 44.17 110.84 98.68"/>
     </g>
   </g>
 </svg>

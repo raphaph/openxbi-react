@@ -30,7 +30,7 @@ export function PageComponents() {
 
   const [filteredData, setFilteredData] = useState<ContentDataProps[]>([])
 
-  const apiKey = import.meta.env.AUTH_KEY
+  const apiKey = import.meta.env.VITE_AUTH_KEY
 
   const [filtered, setFiltered] = useState('all')
 

@@ -3,15 +3,21 @@ import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
 import { getAuth } from 'firebase/auth'
 
+const api_firebase = import.meta.env.VITE_API_FIREBASE;
+const auth_domain = import.meta.env.VITE_AUTH_DOMAIN;
+const message_id = import.meta.env.VITE_MESSAGE_ID;
+const app_id_firebase = import.meta.env.VITE_APP_ID;
+
 const firebaseConfig = {
-    apiKey: "AIzaSyATovcewvGa1cR9QGio9-0OlgXJ3L6uKN8",
-    authDomain: "openxbi.firebaseapp.com",
+    apiKey: api_firebase,
+    authDomain: auth_domain,
     projectId: "openxbi",
     storageBucket: "openxbi.appspot.com",
-    messagingSenderId: "937875943969",
-    appId: "1:937875943969:web:6b49aa75cabb20a8492960",
+    messagingSenderId: message_id,
+    appId: app_id_firebase,
     measurementId: "G-K68H3W6VJE"
 };
+
 
 const app = initializeApp(firebaseConfig);
 const analytics = getAnalytics(app);

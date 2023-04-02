@@ -33,7 +33,7 @@ export const MainContentOne = styled.div`
 
   padding: 0 2rem;
 
-  width: 100%;
+  width: 100vw;
   max-width: 1300px;
 
   h1 {
@@ -42,6 +42,10 @@ export const MainContentOne = styled.div`
     text-align: left;
     font-size: 4rem;
     text-shadow: 0px 0px 2px ${(props) => props.theme['gray-500']};
+
+    @media (max-width: 700px) {
+      font-size: 2rem;
+    }
 
   }
 

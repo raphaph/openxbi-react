@@ -16,6 +16,8 @@ export const FooterContainer = styled.footer<ThemeProps>`
   height: 18rem;
   padding: 2rem 1rem;
 
+  
+
   p {
     color: ${(props) => props.theme['gray-500']};
     font-size: 13px;
@@ -76,11 +78,22 @@ export const FooterMid = styled.div`
   flex-direction: column;
   align-items: center;
 
+  @media (max-width: 700px) {
+    width: 0;
+    visibility: hidden;
+  }
+
   a {
+    display: flex;
+    align-items: center;
     margin: 1rem;
     text-decoration: none;
     color: inherit;
     font-weight: 600;
+
+    svg {
+      margin-left: .2rem;
+    }
 
     &:hover {
       color: ${props => props.theme['strong-orange']};

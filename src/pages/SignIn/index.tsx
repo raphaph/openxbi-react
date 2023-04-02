@@ -1,5 +1,4 @@
-import { GoogleAuthProvider, GithubAuthProvider, signInWithPopup } from 'firebase/auth'
-import { GoogleLogo } from 'phosphor-react';
+import { GoogleAuthProvider, GithubAuthProvider, signInWithPopup, setPersistence, browserLocalPersistence } from 'firebase/auth'
 import { useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { AppContext } from '../../context/AppContext';
@@ -7,6 +6,7 @@ import { auth } from '../../services/firebase'
 import { SignInContainer } from './styles';
 import logoDark from '../../assets/logo-dark.svg'
 import logoLight from '../../assets/logo-light.svg'
+import axios from 'axios'
 
 export function SignIn() {
 
@@ -17,32 +17,90 @@ export function SignIn() {
     function handleGoogleSignIn() {
         const provider = new GoogleAuthProvider();
 
-        signInWithPopup(auth, provider)
-            .then((result) => {
-                setUser(result.user)
-                setProvider(result.providerId)
-                navigate("/")
+        setPersistence(auth, browserLocalPersistence)
+            .then(() => {
+                // A autenticação persistente foi ativada com sucesso
+                // Inicia o processo de login com o Google
+                signInWithPopup(auth, provider)
+                    .then((result) => {
+                        setUser(result.user);
+                        setProvider(result.providerId);
 
+
+                        axios.get(`http://localhost:3333/accounts/${result.user.email}`)
+                            .then(response => {
+                                if (response.data.length !== 1) {
+                                    const data = {
+                                        uuid: result.user.uid, // exemplo de UUID
+                                        display_name: result.user.displayName,
+                                        email: result.user.email,
+                                        provider: result.providerId,
+                                        photo_url: result.user.photoURL,
+                                        username: result.user.email?.split('@', 1),
+                                        created_at: new Date().toISOString()
+                                    };
+
+                                    axios.post('http://localhost:3333/accounts/', data, {
+                                        headers: {
+                                            'Content-Type': 'application/json'
+                                        }
+                                    })
+                                }
+                            })
+
+                        navigate("/");
+                    })
+                    .catch((error) => {
+                        console.log(error);
+                    });
             })
             .catch((error) => {
-                console.log(error)
-            })
-
+                console.log(error);
+            });
     }
 
     function handleGitHubSignIn() {
         const provider = new GithubAuthProvider();
 
-        signInWithPopup(auth, provider)
-            .then((result) => {
-                setUser(result.user)
-                setProvider(result.providerId)
-                navigate("/")
+        setPersistence(auth, browserLocalPersistence)
+            .then(() => {
+                // A autenticação persistente foi ativada com sucesso
+                // Inicia o processo de login com o GitHub
+                signInWithPopup(auth, provider)
+                    .then((result) => {
+                        setUser(result.user);
+                        setProvider(result.providerId);
+
+                        axios.get(`http://localhost:3333/accounts/${result.user.email}`)
+                            .then(response => {
+                                if (response.data.length !== 1) {
+                                    const data = {
+                                        uuid: result.user.uid, // exemplo de UUID
+                                        display_name: result.user.displayName,
+                                        email: result.user.email,
+                                        provider: result.providerId,
+                                        photo_url: result.user.photoURL,
+                                        username: result.user.email?.split('@', 1),
+                                        created_at: new Date().toISOString()
+                                    };
+
+                                    axios.post('http://localhost:3333/accounts/', data, {
+                                        headers: {
+                                            'Content-Type': 'application/json'
+                                        }
+                                    })
+                                }
+                            })
+
+                        navigate("/");
+                    })
+                    .catch((error) => {
+                        console.log(error);
+                    });
             })
             .catch((error) => {
-                console.log(error)
-            })
-
+                console.log(error);
+            });
     }
 
     return (
@@ -52,7 +110,7 @@ export function SignIn() {
                 <h2>Acesse sua conta</h2>
                 <p>Entrar com uma conta social é mais prático e seguro.</p>
                 <button type="button" onClick={handleGoogleSignIn}>
-                    <GoogleLogo size={23} weight="bold" />
+                    <svg xmlns="http://www.w3.org/2000/svg" width="23" height="23" viewBox="0 0 186.69 190.5"><g transform="translate(1184.583 765.171)"><path clip-path="none" mask="none" d="M-1089.333-687.239v36.888h51.262c-2.251 11.863-9.006 21.908-19.137 28.662l30.913 23.986c18.011-16.625 28.402-41.044 28.402-70.052 0-6.754-.606-13.249-1.732-19.483z" fill="#4285f4" /><path clip-path="none" mask="none" d="M-1142.714-651.791l-6.972 5.337-24.679 19.223h0c15.673 31.086 47.796 52.561 85.03 52.561 25.717 0 47.278-8.486 63.038-23.033l-30.913-23.986c-8.486 5.715-19.31 9.179-32.125 9.179-24.765 0-45.806-16.712-53.34-39.226z" fill="#34a853" /><path clip-path="none" mask="none" d="M-1174.365-712.61c-6.494 12.815-10.217 27.276-10.217 42.689s3.723 29.874 10.217 42.689c0 .086 31.693-24.592 31.693-24.592-1.905-5.715-3.031-11.776-3.031-18.098s1.126-12.383 3.031-18.098z" fill="#fbbc05" /><path d="M-1089.333-727.244c14.028 0 26.497 4.849 36.455 14.201l27.276-27.276c-16.539-15.413-38.013-24.852-63.731-24.852-37.234 0-69.359 21.388-85.032 52.561l31.692 24.592c7.533-22.514 28.575-39.226 53.34-39.226z" fill="#ea4335" clip-path="none" mask="none" /></g></svg>
                     Entrar com Google
                 </button>
                 <button type="button" onClick={handleGitHubSignIn}>

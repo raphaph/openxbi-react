@@ -34,11 +34,25 @@ export const SignInContainer = styled.main<ThemeProps>`
     button:nth-child(4) {
         background: #0061eb;
         color: white;
+
+        &:hover {
+            background: white;
+            color: #0061eb;
+        }
     }
 
     button:nth-child(5) {
         background: ${props => props.theme["bg-gray"]};
         color: white;
+
+        &:hover {
+            background: white;
+            color: ${props => props.theme["bg-gray"]};
+
+            svg {
+                fill: ${props => props.theme["bg-gray"]};
+            }
+        }
     }
 
     button {
