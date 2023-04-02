@@ -3,6 +3,7 @@ import { useContext } from 'react'
 import { AppContext } from '../../context/AppContext'
 import { CardFooter, CardMap, HearderTemplate, TemplatesContainer, TemplatesContents, TemplatesMap } from './styles'
 import templatesData from '../../api/templates.json'
+import { saveAs } from 'file-saver';
 
 interface TemplateProps {
   id: string
@@ -19,6 +20,11 @@ export function Templates() {
   const { themeValue } = useContext(AppContext)
 
   const templates: any = templatesData.templates
+
+  function handleDownload(name: string, path: string) {
+    const file = new File([""], name, { type: "application/octet-stream", lastModified: Date.now() });
+    saveAs(file, path);
+  }
 
   return (
     <TemplatesContainer variant={themeValue}>
@@ -37,8 +43,8 @@ export function Templates() {
                 </a>
                 <CardFooter>
                   <strong>{template.name}</strong>
-                  <button>
-                    <a href={template.path} download={template.download}><DownloadSimple />
+                  <button onClick={() => handleDownload(template.name, template.path)}>
+                    <a href={template.path} ><DownloadSimple />
                       Download</a>
                   </button>
                 </CardFooter>
