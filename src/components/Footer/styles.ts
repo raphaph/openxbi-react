@@ -82,7 +82,43 @@ export const FooterMid = styled.div`
     visibility: hidden;
   }
 
-  a {
+  a:nth-child(2) {
+    
+    display: flex;
+    align-items: center;
+    margin: 1rem;
+    padding: .7rem;
+
+    border-radius: 7px;
+
+    text-decoration: none;
+    
+    background: ${props => props.theme.primary};
+    color: Black;
+
+    button {
+      cursor: pointer;
+      border: 0;
+      background: none;
+      font-weight: 600;
+    }
+
+    svg {
+      margin-left: .2rem;
+      color: #AA0000;
+    }
+
+    &:hover {
+      transform: scale(0.98);
+      background: white;
+      box-shadow: 0 0 1px 1px ${props => props.theme.primary};
+      transition: 300ms;
+    }
+  }
+
+  
+
+  a:nth-child(3) {
     display: flex;
     align-items: center;
     margin: 1rem;
@@ -125,7 +161,7 @@ export const RightSideContent = styled.div<ThemeProps>`
     &:hover {
       transform: scale(0.98);
       background: white;
-      box-shadow: 0 0 2px 1px ${props => props.variant === 'light' ? props.theme.primary : props.theme.secondary};
+      box-shadow: 0 0 2px 1px ${props => props.theme.primary};
     }
   }
 
