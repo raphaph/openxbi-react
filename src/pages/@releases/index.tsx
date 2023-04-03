@@ -9,7 +9,7 @@ import { useContext, useEffect } from 'react'
 * O terceiro número (0) representa a correção de bugs ou problemas menores no software. Ele é incrementado sempre que há correções de erros ou ajustes que não afetam a compatibilidade com versões anteriores. */
 
 export function Releases() {
-    document.title = 'OpenXBI | Introduction'
+    document.title = 'OpenXBI | Releases'
     const { themeValue } = useContext(AppContext)
 
     useEffect(() => {

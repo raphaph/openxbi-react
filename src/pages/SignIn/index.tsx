@@ -9,7 +9,7 @@ import logoLight from '../../assets/logo-light.svg'
 import axios from 'axios'
 
 export function SignIn() {
-
+    document.title = 'OpenXBI | Sign In'
     const { themeValue, setUser, setProvider, user } =
         useContext(AppContext)
     const navigate = useNavigate();

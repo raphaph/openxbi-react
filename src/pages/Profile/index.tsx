@@ -4,6 +4,7 @@ import { AppContext } from '../../context/AppContext';
 import { LeftSideProfileAvatar, ProfileContainer, RightSideProfileFavorites } from './styles';
 
 export function Profile() {
+    document.title = 'OpenXBI | My Profile'
     const { themeValue, user } =
         useContext(AppContext)
 
