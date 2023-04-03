@@ -53,7 +53,7 @@ export function Footer() {
         <FooterMid>
           <p>Ajude a manter a plataforma ativa, e crescer cada vez mais. 🥰</p>
           <a href="https://donate.stripe.com/9AQg2bcSydIMchieUU" target={'_blank'}>
-            <button>Buy Me A Coffe </button>
+            <button>Buy Me A Coffee </button>
             <Heart size={20} weight='fill' />
           </a>
           <a href="mailto:raphael@openxbi.com.br">Contato <Envelope size={20} weight='fill' /> </a>
