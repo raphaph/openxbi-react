@@ -96,7 +96,11 @@ export const IsolatedButtonToComponents = styled.div<ThemeProps>`
 
     font-weight: 500;
     padding: 0.7rem;
-    background: ${(props) => props.theme.offblack};
+    background: ${(props) =>
+    props.variant === 'light' ? props.theme.offblack : props.theme.offwhite};
+    
+    
+    
     box-shadow: 0 0 3px 0px ${(props) => props.theme['border-dark']};
     margin-top: 1rem ;
 
@@ -105,7 +109,8 @@ export const IsolatedButtonToComponents = styled.div<ThemeProps>`
     
     a {
       text-decoration: none;
-      color: white;
+      color: ${(props) =>
+    props.variant === 'light' ? props.theme.white : props.theme.black};
       display: flex;
       justify-content: space-between;
       align-items: center;
