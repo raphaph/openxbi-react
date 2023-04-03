@@ -38,7 +38,7 @@ export const MainContentOne = styled.div`
 
   h1 {
     margin: 5rem 0 1rem 0;
-    width: 60%;
+    width: 70%;
     text-align: left;
     font-size: 4rem;
     text-shadow: 0px 0px 2px ${(props) => props.theme['gray-500']};
@@ -98,7 +98,7 @@ export const IsolatedButtonToComponents = styled.div<ThemeProps>`
     padding: 0.7rem;
     background: ${(props) => props.theme.offblack};
     box-shadow: 0 0 3px 0px ${(props) => props.theme['border-dark']};
-    margin-top: 2rem ;
+    margin-top: 1rem ;
 
     border: 1px solid ${(props) => props.theme['border-dark']};
     border-radius: 6px; 
@@ -111,10 +111,11 @@ export const IsolatedButtonToComponents = styled.div<ThemeProps>`
       align-items: center;
     }
 
-    transition: all 0.3s;
+    
     &:hover {
       transform: scale(1.1);
       box-shadow: 0 0 5px 1px ${(props) => props.theme['border-dark']};
+      transition: all 0.3s ease-out;
     }
   }
 `
@@ -177,58 +178,23 @@ export const MainFooterContent = styled.div`
 `
 
 export const ContentFooter = styled.div<ThemeProps>`
-  align-items: center;
-  margin-top: 8rem;
+  margin-top: 6rem;
+
+  div {
+    display: flex;
+    flex-wrap: wrap;
+  } 
 
   img {
-    width: 100px;
-    filter: drop-shadow(0px 0px 1px rgb(35 35 35))
+    max-width: 650px;
+    margin: .5rem 0;
+    width: 100%;
+    border-radius: 5px;
+    box-shadow: 0 0 3px 1px ${props => props.theme['gray-300']};
   }
 
   h2 {
-    margin-right: 1rem;
+    font-size: 2rem;
   }
 
-  nav {
-    display: flex;
-    flex-direction: column;
-
-    a:nth-child(2) {
-      transform: translateX(6px);
-    }
-
-    a {
-      color: inherit;
-      text-decoration: none;
-      display: flex;
-      align-items: center;
-      width: 150px;
-      cursor: pointer;
-      border: 0;
-      border-radius: 6px;
-      transition: all 0.2s;
-      margin-top: 0.7rem;
-      padding: 0.5rem;
-      transition: 100ms;
-
-      &:active {
-        opacity: 1;
-        transform: scale(0.98);
-        text-shadow: 0 0 7px 1px ${(props) => props.theme['strong-orange']};
-      }
-
-      svg {
-        margin-right: .5rem;
-      }
-
-      &:hover {
-        transform: scale(1.05);
-        text-shadow: 0 0 5px inherit;
-        font-weight: bold;
-        transform: translateX(12px);
-      }
-
-    }
-    
-  }
 `

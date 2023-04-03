@@ -20,6 +20,8 @@ import {
 } from 'react-syntax-highlighter/dist/esm/styles/prism'
 import { CookiesModal } from '../../components/CookiesModal'
 import { NavLink } from 'react-router-dom'
+import templateImg from '../../assets/templates-image/openxbi-initial-template.png'
+import templateImg2 from '../../assets/templates-image/openxbi-cloud-costs.png'
 
 export function Home() {
   document.title = 'OpenXBI | Home'
@@ -250,12 +252,9 @@ return
       {cookiesAccept === null ? <CookiesModal /> : null}
       <MainContentOne>
 
-        <h1>Inteligência aplicada a componentes para BI</h1>
+        <h1>Power your BI with customizable components</h1>
         <strong>
-          Criamos componentes estilizados em HTML e CSS, incorporando variáveis
-          e medidas DAX, <br />
-          para melhorar a experiência dos usuários de dashboards, e oferecer
-          novas possibilidades aos analistas de dados.
+          Get flexible and customizable BI components for your data analysis needs using a combination of HTML and CSS with the DAX Language.
         </strong>
         <CardsMainContentOne>
           <div>
@@ -348,6 +347,17 @@ return
           </SyntaxHighlighterStyle>
 
           <ContentFooter variant={themeValue}>
+            <h2>Templates</h2>
+            <p>Experimente também alguns templates com componentes pré-configurados.</p>
+            <div>
+              <img src={templateImg} alt="" />
+              <img src={templateImg2} alt="" />
+            </div>
+            <IsolatedButtonToComponents variant={themeValue}>
+              <button>
+                <NavLink to={"/templates"}>Templates</NavLink>
+              </button>
+            </IsolatedButtonToComponents>
           </ContentFooter>
         </MainFooterContent>
       </MainContentOne>
