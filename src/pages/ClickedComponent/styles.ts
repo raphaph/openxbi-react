@@ -151,7 +151,8 @@ export const SyntaxContainer = styled.div`
 export const SyntaxHighlighterStyle = styled(SyntaxHighlighter) <ThemeProps>`
   width: 100%;
   transition: 300ms;
-  background: ${props => props.theme['linear-card-dark']} !important;
+  background: ${(props) =>
+    props.variant === 'light' ? props.theme.white : props.theme.offblack} !important;
 
   span {
     font-family: 'Fira Code', monospace;

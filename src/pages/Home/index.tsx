@@ -1,4 +1,4 @@
-import { useContext, useEffect, useState } from 'react'
+import { useContext, useEffect } from 'react'
 import { MyAccordion } from '../../components/Accordion'
 import { Principles } from '../../components/Principles'
 import { AppContext } from '../../context/AppContext'
@@ -7,6 +7,7 @@ import {
   CardsMainContentOne,
   ContentFooter,
   ContentTwoCard,
+  IsolatedButtonToComponents,
   MainContainer,
   MainContentOne,
   MainContentTwo,
@@ -18,6 +19,7 @@ import {
   coldarkCold,
 } from 'react-syntax-highlighter/dist/esm/styles/prism'
 import { CookiesModal } from '../../components/CookiesModal'
+import { NavLink } from 'react-router-dom'
 
 export function Home() {
   document.title = 'OpenXBI | Home'
@@ -278,8 +280,14 @@ return
             ></iframe>
           </div>
         </CardsMainContentOne>
+        <IsolatedButtonToComponents variant={themeValue}>
+          <button>
+            <NavLink to={"/components"}>Components</NavLink>
+          </button>
+        </IsolatedButtonToComponents>
         <MainContentTwo>
           <ContentTwoCard>
+
             <h3>Estilizando</h3>
             <p>
               O OpenXBI busca revolucionar a maneira como criamos e estilizamos

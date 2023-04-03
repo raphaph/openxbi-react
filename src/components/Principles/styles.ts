@@ -54,7 +54,7 @@ export const PrinciplesContent = styled.div<ThemeProps>`
     div {
         cursor: pointer;
         background: ${(props) =>
-        props.variant === 'light' ? props.theme.white : props.theme.black};
+        props.variant === 'light' ? props.theme.white : props.theme.offblack};
     
         transition: 300ms;
         padding: 2rem;

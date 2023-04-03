@@ -90,6 +90,35 @@ export const CardsMainContentOne = styled.div`
   }
 `
 
+export const IsolatedButtonToComponents = styled.div<ThemeProps>`
+  button {
+    cursor: pointer;
+
+    font-weight: 500;
+    padding: 0.7rem;
+    background: ${(props) => props.theme.offblack};
+    box-shadow: 0 0 3px 0px ${(props) => props.theme['border-dark']};
+    margin-top: 2rem ;
+
+    border: 1px solid ${(props) => props.theme['border-dark']};
+    border-radius: 6px; 
+    
+    a {
+      text-decoration: none;
+      color: white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    transition: all 0.3s;
+    &:hover {
+      transform: scale(1.1);
+      box-shadow: 0 0 5px 1px ${(props) => props.theme['border-dark']};
+    }
+  }
+`
+
 export const MainContentTwo = styled.main`
   display: flex;
   flex-direction: row;
