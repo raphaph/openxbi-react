@@ -3,7 +3,6 @@ import { useContext } from 'react'
 import { AppContext } from '../../context/AppContext'
 import { CardFooter, CardMap, HearderTemplate, TemplatesContainer, TemplatesContents, TemplatesMap } from './styles'
 import templatesData from '../../api/templates.json'
-import { saveAs } from 'file-saver';
 
 interface TemplateProps {
   id: string

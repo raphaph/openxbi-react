@@ -58,8 +58,8 @@ export function AppContextProvider({ children }: AppContextProviderProps) {
     const currentTheme: any = localStorage.getItem('theme')
 
     if (currentTheme === null) {
-      setThemeValue('dark')
-      localStorage.setItem('theme', 'dark')
+      setThemeValue('light')
+      localStorage.setItem('theme', 'light')
     } else {
       setThemeValue(currentTheme)
     }
