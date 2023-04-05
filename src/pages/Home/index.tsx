@@ -25,7 +25,7 @@ import templateImg2 from '../../assets/templates-image/openxbi-cloud-costs.png'
 
 export function Home() {
   document.title = 'OpenXBI | Home'
-  const { themeValue, contentsNames, cookiesAccept, setCookiesAccept } =
+  const { themeValue, contentsNames, cookiesAccept, setCookiesAccept, user } =
     useContext(AppContext)
 
   const daxCode = `measure_received_gross = 
@@ -259,21 +259,21 @@ return
         <CardsMainContentOne>
           <div>
             <iframe
-              src={contentsNames[1]}
+              src={contentsNames[0]}
               frameBorder={0}
               height={300}
             ></iframe>
           </div>
           <div>
             <iframe
-              src={contentsNames[9]}
+              src={contentsNames[8]}
               frameBorder={0}
               height={300}
             ></iframe>
           </div>
           <div>
             <iframe
-              src={contentsNames[15]}
+              src={contentsNames[14]}
               frameBorder={0}
               height={300}
             ></iframe>
@@ -282,6 +282,11 @@ return
         <IsolatedButtonToComponents variant={themeValue}>
           <button>
             <NavLink to={"/components"}>Components</NavLink>
+          </button>
+          <button>
+            <NavLink to={user === null ? "/sign-in" : "/profile"}>
+              + Create your component
+            </NavLink>
           </button>
         </IsolatedButtonToComponents>
         <MainContentTwo>

@@ -93,16 +93,16 @@ export const CardsMainContentOne = styled.div`
 export const IsolatedButtonToComponents = styled.div<ThemeProps>`
   button {
     cursor: pointer;
-
+    
     font-weight: 500;
+
     padding: 0.7rem;
+
     background: ${(props) =>
     props.variant === 'light' ? props.theme.offblack : props.theme.offwhite};
     
-    
-    
     box-shadow: 0 0 3px 0px ${(props) => props.theme['border-dark']};
-    margin-top: 1rem ;
+    margin-top: 2rem ;
 
     border: 1px solid ${(props) => props.theme['border-dark']};
     border-radius: 6px; 
@@ -122,6 +122,14 @@ export const IsolatedButtonToComponents = styled.div<ThemeProps>`
       box-shadow: 0 0 5px 1px ${(props) => props.theme['border-dark']};
       transition: all 0.3s ease-out;
     }
+  }
+
+  button:nth-child(2) {
+    background: #3e00b6;
+    box-shadow: 0 0 5px 1px #3e00b6;
+    color: white;
+    border: 1px solid transparent;
+    margin-left: 1rem;
   }
 `
 

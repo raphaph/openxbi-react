@@ -58,7 +58,7 @@ export function SignIn() {
                                 console.log(error)
                             })
 
-                        navigate("/");
+                        navigate("/profile");
                     })
                     .catch((error) => {
                         console.log(error);
@@ -112,7 +112,7 @@ export function SignIn() {
                                 console.log(error)
                             })
 
-                        navigate("/");
+                        navigate("/profile");
                     })
                     .catch((error) => {
                         console.log(error);
