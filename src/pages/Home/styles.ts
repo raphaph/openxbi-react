@@ -30,11 +30,14 @@ export const MainContentOne = styled.div`
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
-
+  opacity: 0;
   padding: 0 2rem;
 
   width: 100vw;
   max-width: 1300px;
+
+  animation: anim 1s forwards;
+  animation-delay: 250ms;
 
   h1 {
     margin: 5rem 0 1rem 0;
@@ -60,6 +63,11 @@ export const MainContentOne = styled.div`
     margin-bottom: 2rem;
   }
 
+  @keyframes anim {
+      0% { opacity: 0}
+      100% { opacity: 1}
+    }
+
 `
 
 export const CardsMainContentOne = styled.div`
@@ -68,7 +76,9 @@ export const CardsMainContentOne = styled.div`
   gap: 1rem;
   flex-wrap: wrap;
   align-items: center;
-
+  animation: anim 1s forwards;
+  animation-delay: 600ms;
+  opacity: 0;
   div {
     display: flex;
     align-items: center;
@@ -87,10 +97,24 @@ export const CardsMainContentOne = styled.div`
     &:hover {
       transform: scale(1.05);
     }
+
+    @keyframes anim {
+      0% { opacity: 0}
+      100% { opacity: 1}
+    }
   }
 `
 
-export const IsolatedButtonToComponents = styled.div<ThemeProps>`
+export const IsolatedButtons = styled.div<ThemeProps>`
+  opacity: 0;
+  animation: anim 1s forwards;
+  animation-delay: 1000ms;
+  
+  @keyframes anim {
+    0% { opacity: 0}
+    100% { opacity: 1}
+  }
+  
   button {
     cursor: pointer;
     
@@ -125,8 +149,8 @@ export const IsolatedButtonToComponents = styled.div<ThemeProps>`
   }
 
   button:nth-child(2) {
-    background: #3e00b6;
-    box-shadow: 0 0 5px 1px #3e00b6;
+    background: ${props => props.variant === 'light' ? "#3e00b6" : "#FF8C00"};
+    box-shadow: 0 0 3px 1px ${props => props.variant === 'light' ? "#3e00b6" : "#FF8C00"};
     color: white;
     border: 1px solid transparent;
     margin-left: 1rem;

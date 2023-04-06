@@ -3,7 +3,7 @@ import { AppContext } from "../../context/AppContext"
 import { CodePreviewStyles } from "./styles"
 
 export function PreviewComponent({ code }: any) {
-    const { themeValue, user } =
+    const { themeValue } =
         useContext(AppContext)
 
     return (

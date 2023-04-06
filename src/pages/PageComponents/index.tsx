@@ -106,7 +106,6 @@ export function PageComponents() {
                     Code
                     <CodeSimple size={15} weight="fill" />
                   </button>
-
                 </NavLink>
               </FooterCardContent>
             </main>

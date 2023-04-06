@@ -7,7 +7,7 @@ import {
   CardsMainContentOne,
   ContentFooter,
   ContentTwoCard,
-  IsolatedButtonToComponents,
+  IsolatedButtons,
   MainContainer,
   MainContentOne,
   MainContentTwo,
@@ -279,7 +279,7 @@ return
             ></iframe>
           </div>
         </CardsMainContentOne>
-        <IsolatedButtonToComponents variant={themeValue}>
+        <IsolatedButtons variant={themeValue}>
           <button>
             <NavLink to={"/components"}>Components</NavLink>
           </button>
@@ -288,7 +288,7 @@ return
               + Create your component
             </NavLink>
           </button>
-        </IsolatedButtonToComponents>
+        </IsolatedButtons>
         <MainContentTwo>
           <ContentTwoCard>
 
@@ -358,11 +358,11 @@ return
               <img src={templateImg} alt="" />
               <img src={templateImg2} alt="" />
             </div>
-            <IsolatedButtonToComponents variant={themeValue}>
+            <IsolatedButtons variant={themeValue}>
               <button>
                 <NavLink to={"/templates"}>Templates</NavLink>
               </button>
-            </IsolatedButtonToComponents>
+            </IsolatedButtons>
           </ContentFooter>
         </MainFooterContent>
       </MainContentOne>

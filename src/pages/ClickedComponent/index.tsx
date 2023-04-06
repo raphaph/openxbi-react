@@ -26,7 +26,6 @@ export function ClickedComponent() {
     .slice(26, -5)
     .split('/src/components/@Contents/')
 
-
   document.title = `OpenXBI | ${clickedName}`
   const [likeComponent, setLikeComponent] = useState<number | null>(null)
 
@@ -51,7 +50,6 @@ export function ClickedComponent() {
     }
 
   }
-
 
   async function FetchComponent() {
     await axios.get(`https://uxbi.com.br/api/contents/search/${clickedName}`, {
