@@ -107,6 +107,7 @@ export const CardsMainContentOne = styled.div`
 
 export const IsolatedButtons = styled.div<ThemeProps>`
   opacity: 0;
+  width: 100%;
   animation: anim 1s forwards;
   animation-delay: 1000ms;
   
@@ -125,10 +126,8 @@ export const IsolatedButtons = styled.div<ThemeProps>`
     background: ${(props) =>
     props.variant === 'light' ? props.theme.offblack : props.theme.offwhite};
     
-    box-shadow: 0 0 3px 0px ${(props) => props.theme['border-dark']};
     margin-top: 2rem ;
-
-    border: 1px solid ${(props) => props.theme['border-dark']};
+    border: 0;
     border-radius: 6px; 
     
     a {
@@ -143,17 +142,20 @@ export const IsolatedButtons = styled.div<ThemeProps>`
     
     &:hover {
       transform: scale(1.1);
-      box-shadow: 0 0 5px 1px ${(props) => props.theme['border-dark']};
+      box-shadow: 0 0 5px 1px ${props => props.variant === 'light' ? "#000" : "#fff"};
       transition: all 0.3s ease-out;
     }
   }
 
   button:nth-child(2) {
     background: ${props => props.variant === 'light' ? "#3e00b6" : "#FF8C00"};
-    box-shadow: 0 0 3px 1px ${props => props.variant === 'light' ? "#3e00b6" : "#FF8C00"};
     color: white;
     border: 1px solid transparent;
-    margin-left: 1rem;
+    margin: 1rem;
+
+    &:hover {
+      box-shadow: 0 0 5px 1px ${props => props.variant === 'light' ? "#3e00b6" : "#FF8C00"};
+    }
   }
 `
 

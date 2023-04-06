@@ -95,7 +95,7 @@ export function PageComponents() {
           return (
             <main key={content.id}>
               <div>
-                <iframe src={content.path} frameBorder={0} height={300}></iframe>
+                <iframe src={content.path} frameBorder={0} height={370} width={380}></iframe>
               </div>
               <FooterCardContent variant={themeValue}>
                 <strong>

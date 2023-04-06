@@ -16,5 +16,5 @@ export const CodePreviewStyles = styled.div<ThemeProps>`
     width: 25rem;
     height: 25rem;
     border-radius: 8px;
-    
+    padding: 7.5% 5%;
 `

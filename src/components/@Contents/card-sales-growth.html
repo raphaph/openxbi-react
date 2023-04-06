@@ -1,28 +1,38 @@
 <!-- Componente OpenXBI, ajude-nos compartilhando nossa plataforma -->
 <!-- https://openxbi.com.br -->
-<div class='card'>
-    <link rel='stylesheet' href='https://fonts.googleapis.com/icon?family=Material+Icons:FILL'>
-    <div class='title'>
-        <p class='title-text'>
-            Sales <!-- Título -->
-        </p>
-        <p class='percent'>
-            <span class='material-icons'>
-                arrow_drop_up <!-- arrow_drop_down, para condicional negativa -->
-            </span> 20% </p>
-    </div>
-    <div class='data'>
-        <p>$130.599</p> <!-- Valor exibido -->
-        <div class='range'> <!-- Área da barra azul inferior -->
-            <div class='fill' style="width: 76%"><!-- Barra azul -->
-                76% <!-- Valor exibido -->
+<div class='card-container'>
+    <div class='card-content'>
+        <link rel='stylesheet' href='https://fonts.googleapis.com/icon?family=Material+Icons:FILL'>
+        <div class='title'>
+            <p class='title-text'>
+                Sales <!-- Título -->
+            </p>
+            <p class='percent'>
+                <span class='material-icons'>
+                    arrow_drop_up <!-- arrow_drop_down, para condicional negativa -->
+                </span> 20% </p>
+        </div>
+        <div class='data'>
+            <p>$130.599</p> <!-- Valor exibido -->
+            <div class='range'> <!-- Área da barra azul inferior -->
+                <div class='fill' style="width: 76%"><!-- Barra azul -->
+                    76% <!-- Valor exibido -->
+                </div>
             </div>
         </div>
     </div>
 </div>
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap');
-.card {
+
+/* Alinha todos items ao centro */
+.card-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card-content {
     font-family: 'Inter', sans-serif; /* Font do component, remova para usar a font nativa do PBI */
     margin: 0; /* Remove todas as margens do card */
     padding: 1rem; /* Preenchimento envolta do card */

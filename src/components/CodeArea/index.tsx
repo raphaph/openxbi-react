@@ -23,7 +23,7 @@ const defaultCode = `<div class='card'>
 }
 
 .card-title {
-    color: purple;
+    color: #721bff;
 }
 
 #see-preview {
@@ -59,8 +59,9 @@ export function CodeArea() {
                             value={code}
                             onChange={setCode}
                             name="HTML_EDITOR"
+                            height="600px"
                             width="100%"
-                            fontSize={14}
+                            fontSize={15}
                             editorProps={{ $blockScrolling: true }}
                             enableBasicAutocompletion={true}
                             highlightActiveLine={false}
@@ -116,7 +117,8 @@ export function CodeArea() {
                             <p><strong>width</strong> : Define a largura de um elemento.</p>
                             <p><strong>height</strong> : Define a altura de um elemento.</p>
                             <p><strong>display</strong> : Define como um elemento deve ser exibido, como bloco, inline ou como tabela.</p>
-                            <p><strong>float</strong> : Define como um elemento deve flutuar em relação a outros elementos.</p>
+                            <p><strong>.class_name:hover</strong> : Define propriedades ao passar o mouse sobre o elemento.</p>
+                            <p><strong>.class_name:hover p</strong> : Define propriedades do elemento filho(p) ao passar o mouse sobre o elemento pai.</p>
                         </LanguageContents>}
                 </NecklaceContainer>
             </CodingContainerStyle>

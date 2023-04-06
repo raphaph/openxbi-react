@@ -84,7 +84,6 @@ export const CodingStyle = styled.div<ThemeProps>`
         width: 0;
     }
     
-
     .ace_gutter {
         background: rgba(0, 0, 0, 0.05);
         border-top-left-radius: 6px;

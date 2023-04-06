@@ -155,6 +155,7 @@ export const ComponentsContainer = styled.div<ThemeProps>`
     display: flex;
     align-items: center;
     justify-content: center;
+    
     border: 1px solid ${(props) =>
     props.variant === 'light' ? props.theme['border-light'] : props.theme['border-dark']};
     border-bottom: none;

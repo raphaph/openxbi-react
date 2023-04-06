@@ -23,7 +23,7 @@ export function ConditionalDax() {
                     <h1>Utilizando Condicionais</h1>
                     <strong>Tutorial rápido para uso de condicionais dentro da medida do nosso componente.</strong>
 
-                    <p>Para utilizar condicionais dentro do seu componente, trouxe duas opções.</p>
+                    <p>Para utilizar condicionais dentro do seu componente, temos duas opções.</p>
 
                     <p><strong>PRIMEIRA OPÇÃO</strong> - Utilizar condicional diretamente dentro do código com a seguinte sintaxe.</p>
                     <strong> [Value]</strong> Utilizado nestes exemplos, pode ser tanto uma medida quanto variável, ou até mesmo coluna em caso de iteração.
