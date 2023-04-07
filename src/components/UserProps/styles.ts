@@ -14,18 +14,22 @@ export const ProfileContainer = styled.div<ThemeProps>`
         display: flex;
         flex-direction: column;
     }
+    
 
     nav {
-        
         padding: 2rem;
-        background: ${props => props.variant === 'light' ? props.theme.primary : props.theme.black};
         
-        a:nth-child(1) {
+        border-bottom: 2px solid ${(props) =>
+        props.variant === 'light' ? props.theme['border-light'] : props.theme['border-dark']};
+        background: ${props => props.variant === 'light' ? 'linear-gradient(rgba(0,0,0,0), rgba(235,235,235))' : 'linear-gradient(rgba(0,0,0,0), rgba(10,10,10))'};
+        
+        a {
             text-decoration: none;
-            color:  ${props => props.variant === 'light' ? props.theme["gray-700"] : props.theme["gray-500"]};
+            color:  ${props => props.variant === 'light' ? props.theme["gray-600"] : props.theme["gray-500"]};
             margin: 1rem;
             padding: .5rem 1rem;
             font-weight: 500;
+            font-size: 18px;
             border-radius: 8px;
             transition: 300ms;
 
@@ -35,16 +39,17 @@ export const ProfileContainer = styled.div<ThemeProps>`
             }
             
             &.active {
-                background: ${props => props.variant === 'light' ? props.theme.black : props.theme.white};
-                color: ${props => props.variant === 'light' ? props.theme.white : props.theme.black};
+                background: ${props => props.variant === 'light' ? props.theme.white : props.theme.black};
+                color: ${props => props.variant === 'light' ? props.theme.black : props.theme.white};
+                border: 1px solid ${(props) => props.variant === 'light' ? props.theme['border-light'] : props.theme['border-dark']};
+                font-weight: 700;
             }  
         }
 
-        a:nth-child(2) {
+        /* a:nth-child(2) {
             text-decoration: none;
             color:  white;
             background: #3e00b6;
-            box-shadow: 0 0 5px 1px #3a0050;
             margin: 1rem;
             padding: .5rem;
             font-weight: 500;
@@ -61,7 +66,7 @@ export const ProfileContainer = styled.div<ThemeProps>`
                 color: ${props => props.variant === 'light' ? props.theme.white : props.theme.black};
             }
             
-        }
+        } */
     }
 `
 

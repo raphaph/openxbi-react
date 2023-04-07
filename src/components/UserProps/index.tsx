@@ -2,10 +2,9 @@ import { useContext } from 'react';
 import { AppContext } from '../../context/AppContext';
 import { LeftSideProfileAvatar, ProfileContainer } from './styles';
 import { NavLink } from 'react-router-dom';
-import { Plus } from 'phosphor-react';
 
 export function UserProps() {
-    const { themeValue, user } =
+    const { themeValue, user, setCreateOrEdit } =
         useContext(AppContext)
 
     return (
@@ -23,7 +22,7 @@ export function UserProps() {
             <nav>
                 <NavLink to={"/profile"}>
                     My Components</NavLink>
-                <NavLink to={"/create-component"}>
+                <NavLink to={"/create-component"} onClick={() => setCreateOrEdit('create')}>
                     + Create
                 </NavLink>
             </nav>

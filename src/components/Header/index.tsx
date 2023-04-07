@@ -79,7 +79,7 @@ export function Header() {
           alt=""
         />
       </NavLink>
-      <HeaderSideRight>
+      <HeaderSideRight variant={themeValue}>
         <nav>
           <NavLink to="/components" title="components">
             Components

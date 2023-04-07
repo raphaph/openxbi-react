@@ -26,6 +26,12 @@ interface AppContextType {
   setUser: any
   providerName: string | null
   setProvider: any
+  componentName: string,
+  setComponentName: any,
+  code: string,
+  setCode: any;
+  createOrEdit: string;
+  setCreateOrEdit: any
 }
 
 
@@ -43,6 +49,9 @@ export function AppContextProvider({ children }: AppContextProviderProps) {
   const [cookiesAccept, setCookiesAccept] = useState('')
   const [user, setUser] = useState(null);
   const [providerName, setProvider] = useState<string | null>(null)
+  const [componentName, setComponentName] = useState<string>('')
+  const [code, setCode] = useState<string>('')
+  const [createOrEdit, setCreateOrEdit] = useState<string>('create')
   const [contentData, setContentData] = useState<ContentDataProps>({
     id: '',
     name: '',
@@ -88,7 +97,13 @@ export function AppContextProvider({ children }: AppContextProviderProps) {
         user,
         setUser,
         providerName,
-        setProvider
+        setProvider,
+        componentName,
+        setComponentName,
+        code,
+        setCode,
+        createOrEdit,
+        setCreateOrEdit
       }}
     >
       {children}

@@ -19,7 +19,7 @@ export const HeaderContainer = styled.header<ThemeProps>`
     img:nth-child(1) {
       width: 10rem;
       margin-left: 1.5rem;
-      filter: ${props => props.variant === 'light' ? 'drop-shadow(0px 0px 5px rgba(0,0,0,0.2))' : 'drop-shadow(0px 0px 5px rgba(255,255,255,0.2))'} blur(0.30px);
+      filter: ${props => props.variant === 'light' ? 'drop-shadow(0px 0px 5px rgba(0,0,0,0.05))' : 'drop-shadow(0px 0px 5px rgba(255,255,255,0.05))'} blur(0.30px);
 
     }
 
@@ -43,11 +43,11 @@ export const HeaderContainer = styled.header<ThemeProps>`
   }
 `
 
-export const HeaderSideRight = styled.div`
+export const HeaderSideRight = styled.div<ThemeProps>`
   display: flex;
   align-items: center;
   justify-content: flex-end;
-
+  
   nav {
     display: flex;
     gap: 1rem;

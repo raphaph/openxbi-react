@@ -30,6 +30,25 @@ export const CodingContainerStyle = styled.div`
 `
 
 export const PreviewContainer = styled.div`
+    
+`
+
+export const HeaderCoding = styled.div`
+    display: flex;
+    align-items: center;
+    
+
+    select {
+        font-size: 1.1rem;
+        font-weight: 500;
+        font-family: 'Inter', sans-serif;
+
+        margin-left: 1rem;
+        border: 0;
+        border-radius: 3px;
+        
+    }
+
 `
 
 export const CodingStyle = styled.div<ThemeProps>`
@@ -102,19 +121,19 @@ export const CodingStyle = styled.div<ThemeProps>`
 
 
 
-export const PreviewFooter = styled.div`
+export const PreviewFooter = styled.div<ThemeProps>`
     button {
         display: flex;
         align-items: center;
         justify-content: center;
-        cursor: not-allowed;
+        cursor: pointer;
         
         width: 25rem;
         
         background: ${props => props.theme.secondary};
         color: white;
         
-        margin: 1rem 0;
+        margin: .6rem 0;
         padding: .8rem;
         
         border-radius: 8px;
@@ -130,6 +149,21 @@ export const PreviewFooter = styled.div`
         p {
             margin-left: .5rem;
         }
+    }
+
+    input[type="text"] {
+        border: 0;
+        
+        width: 100%;
+        height: 40px;
+        
+        padding: .2rem .4rem; 
+        margin-top: .4rem;
+        
+        background: ${props => props.theme.white};
+        border: 1px solid ${(props) =>
+        props.variant === 'light' ? props.theme['border-light'] : props.theme['border-dark']};
+        border-radius: 6px;
     }
 `
 

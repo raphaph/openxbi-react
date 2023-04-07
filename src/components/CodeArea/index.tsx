@@ -1,16 +1,17 @@
-import { useContext, useState } from "react";
+import { useContext, useState, useEffect } from "react";
 import AceEditor from "react-ace";
 import "ace-builds/src-noconflict/mode-html";
 import "ace-builds/src-noconflict/theme-monokai";
 import "ace-builds/src-noconflict/theme-xcode";
-import { ButtonNecklace, CodeAreaContainer, CodingContainerStyle, CodingStyle, CodingSyntax, LanguageContents, NecklaceContainer, PreviewContainer, PreviewFooter, PreviewTitle } from "./styles";
+import { ButtonNecklace, CodeAreaContainer, CodingContainerStyle, CodingStyle, CodingSyntax, HeaderCoding, LanguageContents, NecklaceContainer, PreviewContainer, PreviewFooter, PreviewTitle } from "./styles";
 import { AppContext } from "../../context/AppContext";
 import { PreviewComponent } from "../PreviewComponent";
 import cssLogo from "../../assets/css.png"
 import htmlLogo from "../../assets/html.png"
 import { FloppyDisk } from "phosphor-react";
+import axios from 'axios'
 
-const defaultCode = `<div class='card'>
+const card_default = `<div class='card'>
     <strong class='card-title'>Component Preview</strong>
     <p class='card-content'>Edit your component</p>
     <p id='see-preview'>See preview</p>
@@ -31,12 +32,134 @@ const defaultCode = `<div class='card'>
 }
 </style>`
 
-export function CodeArea() {
-    const [code, setCode] = useState(defaultCode);
-    const [necklaceSelect, setNecklaceSelect] = useState<any>('html')
-    const { themeValue } =
-        useContext(AppContext)
+const table_default = `<table>
+    <tr>
+        <td>Coluna 1</td>
+        <td>Coluna 2</td>
+        <td>Coluna 3</td>
+    </tr>
+    <tr>
+        <td>Linha 2</td>
+        <td>Linha 2</td>
+        <td>Linha 2</td>
+    </tr>
+    <tr>
+        <td>Linha 3</td>
+        <td>Linha 3</td>
+        <td>Linha 3</td>
+    </tr>
+    <tr>
+        <td>Linha 3</td>
+        <td>Linha 3</td>
+        <td>Linha 3</td>
+    </tr>
+</table>
+<style>
+table {
+    border-collapse: collapse;
+    margin: 20px auto;
+    font-size: .875rem;
+    color: black;
+}
 
+td {
+    padding: 10px;
+    border: 1px solid #ddd;
+    text-align: center;
+    background-color: #fff;
+}
+
+tr:nth-child(even) {
+    background-color: #fff;
+}
+
+tr:first-child td {
+    background: whitesmoke;
+    font-weight: bold;
+}
+</style>`
+
+const chart_default = `<div class="chart">
+    <div class="bar" style="height: 50%;"></div>
+    <div class="bar" style="height: 75%;"></div>
+    <div class="bar" style="height: 25%;"></div>
+    <div class="bar" style="height: 90%;"></div>
+</div>
+<style>
+.chart {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-end;
+    background-color: #fff;
+    padding: 10px;
+    border-radius: 10px;
+    height: 300px;
+    width: 300px;
+}
+
+.bar {
+    width: 40px;
+    background-color: orange;
+    border-radius: 6px 6px 2px 2px;
+}
+</style>`
+
+export function CodeArea() {
+    const [necklaceSelect, setNecklaceSelect] = useState<any>('html')
+    const { themeValue, user, code, setCode, componentName, setComponentName } =
+        useContext(AppContext)
+    const [typeDefaultCode, setTypeDefaultCode] = useState('card')
+    const apiKey = import.meta.env.VITE_AUTH_KEY
+
+
+    function selectTypeDefaultCode(event: any) {
+        setTypeDefaultCode(event.target.value);
+
+        if (event.target.value === 'card') {
+            setCode(card_default);
+        } else if (event.target.value === 'table') {
+            setCode(table_default);
+        } else if (event.target.value === 'chart') {
+            setCode(chart_default);
+        } else if (event.target.value === 'blank') {
+            setCode(`<div class='container'></div>`);
+        }
+    }
+
+    useEffect(() => {
+        setCode(code)
+    }, [])
+
+    function saveComponent() {
+        axios.post('https://uxbi.com.br/api/save-component', {
+            username: user.user.uid.substring(0, 22),
+            filename: componentName,
+            componentContent: code
+        }, {
+            headers: {
+                "api-key": `${apiKey}`,
+            }
+        })
+            .then(response => {
+                console.log(response.data);
+            })
+            .catch(error => {
+                console.log(error)
+            })
+    }
+
+    function handleInputChange(event: any) {
+        setComponentName(event.target.value);
+    }
+
+    function validarEntrada(event: any) {
+        const tecla = event.key;
+        const regex = /^[a-zA-Z0-9\s'_-]+$/;
+        const entradaValida = regex.test(tecla);
+        if (!entradaValida) {
+            event.preventDefault();
+        }
+    }
 
     return (
         <CodeAreaContainer variant={themeValue}>
@@ -46,12 +169,28 @@ export function CodeArea() {
                         <strong>See preview</strong>
                     </PreviewTitle>
                     <PreviewComponent code={code} />
-                    <PreviewFooter>
-                        <button><FloppyDisk size={25} /> <p>Save (Soon)</p></button>
+                    <PreviewFooter variant={themeValue}>
+                        <input
+                            value={componentName}
+                            type="text"
+                            placeholder="Give your component a name"
+                            spellCheck="false"
+                            onChange={handleInputChange}
+                            onKeyPress={validarEntrada}
+                        ></input>
+                        <button onClick={componentName === '' ? () => alert('Give your component a name') : () => saveComponent()}><FloppyDisk size={25} /> <p>Save (Soon)</p></button>
                     </PreviewFooter>
                 </PreviewContainer>
                 <CodingSyntax>
-                    <strong>Code here</strong>
+                    <HeaderCoding>
+                        <strong>Code here</strong>
+                        <select id="select-type" name="select-type" onChange={selectTypeDefaultCode}>
+                            <option value="card">Card</option>
+                            <option value="table">Table</option>
+                            <option value="chart">Chart</option>
+                            <option value="blank">Blank</option>
+                        </select>
+                    </HeaderCoding>
                     <CodingStyle variant={themeValue}>
                         <AceEditor
                             mode="html"
@@ -63,9 +202,8 @@ export function CodeArea() {
                             width="100%"
                             fontSize={15}
                             editorProps={{ $blockScrolling: true }}
-                            enableBasicAutocompletion={true}
                             highlightActiveLine={false}
-                            defaultValue={defaultCode}
+                            defaultValue={code}
                         />
                     </CodingStyle>
 
