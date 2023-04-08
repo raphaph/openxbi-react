@@ -101,7 +101,7 @@ export function ClickedComponent() {
             .slice(26, -5)
             .split('/src/components/@Contents/')}`}</h2>
           <div>
-            <iframe src={lastClicked} frameBorder={0} height={350} width={380}></iframe>
+            <iframe src={lastClicked} frameBorder={0} height={370} width={380}></iframe>
           </div>
           {/* <p>{contentData.description}</p> */}
           <CreatorInfoLike variant={themeValue}>

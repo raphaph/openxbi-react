@@ -1,23 +1,26 @@
-import { UserProps } from '../../components/UserProps';
+import { UserProps } from '../../components/Profile&Create/UserProps';
 import { CodeArea } from '../../components/CodeArea';
 import { CreateContainer } from './styles';
-import { useContext } from 'react'
+import { useContext, useEffect } from 'react'
 import { AppContext } from '../../context/AppContext';
+import { ArrowRight, CaretRight } from 'phosphor-react';
 
 export function CreateComponent() {
     document.title = 'OpenXBI | Create Component'
-    const { themeValue, createOrEdit } =
+    const { createOrEdit, componentName, themeValue } =
         useContext(AppContext)
+
+    useEffect(() => {
+        window.scrollTo(0, 320)
+    }, [])
 
     return (
         <>
             <UserProps />
-            <CreateContainer>
-                {createOrEdit === 'create' ? <h2>Creating your component</h2> : <h2>Editing your component</h2>}
+            <CreateContainer variant={themeValue}>
+                {createOrEdit === 'create' ? <h2>Creating your component</h2> : <h2>Editing your component <CaretRight size={18} weight='bold' /> <span>{componentName}</span></h2>}
                 <CodeArea />
             </CreateContainer>
         </>
-
-
     )
 }

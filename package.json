@@ -17,6 +17,7 @@
     "codemirror": "^6.0.1",
     "core-js": "^3.29.1",
     "cors": "^2.8.5",
+    "dompurify": "^3.0.1",
     "dotenv": "^16.0.3",
     "ejs": "^3.1.8",
     "express": "^4.18.2",
@@ -30,6 +31,7 @@
     "react-ace": "^10.1.0",
     "react-dom": "^18.2.0",
     "react-error-overlay": "^6.0.11",
+    "react-perfect-scrollbar": "^1.5.8",
     "react-router-dom": "^6.10.0",
     "react-syntax-highlighter": "^15.5.0",
     "styled-components": "^5.3.8",
@@ -37,6 +39,7 @@
   },
   "devDependencies": {
     "@rocketseat/eslint-config": "^1.2.0",
+    "@types/dompurify": "^3.0.1",
     "@types/file-saver": "^2.0.5",
     "@types/mysql": "^2.15.21",
     "@types/pg": "^8.6.6",

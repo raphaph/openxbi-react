@@ -31,7 +31,9 @@ interface AppContextType {
   code: string,
   setCode: any;
   createOrEdit: string;
-  setCreateOrEdit: any
+  setCreateOrEdit: any;
+  showModal: boolean;
+  setShowModal: any;
 }
 
 
@@ -43,6 +45,7 @@ interface AppContextProviderProps {
 export const AppContext = createContext({} as AppContextType)
 
 export function AppContextProvider({ children }: AppContextProviderProps) {
+  const [showModal, setShowModal] = useState<boolean>(false)
   const [themeValue, setThemeValue] = useState<themeValueType>(null)
   const [contentsNames, setContentsNames] = useState<string[]>([])
   const [clickedContent, setClickedContent] = useState('')
@@ -103,7 +106,9 @@ export function AppContextProvider({ children }: AppContextProviderProps) {
         code,
         setCode,
         createOrEdit,
-        setCreateOrEdit
+        setCreateOrEdit,
+        showModal,
+        setShowModal
       }}
     >
       {children}

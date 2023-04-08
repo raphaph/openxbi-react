@@ -3,28 +3,54 @@ import AceEditor from "react-ace";
 import "ace-builds/src-noconflict/mode-html";
 import "ace-builds/src-noconflict/theme-monokai";
 import "ace-builds/src-noconflict/theme-xcode";
-import { ButtonNecklace, CodeAreaContainer, CodingContainerStyle, CodingStyle, CodingSyntax, HeaderCoding, LanguageContents, NecklaceContainer, PreviewContainer, PreviewFooter, PreviewTitle } from "./styles";
+import { ButtonNecklace, CodeAreaContainer, CodingContainerStyle, CodingStyle, CodingSyntax, HeaderCoding, LanguageContents, NecklaceContainer, PreviewContainer, PreviewFooter, PreviewTitle, SaveConfirmContent } from "./styles";
 import { AppContext } from "../../context/AppContext";
-import { PreviewComponent } from "../PreviewComponent";
+import { PreviewComponent } from "../Profile&Create/PreviewComponent";
 import cssLogo from "../../assets/css.png"
 import htmlLogo from "../../assets/html.png"
-import { FloppyDisk } from "phosphor-react";
+import { Check, FloppyDisk } from "phosphor-react";
 import axios from 'axios'
+import DOMPurify from 'dompurify'
+import PerfectScrollbar from 'react-perfect-scrollbar'
+import 'react-perfect-scrollbar/dist/css/styles.css'
+
+const blank_default = `<div class='container'>Hello World</div>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap');
+* {
+    font-family: 'Inter', sans-serif
+} 
+</style>
+`
 
 const card_default = `<div class='card'>
     <strong class='card-title'>Component Preview</strong>
-    <p class='card-content'>Edit your component</p>
+    <p class='card-value'>Edit your component</p>
     <p id='see-preview'>See preview</p>
 </div>
 
 <style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap'); /* import font */
 * {
+    font-family: 'Inter', sans-serif; /* font */
     margin: 0;
     border-box: box-sizing;
 }
 
+.card {
+    display: flex;
+    flex-direction: column; /* arrange in a column */
+    align-items: center; /* center align horizontally */
+    justify-content: center; /* vertical alignment */
+    height: 100%;
+}
+
 .card-title {
     color: #721bff;
+}
+
+.card-value {
+    color: #666;
 }
 
 #see-preview {
@@ -33,28 +59,39 @@ const card_default = `<div class='card'>
 </style>`
 
 const table_default = `<table>
-    <tr>
-        <td>Coluna 1</td>
-        <td>Coluna 2</td>
-        <td>Coluna 3</td>
-    </tr>
-    <tr>
-        <td>Linha 2</td>
-        <td>Linha 2</td>
-        <td>Linha 2</td>
-    </tr>
-    <tr>
-        <td>Linha 3</td>
-        <td>Linha 3</td>
-        <td>Linha 3</td>
-    </tr>
-    <tr>
-        <td>Linha 3</td>
-        <td>Linha 3</td>
-        <td>Linha 3</td>
-    </tr>
+    <thead> <!-- header -->
+        <tr>
+            <th>Coluna 1</th> <!-- column name -->
+            <th>Coluna 2</th>
+            <th>Coluna 3</th>
+        </tr>
+    </thead>
+    <tbody> <!-- all lines -->
+        <tr> <!-- first line -->
+            <td>Linha 1</td> <!-- value 1 line 1 -->
+            <td>Linha 1</td> <!-- value 2 line 1 -->
+            <td>Linha 1</td> <!-- value 3 line 1 -->
+        </tr>
+        <tr>
+            <td>Linha 2</td> <!-- value 1 line 2 -->
+            <td>Linha 2</td>
+            <td>Linha 2</td>
+        </tr>
+        <tr>
+            <td>Linha 3</td>
+            <td>Linha 3</td>
+            <td>Linha 3</td>
+        </tr>
+    </tbody>
 </table>
 <style>
+@import url(
+'https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap'
+);
+* {
+    font-family: 'Inter';
+}
+
 table {
     border-collapse: collapse;
     margin: 20px auto;
@@ -62,9 +99,15 @@ table {
     color: black;
 }
 
+th {
+    background: whitesmoke;
+    border-bottom: 2px solid #ddd;
+    padding: .5rem;
+}
+
 td {
     padding: 10px;
-    border: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
     text-align: center;
     background-color: #fff;
 }
@@ -73,43 +116,53 @@ tr:nth-child(even) {
     background-color: #fff;
 }
 
-tr:first-child td {
-    background: whitesmoke;
-    font-weight: bold;
-}
 </style>`
 
-const chart_default = `<div class="chart">
-    <div class="bar" style="height: 50%;"></div>
-    <div class="bar" style="height: 75%;"></div>
-    <div class="bar" style="height: 25%;"></div>
-    <div class="bar" style="height: 90%;"></div>
+const chart_default = `<div class='chart-container'>
+    <div class='chart'>
+        <div class='bar' style='height: 50%;'>50%</div>
+        <div class='bar' style='height: 75%;'>75%</div>
+        <div class='bar' style='height: 25%;'>25%</div>
+        <div class='bar' style='height: 90%;'>90%</div>
+    </div>
 </div>
 <style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap');
+.chart-container {
+    font-family: 'Inter', sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.875rem;
+}
+
 .chart {
+    text-align: center;
     display: flex;
     justify-content: space-around;
     align-items: flex-end;
     background-color: #fff;
     padding: 10px;
     border-radius: 10px;
-    height: 300px;
-    width: 300px;
+    height: 200px;
+    width: 100%;
 }
 
 .bar {
     width: 40px;
     background-color: orange;
+    color: white;
     border-radius: 6px 6px 2px 2px;
 }
 </style>`
 
 export function CodeArea() {
     const [necklaceSelect, setNecklaceSelect] = useState<any>('html')
-    const { themeValue, user, code, setCode, componentName, setComponentName } =
+    const { themeValue, user, code, setCode, componentName, setComponentName, createOrEdit } =
         useContext(AppContext)
     const [typeDefaultCode, setTypeDefaultCode] = useState('card')
     const apiKey = import.meta.env.VITE_AUTH_KEY
+    const [saveShowConfirm, setSaveShowConfirm] = useState(false)
 
 
     function selectTypeDefaultCode(event: any) {
@@ -122,13 +175,9 @@ export function CodeArea() {
         } else if (event.target.value === 'chart') {
             setCode(chart_default);
         } else if (event.target.value === 'blank') {
-            setCode(`<div class='container'></div>`);
+            setCode(blank_default);
         }
     }
-
-    useEffect(() => {
-        setCode(code)
-    }, [])
 
     function saveComponent() {
         axios.post('https://uxbi.com.br/api/save-component', {
@@ -141,7 +190,10 @@ export function CodeArea() {
             }
         })
             .then(response => {
-                console.log(response.data);
+                setSaveShowConfirm(true)
+                setTimeout(() => {
+                    setSaveShowConfirm(false)
+                }, 2000)
             })
             .catch(error => {
                 console.log(error)
@@ -161,6 +213,15 @@ export function CodeArea() {
         }
     }
 
+    function sanitizedCode(code: string) {
+        const actualCode = DOMPurify.sanitize(code)
+        const htmlString = actualCode
+        const encodedHtml = btoa(htmlString)
+        const dataUrl = `data:text/html;base64,${encodedHtml}`
+        return dataUrl
+    }
+
+
     return (
         <CodeAreaContainer variant={themeValue}>
             <CodingContainerStyle>
@@ -168,51 +229,61 @@ export function CodeArea() {
                     <PreviewTitle>
                         <strong>See preview</strong>
                     </PreviewTitle>
-                    <PreviewComponent code={code} />
+                    <PreviewComponent code={sanitizedCode(code)} />
                     <PreviewFooter variant={themeValue}>
-                        <input
-                            value={componentName}
-                            type="text"
-                            placeholder="Give your component a name"
-                            spellCheck="false"
-                            onChange={handleInputChange}
-                            onKeyPress={validarEntrada}
-                        ></input>
-                        <button onClick={componentName === '' ? () => alert('Give your component a name') : () => saveComponent()}><FloppyDisk size={25} /> <p>Save (Soon)</p></button>
+                        {createOrEdit === 'create' ?
+                            <input
+                                value={componentName}
+                                type="text"
+                                placeholder="Give your component a name"
+                                spellCheck="false"
+                                onChange={handleInputChange}
+                                onKeyPress={validarEntrada}
+                            ></input> : null}
+                        {createOrEdit === 'create' ? <small>using already existing name will replace the component</small> : null}
+                        <button onClick={componentName === '' ? () => alert('Give your component a name') : () => saveComponent()}><FloppyDisk size={25} /> <p>Save</p></button>
+                        {saveShowConfirm === true ? <SaveConfirmContent>
+                            <Check size={25} weight="bold" />
+                            <span>Saved</span>
+                        </SaveConfirmContent> : null}
                     </PreviewFooter>
                 </PreviewContainer>
                 <CodingSyntax>
                     <HeaderCoding>
                         <strong>Code here</strong>
-                        <select id="select-type" name="select-type" onChange={selectTypeDefaultCode}>
-                            <option value="card">Card</option>
-                            <option value="table">Table</option>
-                            <option value="chart">Chart</option>
-                            <option value="blank">Blank</option>
-                        </select>
+                        {createOrEdit === 'create' ?
+                            <div>
+                                <p>Templates</p>
+                                <select id="select-type" name="select-type" onChange={selectTypeDefaultCode}>
+                                    <option value="blank">Blank</option>
+                                    <option value="card">Card</option>
+                                    <option value="table">Table</option>
+                                    <option value="chart">Chart</option>
+                                </select>
+                            </div> : null}
                     </HeaderCoding>
                     <CodingStyle variant={themeValue}>
-                        <AceEditor
-                            mode="html"
-                            theme={themeValue === 'light' ? "xcode" : "monokai"}
-                            value={code}
-                            onChange={setCode}
-                            name="HTML_EDITOR"
-                            height="600px"
-                            width="100%"
-                            fontSize={15}
-                            editorProps={{ $blockScrolling: true }}
-                            highlightActiveLine={false}
-                            defaultValue={code}
-                        />
+                        <PerfectScrollbar>
+                            <AceEditor
+                                mode="html"
+                                theme={themeValue === 'light' ? "xcode" : "monokai"}
+                                value={code}
+                                onChange={setCode}
+                                name="HTML_EDITOR"
+                                height="600px"
+                                width="100%"
+                                fontSize={15}
+                                highlightActiveLine={true}
+                                defaultValue={code}
+                            />
+                        </PerfectScrollbar>
                     </CodingStyle>
 
-                    <p>Using class in most elements avoids conflicts on the page.</p>
+                    <p>Using class in most elements avoids conflicts on the component.</p>
                     <p>Remove double quotes for use in DAX.</p>
                 </CodingSyntax>
                 <NecklaceContainer>
                     <ButtonNecklace language={necklaceSelect}>
-                        <strong>Help!</strong>
                         <button onClick={() => setNecklaceSelect('html')}><img src={htmlLogo} height={"25px"} alt="" /> <p>HTML</p></button>
                         <button onClick={() => setNecklaceSelect('css')}><img src={cssLogo} height={"25px"} alt="" /> <p>CSS</p></button>
                     </ButtonNecklace>
@@ -237,10 +308,22 @@ export function CodeArea() {
                             <p><code>{`<input type='checkbox'>`}</code> : Define um campo de entrada de dados em um formulário.</p>
                             <p><code>{`<button>`}</code> : Define um botão clicável em um formulário ou na página.</p>
                             <p><code>{`<span>`}</code> : Define uma pequena seção de texto ou conteúdo.</p>
+                            <p><code>{`<style>`}</code> : Define um bloco de estilos CSS que serão aplicados ao componente.</p>
+                            <p><code>{`<svg>`}</code> : É usada para criar um contêiner para gráficos vetoriais escaláveis.</p>
+                            <p><code>{`<path>`}</code> : É usada para desenhar linhas, curvas e formas complexas.</p>
+                            <p><code>{`<rect>`}</code> : É usada para desenhar retângulos.</p>
+                            <p><code>{`<circle>`}</code> : É usada para desenhar círculos.</p>
+                            <p><code>{`<ellipse>`}</code> : É usada para desenhar elipses.</p>
+                            <p><code>{`<line>`}</code> : É usada para desenhar linhas retas.</p>
+                            <p><code>{`<polygon>`}</code> : É usada para desenhar polígonos com três ou mais lados.</p>
+                            <p><code>{`<text>`}</code> : É usada para adicionar texto a um gráfico SVG.</p>
                         </LanguageContents> :
                         <LanguageContents variant={themeValue}>
+                            <p><strong>*</strong> : Seleciona todos os elementos no componente.</p>
                             <p><strong>.class_name</strong> : Estiliza elementos com a mesma classe.</p>
-                            <p><strong>#id</strong> : Estiliza elementos o id específico.</p>
+                            <p><strong>.class_name:hover</strong> : Define propriedades ao passar o mouse sobre o elemento.</p>
+                            <p><strong>.class_name:hover p</strong> : Define propriedades do elemento filho(p) ao passar o mouse sobre o elemento pai.</p>
+                            <p><strong>#id</strong> : Estiliza elementos com o id único específico.</p>
                             <p><strong>background-color</strong> : Define a cor de fundo de um elemento.</p>
                             <p><strong>color</strong> : Define a cor do texto de um elemento.</p>
                             <p><strong>font-size</strong> : Define o tamanho da fonte do texto.</p>
@@ -254,9 +337,11 @@ export function CodeArea() {
                             <p><strong>border-radius</strong> : Define o raio da borda.</p>
                             <p><strong>width</strong> : Define a largura de um elemento.</p>
                             <p><strong>height</strong> : Define a altura de um elemento.</p>
-                            <p><strong>display</strong> : Define como um elemento deve ser exibido, como bloco, inline ou como tabela.</p>
-                            <p><strong>.class_name:hover</strong> : Define propriedades ao passar o mouse sobre o elemento.</p>
-                            <p><strong>.class_name:hover p</strong> : Define propriedades do elemento filho(p) ao passar o mouse sobre o elemento pai.</p>
+                            <p><strong>display: flex</strong> : Cria um contêiner flexível que pode ajustar o tamanho e a posição dos itens de acordo com o espaço disponível.</p>
+                            <p><strong>display: inline | display: block</strong> : Definem se o elemento é exibido dentro de uma linha de texto ou em uma linha separada, respectivamente.</p>
+                            <p><strong>flex-direction</strong> : Define a direção na qual os itens dentro do contêiner flexível são dispostos, 'row' ou 'column'.</p>
+                            <p><strong>justify-content</strong> : Alinha os itens ao longo do eixo principal do contêiner flexível.</p>
+                            <p><strong>align-items</strong> : Alinha os itens ao longo do eixo transversal do contêiner flexível.</p>
                         </LanguageContents>}
                 </NecklaceContainer>
             </CodingContainerStyle>

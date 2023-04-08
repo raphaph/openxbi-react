@@ -42,7 +42,7 @@ export const HearderTemplate = styled.header<ThemeProps>`
   --gradient-bg: ${(props) =>
     props.variant === 'light' ? props.theme['gray-100'] : props.theme.offblack};
   
-  background: ${props => props.theme['linear-card-dark']};
+  background: ${props => props.variant === 'light' ? props.theme['linear-card-dark'] : props.theme.offblack};
   padding: 2rem;
   
   p {

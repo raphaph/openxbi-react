@@ -1,4 +1,4 @@
-import { CodeSimple } from 'phosphor-react'
+import { Code, CodeSimple } from 'phosphor-react'
 import { useContext, useEffect, useState } from 'react'
 import { NavLink } from 'react-router-dom'
 import { CookiesModal } from '../../components/CookiesModal'
@@ -103,8 +103,7 @@ export function PageComponents() {
                 </strong>
                 <NavLink to="/componentCode" title="services">
                   <button onClick={() => localStorage.setItem('lastClicked', content.path)}>
-                    Code
-                    <CodeSimple size={15} weight="fill" />
+                    <Code size={23} weight="fill" />
                   </button>
                 </NavLink>
               </FooterCardContent>

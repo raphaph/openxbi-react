@@ -259,9 +259,10 @@ return
         <CardsMainContentOne>
           <div>
             <iframe
-              src={contentsNames[0]}
+              src={contentsNames[5]}
               frameBorder={0}
               height={300}
+
             ></iframe>
           </div>
           <div>
@@ -273,9 +274,10 @@ return
           </div>
           <div>
             <iframe
-              src={contentsNames[14]}
+              src={contentsNames[13]}
               frameBorder={0}
               height={300}
+              width={340}
             ></iframe>
           </div>
         </CardsMainContentOne>

@@ -6,7 +6,7 @@ interface ThemeProps {
 
 export const ProfileContainer = styled.div<ThemeProps>`
     display: flex;
-    flex-direction: column;
+    
     background: ${(props) =>
         props.variant === 'light' ? props.theme.offwhite : props.theme.offblack};
         
@@ -14,74 +14,33 @@ export const ProfileContainer = styled.div<ThemeProps>`
         display: flex;
         flex-direction: column;
     }
-    
 
-    nav {
-        padding: 2rem;
-        
-        border-bottom: 2px solid ${(props) =>
+    border-bottom: 2px solid ${(props) =>
         props.variant === 'light' ? props.theme['border-light'] : props.theme['border-dark']};
         background: ${props => props.variant === 'light' ? 'linear-gradient(rgba(0,0,0,0), rgba(235,235,235))' : 'linear-gradient(rgba(0,0,0,0), rgba(10,10,10))'};
-        
-        a {
-            text-decoration: none;
-            color:  ${props => props.variant === 'light' ? props.theme["gray-600"] : props.theme["gray-500"]};
-            margin: 1rem;
-            padding: .5rem 1rem;
-            font-weight: 500;
-            font-size: 18px;
-            border-radius: 8px;
-            transition: 300ms;
+    
 
-            &:hover {
-                color: ${props => props.variant === 'light' ? props.theme.black : props.theme.white};
-                
-            }
-            
-            &.active {
-                background: ${props => props.variant === 'light' ? props.theme.white : props.theme.black};
-                color: ${props => props.variant === 'light' ? props.theme.black : props.theme.white};
-                border: 1px solid ${(props) => props.variant === 'light' ? props.theme['border-light'] : props.theme['border-dark']};
-                font-weight: 700;
-            }  
-        }
-
-        /* a:nth-child(2) {
-            text-decoration: none;
-            color:  white;
-            background: #3e00b6;
-            margin: 1rem;
-            padding: .5rem;
-            font-weight: 500;
-            border-radius: 8px;
-            transition: 300ms;
-
-            &:hover {
-                color: ${props => props.theme.black};
-                background: white;
-            }
-            
-            &.active {
-                background: ${props => props.variant === 'light' ? props.theme.black : props.theme.white};
-                color: ${props => props.variant === 'light' ? props.theme.white : props.theme.black};
-            }
-            
-        } */
-    }
+    
 `
 
 export const LeftSideProfileAvatar = styled.div<ThemeProps>`
     display: flex;
+    align-items: center;
+    width: auto;
 
     @media (max-width: 700px) {
-        width: 100%;
+        display: flex;
+        flex-direction: column;
     }
 
     padding: 1rem;
     margin: 1rem;
-    width: 400px;
 
     border-radius: 8px;
+
+    div {
+        width: auto;
+    }
 
     img {
         width: 110px;
@@ -102,6 +61,45 @@ export const LeftSideProfileAvatar = styled.div<ThemeProps>`
     strong {
         font-size: 1rem;
     }    
+
+    nav {
+        
+        width: 310px;
+        padding: 2rem;
+             
+        a {
+            display: flex;
+            justify-content: center;
+
+            text-decoration: none;
+            color:  ${props => props.variant === 'light' ? props.theme["gray-600"] : props.theme["gray-500"]};
+            margin: 1rem;
+            padding: .5rem 1rem;
+            font-weight: 500;
+            font-size: 18px;
+            border-radius: 8px;
+            transition: 300ms;
+            background: rgba(100,110,110,.1);
+
+            &:hover {
+                color: ${props => props.variant === 'light' ? props.theme.black : props.theme.white};
+                
+            }
+            
+            &.active {
+                background: ${props => props.variant === 'light' ? props.theme.black : props.theme.secondary};
+                color: ${props => props.theme.white};
+                border: 1px solid ${(props) => props.variant === 'light' ? props.theme['border-light'] : props.theme['border-dark']};
+                font-weight: 700;
+            }  
+        }
+
+        svg {
+            margin-left: .3rem;
+        }
+
+        
+    }
 `
 export const RightSideProfileFavorites = styled.main<ThemeProps>`
     height: 90%;

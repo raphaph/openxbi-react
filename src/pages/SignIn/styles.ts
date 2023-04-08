@@ -8,11 +8,11 @@ export const SignInContainer = styled.main<ThemeProps>`
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
     background: ${(props) =>
         props.variant === 'light' ? props.theme['bg-home-light'] : props.theme['bg-home-dark']};
-       
-    padding: 0rem;
-
+    padding: 5%;
+    
     div {
         display: flex;
         flex-direction: column;
@@ -21,11 +21,11 @@ export const SignInContainer = styled.main<ThemeProps>`
         background: ${(props) =>
         props.variant === 'light' ? props.theme.white : props.theme.black};
         padding: 3rem 5rem;
-        margin: 5%;
+        
 
         border: 1px solid ${(props) =>
         props.variant === 'light' ? props.theme["border-light"] : props.theme["border-dark"]};
-        border-radius: 5px;
+        border-radius: 10px;
 
         box-shadow: 0 0 20px 2px ${(props) =>
         props.variant === 'light' ? props.theme["border-light"] : props.theme.offblack};
@@ -88,5 +88,9 @@ export const SignInContainer = styled.main<ThemeProps>`
         margin: 1rem;
         font-size: 1rem;
     }   
+
+    small {
+        margin-top: 1rem;
+    }
     
 `

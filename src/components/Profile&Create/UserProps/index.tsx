@@ -1,10 +1,11 @@
 import { useContext } from 'react';
-import { AppContext } from '../../context/AppContext';
+import { AppContext } from '../../../context/AppContext';
 import { LeftSideProfileAvatar, ProfileContainer } from './styles';
 import { NavLink } from 'react-router-dom';
+import { Code, Cube } from 'phosphor-react';
 
 export function UserProps() {
-    const { themeValue, user, setCreateOrEdit } =
+    const { themeValue, user, setCreateOrEdit, setCode } =
         useContext(AppContext)
 
     return (
@@ -18,14 +19,16 @@ export function UserProps() {
                         <p>{user._tokenResponse?.screenName || user.user.email.split('@', 1)}</p>
                     </div>
                 </div>
+
+                <nav>
+                    <NavLink to={"/profile"}>
+                        <span>My Components</span><Cube size={20} weight='bold' /></NavLink>
+                    <NavLink to={"/create-component"} onClick={() => { setCreateOrEdit('create'); setCode(`<div class='container'></div>`) }}>
+                        <span>Create </span><Code size={20} weight='bold' />
+                    </NavLink>
+                </nav>
             </LeftSideProfileAvatar>
-            <nav>
-                <NavLink to={"/profile"}>
-                    My Components</NavLink>
-                <NavLink to={"/create-component"} onClick={() => setCreateOrEdit('create')}>
-                    + Create
-                </NavLink>
-            </nav>
+
         </ProfileContainer>
     )
 }

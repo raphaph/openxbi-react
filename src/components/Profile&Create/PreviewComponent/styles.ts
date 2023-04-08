@@ -5,11 +5,13 @@ interface ThemeProps {
 }
 
 export const CodePreviewStyles = styled.div<ThemeProps>`
+    
     display: flex;
     align-items: center;
     justify-content: center;
     
-    background: ${props => props.theme['linear-card-dark']};
+    background:  ${(props) =>
+        props.variant === 'light' ? props.theme.offwhite : props.theme["gray-900"]};
     border: 1px solid ${(props) =>
         props.variant === 'light' ? props.theme['border-light'] : props.theme['border-dark']};
 
@@ -17,4 +19,9 @@ export const CodePreviewStyles = styled.div<ThemeProps>`
     height: 25rem;
     border-radius: 8px;
     padding: 7.5% 5%;
+
+    iframe {
+        background: rgba(0,0,0,0.03);
+        font-family: 'Inter', sans-serif;
+    }
 `

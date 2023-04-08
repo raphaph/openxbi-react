@@ -36,9 +36,20 @@ export const PreviewContainer = styled.div`
 export const HeaderCoding = styled.div`
     display: flex;
     align-items: center;
+    justify-content: space-between;
     
+    div {
+        display: flex;
+        align-items: center;
+
+        p {
+            font-size: 1rem;
+            margin: 0;
+        }
+    }
 
     select {
+        cursor: pointer;
         font-size: 1.1rem;
         font-weight: 500;
         font-family: 'Inter', sans-serif;
@@ -46,7 +57,6 @@ export const HeaderCoding = styled.div`
         margin-left: 1rem;
         border: 0;
         border-radius: 3px;
-        
     }
 
 `
@@ -67,9 +77,8 @@ export const CodingStyle = styled.div<ThemeProps>`
         background: transparent;
         line-height: 1.6;
         
-
         &::-webkit-scrollbar {
-            width: .4rem;
+            width: .7rem;
             height: .4rem;
         }
 
@@ -84,21 +93,7 @@ export const CodingStyle = styled.div<ThemeProps>`
         
     }
 
-    .ace_content {
-        background: transparent;
-
-        &::-webkit-scrollbar {
-            width: .6rem;
-        }
-
-        &::-webkit-scrollbar-track {
-            background: black;
-        }
-
-        &::-webkit-scrollbar-thumb {
-            background: black;
-        }
-    }
+    
     .ace_print-margin {
         width: 0;
     }
@@ -119,9 +114,10 @@ export const CodingStyle = styled.div<ThemeProps>`
     }
 `
 
-
-
 export const PreviewFooter = styled.div<ThemeProps>`
+
+    width: 25rem;
+
     button {
         display: flex;
         align-items: center;
@@ -185,8 +181,7 @@ export const CodingSyntax = styled.div`
     }
 `
 
-export const PreviewTitle = styled.div`
-    
+export const PreviewTitle = styled.div`   
     strong {
         font-size: 1.2rem;
         line-height: 2;
@@ -195,7 +190,7 @@ export const PreviewTitle = styled.div`
 
 export const NecklaceContainer = styled.div`
     padding: .5rem;
-    margin-left: .2rem;
+    margin-left: .5rem;
     border-radius: 8px;
 `
 
@@ -229,12 +224,12 @@ export const ButtonNecklace = styled.div<LanguageSelect>`
         }
     }
 
-    button:nth-child(2) {
+    button:nth-child(1) {
         font-weight: ${props => props.language === 'html' ? 600 : 500};
         color: ${props => props.language === 'html' ? 'inherit' : null};
     }
 
-    button:nth-child(3) {
+    button:nth-child(2) {
         font-weight: ${props => props.language === 'css' ? 600 : 500};
         color: ${props => props.language === 'css' ? 'inherit' : null};
     }
@@ -260,4 +255,29 @@ export const LanguageContents = styled.div<ThemeProps>`
         font-weight: 500;
     }
     
+`
+
+export const SaveConfirmContent = styled.div`
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-top: 1rem;
+    color: green;
+    font-weight: 600;
+
+    span {
+        margin-left: .7rem;
+        color: green !important;
+    }
+
+    transform: translateY(-20px);
+
+    animation: show 300ms forwards;
+
+    @keyframes show {
+        0% {transform: translateY(-30px); opacity: 0}
+        50% {transform: translateY(10px)}
+        100% {transform: translateY(0px); opacity: 1}
+    }
 `
