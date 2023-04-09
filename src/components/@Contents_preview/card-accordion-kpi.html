@@ -76,6 +76,18 @@
     margin: 0;
     box-sizing: border-box;
 }
+
+*::-webkit-scrollbar {
+    height: 6px;
+    width: 6px;
+    background: rgba(221, 221, 221,.5);
+}
+
+*::-webkit-scrollbar-thumb {
+    background: rgba(221, 221, 221,.5);
+    border-radius: 5px;
+}
+
 .accordion {
     margin: .2rem 0;
 }
@@ -147,7 +159,7 @@
     margin: 0 .2rem 0;
     
     border-radius: 6px;
-    box-shadow: 0 0 2px 1px rgb(228, 228, 228);
+    box-shadow: 0 0 2px 1px rgba(155, 155, 155,.3);
 }
 
 .kpi-cards:hover {

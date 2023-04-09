@@ -20,7 +20,7 @@ const blank_default = `<div class='container'>
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap');
 * {
-    font-family: 'Inter', sans-serif
+    font-family: 'Inter', sans-serif;
 } 
 </style>`
 
@@ -197,7 +197,7 @@ export function CodeArea() {
     function saveComponent(nameString: string) {
         axios.post('https://uxbi.com.br/api/save-component', {
             username: user.user.uid.substring(0, 22),
-            filename: `${typeComponentSave}-${nameString}`,
+            filename: nameString,
             componentContent: code
         }, {
             headers: {
@@ -221,7 +221,7 @@ export function CodeArea() {
 
     function validarEntrada(event: any) {
         const tecla = event.key;
-        const regex = /^[<a-z0-9></a-z0-9>\_]+$/;
+        const regex = /^[a-z0-9\_]+$/;
         const entradaValida = regex.test(tecla);
         if (!entradaValida) {
             event.preventDefault();
@@ -261,17 +261,23 @@ export function CodeArea() {
                                         placeholder="Give your component a name (a-z 0-9 _)"
                                         spellCheck="false"
                                         onChange={handleInputChange}
-
                                         onKeyPress={validarEntrada}
                                     >
                                     </input>
                                 </div>
                                 : null}
                         </InputNameComponent>
+                        {createOrEdit === 'create' ? <h4>{`${typeComponentSave}-${componentName}`}</h4> : <h4>{componentName}</h4>}
                         {createOrEdit === 'create' ?
-                            <button onClick={componentName === '' ? () => alert('Give your component a name') : () => saveComponent(componentName)}><FloppyDisk size={25} /> <p>Save</p></button> :
-                            <button onClick={() => saveComponent(componentName.split("-")[1])}><FloppyDisk size={25} /> <p>Save</p></button>}
-
+                            <button onClick={componentName === '' ?
+                                () => alert('Give your component a name') :
+                                () => saveComponent(`${typeComponentSave}-${componentName}`)}><FloppyDisk size={25} />
+                                <p>Save</p>
+                            </button> :
+                            <button onClick={() => saveComponent(componentName)}>
+                                <FloppyDisk size={25} />
+                                <p>Save</p>
+                            </button>}
                         {saveShowConfirm === true ? <SaveConfirmContent>
                             <Check size={25} weight="bold" />
                             <span>Saved</span>

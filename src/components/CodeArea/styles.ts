@@ -114,11 +114,14 @@ export const CodingStyle = styled.div<ThemeProps>`
 `
 
 export const PreviewFooter = styled.div<ThemeProps>`
-
     width: 25rem;
 
     p {
         font-size: .875rem;
+    }
+
+    h4 {
+        margin-top: .2rem;
     }
 
     button {

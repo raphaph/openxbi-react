@@ -229,7 +229,7 @@ export const ContentFooter = styled.div<ThemeProps>`
     margin: .5rem 0;
     width: 100%;
     border-radius: 5px;
-    box-shadow: 0 0 3px 1px ${props => props.theme['gray-300']};
+    box-shadow: 0 0 2px 1px ${props => props.theme['gray-500']};
   }
 
   h2 {
