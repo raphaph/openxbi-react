@@ -139,7 +139,7 @@ export function SignIn() {
                     Login with GitHub
                 </button>
             </div>
-            <small>We don't save passwords!</small>
+            <small>We don't save password's!</small>
         </SignInContainer>
 
     )

@@ -84,8 +84,6 @@ export function ClickedComponent() {
     // API de inicio, traz os detalhes sobre os cards
     FetchComponent()
 
-
-
   }, [lastClicked, apiKey])
 
   function CopyCode() {

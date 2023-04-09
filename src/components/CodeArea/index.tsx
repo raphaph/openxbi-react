@@ -3,7 +3,7 @@ import AceEditor from "react-ace";
 import "ace-builds/src-noconflict/mode-html";
 import "ace-builds/src-noconflict/theme-monokai";
 import "ace-builds/src-noconflict/theme-xcode";
-import { ButtonNecklace, CodeAreaContainer, CodingContainerStyle, CodingStyle, CodingSyntax, HeaderCoding, LanguageContents, NecklaceContainer, PreviewContainer, PreviewFooter, PreviewTitle, SaveConfirmContent } from "./styles";
+import { ButtonNecklace, CodeAreaContainer, CodingContainerStyle, CodingStyle, CodingSyntax, HeaderCoding, InputNameComponent, LanguageContents, NecklaceContainer, PreviewContainer, PreviewFooter, PreviewTitle, SaveConfirmContent } from "./styles";
 import { AppContext } from "../../context/AppContext";
 import { PreviewComponent } from "../Profile&Create/PreviewComponent";
 import cssLogo from "../../assets/css.png"
@@ -14,14 +14,15 @@ import DOMPurify from 'dompurify'
 import PerfectScrollbar from 'react-perfect-scrollbar'
 import 'react-perfect-scrollbar/dist/css/styles.css'
 
-const blank_default = `<div class='container'>Hello World</div>
+const blank_default = `<div class='container'>
+    <p style="color: gray">Hello World</p>
+</div>
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap');
 * {
     font-family: 'Inter', sans-serif
 } 
-</style>
-`
+</style>`
 
 const card_default = `<div class='card'>
     <strong class='card-title'>Component Preview</strong>
@@ -163,7 +164,7 @@ export function CodeArea() {
     const [typeDefaultCode, setTypeDefaultCode] = useState('card')
     const apiKey = import.meta.env.VITE_AUTH_KEY
     const [saveShowConfirm, setSaveShowConfirm] = useState(false)
-
+    const [typeComponentSave, setTypeComponentSave] = useState('card')
 
     function selectTypeDefaultCode(event: any) {
         setTypeDefaultCode(event.target.value);
@@ -179,10 +180,24 @@ export function CodeArea() {
         }
     }
 
-    function saveComponent() {
+    function selectTypeComponentSave(event: any) {
+        setTypeComponentSave(event.target.value);
+
+        if (event.target.value === 'card') {
+            setTypeComponentSave('card');
+        } else if (event.target.value === 'table') {
+            setTypeComponentSave('table');
+        } else if (event.target.value === 'chart') {
+            setTypeComponentSave('chart');
+        } else if (event.target.value === 'other') {
+            setTypeComponentSave('other');
+        }
+    }
+
+    function saveComponent(nameString: string) {
         axios.post('https://uxbi.com.br/api/save-component', {
             username: user.user.uid.substring(0, 22),
-            filename: componentName,
+            filename: `${typeComponentSave}-${nameString}`,
             componentContent: code
         }, {
             headers: {
@@ -206,7 +221,7 @@ export function CodeArea() {
 
     function validarEntrada(event: any) {
         const tecla = event.key;
-        const regex = /^[a-zA-Z0-9\s'_-]+$/;
+        const regex = /^[<a-z0-9></a-z0-9>\_]+$/;
         const entradaValida = regex.test(tecla);
         if (!entradaValida) {
             event.preventDefault();
@@ -214,13 +229,13 @@ export function CodeArea() {
     }
 
     function sanitizedCode(code: string) {
-        const actualCode = DOMPurify.sanitize(code)
+        // const actualCode = DOMPurify.sanitize(code)
+        const actualCode = code.replace(/<script\b[^<]*(?:(?!<\/script>)<[^<]*)*<\/script>/gi, '').replace('script', '')
         const htmlString = actualCode
         const encodedHtml = btoa(htmlString)
         const dataUrl = `data:text/html;base64,${encodedHtml}`
         return dataUrl
     }
-
 
     return (
         <CodeAreaContainer variant={themeValue}>
@@ -231,21 +246,43 @@ export function CodeArea() {
                     </PreviewTitle>
                     <PreviewComponent code={sanitizedCode(code)} />
                     <PreviewFooter variant={themeValue}>
+                        <InputNameComponent variant={themeValue}>
+                            {createOrEdit === 'create' ?
+                                <div>
+                                    <select id="select-type-name" name="type-name" onChange={selectTypeComponentSave}>
+                                        <option value="card">card</option>
+                                        <option value="chart">chart</option>
+                                        <option value="table">table</option>
+                                        <option value="other">other</option>
+                                    </select>
+                                    <input
+                                        value={componentName}
+                                        type="text"
+                                        placeholder="Give your component a name (a-z 0-9 _)"
+                                        spellCheck="false"
+                                        onChange={handleInputChange}
+
+                                        onKeyPress={validarEntrada}
+                                    >
+                                    </input>
+                                </div>
+                                : null}
+                        </InputNameComponent>
                         {createOrEdit === 'create' ?
-                            <input
-                                value={componentName}
-                                type="text"
-                                placeholder="Give your component a name"
-                                spellCheck="false"
-                                onChange={handleInputChange}
-                                onKeyPress={validarEntrada}
-                            ></input> : null}
-                        {createOrEdit === 'create' ? <small>using already existing name will replace the component</small> : null}
-                        <button onClick={componentName === '' ? () => alert('Give your component a name') : () => saveComponent()}><FloppyDisk size={25} /> <p>Save</p></button>
+                            <button onClick={componentName === '' ? () => alert('Give your component a name') : () => saveComponent(componentName)}><FloppyDisk size={25} /> <p>Save</p></button> :
+                            <button onClick={() => saveComponent(componentName.split("-")[1])}><FloppyDisk size={25} /> <p>Save</p></button>}
+
                         {saveShowConfirm === true ? <SaveConfirmContent>
                             <Check size={25} weight="bold" />
                             <span>Saved</span>
                         </SaveConfirmContent> : null}
+
+                        {createOrEdit === 'create' ?
+                            <div>
+                                <p>The type selection is a prefix that will be added before.</p>
+                                <p>Using already existing name will replace the component.</p>
+                            </div>
+                            : null}
                     </PreviewFooter>
                 </PreviewContainer>
                 <CodingSyntax>
@@ -278,7 +315,6 @@ export function CodeArea() {
                             />
                         </PerfectScrollbar>
                     </CodingStyle>
-
                     <p>Using class in most elements avoids conflicts on the component.</p>
                     <p>Remove double quotes for use in DAX.</p>
                 </CodingSyntax>

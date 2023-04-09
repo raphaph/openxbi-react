@@ -9,10 +9,7 @@ export const PrinciplesContainer = styled.main<ThemeProps>`
     flex-direction: column;
     align-items: center;
     width: 100%;
-    background: linear-gradient(
-                -15deg,
-                rgba(52, 22, 227, 0.1) 60%,
-                rgba(255, 140, 0, 0.2)) 40%;
+    background: ${props => props.variant === 'light' ? props.theme.offwhite : props.theme.black};
 
     padding: 6rem .5rem 8rem .5rem;
 
@@ -54,7 +51,7 @@ export const PrinciplesContent = styled.div<ThemeProps>`
     div {
         cursor: pointer;
         background: ${(props) =>
-        props.variant === 'light' ? props.theme.white : props.theme.offblack};
+        props.variant === 'light' ? props.theme['slate-gray-1'] : props.theme.offblack};
     
         transition: 300ms;
         padding: 2rem;

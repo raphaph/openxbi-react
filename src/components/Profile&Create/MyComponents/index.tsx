@@ -16,6 +16,7 @@ export function MyComponents() {
     const [deleteComponentName, setDeleteComponentName] = useState('')
 
     useEffect(() => {
+
         axios.get(`https://uxbi.com.br/api/get-all-components/${user.user.uid.substring(0, 22)}`, {
             headers: {
                 "api-key": `${apiKey}`
@@ -26,6 +27,7 @@ export function MyComponents() {
             })
 
         setComponentName('')
+
     }, [deleteMyComponent])
 
     function deleteMyComponent(name: string) {
@@ -50,12 +52,12 @@ export function MyComponents() {
             <MyComponentsContainer>
                 {userComponents.length === 0 ? <h4>start by creating a component, it will appear here!</h4> : null}
                 {userComponents.map((component: any) => {
-                    const htmlString = component.conteudo
+                    const htmlString = component.conteudo.replace(/<script\b[^<]*(?:(?!<\/script>)<[^<]*)*<\/script>/gi, '').replace('script', '')
                     const encodedHtml = btoa(htmlString)
                     const dataUrl = `data:text/html;base64,${encodedHtml}`;
 
                     return (
-                        <div id="1">
+                        <div id="1" key={component.nome}>
                             <h3>{component.nome.replace(".html", "")}</h3>
                             <PreviewComponent code={dataUrl} />
                             {/* <PreviewComponent code={component.conteudo} /> */}

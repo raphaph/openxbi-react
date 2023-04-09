@@ -35,7 +35,7 @@ export const Trigger = styled(AccordionTrigger) <ThemeProps>`
       : props.theme['border-dark']};
   padding: 0.5rem;
   background: ${(props) =>
-    props.variant === 'light' ? props.theme.white : props.theme.offblack};
+    props.variant === 'light' ? props.theme['slate-gray-1'] : props.theme.offblack};
     
 
   border-radius: 5px;

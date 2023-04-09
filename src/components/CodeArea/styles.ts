@@ -50,8 +50,7 @@ export const HeaderCoding = styled.div`
 
     select {
         cursor: pointer;
-        font-size: 1.1rem;
-        font-weight: 500;
+        font-size: 1rem;
         font-family: 'Inter', sans-serif;
 
         margin-left: 1rem;
@@ -62,7 +61,7 @@ export const HeaderCoding = styled.div`
 `
 
 export const CodingStyle = styled.div<ThemeProps>`
-
+    margin-bottom: .8rem;
     padding: .5rem;
     background: ${props => props.theme['linear-card-dark']};
     border-radius: 11px;
@@ -118,6 +117,10 @@ export const PreviewFooter = styled.div<ThemeProps>`
 
     width: 25rem;
 
+    p {
+        font-size: .875rem;
+    }
+
     button {
         display: flex;
         align-items: center;
@@ -144,23 +147,54 @@ export const PreviewFooter = styled.div<ThemeProps>`
 
         p {
             margin-left: .5rem;
+            font-size: 1rem;
         }
     }
 
-    input[type="text"] {
-        border: 0;
-        
-        width: 100%;
-        height: 40px;
-        
-        padding: .2rem .4rem; 
-        margin-top: .4rem;
-        
-        background: ${props => props.theme.white};
-        border: 1px solid ${(props) =>
+    
+`
+
+export const InputNameComponent = styled.div<ThemeProps>`
+    display: flex;
+    
+    div {
+        select {
+            z-index: 1;
+            cursor: pointer;
+            position: absolute;
+            
+            background: transparent;
+            border: 0;
+            
+            transform: translateY(16px);
+            margin-left: .4rem;
+            
+            font-size: 1rem;
+            font-family: 'Inter', sans-serif;
+            
+            option {
+                
+                background-color: white;
+            }
+        }
+
+        input[type="text"] {
+            border: 0;
+            z-index: 0;
+            width: 25rem;
+            height: 40px;
+            
+            padding: .2rem .4rem .2rem 4.7rem; 
+            margin-top: .5rem;
+            margin-bottom: .4rem;
+            
+            background: ${props => props.theme.white};
+            border: 1px solid ${(props) =>
         props.variant === 'light' ? props.theme['border-light'] : props.theme['border-dark']};
-        border-radius: 6px;
+            border-radius: 6px;
+        }
     }
+    
 `
 
 export const CodingSyntax = styled.div`
@@ -176,7 +210,6 @@ export const CodingSyntax = styled.div`
     }
     
     p {
-        margin: .8rem 0;
         font-size: 0.875rem;
     }
 `
@@ -263,6 +296,7 @@ export const SaveConfirmContent = styled.div`
     justify-content: center;
 
     margin-top: 1rem;
+    margin-bottom: .7rem;
     color: green;
     font-weight: 600;
 

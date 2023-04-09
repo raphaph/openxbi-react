@@ -14,7 +14,7 @@ export function ConfirmDeleteComponent({ handleDelete }: any) {
                 <p>Are you sure?</p>
                 <div>
                     <Warning color="red" weight="fill" size={19} />
-                    <small>This operation is irreversible  </small>
+                    <small>This operation is irreversible</small>
                     <Warning color="red" weight="fill" size={19} />
                 </div>
 

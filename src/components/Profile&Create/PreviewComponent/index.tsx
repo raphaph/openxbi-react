@@ -6,7 +6,6 @@ export function PreviewComponent({ code }: any) {
     const { themeValue } =
         useContext(AppContext)
 
-
     return (
         <CodePreviewStyles variant={themeValue}>
             <iframe src={code} frameBorder="0" height={375} width={380}></iframe>

@@ -3,15 +3,22 @@ import { CodeArea } from '../../components/CodeArea';
 import { CreateContainer } from './styles';
 import { useContext, useEffect } from 'react'
 import { AppContext } from '../../context/AppContext';
-import { ArrowRight, CaretRight } from 'phosphor-react';
+import { CaretRight } from 'phosphor-react';
+import { useNavigate } from 'react-router-dom';
 
 export function CreateComponent() {
     document.title = 'OpenXBI | Create Component'
-    const { createOrEdit, componentName, themeValue } =
+    const { createOrEdit, componentName, themeValue, user } =
         useContext(AppContext)
+    const navigate = useNavigate();
 
     useEffect(() => {
         window.scrollTo(0, 320)
+
+        if (user === null || user === '') {
+            navigate('/sign-in');
+        }
+
     }, [])
 
     return (

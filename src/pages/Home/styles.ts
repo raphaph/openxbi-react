@@ -148,13 +148,13 @@ export const IsolatedButtons = styled.div<ThemeProps>`
   }
 
   button:nth-child(2) {
-    background: ${props => props.variant === 'light' ? "#3e00b6" : "#FF8C00"};
+    background: ${props => props.variant === 'light' ? "#6B4DBF" : "#FF8C00"};
     color: white;
     border: 1px solid transparent;
     margin: 1rem;
 
     &:hover {
-      box-shadow: 0 0 5px 1px ${props => props.variant === 'light' ? "#3e00b6" : "#FF8C00"};
+      box-shadow: 0 0 5px 1px ${props => props.variant === 'light' ? "#825de1" : "#FF8C00"};
     }
   }
 `

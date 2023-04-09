@@ -1,7 +1,10 @@
 import styled from 'styled-components'
 
+interface ThemeProps {
+    variant?: 'light' | 'dark' | null
+}
 
-export const NavigationContainer = styled.aside`
+export const NavigationContainer = styled.aside<ThemeProps>`
     display: flex;
     flex-direction: column;
     padding: 2rem 1.5rem;
@@ -9,7 +12,7 @@ export const NavigationContainer = styled.aside`
     margin-top: 0.8rem;
     position: fixed;
     
-    background: ${props => props.theme['linear-card-dark']};
+    background: ${props => props.variant === 'light' ? props.theme['slate-gray-1'] : props.theme.offblack};
 
     @media (max-width: 700px) {
         position: relative;
@@ -39,14 +42,9 @@ export const NavigationContainer = styled.aside`
             }
 
             &.active {
-                background: linear-gradient(
-                -15deg,
-                rgba(52, 22, 227, 0.1),
-                rgba(255, 140, 0, 0.1));
-                
-                color: ${props => props.theme.primary};
+                background: ${props => props.variant === 'light' ? props.theme.black : props.theme.white};
+                color: ${props => props.variant === 'light' ? props.theme.white : props.theme.black};
                 font-weight: bold;
-
             }
         }
     }
