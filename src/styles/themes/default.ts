@@ -36,7 +36,7 @@ export const defaultTheme = {
   'gray-600': '#323238',
   'gray-700': '#29292E',
   'gray-800': '#202024',
-  'gray-900': '#141414',
+  'gray-900': '#101010',
   'bg-gray': '#050506',
   'bg-home-dark': 'linear-gradient(-45deg, rgba(55, 0, 123, .3) 20%, #050506 80%)',
   'bg-home-light': '#f4f4f4',

@@ -62,7 +62,8 @@ export const FilterSection = styled.section<ThemeProps>`
     props.variant === 'light' ? props.theme['gray-100'] : props.theme.offblack};
   padding: .6rem;
   border-radius: 6px;
-  background: ${props => props.theme['linear-card-dark']};
+  background: ${(props) =>
+    props.variant === 'light' ? props.theme['linear-card-light'] : props.theme['gray-900']};
   
   form {
 
