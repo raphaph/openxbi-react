@@ -188,12 +188,26 @@ export const MidContent = styled.div`
   width: 100%;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: start;
   margin: 10rem 0;
 
   @media (max-width: 700px) {
     display: flex;
     flex-direction: column;
+  }
+
+  div {
+    display: flex;
+    align-items: start;
+    justify-content: center;
+
+    h1:nth-child(2) {
+      color: ${props => props.theme.secondary}
+    }
+
+    h1:nth-child(3) {
+      color: ${props => props.theme.primary}
+    }
   }
 `
 

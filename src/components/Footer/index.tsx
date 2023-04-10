@@ -50,7 +50,7 @@ export function Footer() {
             Discord
           </a>
         </ContactInfo>
-        <FooterMid>
+        <FooterMid variant={themeValue}>
           <p>Ajude a manter a plataforma ativa, e crescer cada vez mais. 🥰</p>
           <a href="https://donate.stripe.com/9AQg2bcSydIMchieUU" target={'_blank'}>
             <button>Buy Me A Coffee </button>

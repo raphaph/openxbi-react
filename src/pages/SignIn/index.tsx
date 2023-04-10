@@ -4,8 +4,6 @@ import { useNavigate } from 'react-router-dom';
 import { AppContext } from '../../context/AppContext';
 import { auth } from '../../services/firebase'
 import { SignInContainer } from './styles';
-import logoDark from '../../assets/logo-dark.svg'
-import logoLight from '../../assets/logo-light.svg'
 import axios from 'axios'
 import { User } from 'phosphor-react';
 
@@ -139,7 +137,7 @@ export function SignIn() {
                     Login with GitHub
                 </button>
             </div>
-            <small>We don't save password's!</small>
+            <small>We don't save passwords!</small>
         </SignInContainer>
 
     )

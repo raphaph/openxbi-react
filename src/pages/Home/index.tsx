@@ -318,7 +318,10 @@ return
         </MainContentTwo>
         <MidContent>
           <MyAccordion />
-          <h1>#FREE #UX #BI</h1>
+          <div>
+            <h1>#FREE</h1><h1>#UX</h1><h1>#BI</h1>
+          </div>
+
         </MidContent>
 
         <MainFooterContent>

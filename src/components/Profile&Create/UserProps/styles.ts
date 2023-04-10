@@ -17,7 +17,7 @@ export const ProfileContainer = styled.div<ThemeProps>`
 
     border-bottom: 2px solid ${(props) =>
         props.variant === 'light' ? props.theme['border-light'] : props.theme['border-dark']};
-        background: ${props => props.variant === 'light' ? 'linear-gradient(rgba(0,0,0,0), rgba(235,235,235))' : 'linear-gradient(rgba(0,0,0,0), rgba(10,10,10))'};
+        background: ${props => props.variant === 'light' ? 'linear-gradient(rgb(245, 245, 245), rgba(233,233,233,1))' : 'linear-gradient(rgba(5,5,6,1), rgba(12,12,12,1))'};
     
 
     
@@ -40,6 +40,12 @@ export const LeftSideProfileAvatar = styled.div<ThemeProps>`
 
     div {
         width: auto;
+
+        svg {
+            fill: ${props => props.variant === 'light' ? props.theme.black : props.theme.white};
+            margin-left: .4rem;
+            transform: translateY(2px);
+        }
     }
 
     img {
@@ -53,10 +59,11 @@ export const LeftSideProfileAvatar = styled.div<ThemeProps>`
     }
 
     p {
-        font-size: 1rem;
-        margin: .4rem .8rem;
-        font-weight: 600;
+        margin: .7rem .8rem;
+        font-weight: 500;
     }
+
+    
 
     strong {
         font-size: 1rem;
@@ -64,19 +71,20 @@ export const LeftSideProfileAvatar = styled.div<ThemeProps>`
 
     nav {
         
-        width: 310px;
-        padding: 2rem;
+        width: auto;
+        
              
         a {
             display: flex;
-            justify-content: center;
+            justify-content: left;
+            align-items: center;
 
             text-decoration: none;
             color:  ${props => props.variant === 'light' ? props.theme["gray-600"] : props.theme["gray-500"]};
             margin: 1rem;
             padding: .5rem 1rem;
             font-weight: 500;
-            font-size: 18px;
+            font-size: 1rem;
             border-radius: 8px;
             transition: 300ms;
             background: rgba(100,110,110,.1);
@@ -90,53 +98,14 @@ export const LeftSideProfileAvatar = styled.div<ThemeProps>`
                 background: ${props => props.variant === 'light' ? props.theme.black : props.theme.secondary};
                 color: ${props => props.theme.white};
                 border: 1px solid ${(props) => props.variant === 'light' ? props.theme['border-light'] : props.theme['border-dark']};
-                font-weight: 700;
+                font-weight: 500;
             }  
         }
 
         svg {
-            margin-left: .3rem;
+            margin-right: .5rem;
         }
 
         
-    }
-`
-export const RightSideProfileFavorites = styled.main<ThemeProps>`
-    height: 90%;
-    width: 20px;
-      
-    div {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-
-        margin: 2rem 2rem 4rem 2rem;
-        height: 700px;
-        border: 1px solid ${(props) =>
-        props.variant === 'light' ? props.theme['border-light'] : props.theme['border-dark']};
-        border-radius: 10px;
-
-        
-
-        p {
-            margin: 2rem 0;
-            text-align: center;
-        }
-
-        svg {
-            position: absolute;
-            animation: heartBeat 2s infinite;
-            transform: translateY(80px);
-        }
-
-        @keyframes heartBeat {
-            0% { 
-                fill: white; 
-                width: 80px; 
-                height: 80px; 
-                filter: drop-shadow(0 0 1px);
-            }
-        }
     }
 `

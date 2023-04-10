@@ -145,9 +145,11 @@ export function Header() {
               <NavLink to="/docs/introduction" title="docs">
                 Docs
               </NavLink>
-              <NavLink to={"/sign-in"}>
-                Sign In
-              </NavLink>
+              {user === null ? <NavLink to={"/sign-in"}>Sign In</NavLink> :
+                <NavLink to="#" onClick={providerName === 'github.com' ? () => logoutGitHub() : () => logoutGoogle()}>
+                  <SignOut size={22} weight="fill" />
+                  <p>Sign Out</p>
+                </NavLink>}
               <SeparatorHorizontal variant={themeValue}></SeparatorHorizontal>
               <button onClick={() => changeTheme()}>
                 Alternar tema

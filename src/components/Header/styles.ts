@@ -153,7 +153,10 @@ export const MenuVertical = styled.div<ThemeProps>`
     border: 1px solid ${(props) =>
     props.variant === 'light' ? props.theme['border-light'] : props.theme['border-dark']};
 
+   
     a {
+      display: flex;
+      align-items: center;
       text-decoration: none;
       color: ${(props) => props.theme['gray-500']};
       
@@ -161,6 +164,11 @@ export const MenuVertical = styled.div<ThemeProps>`
         color: inherit;
         transition: 300ms;
     }
+
+    svg {
+        margin-right: .4rem;
+    }
+    
    }
   }
 `

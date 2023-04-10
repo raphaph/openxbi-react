@@ -33,7 +33,7 @@ export const PreviewContainer = styled.div`
     
 `
 
-export const HeaderCoding = styled.div`
+export const HeaderCoding = styled.div<ThemeProps>`
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -52,10 +52,25 @@ export const HeaderCoding = styled.div`
         cursor: pointer;
         font-size: 1rem;
         font-family: 'Inter', sans-serif;
+        padding: .25rem;
 
         margin-left: 1rem;
         border: 0;
         border-radius: 3px;
+
+        background: ${(props) =>
+        props.variant === 'light' ? props.theme.white : props.theme["gray-900"]};
+            color: ${(props) =>
+        props.variant === 'light' ? props.theme.black : props.theme.white};
+        border: 1px solid ${(props) =>
+        props.variant === 'light' ? props.theme['border-light'] : props.theme['border-dark']};
+
+        option {
+            background: ${(props) =>
+        props.variant === 'light' ? props.theme.white : props.theme["gray-900"]};
+            color: ${(props) =>
+        props.variant === 'light' ? props.theme.black : props.theme.white};
+        }
     }
 
 `
@@ -161,37 +176,49 @@ export const InputNameComponent = styled.div<ThemeProps>`
     display: flex;
     
     div {
+        display: flex;
+
         select {
-            z-index: 1;
             cursor: pointer;
-            position: absolute;
+            background: ${(props) =>
+        props.variant === 'light' ? props.theme.white : props.theme["gray-900"]};
+            color: ${(props) =>
+        props.variant === 'light' ? props.theme.black : props.theme.white};
+            border: 1px solid ${(props) => props.variant === 'light' ?
+        props.theme['border-light'] :
+        props.theme['border-dark']};
+            border-radius: 6px;
             
-            background: transparent;
-            border: 0;
-            
-            transform: translateY(16px);
-            margin-left: .4rem;
-            
+            height: 40px;
+            margin-top: .5rem;
+            margin-right: .4rem;
+
             font-size: 1rem;
             font-family: 'Inter', sans-serif;
             
             option {
-                
-                background-color: white;
+                background: ${(props) =>
+        props.variant === 'light' ? props.theme.white : props.theme["gray-900"]};
+            color: ${(props) =>
+        props.variant === 'light' ? props.theme.black : props.theme.white};
             }
         }
 
         input[type="text"] {
             border: 0;
             z-index: 0;
-            width: 25rem;
+            width: 20.5rem;
             height: 40px;
             
-            padding: .2rem .4rem .2rem 4.7rem; 
+            padding: .2rem .4rem; 
             margin-top: .5rem;
             margin-bottom: .4rem;
             
-            background: ${props => props.theme.white};
+            background: ${(props) =>
+        props.variant === 'light' ? props.theme.white : props.theme["gray-900"]};
+            color: ${(props) =>
+        props.variant === 'light' ? props.theme.black : props.theme.white};
+
             border: 1px solid ${(props) =>
         props.variant === 'light' ? props.theme['border-light'] : props.theme['border-dark']};
             border-radius: 6px;

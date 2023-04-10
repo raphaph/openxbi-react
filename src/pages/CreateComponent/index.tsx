@@ -13,7 +13,7 @@ export function CreateComponent() {
     const navigate = useNavigate();
 
     useEffect(() => {
-        window.scrollTo(0, 320)
+        window.scrollTo(0, 285)
 
         if (user === null || user === '') {
             navigate('/sign-in');

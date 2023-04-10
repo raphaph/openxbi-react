@@ -72,7 +72,7 @@ export const ContactInfo = styled.div<ThemeProps>`
     }
   }
 `
-export const FooterMid = styled.div`
+export const FooterMid = styled.div<ThemeProps>`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -93,14 +93,19 @@ export const FooterMid = styled.div`
 
     text-decoration: none;
     
-    background: ${props => props.theme.primary};
-    color: Black;
+    background: ${props => props.variant === 'light' ? props.theme.black : props.theme.white};
+    
 
     button {
       cursor: pointer;
       border: 0;
       background: none;
       font-weight: 600;
+      color: ${props => props.variant === 'light' ? props.theme.white : props.theme.offblack};
+
+      &:hover {
+        color: ${props => props.variant === 'light' ? props.theme.black : props.theme.white};
+      }
     }
 
     svg {
@@ -110,8 +115,9 @@ export const FooterMid = styled.div`
 
     &:hover {
       transform: scale(0.98);
-      background: white;
-      box-shadow: 0 0 1px 1px ${props => props.theme.primary};
+      background: ${props => props.variant === 'light' ? props.theme.white : props.theme.black};
+      
+      box-shadow: 0 0 1px 1px ${props => props.variant === 'light' ? props.theme.black : props.theme.white};
       transition: 300ms;
     }
   }
@@ -149,19 +155,20 @@ export const RightSideContent = styled.div<ThemeProps>`
       text-decoration: none;
     } 
 
-    color: black;
+    color: ${props => props.variant === 'light' ? props.theme.white : props.theme.offblack};
 
     transition: all 300ms;
     cursor: pointer;
     
     border: 0;
-    background:  ${props => props.theme.primary};
+    background: ${props => props.variant === 'light' ? props.theme.black : props.theme.white};
    
     
     &:hover {
       transform: scale(0.98);
-      background: white;
-      box-shadow: 0 0 2px 1px ${props => props.theme.primary};
+      background: ${props => props.variant === 'light' ? props.theme.white : props.theme.black};
+      color: ${props => props.variant === 'light' ? props.theme.black : props.theme.white};
+      box-shadow: 0 0 2px 1px ${props => props.variant === 'light' ? props.theme.black : props.theme.white};
     }
   }
 

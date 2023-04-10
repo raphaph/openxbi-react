@@ -1,73 +1,70 @@
-<body>
-    <div class='accordion'>
-        <link rel='stylesheet' href='https://fonts.googleapis.com/icon?family=Material+Icons:FILL'>
-        <p class='title'>Marketing KPI</p>
-        <div class='accordion-item'>
-            <input type='checkbox' id='accordion-1' name='accordion'>
-            <label for='accordion-1' class='accordion-header'>Custo por lead (CPL) <span class='material-icons'>
-                chevron_right
-                </span>
-            </label>
-            <div class='accordion-content'>
-                <div class='kpi-cards'>
-                    <strong>Novos Clientes</strong>
-                    <p>12.656</p>
-                </div>
-                <div class='kpi-cards'>
-                    <strong>Investimento</strong>
-                    <p>R$ 50.000</p>
-                </div>
-                <div class='kpi-cards'>
-                    <strong>CPA</strong>
-                    <p>R$ 3,95/cliente</p>
-                </div>
-            </div>
-        </div>
-        <div class='accordion-item'>
-            <input type='checkbox' id='accordion-2' name='accordion'>
-            <label for='accordion-2' class='accordion-header'>ROI em publicidade <span class='material-icons'>
-                chevron_right
-                </span>
-            </label>
-            <div class='accordion-content'>
-                <div class='kpi-cards'>
-                    <strong>Investimento</strong>
-                    <p>R$ 5.000</p>
-                </div>
-                <div class='kpi-cards'>
-                    <strong>Vendas</strong>
-                    <p>R$ 14.890</p>
-                </div>
-                <div class='kpi-cards'>
-                    <strong>ROI</strong>
-                    <p>197,80%</p>
-                </div>
-            </div>
-        </div>
-        <div class='accordion-item'>
-        <input type='checkbox' id='accordion-3' name='accordion'>
-        <label for='accordion-3' class='accordion-header'>Taxa de conversão Web <span class='material-icons'>
-            chevron_right
+<div class='accordion'>
+    <link rel='stylesheet' href='https://fonts.googleapis.com/icon?family=Material+Icons:FILL'>
+    <p class='title'>Marketing KPIs</p>
+    <div class='accordion-item'>
+        <input type='checkbox' id='accordion-1' name='accordion'>
+        <label for='accordion-1' class='accordion-header'>Custo por lead (CPL) <span class='material-icons'>
+            expand_less
             </span>
         </label>
         <div class='accordion-content'>
             <div class='kpi-cards'>
-                <strong>Visitas</strong>
-                <p>9.348</p>
+                <strong>Novos Clientes</strong>
+                <p>12.656</p>
             </div>
             <div class='kpi-cards'>
-                <strong>Compras</strong>
-                <p>890</p>
+                <strong>Investimento</strong>
+                <p>R$ 50.000</p>
             </div>
             <div class='kpi-cards'>
-                <strong>Taxa de conversão</strong>
-                <p>9%</p>
+                <strong>CPA</strong>
+                <p>R$ 3,95/cliente</p>
             </div>
         </div>
     </div>
-  </div>
-</body>
-  
+    <div class='accordion-item'>
+        <input type='checkbox' id='accordion-2' name='accordion'>
+        <label for='accordion-2' class='accordion-header'>ROI em publicidade <span class='material-icons'>
+            expand_less
+            </span>
+        </label>
+        <div class='accordion-content'>
+            <div class='kpi-cards'>
+                <strong>Investimento</strong>
+                <p>R$ 5.000</p>
+            </div>
+            <div class='kpi-cards'>
+                <strong>Vendas</strong>
+                <p>R$ 14.890</p>
+            </div>
+            <div class='kpi-cards'>
+                <strong>ROI</strong>
+                <p>197,80%</p>
+            </div>
+        </div>
+    </div>
+    <div class='accordion-item'>
+    <input type='checkbox' id='accordion-3' name='accordion'>
+    <label for='accordion-3' class='accordion-header'>Taxa de conversão Web <span class='material-icons'>
+        expand_less
+        </span>
+    </label>
+    <div class='accordion-content'>
+        <div class='kpi-cards'>
+            <strong>Visitas</strong>
+            <p>9.348</p>
+        </div>
+        <div class='kpi-cards'>
+            <strong>Compras</strong>
+            <p>890</p>
+        </div>
+        <div class='kpi-cards'>
+            <strong>Taxa de conversão</strong>
+            <p>9%</p>
+        </div>
+    </div>
+</div>
+</div>
 
 <style>
     @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap');
@@ -80,11 +77,11 @@
 *::-webkit-scrollbar {
     height: 6px;
     width: 6px;
-    background: rgba(221, 221, 221,.5);
+    background: rgba(221, 221, 221,.7);
 }
 
 *::-webkit-scrollbar-thumb {
-    background: rgba(221, 221, 221,.5);
+    background: rgba(200, 200, 200,1);
     border-radius: 5px;
 }
 
@@ -110,8 +107,8 @@
     align-items: center;
     cursor: pointer;
 
-    background: linear-gradient(45deg, #da50aa, #ec706a);
-    color: #f1f1f1;    
+    background: linear-gradient(45deg, #fafafa, #fdfdfd);
+    color: #44d;    
     border: 1px solid rgba(100, 100, 100,.2);
     
     font-weight: bold;
@@ -123,7 +120,13 @@
     padding: .5rem .7rem;
     margin: .1rem;
 
-    border-radius: 3px;
+    border-radius: 6px;
+}
+
+.accordion-header:hover {
+    transition: 300ms;
+    color: white;
+    background: #44f;
 }
 
 .material-icons {
@@ -163,10 +166,10 @@
 }
 
 .kpi-cards:hover {
-    transform: scale(1.1);
+    transform: scale(1.05);
     transition: 300ms;
     color: white;
-    background: #e36287;
+    background: #44f;
 }
 
 .kpi-cards strong {
@@ -187,7 +190,7 @@ input[type='checkbox']:checked ~ .accordion-content {
 }
 
 input[type='checkbox']:checked ~ .accordion-header span {
-    transform: rotateZ(90deg);
+    transform: rotateZ(180deg);
     transition: 300ms;
 }
 

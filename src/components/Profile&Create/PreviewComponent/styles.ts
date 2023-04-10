@@ -11,7 +11,7 @@ export const CodePreviewStyles = styled.div<ThemeProps>`
     justify-content: center;
     
     background:  ${(props) =>
-        props.variant === 'light' ? props.theme.offwhite : props.theme["gray-900"]};
+        props.variant === 'light' ? 'rgba(246,246,246)' : props.theme["gray-900"]};
     border: 1px solid ${(props) =>
         props.variant === 'light' ? props.theme['border-light'] : props.theme['border-dark']};
 
@@ -21,7 +21,6 @@ export const CodePreviewStyles = styled.div<ThemeProps>`
     padding: 7.5% 5%;
 
     iframe {
-        background: rgba(0,0,0,0.03);
         font-family: 'Inter', sans-serif;
     }
 `

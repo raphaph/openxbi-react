@@ -258,7 +258,7 @@ export function CodeArea() {
                                     <input
                                         value={componentName}
                                         type="text"
-                                        placeholder="Give your component a name (a-z 0-9 _)"
+                                        placeholder="Component name (a-z 0-9 _)"
                                         spellCheck="false"
                                         onChange={handleInputChange}
                                         onKeyPress={validarEntrada}
@@ -267,7 +267,7 @@ export function CodeArea() {
                                 </div>
                                 : null}
                         </InputNameComponent>
-                        {createOrEdit === 'create' ? <h4>{`${typeComponentSave}-${componentName}`}</h4> : <h4>{componentName}</h4>}
+                        {/* {createOrEdit === 'create' ? <h4>{`${typeComponentSave}-${componentName}`}</h4> : null} */}
                         {createOrEdit === 'create' ?
                             <button onClick={componentName === '' ?
                                 () => alert('Give your component a name') :
@@ -292,7 +292,7 @@ export function CodeArea() {
                     </PreviewFooter>
                 </PreviewContainer>
                 <CodingSyntax>
-                    <HeaderCoding>
+                    <HeaderCoding variant={themeValue}>
                         <strong>Code here</strong>
                         {createOrEdit === 'create' ?
                             <div>
@@ -361,7 +361,7 @@ export function CodeArea() {
                             <p><code>{`<text>`}</code> : É usada para adicionar texto a um gráfico SVG.</p>
                         </LanguageContents> :
                         <LanguageContents variant={themeValue}>
-                            <p><strong>*</strong> : Seleciona todos os elementos no componente.</p>
+                            <p><strong>*</strong> : Seleciona e estiliza todos os elementos no componente.</p>
                             <p><strong>.class_name</strong> : Estiliza elementos com a mesma classe.</p>
                             <p><strong>.class_name:hover</strong> : Define propriedades ao passar o mouse sobre o elemento.</p>
                             <p><strong>.class_name:hover p</strong> : Define propriedades do elemento filho(p) ao passar o mouse sobre o elemento pai.</p>
