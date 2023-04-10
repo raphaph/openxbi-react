@@ -17,7 +17,7 @@ export const ProfileContainer = styled.div<ThemeProps>`
 
     border-bottom: 2px solid ${(props) =>
         props.variant === 'light' ? props.theme['border-light'] : props.theme['border-dark']};
-        background: ${props => props.variant === 'light' ? 'linear-gradient(rgb(245, 245, 245), rgba(233,233,233,1))' : 'linear-gradient(rgba(5,5,6,1), rgba(12,12,12,1))'};
+        background: ${props => props.variant === 'light' ? `linear-gradient(rgb(245, 245, 245), ${props.theme["slate-gray-1"]})` : 'linear-gradient(rgba(5,5,6,1), rgba(12,12,12,1))'};
     
 
     
@@ -80,7 +80,7 @@ export const LeftSideProfileAvatar = styled.div<ThemeProps>`
             align-items: center;
 
             text-decoration: none;
-            color:  ${props => props.variant === 'light' ? props.theme["gray-600"] : props.theme["gray-500"]};
+            color:  ${props => props.variant === 'light' ? props.theme["gray-500"] : props.theme["gray-500"]};
             margin: 1rem;
             padding: .5rem 1rem;
             font-weight: 500;

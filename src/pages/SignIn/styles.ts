@@ -10,7 +10,10 @@ export const SignInContainer = styled.main<ThemeProps>`
     justify-content: center;
     flex-direction: column;
     background: ${(props) =>
-        props.variant === 'light' ? props.theme['bg-home-light'] : props.theme['bg-home-dark']};
+        props.variant === 'light' ?
+            `linear-gradient(${props.theme.offwhite},
+        ${props.theme["slate-gray-1"]})`
+            : props.theme['bg-home-dark']};
     padding: 5%;
     
     div {

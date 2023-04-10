@@ -243,7 +243,7 @@ export const ContentFooter = styled.div<ThemeProps>`
     margin: .5rem 0;
     width: 100%;
     border-radius: 5px;
-    box-shadow: 0 0 2px 1px ${props => props.theme['gray-500']};
+    box-shadow: 0 0 2px 1px rgba(0,0,0,.1)};
   }
 
   h2 {
