@@ -34,6 +34,8 @@ interface AppContextType {
   setCreateOrEdit: any;
   showModal: boolean;
   setShowModal: any;
+  languageSelect: string;
+  setLanguageSelect: any;
 }
 
 
@@ -55,6 +57,7 @@ export function AppContextProvider({ children }: AppContextProviderProps) {
   const [componentName, setComponentName] = useState<string>('')
   const [code, setCode] = useState<string>('')
   const [createOrEdit, setCreateOrEdit] = useState<string>('create')
+  const [languageSelect, setLanguageSelect] = useState('en');
   const [contentData, setContentData] = useState<ContentDataProps>({
     id: '',
     name: '',
@@ -108,7 +111,9 @@ export function AppContextProvider({ children }: AppContextProviderProps) {
         createOrEdit,
         setCreateOrEdit,
         showModal,
-        setShowModal
+        setShowModal,
+        languageSelect,
+        setLanguageSelect
       }}
     >
       {children}

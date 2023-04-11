@@ -22,10 +22,11 @@ import { CookiesModal } from '../../components/CookiesModal'
 import { NavLink } from 'react-router-dom'
 import templateImg from '../../assets/templates-image/openxbi-initial-template.png'
 import templateImg2 from '../../assets/templates-image/openxbi-cloud-costs.png'
+import { LanguageContents } from '../../components/CodeArea/styles'
 
 export function Home() {
   document.title = 'OpenXBI | Home'
-  const { themeValue, contentsNames, cookiesAccept, setCookiesAccept, user } =
+  const { themeValue, contentsNames, cookiesAccept, setCookiesAccept, user, languageSelect } =
     useContext(AppContext)
 
   const daxCode = `measure_received_gross = 
@@ -252,9 +253,10 @@ return
       {cookiesAccept === null ? <CookiesModal /> : null}
       <MainContentOne>
 
-        <h1>Power your BI with customizable components</h1>
+        <h1>{languageSelect === 'pt' ? 'Potencialize seu BI com componentes personalizáveis' : 'Power your BI with customizable components'} </h1>
         <strong>
-          Get flexible and customizable BI components for your data analysis needs using a combination of HTML and CSS with the DAX Language.
+          {languageSelect === 'pt' ? 'Crie ou obtenha componentes para BI, flexivéis e personalizáveis para suas necessidades de análise de dados, usando uma combinação de HTML e CSS com a linguagem DAX' :
+            'Create or get flexible and customizable BI components for your data analysis needs using a combination of HTML and CSS with the DAX Language'}
         </strong>
         <CardsMainContentOne>
           <div>
@@ -292,48 +294,76 @@ return
           </button>
         </IsolatedButtons>
         <MainContentTwo>
-          <ContentTwoCard>
-
-            <h3>Estilizando</h3>
-            <p>
-              O OpenXBI busca revolucionar a maneira como criamos e estilizamos
-              interfaces utilizando também HTML e CSS.{' '}
-              <strong>
-                A iniciativa nasceu ao perceber um potencial ao incorporar
-                dentro do componente, inteligência a partir do uso de medidas e
-                variáveis DAX.
-              </strong>
-            </p>
-          </ContentTwoCard>
-          <ContentTwoCard>
-            <h3>Conhecimento compartilhado</h3>
-            <p>
-              Estamos empenhados em entregar componentes e templates prontos
-              para uso, oferecendo suporte e recursos comentados, para que
-              usuários possam aproveitar o máximo a plataforma, utilizando os
-              componentes não somente para sua finalidade visual, mas também
-              como forma de conhecimento.
-            </p>
-          </ContentTwoCard>
+          {LanguageContents === 'pt' ? <>
+            <ContentTwoCard>
+              <h3>Estilizando</h3>
+              <p>
+                O OpenXBI busca revolucionar a maneira como criamos e estilizamos
+                interfaces utilizando também HTML e CSS.{' '}
+                <strong>
+                  A iniciativa nasceu ao perceber um potencial ao incorporar
+                  dentro do componente, inteligência a partir do uso de medidas e
+                  variáveis DAX.
+                </strong>
+              </p>
+            </ContentTwoCard>
+            <ContentTwoCard>
+              <h3>Conhecimento compartilhado</h3>
+              <p>
+                Estamos empenhados em entregar componentes e templates prontos
+                para uso, oferecendo suporte e recursos comentados, para que
+                usuários possam aproveitar o máximo a plataforma, utilizando os
+                componentes não somente para sua finalidade visual, mas também
+                como forma de conhecimento.
+              </p>
+            </ContentTwoCard> </> :
+            <>
+              <ContentTwoCard>
+                <h3>Styling</h3>
+                <p>
+                  OpenXBI seeks to revolutionize the way we create and style interfaces using HTML and CSS as well.{' '}
+                  <strong>
+                    The initiative was born out of the realization of the potential to incorporate intelligence into the component by using DAX measures and variables.
+                  </strong>
+                </p>
+              </ContentTwoCard>
+              <ContentTwoCard>
+                <h3>Shared knowledge</h3>
+                <p>
+                  We are committed to delivering ready-to-use components and templates, providing support and commented resources, so that users can get the most out of the platform, using the components not only for their visual purpose, but also as a way of gaining knowledge.
+                </p>
+              </ContentTwoCard>
+            </>
+          }
         </MainContentTwo>
         <MidContent>
-          <MyAccordion />
           <div>
             <h1>#FREE</h1><h1>#UX</h1><h1>#BI</h1>
           </div>
-
         </MidContent>
 
         <MainFooterContent>
-          <div>
-            <h2>Experimente</h2>
-          </div>
+          {languageSelect === 'pt' ?
+            <>
+              <div>
+                <h2>Experimente</h2>
+              </div>
 
-          <h3>Código comentado</h3>
-          <p>
-            Os componentes são comentados para auxiliar novos usuários na
-            personalização e aprendizagem.
-          </p>
+              <h3>Código comentado</h3>
+              <p>
+                Os componentes são comentados para auxiliar novos usuários na
+                personalização e aprendizagem.
+              </p></>
+            :
+            <>
+              <div>
+                <h2>Try it out</h2>
+              </div>
+              <h3>Commented code</h3>
+              <p>
+                The components are commented to assist new users in customization and learning.
+              </p>
+            </>}
           <SyntaxHighlighterStyle
             variant={themeValue}
             language="html"
@@ -343,9 +373,14 @@ return
           >
             {htmlCode}
           </SyntaxHighlighterStyle>
+          {languageSelect === 'pt' ? <>
+            <h3>DAX</h3>
+            <p>Incorpore a linguagem DAX a um componente.</p>
+          </> : <>
+            <h3>DAX</h3>
+            <p>Embed the DAX language into a component.</p>
+          </>}
 
-          <h3>DAX</h3>
-          <p>Incorpore a linguagem DAX a um componente.</p>
           <SyntaxHighlighterStyle
             variant={themeValue}
             language="dax"
@@ -358,7 +393,7 @@ return
 
           <ContentFooter variant={themeValue}>
             <h2>Templates</h2>
-            <p>Experimente também alguns templates com componentes pré-configurados.</p>
+            {languageSelect === 'pt' ? <p>Experimente também alguns templates com componentes pré-configurados.</p> : <p>Also try out some templates with preconfigured components.</p>}
             <div>
               <img src={templateImg} alt="" />
               <img src={templateImg2} alt="" />

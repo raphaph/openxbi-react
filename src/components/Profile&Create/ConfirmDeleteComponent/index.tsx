@@ -6,15 +6,15 @@ import { Check, Warning, X } from "phosphor-react"
 
 export function ConfirmDeleteComponent({ handleDelete }: any) {
 
-    const { setShowModal, themeValue } = useContext(AppContext)
+    const { setShowModal, themeValue, languageSelect } = useContext(AppContext)
 
     return (
         <ModalContainerDeletion>
             <ModalDeleteContent variant={themeValue}>
-                <p>Are you sure?</p>
+                <p>{languageSelect === 'pt' ? 'Você tem certeza?' : 'Are you sure?'}</p>
                 <div>
                     <Warning color="red" weight="fill" size={19} />
-                    <small>This operation is irreversible</small>
+                    <small>{languageSelect === 'pt' ? 'Está operação é irreversível' : 'This operation is irreversible'}</small>
                     <Warning color="red" weight="fill" size={19} />
                 </div>
 

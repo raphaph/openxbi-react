@@ -182,6 +182,7 @@ export const SeparatorRightSide = styled.div<ThemeProps>`
       ? props.theme['gray-100']
       : props.theme['gray-900']};
   color: transparent;
+  margin-right: 1.6rem;
 
   @media (max-width: 600px) {
       visibility: hidden;
@@ -210,19 +211,22 @@ export const UserAvatarName = styled.div`
     align-items: center;
 
     color: inherit;
-    margin: 0;
+    margin: 0 .4rem 0 0 ;
+    padding: .2rem;
+    transition: 300ms;
+    border-radius: 6px;
 
     &:hover {
-      transform: scale(0.95);
-      transition: 300ms;
+      background: rgba(155,155,155,0.2);
     }
   }
 
-  strong, img {
+  strong {
     margin-right: 1rem;
   }
 
   img {
+    margin: 0;
     border-radius: 50%;
     border: 2px solid ${props => props.theme.primary};
   }
@@ -233,6 +237,7 @@ export const ProfileModal = styled.div<ThemeProps>`
   display: flex;
   flex-direction: column;
   position: absolute;
+  transition: 300ms;
 
   width: auto;
   

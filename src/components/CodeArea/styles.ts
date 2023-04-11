@@ -255,12 +255,13 @@ export const NecklaceContainer = styled.div`
     padding: .5rem;
     margin-left: .5rem;
     border-radius: 8px;
+    transform: translateY(-3px);
 `
 
 export const ButtonNecklace = styled.div<LanguageSelect>`
     display: flex;
     width: 100%;
-    margin-bottom: .4rem;
+    margin-bottom: .5rem;
     
     strong {
         font-size: 19.2px;
@@ -276,6 +277,7 @@ export const ButtonNecklace = styled.div<LanguageSelect>`
         background-color: transparent;
         color: ${props => props.theme["gray-500"]};
         transition: 300ms;
+
         
         
         &:hover {

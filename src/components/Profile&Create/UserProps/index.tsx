@@ -2,10 +2,10 @@ import { useContext } from 'react';
 import { AppContext } from '../../../context/AppContext';
 import { LeftSideProfileAvatar, ProfileContainer } from './styles';
 import { NavLink } from 'react-router-dom';
-import { Code, Cube, GithubLogo, GoogleLogo, Plus } from 'phosphor-react';
+import { Cube, Plus } from 'phosphor-react';
 
 export function UserProps() {
-    const { themeValue, user, setCreateOrEdit, setCode } =
+    const { themeValue, user, setCreateOrEdit, setCode, languageSelect } =
         useContext(AppContext)
 
     const blank_default = `<div class='container'>

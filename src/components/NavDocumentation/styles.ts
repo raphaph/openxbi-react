@@ -19,15 +19,24 @@ export const NavigationContainer = styled.aside<ThemeProps>`
     }
 
     nav {
+        width: 222px;
         display: flex;
         flex-direction: column;
         margin: 1rem 0;
         transition: 300ms;
 
+        svg {
+            color: transparent;
+        }
+
         a {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
             margin: .4rem .1rem;
             padding: .5rem 1rem;
-            color: inherit;
+            color: ${props => props.theme['gray-500']};
+            font-weight: 500;
             text-decoration: none;
             border-radius: 6px;
             transition: all 300ms;
@@ -39,12 +48,16 @@ export const NavigationContainer = styled.aside<ThemeProps>`
                 rgba(52, 22, 227, 0.1),
                 rgba(41, 171, 226, 0.1)
                 );
+                color: inherit;
             }
 
             &.active {
                 background: ${props => props.variant === 'light' ? props.theme.black : props.theme.white};
                 color: ${props => props.variant === 'light' ? props.theme.white : props.theme.black};
-                font-weight: bold;
+
+                svg {
+                    color: inherit;
+                }
             }
         }
     }

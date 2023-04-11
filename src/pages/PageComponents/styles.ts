@@ -33,8 +33,6 @@ export const HeaderContentsContainer = styled.header<ThemeProps>`
   justify-content: flex-start;
   align-items: flex-start;
 
-  
-
   background: ${props => props.variant === 'light' ? props.theme.offwhite : props.theme.offblack};
 
   width: 100%;

@@ -14,13 +14,13 @@ import { useContext } from 'react'
 import { AppContext } from '../../context/AppContext'
 
 export function Footer() {
-  const { themeValue } = useContext(AppContext)
+  const { themeValue, languageSelect } = useContext(AppContext)
 
   return (
     <FooterContainer>
       <FooterContents>
         <ContactInfo variant={themeValue}>
-          <p>Mantido por </p><strong>Raphael Barros</strong>
+          <p>Maintained by </p><strong>Raphael Barros</strong>
           <a href="https://github.com/raphaph" target="_blank" rel="noreferrer">
             <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 256 256"><path d="M216,104v8a56.06,56.06,0,0,1-48.44,55.47A39.8,39.8,0,0,1,176,192v40a8,8,0,0,1-8,8H104a8,8,0,0,1-8-8V216H72a40,40,0,0,1-40-40A24,24,0,0,0,8,152a8,8,0,0,1,0-16,40,40,0,0,1,40,40,24,24,0,0,0,24,24H96v-8a39.8,39.8,0,0,1,8.44-24.53A56.06,56.06,0,0,1,56,112v-8a58.14,58.14,0,0,1,7.69-28.32A59.78,59.78,0,0,1,69.07,28,8,8,0,0,1,76,24a59.75,59.75,0,0,1,48,24h24a59.75,59.75,0,0,1,48-24,8,8,0,0,1,6.93,4,59.74,59.74,0,0,1,5.37,47.68A58,58,0,0,1,216,104Z"></path></svg>
             GitHub
@@ -51,13 +51,13 @@ export function Footer() {
           </a>
         </ContactInfo>
         <FooterMid variant={themeValue}>
-          <p>Ajude a manter a plataforma ativa, e crescer cada vez mais. 🥰</p>
+          <p>{languageSelect === 'pt' ? 'Ajude a manter a plataforma ativa, e crescer cada vez mais.' : 'Help keep the platform active, and grow more and more.'} 🥰</p>
           <a href="https://donate.stripe.com/9AQg2bcSydIMchieUU" target={'_blank'}>
-            <button>Buy Me A Coffee </button>
+            Buy Me A Coffee
             <Heart size={20} weight='fill' />
           </a>
-          <a href="mailto:raphael@openxbi.com.br">Contato <Envelope size={20} weight='fill' /> </a>
-          <p>Entre em contato para dúvidas, sugestões, bugs, envio ou ideias de componentes.</p>
+          <a href="mailto:raphael@openxbi.com.br">Contact <Envelope size={20} weight='fill' /> </a>
+          <p>{languageSelect === 'pt' ? 'Entre em contato para dúvidas, sugestões, bugs, envio ou ideias de componentes.' : 'Contact us for questions, suggestions, bugs, submission or component ideas.'}</p>
         </FooterMid>
         <RightSideContent variant={themeValue}>
 

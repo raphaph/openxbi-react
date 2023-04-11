@@ -15,11 +15,17 @@ export const SignInContainer = styled.main<ThemeProps>`
         ${props.theme["slate-gray-1"]})`
             : props.theme['bg-home-dark']};
     padding: 5%;
+    border-bottom: 1px solid ${(props) =>
+        props.variant === 'light' ? props.theme["border-light"] : props.theme["border-dark"]};
+    
     
     div {
         display: flex;
         flex-direction: column;
         align-items: center;
+        justify-content: center;
+        max-width: 450px;
+        width: 100%;
 
         background: ${(props) =>
         props.variant === 'light' ? props.theme.white : props.theme.black};

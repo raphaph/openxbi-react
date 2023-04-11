@@ -26,7 +26,7 @@ export const FooterContainer = styled.footer<ThemeProps>`
 
 export const FooterContents = styled.div`
   width: 100%;
-  max-width: 1000px;
+  max-width: 1100px;
   display: flex;
   justify-content: space-between;
 `
@@ -88,24 +88,14 @@ export const FooterMid = styled.div<ThemeProps>`
     align-items: center;
     margin: 1rem;
     padding: .7rem;
+    color: inherit;
 
     border-radius: 7px;
 
     text-decoration: none;
-    
-    background: ${props => props.variant === 'light' ? props.theme.black : props.theme.white};
-    
 
-    button {
-      cursor: pointer;
-      border: 0;
-      background: none;
-      font-weight: 600;
-      color: ${props => props.variant === 'light' ? props.theme.white : props.theme.offblack};
-
-      &:hover {
+    &:hover {
         color: ${props => props.variant === 'light' ? props.theme.black : props.theme.white};
-      }
     }
 
     svg {
@@ -114,10 +104,7 @@ export const FooterMid = styled.div<ThemeProps>`
     }
 
     &:hover {
-      transform: scale(0.98);
-      background: ${props => props.variant === 'light' ? props.theme.white : props.theme.black};
-      
-      box-shadow: 0 0 1px 1px ${props => props.variant === 'light' ? props.theme.black : props.theme.white};
+      transform: scale(0.98);      
       transition: 300ms;
     }
   }

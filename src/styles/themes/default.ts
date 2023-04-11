@@ -38,7 +38,7 @@ export const defaultTheme = {
   'gray-800': '#202024',
   'gray-900': '#101010',
   'bg-gray': '#050506',
-  'bg-home-dark': 'linear-gradient(-45deg, rgba(55, 0, 123, .3) 20%, #050506 80%)',
+  'bg-home-dark': 'linear-gradient(-45deg, rgba(22, 22, 55, .3) 20%, #050506 80%)',
   'bg-home-light': '#f4f4f4',
   offblack: '#080808',
   black: '#000',

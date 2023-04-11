@@ -9,10 +9,11 @@ import logoDark from '../../assets/logo-dark.svg'
 import logoLight from '../../assets/logo-light.svg'
 import boxDark from '../../assets/box-dark.svg'
 import boxLight from '../../assets/box-light.svg'
+import { LanguageSelect } from '../LanguageSelect'
 
 export function Header() {
 
-  const { themeValue, setThemeValue, user, setUser, providerName } = useContext(AppContext)
+  const { themeValue, setThemeValue, user, setUser, providerName, setLanguageSelect, languageSelect } = useContext(AppContext)
   const [menuVertical, setMenuVertical] = useState<string>('closed')
   const [signOutModal, setSignOutModal] = useState<string>('closed')
 
@@ -92,17 +93,18 @@ export function Header() {
           </NavLink>
         </nav>
         <SeparatorRightSide variant={themeValue} />
+        <LanguageSelect />
         <SunButton title="changeTheme" onClick={() => changeTheme()}>
           {themeValue === 'light' ?
             <MoonStars
               size={22}
               weight="fill"
-              color={'purple'}
+              color={'#6b55f9'}
             /> :
             <SunDim
               size={22}
               weight="fill"
-              color={'orange'}
+              color={'#FF8C00'}
             />
           }
         </SunButton>
@@ -153,6 +155,9 @@ export function Header() {
               <SeparatorHorizontal variant={themeValue}></SeparatorHorizontal>
               <button onClick={() => changeTheme()}>
                 Alternar tema
+              </button>
+              <button onClick={languageSelect === 'pt' ? () => setLanguageSelect('en') : () => setLanguageSelect('pt')}>
+                en | pt
               </button>
             </nav>
           </div>

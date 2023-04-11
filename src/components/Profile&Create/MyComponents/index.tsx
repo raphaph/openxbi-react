@@ -9,7 +9,7 @@ import { ConfirmDeleteComponent } from "../ConfirmDeleteComponent";
 
 
 export function MyComponents() {
-    const { themeValue, user, setCode, setComponentName, setCreateOrEdit, setShowModal, showModal } = useContext(AppContext)
+    const { themeValue, user, setCode, setComponentName, setCreateOrEdit, setShowModal, showModal, languageSelect } = useContext(AppContext)
     const apiKey = import.meta.env.VITE_AUTH_KEY
     const [userComponents, setUserComponents] = useState([])
     const navigate = useNavigate();
@@ -48,9 +48,9 @@ export function MyComponents() {
 
     return (
         <MyComponentsArea variant={themeValue} >
-            <h2>My Components</h2>
+            <h2>{languageSelect === 'pt' ? 'Meus Componentes' : 'My Components'}</h2>
             <MyComponentsContainer>
-                {userComponents.length === 0 ? <h4>start by creating a component, it will appear here!</h4> : null}
+                {userComponents.length === 0 ? <h4>{languageSelect === 'pt' ? 'começe criando um componente, ele irá aparecer aqui!' : 'start by creating a component, it will appear here!'}</h4> : null}
                 {userComponents.map((component: any) => {
                     const htmlString = component.conteudo.replace(/<script\b[^<]*(?:(?!<\/script>)<[^<]*)*<\/script>/gi, '').replace('script', '')
                     const encodedHtml = btoa(htmlString)
@@ -62,7 +62,7 @@ export function MyComponents() {
                             <PreviewComponent code={dataUrl} />
                             {/* <PreviewComponent code={component.conteudo} /> */}
                             <FooterMyComponent>
-                                <button onClick={() => editMyComponent(component.nome, component.conteudo)}>Edit</button>
+                                <button onClick={() => editMyComponent(component.nome, component.conteudo)}>{languageSelect === 'pt' ? 'Editar' : 'Edit'}</button>
                                 <button onClick={() => { setShowModal(true); setDeleteComponentName(component.nome) }}><Trash size={19} /></button>
                             </FooterMyComponent>
                         </div>
