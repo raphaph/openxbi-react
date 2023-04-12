@@ -1,29 +1,30 @@
 <!-- Componente OpenXBI, ajude-nos compartilhando nossa plataforma -->
 <!-- https://openxbi.com.br -->
-<div class='card-developer'>
-    <link rel='stylesheet' href='https://fonts.googleapis.com/icon?family=Material+Icons:FILL'>
-    <div class='info'>
-        <strong class='name'>Jhon Doe</strong> <!-- Nome do desenvolvedor -->
-        <p class='sector'>Data Analyst - Customer Experience</p> <!-- Função e Squad -->
-    </div>
-    <div class='contact'>
-        <div class='redirect'> 
-            <a href='mailto: example@example.com' title='example@example.com'>
-                <span class='material-icons'>email</span> <!-- Icone de email - Meterial Icons Google -->
-                <p>Email</p> 
-            </a>
-            <!-- Substitua o email após mailto: e em title pelo email do desenvolvedor -->            
+<div class='card-container'>
+    <div class='card-developer'>
+        <link rel='stylesheet' href='https://fonts.googleapis.com/icon?family=Material+Icons:FILL'>
+        <div class='info'>
+            <strong class='name'>Jhon Doe</strong> <!-- Nome do desenvolvedor -->
+            <p class='sector'>Data Analyst - Customer Experience</p> <!-- Função e Squad -->
         </div>
-        <div class='redirect'>
-            <a href='https://openxbi.com/docs/introduction' title='https://openxbi.com/docs/introduction' target='_blank'>
-                <span class='material-icons'>description</span>
-                <p>Docs</p> 
-            </a>
-            <!-- Substitua ambos Telefones pelo do desenvolvedor -->
+        <div class='contact'>
+            <div class='redirect'> 
+                <a href='mailto: example@example.com' title='example@example.com'>
+                    <span class='material-icons'>email</span> <!-- Icone de email - Meterial Icons Google -->
+                    <p>Email</p> 
+                </a>
+                <!-- Substitua o email após mailto: e em title pelo email do desenvolvedor -->            
+            </div>
+            <div class='redirect'>
+                <a href='https://openxbi.com/docs/introduction' title='https://openxbi.com/docs/introduction' target='_blank'>
+                    <span class='material-icons'>description</span>
+                    <p>Docs</p> 
+                </a>
+                <!-- Substitua ambos Telefones pelo do desenvolvedor -->
+            </div>
         </div>
     </div>
 </div>
-
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap');
 
@@ -31,6 +32,12 @@
     font-family: 'Inter', sans-serif; /* Font do component, remova para usar a font nativa do PBI */
     margin: 0; /* Remove todas as margens iniciais */
     box-sizing: border-box;
+}
+
+.card-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 /* card todo */
@@ -43,6 +50,7 @@
     box-shadow: 0px 1px 5px 1px rgba(0, 0, 0, 0.1); /* Sombra do component */
     /* Sobre a sombra ->
      * (desloc. em X) (Desloc em Y) (tamanho da sombra) (força do blur aplicado) color */
+    width: 300px;
 }
 
 /* area inferior com botões de contato */
