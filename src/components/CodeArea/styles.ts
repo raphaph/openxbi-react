@@ -89,7 +89,7 @@ export const CodingStyle = styled.div<ThemeProps>`
     div {
         font-family: 'Fira Code';
         background: transparent;
-        line-height: 1.6;
+        
         
         &::-webkit-scrollbar {
             width: .7rem;
@@ -106,7 +106,6 @@ export const CodingStyle = styled.div<ThemeProps>`
         }
         
     }
-
     
     .ace_print-margin {
         width: 0;
@@ -114,8 +113,7 @@ export const CodingStyle = styled.div<ThemeProps>`
     
     .ace_gutter {
         background: rgba(0, 0, 0, 0.05);
-        border-top-left-radius: 6px;
-        
+        border-top-left-radius: 6px;   
     }
 
     .ace_active-line {
@@ -318,6 +316,11 @@ export const LanguageContents = styled.div<ThemeProps>`
     strong {
         color: #ff8c00;
         font-weight: 500;
+    }
+
+    small {
+        font-size: .9rem;
+        font-weight: bold;
     }
     
 `

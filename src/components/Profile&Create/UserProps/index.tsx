@@ -1,11 +1,12 @@
 import { useContext } from 'react';
+import { useNavigate } from 'react-router';
 import { AppContext } from '../../../context/AppContext';
 import { LeftSideProfileAvatar, ProfileContainer } from './styles';
 import { NavLink } from 'react-router-dom';
-import { Cube, Plus } from 'phosphor-react';
+import { Cube, PencilLine, Plus } from 'phosphor-react';
 
 export function UserProps() {
-    const { themeValue, user, setCreateOrEdit, setCode, languageSelect } =
+    const { themeValue, user, setCreateOrEdit, setCode, languageSelect, createOrEdit } =
         useContext(AppContext)
 
     const blank_default = `<div class='container'>
@@ -17,6 +18,21 @@ export function UserProps() {
     font-family: 'Inter', sans-serif;
 } 
 </style>`
+
+    const navigate = useNavigate();
+    function ConfirmExitNavigateComponent() {
+        let confirm = window.confirm('Unsaved changes will be lost!')
+        if (confirm) {
+            navigate("/profile")
+            setCreateOrEdit('create')
+        }
+    }
+
+    function ConfirmExitNavigateCreate() {
+        navigate("/create-component")
+        setCreateOrEdit('create')
+        setCode(blank_default)
+    }
 
     return (
         <ProfileContainer variant={themeValue}>
@@ -38,12 +54,20 @@ export function UserProps() {
                 </div>
 
                 <nav>
-                    <NavLink to={"/profile"} title="My Components" >
+
+                    <button title="My Components" onClick={() => ConfirmExitNavigateComponent()} >
                         <Cube size={20} weight='bold' />Components
-                    </NavLink>
-                    <NavLink to={"/create-component"} onClick={() => { setCreateOrEdit('create'); setCode(blank_default) }}>
-                        <Plus size={20} weight='bold' />Create
-                    </NavLink>
+                    </button>
+                    {createOrEdit === 'create' ?
+                        <button onClick={() => ConfirmExitNavigateCreate()} >
+                            <Plus size={20} weight='bold' />Create
+                        </button>
+                        :
+                        <button>
+                            <PencilLine size={20} weight='bold' />Editing
+                        </button>
+                    }
+
                 </nav>
             </LeftSideProfileAvatar>
 

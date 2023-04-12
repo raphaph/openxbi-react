@@ -242,7 +242,7 @@ export const ProfileModal = styled.div<ThemeProps>`
   width: auto;
   
   background: ${(props) =>
-    props.variant === 'light' ? props.theme.offwhite : props.theme['bg-gray']};
+    props.variant === 'light' ? props.theme.offwhite : props.theme['gray-900']};
 
   border: 1px solid ${(props) =>
     props.variant === 'light' ? props.theme['border-light'] : props.theme['border-dark']};
@@ -255,19 +255,40 @@ export const ProfileModal = styled.div<ThemeProps>`
   padding: 1rem;
 
   a:first-child {
-    background: ${props => props.theme.secondary};
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+    border-radius: 50px;
+    border: 0;
     color: white;
-    padding: .5rem;
-    border-radius: 20px;
-    text-align: center;
+    background-color: black;
+    box-shadow: rgb(0 0 0 / 5%) 0 0 8px;
+    letter-spacing: 1.2px;
     text-decoration: none;
-    margin-bottom: 1rem;
-    width: 100%;
+    transition: all .5s ease;
+    width: 118px;
+    height: 40px;
+    font-size: .95rem;
+
+    transition: 300ms;
 
     &:hover {
-      transform: scale(0.95);
-      transition: 350ms;
+      background-color: hsl(261deg 80% 48%);
+      color: hsl(0, 0%, 100%);
+      box-shadow: rgb(93 24 220) 0px 0px 22px 0px;
     }
+
+    &:active {
+      background-color: black;
+      color: hsl(0, 0%, 100%);
+      box-shadow: rgb(93 24 220) 0px 0px 0px 0px;
+      transform: translateY(2px);
+      transition: 100ms;
+   }
+
+   svg {
+            margin-right: .5rem;
+        }
   }
 
   a:nth-child(2) {

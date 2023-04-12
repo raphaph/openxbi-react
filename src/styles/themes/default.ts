@@ -1,30 +1,17 @@
 export const defaultTheme = {
   white: '#fff',
   offwhite: '#f5f5f5',
-  primary: '#ff8c00',
-  secondary: '#6B4DFF',
-  tertiary: '#2ac6ff',
+  'pri-sec': 'linear-gradient(120deg, #ff8c00, #6B4DFF )',
+
   'slate-gray-1': '#F3E8F2',
   // principal color
-  'blue-turq': '#29ABE2',
-  'bturq-100': '#ABECF4',
-  'bturq-200': '#90E0EA',
-  'bturq-300': '#75D3E0',
-  'bturq-400': '#5AC6D7',
-  'bturq-500': '#4AB8CF',
-  'bturq-600': '#3CAAC7',
-  'bturq-700': '#2D9CBF',
-  'bturq-800': '#1E8DB6',
-  'bturq-900': '#0E7EAF',
+  primary: '#ff8c00',
+  secondary: '#6B4DFF',
 
   // combinations
   'red-orange': '#E25437',
   salmon: '#FFA07A',
   'strong-orange': '#FF8C00',
-  'soft-blue': '#7AC7E2',
-  'blue-emerald': '#009ACD',
-  'vibrant-green': '#00C957',
-  'purple-god': '#3416e3', // rgba(52,	22,	227,1)
 
   // gray's
   'gray-000': '#FAFAEA',

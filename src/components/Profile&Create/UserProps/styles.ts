@@ -74,13 +74,15 @@ export const LeftSideProfileAvatar = styled.div<ThemeProps>`
         width: auto;
         
              
-        a {
+        button {
+            cursor: pointer;
             display: flex;
             justify-content: left;
             align-items: center;
+            border: 0;
 
             text-decoration: none;
-            color:  ${props => props.variant === 'light' ? props.theme["gray-500"] : props.theme["gray-500"]};
+            color:  ${props => props.theme["gray-500"]};
             margin: 1rem;
             padding: .5rem 1rem;
             font-weight: 500;
@@ -91,13 +93,13 @@ export const LeftSideProfileAvatar = styled.div<ThemeProps>`
 
             &:hover {
                 color: ${props => props.variant === 'light' ? props.theme.black : props.theme.white};
+                background: rgba(100,110,110,.2);
                 
             }
             
-            &.active {
+            &:active {
                 background: ${props => props.variant === 'light' ? props.theme.black : props.theme.secondary};
                 color: ${props => props.theme.white};
-                border: 1px solid ${(props) => props.variant === 'light' ? props.theme['border-light'] : props.theme['border-dark']};
                 font-weight: 500;
             }  
         }
@@ -105,6 +107,7 @@ export const LeftSideProfileAvatar = styled.div<ThemeProps>`
         svg {
             margin-right: .5rem;
         }
+
 
         
     }

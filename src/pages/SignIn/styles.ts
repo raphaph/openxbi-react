@@ -78,10 +78,6 @@ export const SignInContainer = styled.main<ThemeProps>`
         margin-top: 1rem;
         padding: .5rem;
         transition: 300ms ease-out;
-
-        &:hover {
-            transform: scale(1.06);
-        }
     }
 
     h2 {

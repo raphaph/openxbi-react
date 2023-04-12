@@ -91,21 +91,18 @@ export const FooterMid = styled.div<ThemeProps>`
     color: inherit;
 
     border-radius: 7px;
-
+    transition: 300ms;
     text-decoration: none;
-
-    &:hover {
-        color: ${props => props.variant === 'light' ? props.theme.black : props.theme.white};
-    }
 
     svg {
       margin-left: .2rem;
       color: #AA0000;
     }
 
-    &:hover {
-      transform: scale(0.98);      
-      transition: 300ms;
+    &:hover {   
+      transform: scale(1.12);
+      font-weight: 700;
+      color: ${props => props.variant === 'light' ? props.theme.primary : props.theme.secondary};       
     }
   }
 

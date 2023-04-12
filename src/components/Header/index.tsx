@@ -1,4 +1,4 @@
-import { List, MoonStars, SunDim, User, X, SignOut } from 'phosphor-react'
+import { List, MoonStars, SunDim, User, X, SignOut, Plus } from 'phosphor-react'
 import { useContext, useState } from 'react'
 import { NavLink, useNavigate } from 'react-router-dom'
 import { AppContext } from '../../context/AppContext'
@@ -11,9 +11,19 @@ import boxDark from '../../assets/box-dark.svg'
 import boxLight from '../../assets/box-light.svg'
 import { LanguageSelect } from '../LanguageSelect'
 
+const blank_default = `<div class='container'>
+    <p style="color: gray">Hello World</p>
+</div>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap');
+* {
+    font-family: 'Inter', sans-serif;
+} 
+</style>`
+
 export function Header() {
 
-  const { themeValue, setThemeValue, user, setUser, providerName, setLanguageSelect, languageSelect } = useContext(AppContext)
+  const { themeValue, setCreateOrEdit, setThemeValue, user, setUser, providerName, setLanguageSelect, languageSelect, setCode } = useContext(AppContext)
   const [menuVertical, setMenuVertical] = useState<string>('closed')
   const [signOutModal, setSignOutModal] = useState<string>('closed')
 
@@ -108,6 +118,7 @@ export function Header() {
             />
           }
         </SunButton>
+
         <UserAvatarName>
           {user === null ? <nav><NavLink to={"/sign-in"}>Sign In</NavLink></nav> :
             <button onClick={signOutModal === 'closed' ? () => { setSignOutModal('open'); setMenuVertical('closed'); } : () => setSignOutModal('closed')}>
@@ -167,7 +178,9 @@ export function Header() {
       </MenuVertical>
       {signOutModal === 'closed' ? null :
         <ProfileModal variant={themeValue}>
-          <button><a href='https://discord.gg/BTgztvKF7E' target={"_blank"}>Discord</a></button>
+          <button><NavLink to={"/create-component"} onClick={() => { setCreateOrEdit('create'); setCode(blank_default) }}>
+            <Plus size={20} weight='bold' />Create
+          </NavLink></button>
           <NavLink to={"/profile"} onClick={() => { setSignOutModal('closed') }}>
             <User size={20} weight="fill" />
             <p>Profile</p>

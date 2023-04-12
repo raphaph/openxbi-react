@@ -230,12 +230,16 @@ export function CodeArea() {
 
     function sanitizedCode(code: string) {
         // const actualCode = DOMPurify.sanitize(code)
-        const actualCode = code.replace(/<script\b[^<]*(?:(?!<\/script>)<[^<]*)*<\/script>/gi, '').replace('script', '')
-        const htmlString = actualCode
-        const encodedHtml = btoa(htmlString)
-        const dataUrl = `data:text/html;base64,${encodedHtml}`
-        return dataUrl
+        const actualCode = code.replace(/<script\b[^<]*(?:(?!<\/script>)<[^<]*)*<\/script>/gi, '').replace('script', '').replace('.js', '')
+        const htmlString = actualCode;
+        const encoder = new TextEncoder();
+        const encodedBytes = encoder.encode(htmlString);
+        const encodedHtml = btoa(String.fromCharCode(...new Uint8Array(encodedBytes)));
+        const decodedHtml = decodeURIComponent(escape(atob(encodedHtml)));
+        const dataUrl = `data:text/html;base64,${btoa(decodedHtml)}`;
+        return dataUrl;
     }
+
 
     return (
         <CodeAreaContainer variant={themeValue}>
@@ -312,10 +316,11 @@ export function CodeArea() {
                                 theme={themeValue === 'light' ? "xcode" : "monokai"}
                                 value={code}
                                 onChange={setCode}
-                                name="HTML_EDITOR"
+                                name="editor"
                                 height="600px"
                                 width="100%"
                                 fontSize={15}
+                                editorProps={{ $blockScrolling: true }}
                                 highlightActiveLine={true}
                                 defaultValue={code}
                             />
@@ -333,6 +338,7 @@ export function CodeArea() {
                         <LanguageContents variant={themeValue}>
                             {languageSelect === 'pt' ?
                                 <>
+                                    <small>Essas são apenas algumas das tags e propriedades html.</small>
                                     <p><strong>{`<p class="class name">`}</strong> : Atributo utilizado para agrupar elementos.</p>
                                     <p><strong>{`<p id="value">`}</strong> : Atributo utilizado para identificar um elemento específico na página, id é unico.</p>
                                     <p><code>{`<div>`}</code> : Define uma seção genérica da página.</p>
@@ -362,6 +368,7 @@ export function CodeArea() {
                                     <p><code>{`<text>`}</code> : É usada para adicionar texto a um gráfico SVG.</p>
                                 </> :
                                 <>
+                                    <small>These are just some of the html tags and properties.</small>
                                     <p><strong>{`<p class="class name">`}</strong> : Attribute used to group elements.</p>
                                     <p><strong>{`<p id="value">`}</strong> : Attribute used to identify a specific element on the page, id is unique.</p>
                                     <p><code>{`<div>`}</code> : Defines a generic section of the page.</p>
@@ -392,8 +399,10 @@ export function CodeArea() {
                             }
                         </LanguageContents> :
                         <LanguageContents variant={themeValue}>
+
                             {languageSelect === 'pt' ?
                                 <>
+                                    <small>Essas são apenas algumas das propriedades css.</small>
                                     <p><strong>*</strong> : Seleciona e estiliza todos os elementos no componente.</p>
                                     <p><strong>.class_name</strong> : Estiliza elementos com a mesma classe.</p>
                                     <p><strong>.class_name:hover</strong> : Define propriedades ao passar o mouse sobre o elemento.</p>
@@ -419,6 +428,7 @@ export function CodeArea() {
                                     <p><strong>align-items</strong> : Alinha os itens ao longo do eixo transversal do contêiner flexível.</p></>
                                 :
                                 <>
+                                    <small>These are just some of the css properties.</small>
                                     <p><strong>*</strong> : Selects and styles all elements within the component.</p>
                                     <p><strong>.class_name</strong> : Styles elements with the same class.</p>
                                     <p><strong>.class_name:hover</strong> : Defines properties when hovering over the element.</p>

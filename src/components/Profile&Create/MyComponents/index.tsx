@@ -1,10 +1,10 @@
 import { useEffect, useState, useContext } from "react";
-import { FooterMyComponent, MyComponentsArea, MyComponentsContainer } from "./styles";
+import { FooterMyComponent, MyComponentsArea, MyComponentsContainer, NoComponent } from "./styles";
 import axios from 'axios'
 import { AppContext } from "../../../context/AppContext";
 import { PreviewComponent } from "../PreviewComponent";
-import { Trash } from "phosphor-react";
-import { useNavigate } from 'react-router-dom';
+import { Plus, Trash } from "phosphor-react";
+import { NavLink, useNavigate } from 'react-router-dom';
 import { ConfirmDeleteComponent } from "../ConfirmDeleteComponent";
 
 
@@ -14,6 +14,16 @@ export function MyComponents() {
     const [userComponents, setUserComponents] = useState([])
     const navigate = useNavigate();
     const [deleteComponentName, setDeleteComponentName] = useState('')
+
+    const blank_default = `<div class='container'>
+    <p style="color: gray">Hello World</p>
+</div>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap');
+* {
+    font-family: 'Inter', sans-serif;
+} 
+</style>`
 
     useEffect(() => {
 
@@ -49,12 +59,21 @@ export function MyComponents() {
     return (
         <MyComponentsArea variant={themeValue} >
             <h2>{languageSelect === 'pt' ? 'Meus Componentes' : 'My Components'}</h2>
-            <MyComponentsContainer>
+            <NoComponent>
                 {userComponents.length === 0 ? <h4>{languageSelect === 'pt' ? 'começe criando um componente, ele irá aparecer aqui!' : 'start by creating a component, it will appear here!'}</h4> : null}
+                {userComponents.length === 0 ? <NavLink to={"/create-component"} onClick={() => { setCreateOrEdit('create'); setCode(blank_default) }}>
+                    <Plus size={20} weight='bold' />Create
+                </NavLink> : null}
+            </NoComponent>
+            <MyComponentsContainer>
+
                 {userComponents.map((component: any) => {
                     const htmlString = component.conteudo.replace(/<script\b[^<]*(?:(?!<\/script>)<[^<]*)*<\/script>/gi, '').replace('script', '')
-                    const encodedHtml = btoa(htmlString)
-                    const dataUrl = `data:text/html;base64,${encodedHtml}`;
+                    const encoder = new TextEncoder();
+                    const encodedBytes = encoder.encode(htmlString);
+                    const encodedHtml = btoa(String.fromCharCode(...new Uint8Array(encodedBytes)));
+                    const decodedHtml = decodeURIComponent(escape(atob(encodedHtml)));
+                    const dataUrl = `data:text/html;base64,${btoa(decodedHtml)}`;
 
                     return (
                         <div id="1" key={component.nome}>

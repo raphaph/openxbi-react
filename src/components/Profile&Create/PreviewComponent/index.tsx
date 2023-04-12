@@ -8,7 +8,7 @@ export function PreviewComponent({ code }: any) {
 
     return (
         <CodePreviewStyles variant={themeValue}>
-            <iframe src={code} frameBorder="0" height={375} width={380}></iframe>
+            <iframe src={code} frameBorder="0" height={375} width={380} ></iframe>
         </CodePreviewStyles>
     )
 }

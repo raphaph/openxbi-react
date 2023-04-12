@@ -38,13 +38,58 @@ export const MyComponentsContainer = styled.main`
         }
     }
 
-    
+
+`
+
+export const NoComponent = styled.div`
+    display: flex;
+    align-items: center;
 
     h4 {
         padding: 1rem;
-        margin-bottom: .5rem;
+        margin: .5rem;
         background: rgba(50,50,50,0.1);
         border-radius: 8px;
+        font-size: .9rem;
+    }
+
+    a {
+        display: flex;
+        align-items: center;
+        padding: 1rem;
+        border-radius: 50px;
+        border: 0;
+        color: white;
+        background-color: black;
+        box-shadow: rgb(0 0 0 / 5%) 0 0 8px;
+        letter-spacing: 1.2px;
+        text-decoration: none;
+        transition: all .5s ease;
+        width: 130px;
+        height: 45px;
+        font-size: 1rem;
+
+        transition: 300ms;
+
+        &:hover {
+            background-color: hsl(261deg 80% 48%);
+            color: hsl(0, 0%, 100%);
+            box-shadow: rgb(93 24 220) 0px 0px 22px 0px;
+
+        }
+        
+        &:active {
+            background-color: black;
+            color: hsl(0, 0%, 100%);
+            box-shadow: rgb(93 24 220) 0px 0px 0px 0px;
+            transform: translateY(2px);
+            transition: 100ms;
+        }
+
+        svg {
+            margin-right: .5rem;
+        }
+        
     }
 `
 

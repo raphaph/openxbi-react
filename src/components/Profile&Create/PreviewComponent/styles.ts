@@ -5,7 +5,7 @@ interface ThemeProps {
 }
 
 export const CodePreviewStyles = styled.div<ThemeProps>`
-    
+    font-family: 'Inter', sans-serif;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -20,7 +20,4 @@ export const CodePreviewStyles = styled.div<ThemeProps>`
     border-radius: 8px;
     padding: 7.5% 5%;
 
-    iframe {
-        font-family: 'Inter', sans-serif;
-    }
 `

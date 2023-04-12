@@ -23,10 +23,11 @@ import { NavLink } from 'react-router-dom'
 import templateImg from '../../assets/templates-image/openxbi-initial-template.png'
 import templateImg2 from '../../assets/templates-image/openxbi-cloud-costs.png'
 import { LanguageContents } from '../../components/CodeArea/styles'
+import { HomeCreateComponent } from '../../components/HomeCreateComponent'
 
 export function Home() {
   document.title = 'OpenXBI | Home'
-  const { themeValue, contentsNames, cookiesAccept, setCookiesAccept, user, languageSelect } =
+  const { themeValue, contentsNames, setCode, code, cookiesAccept, setCookiesAccept, user, languageSelect } =
     useContext(AppContext)
 
   const daxCode = `measure_received_gross = 
@@ -181,6 +182,9 @@ return
 
   "
   `
+  useEffect(() => {
+    setCode('<div></div>')
+  }, [])
 
   const htmlCode = `<!-- Componente OpenXBI, ajude-nos compartilhando nossa plataforma -->
 <!-- https://openxbi.com.br -->
@@ -294,12 +298,12 @@ return
           </button>
         </IsolatedButtons>
         <MainContentTwo>
-          {LanguageContents === 'pt' ? <>
+          {languageSelect === 'pt' ? <>
             <ContentTwoCard>
               <h3>Estilizando</h3>
               <p>
                 O OpenXBI busca revolucionar a maneira como criamos e estilizamos
-                interfaces utilizando também HTML e CSS.{' '}
+                interfaces para BI utilizando HTML e CSS.{' '}
                 <strong>
                   A iniciativa nasceu ao perceber um potencial ao incorporar
                   dentro do componente, inteligência a partir do uso de medidas e
@@ -310,27 +314,30 @@ return
             <ContentTwoCard>
               <h3>Conhecimento compartilhado</h3>
               <p>
-                Estamos empenhados em entregar componentes e templates prontos
-                para uso, oferecendo suporte e recursos comentados, para que
-                usuários possam aproveitar o máximo a plataforma, utilizando os
+                Buscamos entregar para comunidade componentes comentados, para que
+                usuários possam aproveitar o máximo do componente, personalizando para sua necessidade, utilizando os
                 componentes não somente para sua finalidade visual, mas também
-                como forma de conhecimento.
+                como forma de aprendizado.
               </p>
             </ContentTwoCard> </> :
             <>
               <ContentTwoCard>
                 <h3>Styling</h3>
                 <p>
-                  OpenXBI seeks to revolutionize the way we create and style interfaces using HTML and CSS as well.{' '}
+                  OpenXBI seeks to revolutionize the way we create and style interfaces for BI using HTML and CSS.{' '}
                   <strong>
-                    The initiative was born out of the realization of the potential to incorporate intelligence into the component by using DAX measures and variables.
+                    The initiative was born out of the realization of the potential to incorporate intelligence into the component by using DAX
+                    measures and variables.
                   </strong>
                 </p>
               </ContentTwoCard>
               <ContentTwoCard>
                 <h3>Shared knowledge</h3>
                 <p>
-                  We are committed to delivering ready-to-use components and templates, providing support and commented resources, so that users can get the most out of the platform, using the components not only for their visual purpose, but also as a way of gaining knowledge.
+                  We seek to deliver commented components to the community, so that
+                  users can make the most of the component, customizing it to their needs, using the
+                  components not only for their visual purpose, but also
+                  as a way of learning.
                 </p>
               </ContentTwoCard>
             </>
@@ -341,7 +348,6 @@ return
             <h1>#FREE</h1><h1>#UX</h1><h1>#BI</h1>
           </div>
         </MidContent>
-
         <MainFooterContent>
           {languageSelect === 'pt' ?
             <>
@@ -406,6 +412,7 @@ return
           </ContentFooter>
         </MainFooterContent>
       </MainContentOne>
+      {/* <HomeCreateComponent /> */}
       <Principles />
     </MainContainer>
   )

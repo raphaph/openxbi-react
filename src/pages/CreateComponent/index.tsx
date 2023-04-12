@@ -25,7 +25,8 @@ export function CreateComponent() {
         <>
             <UserProps />
             <CreateContainer variant={themeValue}>
-                {createOrEdit === 'create' ? <h2>{languageSelect === 'pt' ? 'Crie seu componente' : 'Creating your component'}</h2> : <h2>{languageSelect === 'pt' ? 'Editando seu componente' : 'Editing your component'} <CaretRight size={18} weight='bold' /> <span>{componentName}</span></h2>}
+                {createOrEdit === 'create' ? <h2>{languageSelect === 'pt' ? 'Crie seu componente' : 'Creating your component'}</h2> :
+                    <h2>{languageSelect === 'pt' ? 'Editando seu componente' : 'Editing your component'} <CaretRight size={18} weight='bold' /> <span>{componentName}</span></h2>}
                 <CodeArea />
             </CreateContainer>
         </>
