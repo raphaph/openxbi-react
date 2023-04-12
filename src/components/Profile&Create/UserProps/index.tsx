@@ -41,7 +41,7 @@ export function UserProps() {
                 <div>
                     <h2>{user.user?.displayName}</h2>
                     <div>
-                        <p>{user.user?.email}</p>
+                        <p>{user.user?.email.replace(/(?<=.).(?=[^@]*@)/g, '*')}</p>
                         <p>
                             {user._tokenResponse?.screenName || user.user.email.split('@', 1)}
                             {user.providerId === 'github.com' ?
