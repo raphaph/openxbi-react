@@ -1,6 +1,5 @@
 import { createContext, ReactNode, useEffect, useState } from 'react'
 type themeValueType = 'light' | 'dark' | null
-import { User } from 'firebase/auth'
 
 interface ContentDataProps {
   id: string
@@ -73,8 +72,8 @@ export function AppContextProvider({ children }: AppContextProviderProps) {
     const currentTheme: any = localStorage.getItem('theme')
 
     if (currentTheme === null) {
-      setThemeValue('light')
-      localStorage.setItem('theme', 'light')
+      setThemeValue('dark')
+      localStorage.setItem('theme', 'dark')
     } else {
       setThemeValue(currentTheme)
     }
