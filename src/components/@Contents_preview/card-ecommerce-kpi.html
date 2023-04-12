@@ -1,0 +1,85 @@
+<div class='flip-card'>
+    <div class='flip-card-inner'>
+        <link rel='stylesheet' href='https://fonts.googleapis.com/icon?family=Material+Icons:FILL'>
+        <div class='flip-card-front'>
+            <p class='title'>E-commerce KPI 2023</p>
+            <strong>Conversion Rate</strong>
+            <span style='color: green'>24% <span class='material-icons' style='font-size:1rem; font-weight: bold;'>arrow_drop_up</span></span>
+            <strong>Average Order Value</strong>
+            <span style='color: green'>$1498.49 <span class='material-icons' style='font-size:1rem; font-weight: bold;'>arrow_drop_up</span></span>
+            <strong>Cart Abandonment Rate</strong>
+            <span style='color: red'>3% <span class='material-icons' style='font-size:1rem; font-weight: bold;'>arrow_drop_up</span></span>
+        </div>
+        <div class='flip-card-back'>
+            <p class='title'>E-commerce KPI 2022</p>
+            <strong>Conversion Rate</strong>
+            <span>20%</span>
+            <strong>Average Order Value</strong>
+            <span>$957.99</span>
+            <strong>Cart Abandonment Rate</strong>
+            <span>2%</span>
+        </div>
+    </div>
+</div>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap');
+* {
+    font-family: 'Inter', sans-serif;
+    box-sizing: border-box;
+} 
+
+.flip-card {
+    background-color: transparent;
+    width: 240px;
+    height: 224px;
+}
+
+.title {
+    font-size: 1rem;
+    font-weight: 600;
+    text-align: center;
+    color: #6b4dff;
+    margin: 0 0 .4rem 0;
+}
+
+strong {
+    margin: 1rem 0 .5rem;
+}
+
+.flip-card-inner {
+    cursor: pointer;
+    position: relative;
+    width: auto;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.25s;
+    transform-style: preserve-3d;
+}
+
+.flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+}
+
+.flip-card-front, .flip-card-back {
+    box-shadow: 0 0 5px 0 rgba(0,0,0,0.2);
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    backface-visibility: hidden;
+    border: 1px solid rgba(155,155,155,.1);
+    border-radius: 15px;
+    padding: 20px;
+}
+
+.flip-card-front {
+    background: white;
+    color: black;
+}
+
+.flip-card-back {
+    background: rgb(15,15,15);
+    color: white;
+    transform: rotateY(180deg);
+}
+</style>

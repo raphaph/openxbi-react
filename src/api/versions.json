@@ -1,17 +1,33 @@
 {
     "versions" : [
         {
-        "version": "0.0.1",
-        "release": "April 3, 2023",
-        "description": "Initial version! 🎉",
-        "marks": [
-            {
-            "mark": "16 components and 2 templates added initially."
-            },
-            {
-            "mark": "Initial documentation."
-            }
-        ]
+            "version": "1.0.1",
+            "release": "April 12, 2023",
+            "description": "New feature 'Create mode'!👩🏻‍💻",
+            "marks": [
+                {
+                    "mark": "2 components added, card-marketing-kpi, card-ecommerce-kpi."
+                },
+                {
+                    "mark": "Visual improvements."
+                },
+                {
+                    "mark": "New feature 'Create mode', now you can create, save and edit components into the platform."
+                }
+            ]
+        },
+        {
+            "version": "0.0.1",
+            "release": "April 3, 2023",
+            "description": "Initial version! 🎉",
+            "marks": [
+                {
+                    "mark": "16 components and 2 templates added initially."
+                },
+                {
+                    "mark": "Initial documentation."
+                }
+            ]
         }
     ]
 }

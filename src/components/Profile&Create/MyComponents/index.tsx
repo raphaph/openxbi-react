@@ -3,7 +3,7 @@ import { FooterMyComponent, MyComponentsArea, MyComponentsContainer, NoComponent
 import axios from 'axios'
 import { AppContext } from "../../../context/AppContext";
 import { PreviewComponent } from "../PreviewComponent";
-import { Plus, Trash } from "phosphor-react";
+import { Plus, Rocket, Trash } from "phosphor-react";
 import { NavLink, useNavigate } from 'react-router-dom';
 import { ConfirmDeleteComponent } from "../ConfirmDeleteComponent";
 
@@ -81,6 +81,7 @@ export function MyComponents() {
                             <PreviewComponent code={dataUrl} />
                             {/* <PreviewComponent code={component.conteudo} /> */}
                             <FooterMyComponent>
+                                <button onClick={() => alert('Send to community is coming soon!')}>{languageSelect === 'pt' ? <Rocket size={19} /> : <Rocket size={19} />}</button>
                                 <button onClick={() => editMyComponent(component.nome, component.conteudo)}>{languageSelect === 'pt' ? 'Editar' : 'Edit'}</button>
                                 <button onClick={() => { setShowModal(true); setDeleteComponentName(component.nome) }}><Trash size={19} /></button>
                             </FooterMyComponent>

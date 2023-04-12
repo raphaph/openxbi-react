@@ -13,114 +13,98 @@ export function SignIn() {
         useContext(AppContext)
     const navigate = useNavigate();
 
-    function handleGoogleSignIn() {
+    async function handleGoogleSignIn() {
         const provider = new GoogleAuthProvider();
 
-        setPersistence(auth, browserLocalPersistence)
-            .then(() => {
-                // A autenticação persistente foi ativada com sucesso
-                // Inicia o processo de login com o Google
-                signInWithPopup(auth, provider)
-                    .then((result) => {
-                        setUser(result);
-                        setProvider(result.providerId);
+        try {
+            await setPersistence(auth, browserLocalPersistence);
 
-                        const apikey = import.meta.env.VITE_AUTH_KEY
+            // A autenticação persistente foi ativada com sucesso
+            // Inicia o processo de login com o Google
+            const result = await signInWithPopup(auth, provider);
+            setUser(result);
+            setProvider(result.providerId);
 
-                        axios.get(`https://uxbi.com.br/api/accounts/${result.user.email}`, {
-                            headers: {
-                                'Content-Type': 'application/json',
-                                "api-key": `${apikey}`,
-                            }
-                        })
-                            .then(response => {
-                                if (response.data.length !== 1) {
-                                    const data = {
-                                        uuid: result.user.uid,
-                                        display_name: result.user.displayName,
-                                        email: result.user.email,
-                                        provider: result.providerId,
-                                        photo_url: result.user.photoURL,
-                                        username: result.user.email?.split('@', 1),
-                                        created_at: new Date().toISOString()
-                                    };
+            const apikey = import.meta.env.VITE_AUTH_KEY;
 
-                                    axios.post('https://uxbi.com.br/api/accounts/', data, {
-                                        headers: {
-                                            'Content-Type': 'application/json',
-                                            "api-key": `${apikey}`,
-                                        }
-                                    })
-                                }
-                            })
-                            .catch((error) => {
-                                console.log(error)
-                            })
-
-                        navigate("/profile");
-                    })
-                    .catch((error) => {
-                        console.log(error);
-                    });
-            })
-            .catch((error) => {
-                console.log(error);
+            const response = await axios.get(`https://uxbi.com.br/api/accounts/${result.user.email}`, {
+                headers: {
+                    'Content-Type': 'application/json',
+                    "api-key": `${apikey}`,
+                }
             });
+
+            if (response.data.length !== 1) {
+                const data = {
+                    uuid: result.user.uid,
+                    display_name: result.user.displayName,
+                    email: result.user.email,
+                    provider: result.providerId,
+                    photo_url: result.user.photoURL,
+                    username: result.user.email?.split('@', 1),
+                    created_at: new Date().toISOString()
+                };
+
+                await axios.post('https://uxbi.com.br/api/accounts/', data, {
+                    headers: {
+                        'Content-Type': 'application/json',
+                        "api-key": `${apikey}`,
+                    }
+                });
+            }
+
+            navigate("/profile");
+        } catch (error) {
+            console.log(error);
+        }
     }
 
-    function handleGitHubSignIn() {
+    async function handleGitHubSignIn() {
         const provider = new GithubAuthProvider();
 
-        setPersistence(auth, browserLocalPersistence)
-            .then(() => {
-                // A autenticação persistente foi ativada com sucesso
-                // Inicia o processo de login com o GitHub
-                signInWithPopup(auth, provider)
-                    .then((result) => {
-                        setUser(result);
-                        setProvider(result.providerId);
+        try {
+            await setPersistence(auth, browserLocalPersistence);
 
-                        const apikey = import.meta.env.VITE_AUTH_KEY
-                        axios.get(`https://uxbi.com.br/api/accounts/${result.user.email}`, {
-                            headers: {
-                                'Content-Type': 'application/json',
-                                "api-key": `${apikey}`,
-                            }
-                        })
-                            .then(response => {
-                                if (response.data.length !== 1) {
-                                    const data = {
-                                        uuid: result.user.uid,
-                                        display_name: result.user.displayName,
-                                        email: result.user.email,
-                                        provider: result.providerId,
-                                        photo_url: result.user.photoURL,
-                                        username: result.user.email?.split('@', 1),
-                                        created_at: new Date().toISOString()
-                                    };
+            const result = await signInWithPopup(auth, provider);
+            setUser(result);
+            setProvider(result.providerId);
 
-                                    axios.post('https://uxbi.com.br/api/accounts/', data, {
-                                        headers: {
-                                            'Content-Type': 'application/json',
-                                            "api-key": `${apikey}`,
-                                        }
-                                    })
-                                }
-                            })
-                            .catch((error) => {
-                                console.log(error)
-                            })
+            const apikey = import.meta.env.VITE_AUTH_KEY;
+            try {
+                const response = await axios.get(`https://uxbi.com.br/api/accounts/${result.user.email}`, {
+                    headers: {
+                        'Content-Type': 'application/json',
+                        "api-key": `${apikey}`,
+                    }
+                });
+                if (response.data.length !== 1) {
+                    const data = {
+                        uuid: result.user.uid,
+                        display_name: result.user.displayName,
+                        email: result.user.email,
+                        provider: result.providerId,
+                        photo_url: result.user.photoURL,
+                        username: result.user.email?.split('@', 1),
+                        created_at: new Date().toISOString()
+                    };
 
-                        navigate("/profile");
-                    })
-                    .catch((error) => {
-                        console.log(error);
+                    await axios.post('https://uxbi.com.br/api/accounts/', data, {
+                        headers: {
+                            'Content-Type': 'application/json',
+                            "api-key": `${apikey}`,
+                        }
                     });
-            })
-            .catch((error) => {
+                }
+            } catch (error) {
                 console.log(error);
-            });
+            }
+
+            navigate("/profile");
+        } catch (error) {
+            console.log(error);
+        }
     }
+
 
     return (
         <SignInContainer variant={themeValue}>

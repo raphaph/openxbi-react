@@ -109,21 +109,38 @@ export const FooterMyComponent = styled.div`
     }
 
     button:first-child {
+        width: 20%;
+        background: ${props => props.theme.primary};
+        border: 1px solid ${props => props.theme.primary};
+
+        &:hover {
+            color: ${props => props.theme.primary};
+        }
+    }
+
+    button:nth-child(2) {
         width: 80%;
         background: ${props => props.theme.secondary};
         border: 1px solid ${props => props.theme.secondary};
+        
+        &:hover {
+            color: ${props => props.theme.secondary};
+        }
     }
 
     button:last-child {
         width: 20%;
         background-color: #C92214;
         border: 1px solid #C92214;
+
+        &:hover {
+            color: #C92214;
+        }
     }
 
     
     button:hover {
         background: ${props => props.theme.white};
-        color: black;
     }
     
     button:active {

@@ -140,7 +140,7 @@ export const SyntaxContainer = styled.div`
       }
 
       &:active {
-        color: ${(props) => props.theme['blue-emerald']};
+        color: ${(props) => props.theme.secondary};
       }
     }
   }

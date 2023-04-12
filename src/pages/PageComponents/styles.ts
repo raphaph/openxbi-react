@@ -94,7 +94,7 @@ export const FilterSection = styled.section<ThemeProps>`
     input[type="radio"]:nth-child(1) {
       &:checked ~ label:nth-child(2) {
         background:  ${props => props.variant === 'light' ? props.theme.primary : props.theme.secondary};
-        box-shadow: 0 0 5px 0px ${props => props.variant === 'light' ? props.theme['strong-orange'] : props.theme['purple-god']};
+        box-shadow: 0 0 5px 0px ${props => props.variant === 'light' ? props.theme['strong-orange'] : props.theme.secondary};
         color: ${props => props.variant === 'light' ? props.theme.black : props.theme.white}
       }
     }
@@ -102,7 +102,7 @@ export const FilterSection = styled.section<ThemeProps>`
     input[type="radio"]:nth-child(3) {
       &:checked ~ label:nth-child(4) {
         background:  ${props => props.variant === 'light' ? props.theme.primary : props.theme.secondary};
-        box-shadow: 0 0 5px 0px ${props => props.variant === 'light' ? props.theme['strong-orange'] : props.theme['purple-god']};
+        box-shadow: 0 0 5px 0px ${props => props.variant === 'light' ? props.theme['strong-orange'] : props.theme.secondary};
         color: ${props => props.variant === 'light' ? props.theme.black : props.theme.white}         
       }
     }
@@ -110,7 +110,7 @@ export const FilterSection = styled.section<ThemeProps>`
     input[type="radio"]:nth-child(5) {
       &:checked ~ label:nth-child(6) {
         background:  ${props => props.variant === 'light' ? props.theme.primary : props.theme.secondary};
-        box-shadow: 0 0 5px 0px ${props => props.variant === 'light' ? props.theme['strong-orange'] : props.theme['purple-god']};
+        box-shadow: 0 0 5px 0px ${props => props.variant === 'light' ? props.theme['strong-orange'] : props.theme.secondary};
         color: ${props => props.variant === 'light' ? props.theme.black : props.theme.white}            
       }
     }
@@ -118,7 +118,7 @@ export const FilterSection = styled.section<ThemeProps>`
     input[type="radio"]:nth-child(7) {
       &:checked ~ label:nth-child(8) {
         background:  ${props => props.variant === 'light' ? props.theme.primary : props.theme.secondary};
-        box-shadow: 0 0 5px 0px ${props => props.variant === 'light' ? props.theme['strong-orange'] : props.theme['purple-god']};
+        box-shadow: 0 0 5px 0px ${props => props.variant === 'light' ? props.theme['strong-orange'] : props.theme.secondary};
         color: ${props => props.variant === 'light' ? props.theme.black : props.theme.white}  
       }
     }
