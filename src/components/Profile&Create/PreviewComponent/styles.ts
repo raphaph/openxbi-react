@@ -15,7 +15,7 @@ export const CodePreviewStyles = styled.div<ThemeProps>`
     border: 1px solid ${(props) =>
         props.variant === 'light' ? props.theme['border-light'] : props.theme['border-dark']};
 
-    width: 25rem;
+    width: 25.1rem;
     height: 25rem;
     border-radius: 8px;
     padding: 7.5% 5%;
