@@ -1,4 +1,4 @@
-import { CodeSimple } from 'phosphor-react'
+import { Code, CodeSimple } from 'phosphor-react'
 import { useContext, useEffect, useState } from 'react'
 import { NavLink } from 'react-router-dom'
 import { CookiesModal } from '../../components/CookiesModal'
@@ -26,6 +26,7 @@ export function PageComponents() {
     themeValue,
     cookiesAccept,
     setCookiesAccept,
+    languageSelect
   } = useContext(AppContext)
 
   const [filteredData, setFilteredData] = useState<ContentDataProps[]>([])
@@ -74,8 +75,12 @@ export function PageComponents() {
       {cookiesAccept === null ? <CookiesModal /> : null}
       <HeaderContentsContainer variant={themeValue}>
         <div>
-          <h2>Componentes</h2>
-          <p>Os componentes são HTML e CSS puro, caso queira experiementar os componentes com a linguagem DAX incorporada, baixe nossos <NavLink to="/templates"><strong>templates</strong></NavLink>. </p>
+          <h2>{languageSelect === 'pt' ? 'Componentes' : 'Components'}</h2>
+          {languageSelect === 'pt' ?
+            <p>Os componentes são HTML e CSS puro, caso queira experiementar os componentes com a linguagem DAX incorporada, baixe nossos <NavLink to="/templates"><strong>templates</strong></NavLink>. </p>
+            :
+            <p>The components are pure HTML and CSS. If you want to try out the components with the embedded DAX language, download our <NavLink to="/templates"><strong>templates</strong></NavLink>.</p>
+          }
           <FilterSection variant={themeValue}>
             <form action="">
               <input type="radio" value={'all'} name={'all'} id={'1'} onChange={() => setFiltered('all')} defaultChecked />
@@ -95,7 +100,7 @@ export function PageComponents() {
           return (
             <main key={content.id}>
               <div>
-                <iframe src={content.path} frameBorder={0} height={300}></iframe>
+                <iframe src={content.path} frameBorder={0} height={370} width={380}></iframe>
               </div>
               <FooterCardContent variant={themeValue}>
                 <strong>
@@ -103,10 +108,8 @@ export function PageComponents() {
                 </strong>
                 <NavLink to="/componentCode" title="services">
                   <button onClick={() => localStorage.setItem('lastClicked', content.path)}>
-                    Code
-                    <CodeSimple size={15} weight="fill" />
+                    <Code size={23} weight="fill" />
                   </button>
-
                 </NavLink>
               </FooterCardContent>
             </main>

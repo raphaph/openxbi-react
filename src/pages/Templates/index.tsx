@@ -16,7 +16,7 @@ interface TemplateProps {
 
 export function Templates() {
   document.title = 'OpenXBI | Templates'
-  const { themeValue } = useContext(AppContext)
+  const { themeValue, languageSelect } = useContext(AppContext)
 
   const templates: any = templatesData.templates
 
@@ -24,9 +24,13 @@ export function Templates() {
     <TemplatesContainer variant={themeValue}>
       <TemplatesContents>
         <HearderTemplate variant={themeValue}>
-          <h2>Templates</h2>
-          <p>Templates <strong>OpenXBI</strong> possuem componentes já configurados e com algumas medidas ou variáveis DAX incorporadas.</p>
-          <p>Há também templates da comunidade disponíveis com prefixo <strong>community</strong>, e podem ou não ter componentes já configurados e incorporado DAX.</p>
+          {languageSelect === 'pt' ? <><h2>Templates</h2>
+            <p>Templates <strong>OpenXBI</strong> possuem componentes já configurados e com algumas medidas ou variáveis DAX incorporadas.</p>
+            <p>Há também templates da comunidade disponíveis com prefixo <strong>community</strong>, e podem ou não ter componentes já configurados e incorporado DAX.</p>
+          </> : <><h2>Templates</h2>
+            <p><strong>OpenXBI</strong> templates come with preconfigured components and some embedded DAX measures or variables.</p>
+            <p>There are also community templates available with the prefix <strong>community</strong>, which may or may not have preconfigured components and embedded DAX.</p></>
+          }
         </HearderTemplate>
         <TemplatesMap>
           {templates.map((template: TemplateProps) => {

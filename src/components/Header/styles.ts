@@ -19,7 +19,7 @@ export const HeaderContainer = styled.header<ThemeProps>`
     img:nth-child(1) {
       width: 10rem;
       margin-left: 1.5rem;
-      filter: ${props => props.variant === 'light' ? 'drop-shadow(0px 0px 5px rgba(0,0,0,0.2))' : 'drop-shadow(0px 0px 5px rgba(255,255,255,0.2))'} blur(0.30px);
+      filter: ${props => props.variant === 'light' ? 'drop-shadow(0px 0px 5px rgba(0,0,0,0.05))' : 'drop-shadow(0px 0px 5px rgba(255,255,255,0.05))'} blur(0.30px);
 
     }
 
@@ -43,11 +43,11 @@ export const HeaderContainer = styled.header<ThemeProps>`
   }
 `
 
-export const HeaderSideRight = styled.div`
+export const HeaderSideRight = styled.div<ThemeProps>`
   display: flex;
   align-items: center;
   justify-content: flex-end;
-
+  
   nav {
     display: flex;
     gap: 1rem;
@@ -153,7 +153,10 @@ export const MenuVertical = styled.div<ThemeProps>`
     border: 1px solid ${(props) =>
     props.variant === 'light' ? props.theme['border-light'] : props.theme['border-dark']};
 
+   
     a {
+      display: flex;
+      align-items: center;
       text-decoration: none;
       color: ${(props) => props.theme['gray-500']};
       
@@ -161,6 +164,11 @@ export const MenuVertical = styled.div<ThemeProps>`
         color: inherit;
         transition: 300ms;
     }
+
+    svg {
+        margin-right: .4rem;
+    }
+    
    }
   }
 `
@@ -174,6 +182,7 @@ export const SeparatorRightSide = styled.div<ThemeProps>`
       ? props.theme['gray-100']
       : props.theme['gray-900']};
   color: transparent;
+  margin-right: 1.6rem;
 
   @media (max-width: 600px) {
       visibility: hidden;
@@ -202,19 +211,22 @@ export const UserAvatarName = styled.div`
     align-items: center;
 
     color: inherit;
-    margin: 0;
+    margin: 0 .4rem 0 0 ;
+    padding: .2rem;
+    transition: 300ms;
+    border-radius: 6px;
 
     &:hover {
-      transform: scale(0.95);
-      transition: 300ms;
+      background: rgba(155,155,155,0.2);
     }
   }
 
-  strong, img {
+  strong {
     margin-right: 1rem;
   }
 
   img {
+    margin: 0;
     border-radius: 50%;
     border: 2px solid ${props => props.theme.primary};
   }
@@ -225,11 +237,12 @@ export const ProfileModal = styled.div<ThemeProps>`
   display: flex;
   flex-direction: column;
   position: absolute;
+  transition: 300ms;
 
   width: auto;
   
   background: ${(props) =>
-    props.variant === 'light' ? props.theme.offwhite : props.theme['bg-gray']};
+    props.variant === 'light' ? props.theme.offwhite : props.theme['gray-900']};
 
   border: 1px solid ${(props) =>
     props.variant === 'light' ? props.theme['border-light'] : props.theme['border-dark']};
@@ -242,19 +255,40 @@ export const ProfileModal = styled.div<ThemeProps>`
   padding: 1rem;
 
   a:first-child {
-    background: ${props => props.theme.secondary};
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+    border-radius: 50px;
+    border: 0;
     color: white;
-    padding: .5rem;
-    border-radius: 20px;
-    text-align: center;
+    background-color: black;
+    box-shadow: rgb(0 0 0 / 5%) 0 0 8px;
+    letter-spacing: 1.2px;
     text-decoration: none;
-    margin-bottom: 1rem;
-    width: 100%;
+    transition: all .5s ease;
+    width: 118px;
+    height: 40px;
+    font-size: .95rem;
+
+    transition: 300ms;
 
     &:hover {
-      transform: scale(0.95);
-      transition: 350ms;
+      background-color: hsl(261deg 80% 48%);
+      color: hsl(0, 0%, 100%);
+      box-shadow: rgb(93 24 220) 0px 0px 22px 0px;
     }
+
+    &:active {
+      background-color: black;
+      color: hsl(0, 0%, 100%);
+      box-shadow: rgb(93 24 220) 0px 0px 0px 0px;
+      transform: translateY(2px);
+      transition: 100ms;
+   }
+
+   svg {
+            margin-right: .5rem;
+        }
   }
 
   a:nth-child(2) {

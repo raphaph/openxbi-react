@@ -8,24 +8,33 @@ export const SignInContainer = styled.main<ThemeProps>`
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
     background: ${(props) =>
-        props.variant === 'light' ? props.theme['bg-home-light'] : props.theme['bg-home-dark']};
-       
-    padding: 0rem;
-
+        props.variant === 'light' ?
+            `linear-gradient(${props.theme.offwhite},
+        ${props.theme["slate-gray-1"]})`
+            : props.theme['bg-home-dark']};
+    padding: 5%;
+    border-bottom: 1px solid ${(props) =>
+        props.variant === 'light' ? props.theme["border-light"] : props.theme["border-dark"]};
+    
+    
     div {
         display: flex;
         flex-direction: column;
         align-items: center;
+        justify-content: center;
+        max-width: 450px;
+        width: 100%;
 
         background: ${(props) =>
         props.variant === 'light' ? props.theme.white : props.theme.black};
         padding: 3rem 5rem;
-        margin: 5%;
+        
 
         border: 1px solid ${(props) =>
         props.variant === 'light' ? props.theme["border-light"] : props.theme["border-dark"]};
-        border-radius: 5px;
+        border-radius: 10px;
 
         box-shadow: 0 0 20px 2px ${(props) =>
         props.variant === 'light' ? props.theme["border-light"] : props.theme.offblack};
@@ -69,10 +78,6 @@ export const SignInContainer = styled.main<ThemeProps>`
         margin-top: 1rem;
         padding: .5rem;
         transition: 300ms ease-out;
-
-        &:hover {
-            transform: scale(1.06);
-        }
     }
 
     h2 {
@@ -88,5 +93,9 @@ export const SignInContainer = styled.main<ThemeProps>`
         margin: 1rem;
         font-size: 1rem;
     }   
+
+    small {
+        margin-top: 1rem;
+    }
     
 `

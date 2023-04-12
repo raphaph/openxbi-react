@@ -1,4 +1,4 @@
-import { List, MoonStars, SunDim, User, X, SignOut } from 'phosphor-react'
+import { List, MoonStars, SunDim, User, X, SignOut, Plus } from 'phosphor-react'
 import { useContext, useState } from 'react'
 import { NavLink, useNavigate } from 'react-router-dom'
 import { AppContext } from '../../context/AppContext'
@@ -9,10 +9,21 @@ import logoDark from '../../assets/logo-dark.svg'
 import logoLight from '../../assets/logo-light.svg'
 import boxDark from '../../assets/box-dark.svg'
 import boxLight from '../../assets/box-light.svg'
+import { LanguageSelect } from '../LanguageSelect'
+
+const blank_default = `<div class='container'>
+    <p style="color: gray">Hello World</p>
+</div>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap');
+* {
+    font-family: 'Inter', sans-serif;
+} 
+</style>`
 
 export function Header() {
 
-  const { themeValue, setThemeValue, user, setUser, providerName } = useContext(AppContext)
+  const { themeValue, setCreateOrEdit, setThemeValue, user, setUser, providerName, setLanguageSelect, languageSelect, setCode } = useContext(AppContext)
   const [menuVertical, setMenuVertical] = useState<string>('closed')
   const [signOutModal, setSignOutModal] = useState<string>('closed')
 
@@ -79,7 +90,7 @@ export function Header() {
           alt=""
         />
       </NavLink>
-      <HeaderSideRight>
+      <HeaderSideRight variant={themeValue}>
         <nav>
           <NavLink to="/components" title="components">
             Components
@@ -92,20 +103,22 @@ export function Header() {
           </NavLink>
         </nav>
         <SeparatorRightSide variant={themeValue} />
+        <LanguageSelect />
         <SunButton title="changeTheme" onClick={() => changeTheme()}>
           {themeValue === 'light' ?
             <MoonStars
               size={22}
               weight="fill"
-              color={'purple'}
+              color={'#6b55f9'}
             /> :
             <SunDim
               size={22}
               weight="fill"
-              color={'orange'}
+              color={'#FF8C00'}
             />
           }
         </SunButton>
+
         <UserAvatarName>
           {user === null ? <nav><NavLink to={"/sign-in"}>Sign In</NavLink></nav> :
             <button onClick={signOutModal === 'closed' ? () => { setSignOutModal('open'); setMenuVertical('closed'); } : () => setSignOutModal('closed')}>
@@ -145,12 +158,17 @@ export function Header() {
               <NavLink to="/docs/introduction" title="docs">
                 Docs
               </NavLink>
-              <NavLink to={"/sign-in"}>
-                Sign In
-              </NavLink>
+              {user === null ? <NavLink to={"/sign-in"}>Sign In</NavLink> :
+                <NavLink to="#" onClick={providerName === 'github.com' ? () => logoutGitHub() : () => logoutGoogle()}>
+                  <SignOut size={22} weight="fill" />
+                  <p>Sign Out</p>
+                </NavLink>}
               <SeparatorHorizontal variant={themeValue}></SeparatorHorizontal>
               <button onClick={() => changeTheme()}>
                 Alternar tema
+              </button>
+              <button onClick={languageSelect === 'pt' ? () => setLanguageSelect('en') : () => setLanguageSelect('pt')}>
+                en | pt
               </button>
             </nav>
           </div>
@@ -160,7 +178,9 @@ export function Header() {
       </MenuVertical>
       {signOutModal === 'closed' ? null :
         <ProfileModal variant={themeValue}>
-          <button><a href='https://discord.gg/BTgztvKF7E' target={"_blank"}>Discord</a></button>
+          <button><NavLink to={"/create-component"} onClick={() => { setCreateOrEdit('create'); setCode(blank_default) }}>
+            <Plus size={20} weight='bold' />Create
+          </NavLink></button>
           <NavLink to={"/profile"} onClick={() => { setSignOutModal('closed') }}>
             <User size={20} weight="fill" />
             <p>Profile</p>

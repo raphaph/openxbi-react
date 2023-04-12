@@ -1,6 +1,5 @@
 import { createContext, ReactNode, useEffect, useState } from 'react'
 type themeValueType = 'light' | 'dark' | null
-import { User } from 'firebase/auth'
 
 interface ContentDataProps {
   id: string
@@ -26,6 +25,16 @@ interface AppContextType {
   setUser: any
   providerName: string | null
   setProvider: any
+  componentName: string,
+  setComponentName: any,
+  code: string,
+  setCode: any;
+  createOrEdit: string;
+  setCreateOrEdit: any;
+  showModal: boolean;
+  setShowModal: any;
+  languageSelect: string;
+  setLanguageSelect: any;
 }
 
 
@@ -37,12 +46,17 @@ interface AppContextProviderProps {
 export const AppContext = createContext({} as AppContextType)
 
 export function AppContextProvider({ children }: AppContextProviderProps) {
+  const [showModal, setShowModal] = useState<boolean>(false)
   const [themeValue, setThemeValue] = useState<themeValueType>(null)
   const [contentsNames, setContentsNames] = useState<string[]>([])
   const [clickedContent, setClickedContent] = useState('')
   const [cookiesAccept, setCookiesAccept] = useState('')
   const [user, setUser] = useState(null);
   const [providerName, setProvider] = useState<string | null>(null)
+  const [componentName, setComponentName] = useState<string>('')
+  const [code, setCode] = useState<string>('')
+  const [createOrEdit, setCreateOrEdit] = useState<string>('create')
+  const [languageSelect, setLanguageSelect] = useState('en');
   const [contentData, setContentData] = useState<ContentDataProps>({
     id: '',
     name: '',
@@ -58,8 +72,8 @@ export function AppContextProvider({ children }: AppContextProviderProps) {
     const currentTheme: any = localStorage.getItem('theme')
 
     if (currentTheme === null) {
-      setThemeValue('light')
-      localStorage.setItem('theme', 'light')
+      setThemeValue('dark')
+      localStorage.setItem('theme', 'dark')
     } else {
       setThemeValue(currentTheme)
     }
@@ -88,7 +102,17 @@ export function AppContextProvider({ children }: AppContextProviderProps) {
         user,
         setUser,
         providerName,
-        setProvider
+        setProvider,
+        componentName,
+        setComponentName,
+        code,
+        setCode,
+        createOrEdit,
+        setCreateOrEdit,
+        showModal,
+        setShowModal,
+        languageSelect,
+        setLanguageSelect
       }}
     >
       {children}

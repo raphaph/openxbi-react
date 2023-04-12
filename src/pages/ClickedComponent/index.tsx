@@ -19,13 +19,12 @@ import axios from 'axios'
 
 export function ClickedComponent() {
   const lastClicked: any = localStorage.getItem('lastClicked')
-  const { themeValue, contentData, setContentData, user } = useContext(AppContext)
+  const { themeValue, contentData, setContentData, user, languageSelect } = useContext(AppContext)
   const apiKey = import.meta.env.VITE_AUTH_KEY
   const [codigo, setCodigo] = useState('')
   const clickedName = lastClicked
     .slice(26, -5)
     .split('/src/components/@Contents/')
-
 
   document.title = `OpenXBI | ${clickedName}`
   const [likeComponent, setLikeComponent] = useState<number | null>(null)
@@ -51,7 +50,6 @@ export function ClickedComponent() {
     }
 
   }
-
 
   async function FetchComponent() {
     await axios.get(`https://uxbi.com.br/api/contents/search/${clickedName}`, {
@@ -86,8 +84,6 @@ export function ClickedComponent() {
     // API de inicio, traz os detalhes sobre os cards
     FetchComponent()
 
-
-
   }, [lastClicked, apiKey])
 
   function CopyCode() {
@@ -103,7 +99,7 @@ export function ClickedComponent() {
             .slice(26, -5)
             .split('/src/components/@Contents/')}`}</h2>
           <div>
-            <iframe src={lastClicked} frameBorder={0} height={300}></iframe>
+            <iframe src={lastClicked} frameBorder={0} height={370} width={380}></iframe>
           </div>
           {/* <p>{contentData.description}</p> */}
           <CreatorInfoLike variant={themeValue}>
@@ -134,53 +130,103 @@ export function ClickedComponent() {
         </SyntaxContainer>
         <SupportContainer>
           <DetailsSupport>
-            <summary>Como utilizar</summary>
-            <div>
-              <p>
-                1. Copie o código, e cole em uma medida DAX dentro de aspas duplas
-              </p>
-              <SyntaxHighlighterHowToUse
-                variant={themeValue}
-                language="dax"
-                style={themeValue === 'light' ? coldarkCold : coldarkDark}
-                wrapLines>
-                {'medida = "<h1 class=\'title\'>Hello</h1>"'}
-              </SyntaxHighlighterHowToUse>
-            </div>
-            <div>
-              <p>
-                2. Incorpore o código HTML e CSS com medidas e variáveis DAX utilizando a seguinte sintaxe:
-              </p>
-              <SyntaxHighlighterHowToUse
-                variant={themeValue}
-                language="dax"
-                style={themeValue === 'light' ? coldarkCold : coldarkDark}
-                wrapLines>
-                {`medida = 
+            {languageSelect === 'pt' ? <>
+              <summary>Como utilizar</summary>
+              <div>
+                <p>
+                  1. Copie o código, e cole em uma medida DAX dentro de aspas duplas
+                </p>
+                <SyntaxHighlighterHowToUse
+                  variant={themeValue}
+                  language="dax"
+                  style={themeValue === 'light' ? coldarkCold : coldarkDark}
+                  wrapLines>
+                  {'medida = "<h1 class=\'title\'>Hello</h1>"'}
+                </SyntaxHighlighterHowToUse>
+              </div>
+              <div>
+                <p>
+                  2. Incorpore o código HTML e CSS com medidas e variáveis DAX utilizando a seguinte sintaxe:
+                </p>
+                <SyntaxHighlighterHowToUse
+                  variant={themeValue}
+                  language="dax"
+                  style={themeValue === 'light' ? coldarkCold : coldarkDark}
+                  wrapLines>
+                  {`medida = 
 var greetings = "Hello"
 return
 "<h1>"&greetings&"</h1>"`}
-              </SyntaxHighlighterHowToUse>
+                </SyntaxHighlighterHowToUse>
 
-            </div>
-            <div>
-              <p>
-                3. Quanto mais incorporar seu código com variáveis que se
-                adaptam conforme os dados mudam no seu dashboard,
-                mais inteligentes ficarão os componentes.
-              </p>
-            </div>
-            <SupportButton>
-              <strong>
-                Caso tenha dúvidas acesse a documentação.
-              </strong>
-              <button>
-                <NavLink to="/docs/introduction">
-                  <BookBookmark />
-                  Documentação
-                </NavLink>
-              </button>
-            </SupportButton>
+              </div>
+              <div>
+                <p>
+                  3. Quanto mais incorporar seu código com variáveis que se
+                  adaptam conforme os dados mudam no seu dashboard,
+                  mais inteligentes ficarão os componentes.
+                </p>
+              </div>
+              <SupportButton>
+                <strong>
+                  Caso tenha dúvidas acesse a documentação.
+                </strong>
+                <button>
+                  <NavLink to="/docs/introduction">
+                    <BookBookmark />
+                    Documentação
+                  </NavLink>
+                </button>
+              </SupportButton>
+            </> : <>
+              <summary>How to use</summary>
+              <div>
+                <p>
+                  1. Copy the code, and paste it into a DAX measure inside double quotes
+                </p>
+                <SyntaxHighlighterHowToUse
+                  variant={themeValue}
+                  language="dax"
+                  style={themeValue === 'light' ? coldarkCold : coldarkDark}
+                  wrapLines>
+                  {'measure = "<h1 class=\'title\'>Hello</h1>"'}
+                </SyntaxHighlighterHowToUse>
+              </div>
+              <div>
+                <p>
+                  2. Embed HTML and CSS code with measures and DAX variables using the following syntax:
+                </p>
+                <SyntaxHighlighterHowToUse
+                  variant={themeValue}
+                  language="dax"
+                  style={themeValue === 'light' ? coldarkCold : coldarkDark}
+                  wrapLines>
+                  {` measure =
+var greetings = "Hello"
+return
+"<h1>"&greetings&"</h1>"`}
+                </SyntaxHighlighterHowToUse>
+
+              </div>
+              <div>
+                <p>
+                  3. The more you incorporate your code with variables that
+                  adapt as the data changes on your dashboard,
+                  the smarter the components will become.
+                </p>
+              </div>
+              <SupportButton>
+                <strong>
+                  If in doubt, access the documentation.
+                </strong>
+                <button>
+                  <NavLink to="/docs/introduction">
+                    <BookBookmark />
+                    Documentation
+                  </NavLink>
+                </button>
+              </SupportButton>
+            </>}
           </DetailsSupport>
         </SupportContainer>
       </ClickedMainContent>

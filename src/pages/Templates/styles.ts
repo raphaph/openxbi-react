@@ -42,7 +42,7 @@ export const HearderTemplate = styled.header<ThemeProps>`
   --gradient-bg: ${(props) =>
     props.variant === 'light' ? props.theme['gray-100'] : props.theme.offblack};
   
-  background: ${props => props.theme['linear-card-dark']};
+  background: ${props => props.variant === 'light' ? props.theme.offwhite : props.theme.offblack};
   padding: 2rem;
   
   p {
@@ -77,7 +77,7 @@ export const CardMap = styled.div<ThemeProps>`
   align-items: center;
 
   padding: 1rem;
-  background: ${props => props.theme['linear-card-dark']};
+  background: ${props => props.variant === 'light' ? props.theme['slate-gray-1'] : props.theme['gray-900']};
   border: 1px solid ${(props) =>
     props.variant === 'light' ? props.theme['border-light'] : props.theme['border-dark']};
   border-radius: 6px;

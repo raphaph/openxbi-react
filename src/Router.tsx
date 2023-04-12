@@ -13,6 +13,7 @@ import { IteratingDax } from './pages/@docs-6-IteratingWithDax'
 import { SignIn } from './pages/SignIn'
 import { Profile } from './pages/Profile'
 import { Releases } from './pages/@releases'
+import { CreateComponent } from './pages/CreateComponent'
 
 
 export function Router() {
@@ -32,6 +33,7 @@ export function Router() {
         <Route path="/docs/iterating-with-dax" element={<IteratingDax />} />
         <Route path='/profile' element={<Profile />} />
         <Route path="/sign-in" element={<SignIn />} />
+        <Route path="/create-component" element={<CreateComponent />} />
       </Route>
     </Routes>
   )

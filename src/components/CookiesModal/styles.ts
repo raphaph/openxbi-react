@@ -14,12 +14,14 @@ export const CookiesContainer = styled.div`
         background: white;
         padding: 1rem;
         border-radius: 6px;
-        box-shadow: 0 0 2px 1px;
+        box-shadow: 0 0 2px 1px rgba(0,0,0,0.3);
     }
 
     p {
         margin: .5rem 0;
-        color: ${props => props.theme['gray-600']}
+        color: ${props => props.theme['gray-600']};
+        font-size: .95rem;
+        line-height: 1.4;
     }
 
     button {
@@ -33,5 +35,10 @@ export const CookiesContainer = styled.div`
         bottom: 15px;
         right: 15px;
         border-radius: 3px;
+    }
+
+    li {
+        font-size: 0.875rem;
+        line-height: 1.6;
     }
 `

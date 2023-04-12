@@ -1,29 +1,17 @@
 export const defaultTheme = {
   white: '#fff',
   offwhite: '#f5f5f5',
-  primary: '#ff8c00',
-  secondary: '#3e00b6',
-  tertiary: '#2ac6ff',
+  'pri-sec': 'linear-gradient(120deg, #ff8c00, #6B4DFF )',
+
+  'slate-gray-1': '#F3E8F2',
   // principal color
-  'blue-turq': '#29ABE2',
-  'bturq-100': '#ABECF4',
-  'bturq-200': '#90E0EA',
-  'bturq-300': '#75D3E0',
-  'bturq-400': '#5AC6D7',
-  'bturq-500': '#4AB8CF',
-  'bturq-600': '#3CAAC7',
-  'bturq-700': '#2D9CBF',
-  'bturq-800': '#1E8DB6',
-  'bturq-900': '#0E7EAF',
+  primary: '#ff8c00',
+  secondary: '#6B4DFF',
 
   // combinations
   'red-orange': '#E25437',
   salmon: '#FFA07A',
   'strong-orange': '#FF8C00',
-  'soft-blue': '#7AC7E2',
-  'blue-emerald': '#009ACD',
-  'vibrant-green': '#00C957',
-  'purple-god': '#3416e3', // rgba(52,	22,	227,1)
 
   // gray's
   'gray-000': '#FAFAEA',
@@ -35,9 +23,9 @@ export const defaultTheme = {
   'gray-600': '#323238',
   'gray-700': '#29292E',
   'gray-800': '#202024',
-  'gray-900': '#141414',
+  'gray-900': '#101010',
   'bg-gray': '#050506',
-  'bg-home-dark': 'linear-gradient(-45deg, rgba(55, 0, 123, .3) 20%, #050506 80%)',
+  'bg-home-dark': 'linear-gradient(-45deg, rgba(22, 22, 55, .3) 20%, #050506 80%)',
   'bg-home-light': '#f4f4f4',
   offblack: '#080808',
   black: '#000',

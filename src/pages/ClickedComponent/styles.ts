@@ -140,7 +140,7 @@ export const SyntaxContainer = styled.div`
       }
 
       &:active {
-        color: ${(props) => props.theme['blue-emerald']};
+        color: ${(props) => props.theme.secondary};
       }
     }
   }
@@ -152,7 +152,9 @@ export const SyntaxHighlighterStyle = styled(SyntaxHighlighter) <ThemeProps>`
   width: 100%;
   transition: 300ms;
   background: ${(props) =>
-    props.variant === 'light' ? props.theme.white : props.theme.offblack} !important;
+    props.variant === 'light' ? props.theme['slate-gray-1'] : props.theme.offblack} !important;
+
+  border: 1px solid ${props => props.variant === 'light' ? props.theme['border-light'] : props.theme['border-dark']};
 
   span {
     font-family: 'Fira Code', monospace;
