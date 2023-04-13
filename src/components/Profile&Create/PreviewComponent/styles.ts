@@ -6,12 +6,16 @@ interface ThemeProps {
 
 export const CodePreviewStyles = styled.div<ThemeProps>`
     font-family: 'Inter', sans-serif;
+    
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     
     background:  ${(props) =>
-        props.variant === 'light' ? 'rgba(246,246,246)' : props.theme["gray-900"]};
+        props.variant === 'light' ? props.theme["preview-light"] : props.theme["preview-dark"]};
+    background-position: center;
+    background-size: cover;
     border: 1px solid ${(props) =>
         props.variant === 'light' ? props.theme['border-light'] : props.theme['border-dark']};
 
@@ -20,4 +24,8 @@ export const CodePreviewStyles = styled.div<ThemeProps>`
     border-radius: 8px;
     padding: 7.5% 5%;
 
+    iframe {
+        text-align: center;
+        margin: 0 auto;
+    }
 `

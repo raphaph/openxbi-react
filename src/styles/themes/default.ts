@@ -4,6 +4,8 @@ export const defaultTheme = {
   'pri-sec': 'linear-gradient(120deg, #ff8c00, #6B4DFF )',
 
   'slate-gray-1': '#F3E8F2',
+  'preview-light': 'radial-gradient(#f6f6f6 15%, #e7e7e7)',
+  'preview-dark': 'radial-gradient(#202020 15%, #101010 )',
   // principal color
   primary: '#ff8c00',
   secondary: '#6B4DFF',

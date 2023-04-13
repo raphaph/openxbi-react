@@ -156,7 +156,7 @@ export const ComponentsContainer = styled.div<ThemeProps>`
     
     border: 1px solid ${(props) =>
     props.variant === 'light' ? props.theme['gray-000'] : props.theme['gray-800']};
-    background: ${props => props.variant === 'light' ? props.theme['slate-gray-1'] : props.theme['gray-900']};
+    background: ${props => props.variant === 'light' ? props.theme['preview-light'] : props.theme['preview-dark']};
 
     width: 100%;
     height: 25rem;

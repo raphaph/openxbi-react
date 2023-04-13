@@ -205,7 +205,7 @@ export const InputNameComponent = styled.div<ThemeProps>`
         input[type="text"] {
             border: 0;
             z-index: 0;
-            width: 20.5rem;
+            width: 20rem;
             height: 40px;
             
             padding: .2rem .4rem; 
@@ -276,7 +276,6 @@ export const ButtonNecklace = styled.div<LanguageSelect>`
         color: ${props => props.theme["gray-500"]};
         transition: 300ms;
 
-        
         
         &:hover {
             color: inherit;
