@@ -191,6 +191,10 @@ export function CodeArea() {
             setTypeComponentSave('chart');
         } else if (event.target.value === 'other') {
             setTypeComponentSave('other');
+        } else if (event.target.value === 'slider') {
+            setTypeComponentSave('slider');
+        } else if (event.target.value === 'toggle') {
+            setTypeComponentSave('toggle');
         }
     }
 
@@ -240,7 +244,6 @@ export function CodeArea() {
         return dataUrl;
     }
 
-
     return (
         <CodeAreaContainer variant={themeValue}>
             <CodingContainerStyle>
@@ -256,6 +259,9 @@ export function CodeArea() {
                                     <select id="select-type-name" name="type-name" onChange={selectTypeComponentSave}>
                                         <option value="card">card</option>
                                         <option value="chart">chart</option>
+                                        <option value="button">button</option>
+                                        <option value="toggle">toggle</option>
+                                        <option value="slider">slider</option>
                                         <option value="table">table</option>
                                         <option value="other">other</option>
                                     </select>
