@@ -12,13 +12,20 @@ import boxLight from '../../assets/box-light.svg'
 import { LanguageSelect } from '../LanguageSelect'
 
 const blank_default = `<div class='container'>
-    <p style="color: gray">Hello World</p>
+  <p style="color: gray">Hello World</p>
 </div>
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap');
 * {
-    font-family: 'Inter', sans-serif;
+  font-family: 'Inter', sans-serif;
 } 
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
 </style>`
 
 export function Header() {
