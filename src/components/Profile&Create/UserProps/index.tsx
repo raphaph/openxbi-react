@@ -2,7 +2,6 @@ import { useContext } from 'react';
 import { useNavigate } from 'react-router';
 import { AppContext } from '../../../context/AppContext';
 import { LeftSideProfileAvatar, ProfileContainer } from './styles';
-import { NavLink } from 'react-router-dom';
 import { Cube, PencilLine, Plus } from 'phosphor-react';
 
 export function UserProps() {
@@ -17,6 +16,13 @@ export function UserProps() {
 * {
     font-family: 'Inter', sans-serif;
 } 
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
 </style>`
 
     const navigate = useNavigate();

@@ -1,17 +1,19 @@
 import { GoogleAuthProvider, GithubAuthProvider, signInWithPopup, setPersistence, browserLocalPersistence } from 'firebase/auth'
-import { useContext } from 'react';
+import { useContext, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { AppContext } from '../../context/AppContext';
 import { auth } from '../../services/firebase'
 import { SignInContainer } from './styles';
 import axios from 'axios'
 import { User } from 'phosphor-react';
+import Loading from '../../components/Loading';
 
 export function SignIn() {
     document.title = 'OpenXBI | Sign In'
     const { themeValue, setUser, setProvider, languageSelect } =
         useContext(AppContext)
     const navigate = useNavigate();
+    const [isLoading, setIsLoading] = useState(false)
 
     async function handleGoogleSignIn() {
         const provider = new GoogleAuthProvider();
@@ -45,7 +47,7 @@ export function SignIn() {
                     created_at: new Date().toISOString()
                 };
 
-                await axios.post('https://uxbi.com.br/api/accounts/', data, {
+                axios.post('https://uxbi.com.br/api/accounts/', data, {
                     headers: {
                         'Content-Type': 'application/json',
                         "api-key": `${apikey}`,
@@ -64,7 +66,7 @@ export function SignIn() {
 
         try {
             await setPersistence(auth, browserLocalPersistence);
-
+            setIsLoading(true)
             const result = await signInWithPopup(auth, provider);
             setUser(result);
             setProvider(result.providerId);
@@ -88,7 +90,7 @@ export function SignIn() {
                         created_at: new Date().toISOString()
                     };
 
-                    await axios.post('https://uxbi.com.br/api/accounts/', data, {
+                    axios.post('https://uxbi.com.br/api/accounts/', data, {
                         headers: {
                             'Content-Type': 'application/json',
                             "api-key": `${apikey}`,
@@ -100,6 +102,7 @@ export function SignIn() {
             }
 
             navigate("/profile");
+            setIsLoading(false)
         } catch (error) {
             console.log(error);
         }
@@ -122,6 +125,7 @@ export function SignIn() {
                 </button>
             </div>
             <small>{languageSelect === 'pt' ? 'Nós não salvamos senhas!' : `We don't save passwords!`}</small>
+            <Loading isLoading={isLoading} />
         </SignInContainer>
 
     )

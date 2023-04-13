@@ -6,26 +6,28 @@ interface ThemeProps {
 
 export const CodePreviewStyles = styled.div<ThemeProps>`
     font-family: 'Inter', sans-serif;
-    
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    
+
+    display: flex; /* Define o elemento pai como um flex container */
+    justify-content: center; /* Centraliza o conteúdo horizontalmente */
+    align-items: center; /* Centraliza o conteúdo verticalmente */
+    height: 100vh; /* Define a altura do elemento pai */
+    width: 100vw;
+
     background:  ${(props) =>
         props.variant === 'light' ? props.theme["preview-light"] : props.theme["preview-dark"]};
-    background-position: center;
-    background-size: cover;
     border: 1px solid ${(props) =>
         props.variant === 'light' ? props.theme['border-light'] : props.theme['border-dark']};
 
     width: 25.1rem;
     height: 25rem;
     border-radius: 8px;
-    padding: 7.5% 5%;
-
-    iframe {
-        text-align: center;
-        margin: 0 auto;
+    padding: 1.5% 2%;
+        
+    body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        margin: 0;
     }
 `

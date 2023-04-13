@@ -23,6 +23,13 @@ export function MyComponents() {
 * {
     font-family: 'Inter', sans-serif;
 } 
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
 </style>`
 
     useEffect(() => {
@@ -76,7 +83,7 @@ export function MyComponents() {
                     const dataUrl = `data:text/html;base64,${btoa(decodedHtml)}`;
 
                     return (
-                        <div id="1" key={component.nome}>
+                        <div key={component.nome}>
                             <h3>{component.nome.replace(".html", "")}</h3>
                             <PreviewComponent code={dataUrl} />
                             {/* <PreviewComponent code={component.conteudo} /> */}
