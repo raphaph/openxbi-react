@@ -20,7 +20,7 @@ export function SignIn() {
 
         try {
             await setPersistence(auth, browserLocalPersistence);
-
+            setIsLoading(true)
             // A autenticação persistente foi ativada com sucesso
             // Inicia o processo de login com o Google
             const result = await signInWithPopup(auth, provider);
@@ -56,6 +56,7 @@ export function SignIn() {
             }
 
             navigate("/profile");
+            setIsLoading(false)
         } catch (error) {
             console.log(error);
         }
