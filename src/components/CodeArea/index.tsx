@@ -202,6 +202,8 @@ export function CodeArea() {
             setTypeComponentSave('slider');
         } else if (event.target.value === 'toggle') {
             setTypeComponentSave('toggle');
+        } else if (event.target.value === 'tooltip') {
+            setTypeComponentSave('tooltip');
         }
     }
 
@@ -267,8 +269,9 @@ export function CodeArea() {
                                         <option value="card">card</option>
                                         <option value="chart">chart</option>
                                         <option value="button">button</option>
-                                        <option value="toggle">toggle</option>
                                         <option value="slider">slider</option>
+                                        <option value="toggle">toggle</option>
+                                        <option value="tooltip">tooltip</option>
                                         <option value="table">table</option>
                                         <option value="other">other</option>
                                     </select>
