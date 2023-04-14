@@ -1,63 +1,65 @@
 <!-- Componente OpenXBI para exibição de metas de vendas em formato de gráfico de barras -->
 <!-- Disponível em https://openxbi.com.br -->
-<div class='card'>
-  <div class='header'>
-    <div>
-      <strong>Meta de vendas</strong>
-      <small>(em milhões)</small>
-    </div>
-    <div> <!-- Legenda -->
-      <span>Meta</span> <!-- Categoria meta -->
-      <span>Valor</span> <!-- Categoria valor -->
-    </div>
-  </div>
-  <div class='body'>
-    <!-- Cada bloco representa uma meta de vendas -->
-    <div class='wrapper'>
-      <p>1M</p>
-      <div class='target-area'>
-        <!-- Barra de progresso que representa o percentual de atingimento da meta -->
-        <div class='hit-target' style='height: 65%'>
-          <p>65%</p>
-        </div>
+<div class='chart-container'>
+  <div class='chart-content'>
+    <div class='header'>
+      <div>
+        <strong>Meta de vendas</strong>
+        <small>(em milhões)</small>
       </div>
-      <div class='year'>2019</div> <!-- Ano -->
-    </div>
-    <div class='wrapper'>
-      <p>2.3M</p> <!-- Valor da meta a cima da barra -->
-      <div class='target-area'>
-        <div class='hit-target' style='height: 70%'>
-          <p>70%</p>
-        </div>
+      <div> <!-- Legenda -->
+        <span>Meta</span> <!-- Categoria meta -->
+        <span>Valor</span> <!-- Categoria valor -->
       </div>
-      <div class='year'>2020</div> <!-- Ano -->
     </div>
-    <div class='wrapper'>
-      <p>2.2M</p> <!-- Valor da meta a cima da barra -->
-      <div class='target-area'>
-        <div class='hit-target' style='height: 80%'>
-          <p>80%</p>
+    <div class='body'>
+      <!-- Cada bloco representa uma meta de vendas -->
+      <div class='wrapper'>
+        <p>1M</p>
+        <div class='target-area'>
+          <!-- Barra de progresso que representa o percentual de atingimento da meta -->
+          <div class='hit-target' style='height: 65%'>
+            <p>65%</p>
+          </div>
         </div>
+        <div class='year'>2019</div> <!-- Ano -->
       </div>
-      <div class='year'>2021</div> 
-    </div>
-    <div class='wrapper'>
-      <p>3M</p>
-      <div class='target-area'>
-        <div class='hit-target' style='height: 100%'>
-          <p>100%</p>
+      <div class='wrapper'>
+        <p>2.3M</p> <!-- Valor da meta a cima da barra -->
+        <div class='target-area'>
+          <div class='hit-target' style='height: 70%'>
+            <p>70%</p>
+          </div>
         </div>
+        <div class='year'>2020</div> <!-- Ano -->
       </div>
-      <div class='year'>2022</div>
-    </div>
-    <div class='wrapper'>
-      <p>4M</p>
-      <div class='target-area'>
-        <div class='hit-target' style='height: 67%'>
-          <p>67%</p>
+      <div class='wrapper'>
+        <p>2.2M</p> <!-- Valor da meta a cima da barra -->
+        <div class='target-area'>
+          <div class='hit-target' style='height: 80%'>
+            <p>80%</p>
+          </div>
         </div>
+        <div class='year'>2021</div> 
       </div>
-      <div class='year'>2023</div>
+      <div class='wrapper'>
+        <p>3M</p>
+        <div class='target-area'>
+          <div class='hit-target' style='height: 100%'>
+            <p>100%</p>
+          </div>
+        </div>
+        <div class='year'>2022</div>
+      </div>
+      <div class='wrapper'>
+        <p>4M</p>
+        <div class='target-area'>
+          <div class='hit-target' style='height: 67%'>
+            <p>67%</p>
+          </div>
+        </div>
+        <div class='year'>2023</div>
+      </div>
     </div>
   </div>
 </div>
@@ -75,8 +77,15 @@
     border-radius: 5px;
 }
 
+.chart-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
 /* Card todo */
-.card {
+.chart-content {
   font-family: 'Inter', sans-serif; /* Fonte */
   width: 400px; /* Largura do componente */
   background-color: #fff; /* Cor de fundo */

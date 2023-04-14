@@ -143,6 +143,24 @@
             "description": "Gráfico com barras verticais que exibem porcetagem atiginda da meta de vendas a cada ano.",
             "likes": 0,
             "id": "c64b6916-810d-4cc0-9899-3eddf056e78d"
+        },
+        {
+            "name": "chart-brazil-map",
+            "path": "/src/components/@Contents/chart-brazil-map.html",
+            "type": "chart",
+            "creator": "raphaph",
+            "description": "Mapa do Brasil como gráico personalizável.",
+            "likes": 0,
+            "id": "c89as0ud-810d-4cc0-9899-3eddf056e78d"
+        },
+        {
+            "name": "chart-usa-map",
+            "path": "/src/components/@Contents/chart-usa-map.html",
+            "type": "chart",
+            "creator": "raphaph",
+            "description": "Mapa dos EUA como gráico personalizável.",
+            "likes": 0,
+            "id": "3eddf056-810d-4cc0-9899-asd9as7e78d"
         }
 ]
 }
