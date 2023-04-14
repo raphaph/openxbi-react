@@ -105,6 +105,7 @@ export const CreatorInfoLike = styled.article<ThemeProps>`
 
     img {
       width: 40px;
+      height: 40px;
       border-radius: 50%;
       border: 2px solid #ff8c00;
       margin: .2rem;

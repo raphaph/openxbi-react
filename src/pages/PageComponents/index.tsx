@@ -26,7 +26,8 @@ export function PageComponents() {
     themeValue,
     cookiesAccept,
     setCookiesAccept,
-    languageSelect
+    languageSelect,
+    user
   } = useContext(AppContext)
 
   const [filteredData, setFilteredData] = useState<ContentDataProps[]>([])
@@ -116,11 +117,17 @@ export function PageComponents() {
                 <strong>
                   {content.name}
                 </strong>
-                <NavLink to="/componentCode" title="services">
-                  <button onClick={() => localStorage.setItem('lastClicked', content.path)}>
-                    <Code size={23} weight="fill" />
-                  </button>
-                </NavLink>
+                {user === null ?
+                  <NavLink to="">
+                    <button onClick={() => alert(`${languageSelect === 'pt' ? 'Acesse sua conta para poder visualizar e copiar o código.🚀' : 'Login to your account to view and copy the code.🚀'}`)} >
+                      <Code size={23} weight="fill" />
+                    </button>
+                  </NavLink> :
+                  <NavLink to="/componentCode">
+                    <button onClick={() => localStorage.setItem('lastClicked', content.path)}>
+                      <Code size={23} weight="fill" />
+                    </button>
+                  </NavLink>}
               </FooterCardContent>
             </main>
           )
