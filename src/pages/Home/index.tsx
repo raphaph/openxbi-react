@@ -22,8 +22,6 @@ import { CookiesModal } from '../../components/CookiesModal'
 import { NavLink } from 'react-router-dom'
 import templateImg from '../../assets/templates-image/openxbi-initial-template.png'
 import templateImg2 from '../../assets/templates-image/openxbi-cloud-costs.png'
-import { LanguageContents } from '../../components/CodeArea/styles'
-import { HomeCreateComponent } from '../../components/HomeCreateComponent'
 
 export function Home() {
   document.title = 'OpenXBI | Home'
@@ -280,10 +278,10 @@ return
           </div>
           <div>
             <iframe
-              src={contentsNames[15]}
+              src={contentsNames[11]}
               frameBorder={0}
-              height={300}
-              width={340}
+              height={365}
+              width={360}
             ></iframe>
           </div>
         </CardsMainContentOne>
