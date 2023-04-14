@@ -104,7 +104,7 @@ export function ClickedComponent() {
           {/* <p>{contentData.description}</p> */}
           <CreatorInfoLike variant={themeValue}>
             <section>
-              <img src={`https://github.com/${contentData.creator}.png`} alt="" width={10} />
+              <img src={`https://github.com/${contentData.creator}.png`} alt="" />
               <a href={`https://github.com/${contentData.creator}`} target={'_blank'} rel="noreferrer"><small>{contentData.creator}</small></a>
             </section>
             <button onClick={() => LikeLike(contentData.id, contentData.likes + 1)}>
