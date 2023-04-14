@@ -1,20 +1,22 @@
 <!-- Componente OpenXBI, ajude-nos compartilhando nossa plataforma -->
 <!-- https://openxbi.com.br -->
-<div class='card-content'>
-    <div class='flip-card-rotate'>
-        <div class='card-front'>
-            <strong>TPV 2022</strong> <!-- Título card back -->
-            <p class='value'>$ 2,5 BI</p> <!-- valor card back -->
-            <span>jan - dec</span> <!-- tooltip -->
+<div class='card-container'>
+    <div class='card-content'>
+        <div class='flip-card-rotate'>
+            <div class='card-front'>
+                <strong>TPV 2022</strong> <!-- Título card back -->
+                <p class='value'>$ 2,5 BI</p> <!-- valor card back -->
+                <span>jan - dec</span> <!-- tooltip -->
+            </div>
+            <div class='card-back'>
+                <strong>TPV 2023</strong> <!-- Título card front -->
+                <p class='value'>$ 1,7 Bi</p> <!-- valor card front -->
+                <span>until - march-2023</span> <!-- tooltip -->
+            </div>
+        </div>  
+        <div class='target-card'>
+            <p>2023: <strong>68%</strong> of target</p> <!-- card oculto -->
         </div>
-        <div class='card-back'>
-            <strong>TPV 2023</strong> <!-- Título card front -->
-            <p class='value'>$ 1,7 Bi</p> <!-- valor card front -->
-            <span>until - march-2023</span> <!-- tooltip -->
-        </div>
-    </div>  
-    <div class='target-card'>
-        <p>2023: <strong>68%</strong> of target</p> <!-- card oculto -->
     </div>
 </div>
 
@@ -28,12 +30,15 @@
     box-sizing: border-box;
 }
 
-.card-content {
-    display: flex; 
-    flex-direction: column;
-    justify-content: center;
+.card-container, .card-content {
+    display: flex;
     align-items: center;
-    
+    justify-content: center;
+    height: 60%;
+}
+
+.card-content {
+    flex-direction: column;
     cursor: pointer; /* Exibe a mãozinha de clique ao passar o mouse */
     margin-top: .5rem; /* Um espaço de folga na parte superior */
 }
@@ -96,7 +101,6 @@ body:hover .flip-card-rotate {
 .target-card {
     font-size: 0.875rem; /* Tamanho da font do card */
 
-    height: auto; /* Altura do card */
     padding: .5rem 1rem; /* preenchimentos internos do card */
 
     background: white; /* Cor de fundo do card */

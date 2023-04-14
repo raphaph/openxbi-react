@@ -1,6 +1,7 @@
 <!-- Componente OpenXBI, ajude-nos compartilhando nossa plataforma -->
 <!-- https://openxbi.com.br -->
 <div class='card-container'>
+<div class='card-content'>
     <link rel='stylesheet' href='https://fonts.googleapis.com/icon?family=Material+Icons:FILL'>
     <div class='card-info'>
         <strong>
@@ -29,6 +30,7 @@
         </div>
         </p> 
 </div>
+</div>
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap');
 
@@ -37,18 +39,22 @@
 }
 
 .card-container {
-    font-family: 'Inter', sans-serif;
-    cursor: pointer;
-    color: #111; /* Cor da font valores */
-    width: auto;
-}
-
-.card-container,
-.card-info,
-.card-hidden {
     display: flex;
     align-items: center;
     justify-content: center;
+    height: 50%;
+}
+
+.card-content,
+.card-info,
+.card-hidden {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: #111; /* Cor da font valores */
+    font-family: 'Inter', sans-serif;
 }
 
 .card-info {
@@ -95,7 +101,7 @@
     margin: .5rem 0;
 }
 
-.card-container:hover>.card-hidden {
+.card-content:hover>.card-hidden {
     animation: fadeUp 300ms; /* Tempo de transição do card secundário */
     animation-fill-mode: forwards;
 }

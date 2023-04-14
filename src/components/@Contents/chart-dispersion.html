@@ -1,6 +1,7 @@
 <!-- Componente OpenXBI, ajude-nos compartilhando nossa plataforma -->
 <!-- https://openxbi.com.br -->
-<div class='chart-container'>
+<div class="chart-container">
+<div class='chart-content'>
     <strong class='title'>Chart Dispersion</strong>
     <div class='upper'>   
         <small class='axisy-title'>y axis</small> <!-- Nome eixo y--> 
@@ -314,6 +315,7 @@
         <small class='axisx-title'>x axis</small> <!-- Nome eixo x--> 
     </div>
 </div>
+</div>
 
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap');
@@ -322,10 +324,19 @@
     font-family: 'Inter', sans-serif;
 }
 
-/* Container */
 .chart-container {
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    height: 100%;
+}
+
+/* content */
+.chart-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    
 
     width: 440px; /* Largura do gráfico */
     
@@ -333,7 +344,7 @@
     padding: 1rem; /* Preenchimento do gráfico */
 
     background: white; /* Cor de fundo do gráfico */
-    box-shadow: 0 0 3px 1px gainsboro; /* Sombra do gráfico */
+    box-shadow: 0 0 3px 1px rgba(0,0,0,.1); /* Sombra do gráfico */
     border-radius: 6px;
 }
 

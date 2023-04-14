@@ -1,69 +1,71 @@
-<div class='accordion'>
-    <link rel='stylesheet' href='https://fonts.googleapis.com/icon?family=Material+Icons:FILL'>
-    <p class='title'>Marketing KPIs</p>
-    <div class='accordion-item'>
-        <input type='checkbox' id='accordion-1' name='accordion'>
-        <label for='accordion-1' class='accordion-header'>Custo por lead (CPL) <span class='material-icons'>
-            expand_less
-            </span>
-        </label>
-        <div class='accordion-content'>
-            <div class='kpi-cards'>
-                <strong>Novos Clientes</strong>
-                <p>12.656</p>
+<div class='card-container'>
+    <div class='accordion'>
+        <link rel='stylesheet' href='https://fonts.googleapis.com/icon?family=Material+Icons:FILL'>
+        <p class='title'>Marketing KPIs</p>
+            <div class='accordion-item'>
+                <input type='checkbox' id='accordion-1' name='accordion'>
+                <label for='accordion-1' class='accordion-header'>Custo por lead (CPL) <span class='material-icons'>
+                    expand_less
+                    </span>
+                </label>
+                <div class='accordion-content'>
+                    <div class='kpi-cards'>
+                        <strong>Novos Clientes</strong>
+                        <p>12.656</p>
+                    </div>
+                    <div class='kpi-cards'>
+                        <strong>Investimento</strong>
+                        <p>R$ 50.000</p>
+                    </div>
+                    <div class='kpi-cards'>
+                        <strong>CPA</strong>
+                        <p>R$ 3,95/cliente</p>
+                    </div>
+                </div>
             </div>
-            <div class='kpi-cards'>
-                <strong>Investimento</strong>
-                <p>R$ 50.000</p>
+            <div class='accordion-item'>
+                <input type='checkbox' id='accordion-2' name='accordion'>
+                <label for='accordion-2' class='accordion-header'>ROI em publicidade <span class='material-icons'>
+                    expand_less
+                    </span>
+                </label>
+                <div class='accordion-content'>
+                    <div class='kpi-cards'>
+                        <strong>Investimento</strong>
+                        <p>R$ 5.000</p>
+                    </div>
+                    <div class='kpi-cards'>
+                        <strong>Vendas</strong>
+                        <p>R$ 14.890</p>
+                    </div>
+                    <div class='kpi-cards'>
+                        <strong>ROI</strong>
+                        <p>197,8%</p>
+                    </div>
+                </div>
             </div>
-            <div class='kpi-cards'>
-                <strong>CPA</strong>
-                <p>R$ 3,95/cliente</p>
+            <div class='accordion-item'>
+            <input type='checkbox' id='accordion-3' name='accordion'>
+            <label for='accordion-3' class='accordion-header'>Taxa de conversão Web <span class='material-icons'>
+                expand_less
+                </span>
+            </label>
+            <div class='accordion-content'>
+                <div class='kpi-cards'>
+                    <strong>Visitas</strong>
+                    <p>9.348</p>
+                </div>
+                <div class='kpi-cards'>
+                    <strong>Compras</strong>
+                    <p>890</p>
+                </div>
+                <div class='kpi-cards'>
+                    <strong>Taxa de conversão</strong>
+                    <p>9%</p>
+                </div>
             </div>
         </div>
     </div>
-    <div class='accordion-item'>
-        <input type='checkbox' id='accordion-2' name='accordion'>
-        <label for='accordion-2' class='accordion-header'>ROI em publicidade <span class='material-icons'>
-            expand_less
-            </span>
-        </label>
-        <div class='accordion-content'>
-            <div class='kpi-cards'>
-                <strong>Investimento</strong>
-                <p>R$ 5.000</p>
-            </div>
-            <div class='kpi-cards'>
-                <strong>Vendas</strong>
-                <p>R$ 14.890</p>
-            </div>
-            <div class='kpi-cards'>
-                <strong>ROI</strong>
-                <p>197,8%</p>
-            </div>
-        </div>
-    </div>
-    <div class='accordion-item'>
-    <input type='checkbox' id='accordion-3' name='accordion'>
-    <label for='accordion-3' class='accordion-header'>Taxa de conversão Web <span class='material-icons'>
-        expand_less
-        </span>
-    </label>
-    <div class='accordion-content'>
-        <div class='kpi-cards'>
-            <strong>Visitas</strong>
-            <p>9.348</p>
-        </div>
-        <div class='kpi-cards'>
-            <strong>Compras</strong>
-            <p>890</p>
-        </div>
-        <div class='kpi-cards'>
-            <strong>Taxa de conversão</strong>
-            <p>9%</p>
-        </div>
-    </div>
-</div>
 </div>
 
 <style>
@@ -74,15 +76,11 @@
     box-sizing: border-box;
 }
 
-*::-webkit-scrollbar {
-    height: 6px;
-    width: 6px;
-    background: rgba(221, 221, 221,.7);
-}
-
-*::-webkit-scrollbar-thumb {
-    background: rgba(200, 200, 200,1);
-    border-radius: 5px;
+.card-container {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    height: 100%;
 }
 
 .accordion {
@@ -199,4 +197,16 @@ input[type='checkbox']:checked ~ .accordion-header span {
     0% { height: 0 }
     100% { height: 100px }
 }
+
+*::-webkit-scrollbar {
+    height: 6px;
+    width: 6px;
+    background: rgba(221, 221, 221,.7);
+}
+
+*::-webkit-scrollbar-thumb {
+    background: rgba(200, 200, 200,1);
+    border-radius: 5px;
+}
+
 </style>

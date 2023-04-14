@@ -1,23 +1,33 @@
 <!-- Componente OpenXBI, ajude-nos a compartilhar conhecimento -->
 <!-- https://openxbi.com.br -->
 <div class='card-container'>
-    <div class='card'>
-        <strong>Net value</strong>
-        <p> $5.958.598,10</p>
-    </div>
-    <div class='card'>
-        <strong>Gross value</strong>
-        <p>$10.244.870,55</p>
-    </div>
-    <div class='card'>
-        <strong>Margin</strong>
-        <p>$500.348,90</p>
-    </div>
+  <div class='card-content'>
+      <div class='card'>
+          <strong>Net value</strong>
+          <p> $5.958.598,10</p>
+      </div>
+      <div class='card'>
+          <strong>Gross value</strong>
+          <p>$10.244.870,55</p>
+      </div>
+      <div class='card'>
+          <strong>Margin</strong>
+          <p>$500.348,90</p>
+      </div>
+  </div>
 </div>
 <style>
 
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap');
+
 .card-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.card-content {
   display: flex;
   flex-direction: column; /*Mude aqui para row, ou simplesmente apague esta linha para deixar alinha horizontalmente*/
   align-items: center;
@@ -48,14 +58,14 @@
   margin: auto;
 }
 
-.card-container:hover .card {
+.card-content:hover .card {
   filter: blur(2px); /* força do ofuscamento */
   opacity: .7; /* opacidade dos cards ofuscados */
   transform: scale(.98);
   box-shadow: none;
 }
 
-.card-container:hover .card:hover {
+.card-content:hover .card:hover {
   transform: scale(1);
   filter: blur(0px);
   opacity: 1;

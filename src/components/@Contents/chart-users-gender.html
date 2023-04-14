@@ -1,31 +1,33 @@
 <!-- Componente OpenXBI, ajude-nos compartilhando nossa plataforma -->
 <!-- https://openxbi.com.br -->
-<div class='chart-bar-container'>
-    <link rel='stylesheet' href='https://fonts.googleapis.com/icon?family=Material+Icons:FILL'>
-    <strong class='title'>Users by gender identity</strong> <!-- Título do gráfico -->
-    <div class='chart-area-total'>
-        <div class='y-axis'>
-            <!-- Valores do eixo vertical Y -->
-            <small>100%</small>
-            <small>50%</small>
-            <small>0%</small>
-        </div>
-        <div class='chart-bar-area'>
-            <div class='bar' id='bar1' style='height: calc(185px * 0.59)'> <!-- 0.59 altura da barra 1 -->
-                <p>59%</p> <!-- Texto de exibição na barra 1 -->
+<div class='chart-container'>
+    <div class='chart-bar-content'>
+        <link rel='stylesheet' href='https://fonts.googleapis.com/icon?family=Material+Icons:FILL'>
+        <strong class='title'>Users by gender identity</strong> <!-- Título do gráfico -->
+        <div class='chart-area-total'>
+            <div class='y-axis'>
+                <!-- Valores do eixo vertical Y -->
+                <small>100%</small>
+                <small>50%</small>
+                <small>0%</small>
             </div>
-            <div class='bar' id='bar2' style='height: calc(185px * 0.41)'>  <!-- 0.41 altura da barra 2-->
-                <p>41%</p> <!-- Texto de exibição na barra 2 -->
+            <div class='chart-bar-area'>
+                <div class='bar' id='bar1' style='height: calc(185px * 0.59)'> <!-- 0.59 altura da barra 1 -->
+                    <p>59%</p> <!-- Texto de exibição na barra 1 -->
+                </div>
+                <div class='bar' id='bar2' style='height: calc(185px * 0.41)'>  <!-- 0.41 altura da barra 2-->
+                    <p>41%</p> <!-- Texto de exibição na barra 2 -->
+                </div>
             </div>
         </div>
-    </div>
-    <div class='footer'>
-        <p title='female'>
-            <span class='material-icons' style='font-size:1.2rem; font-weight: bold;'>female</span>
-        </p>
-        <p title='male'>
-            <span class='material-icons' style='font-size:1.2rem; font-weight: bold;'>male</span>
-        </p>
+        <div class='footer'>
+            <p title='female'>
+                <span class='material-icons' style='font-size:1.2rem; font-weight: bold;'>female</span>
+            </p>
+            <p title='male'>
+                <span class='material-icons' style='font-size:1.2rem; font-weight: bold;'>male</span>
+            </p>
+        </div>
     </div>
 </div>
 
@@ -47,7 +49,14 @@
     margin-bottom: 1rem; /* espaço entre título e início da área centrarl */
 }
 
-.chart-bar-container {
+.chart-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+.chart-bar-content {
     padding: 1rem;
     margin: .2rem;
     background: white;
@@ -56,7 +65,7 @@
     border-radius: 6px; /* Raio da borda do gráfico todo */
 }
 
-.chart-bar-container, .y-axis {
+.chart-bar-content, .y-axis {
     display: flex; 
     flex-direction: column;
 }
