@@ -55,11 +55,12 @@ export function SignIn() {
                 });
             }
 
-            navigate("/profile");
-            setIsLoading(false)
+
         } catch (error) {
             console.log(error);
         }
+        navigate("/profile");
+        setIsLoading(false)
     }
 
     async function handleGitHubSignIn() {
