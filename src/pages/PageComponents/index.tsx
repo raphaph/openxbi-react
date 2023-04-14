@@ -35,6 +35,16 @@ export function PageComponents() {
 
   const [filtered, setFiltered] = useState('all')
 
+  function compare(a: any, b: any) {
+    if (a.id < b.id) {
+      return -1;
+    }
+    if (a.id > b.id) {
+      return 1;
+    }
+    return 0;
+  }
+
   async function FetchFilteredContent(all: string, filter: string) {
     if (all === 'all') {
       await axios.get('https://uxbi.com.br/api/contents', {
@@ -42,9 +52,9 @@ export function PageComponents() {
           "api-key": `${apiKey}`,
         },
       })
-        .then((response) => response.data.contents.sort())
+        .then((response) => response.data.contents)
         // .then((data) => data.sort(() => Math.random() - 0.5)) RANDOMICO
-        .then((final) => setFilteredData(final))
+        .then((final) => setFilteredData(final.sort(compare)))
 
     } else {
       await axios.get(`https://uxbi.com.br/api/contents/type/${filter}`, {
@@ -52,7 +62,7 @@ export function PageComponents() {
           "api-key": `${apiKey}`,
         },
       })
-        .then((response) => response.data.sort())
+        .then((response) => response.data)
         // .then((data) => data.sort(() => Math.random() - 0.5)) RANDOMICO
         .then((final) => setFilteredData(final))
     }
