@@ -1,4 +1,4 @@
-import { createContext, ReactNode, useEffect, useState } from 'react'
+import { createContext, ReactNode, useEffect, useState, Dispatch, SetStateAction } from 'react'
 type themeValueType = 'light' | 'dark' | null
 
 interface ContentDataProps {
@@ -14,27 +14,27 @@ interface ContentDataProps {
 interface AppContextType {
   contentsNames: string[]
   themeValue: themeValueType
-  setThemeValue: any
+  setThemeValue: Dispatch<SetStateAction<themeValueType>>
   clickedContent: string
-  setClickedContent: any
-  cookiesAccept: string
-  setCookiesAccept: any
+  setClickedContent: Dispatch<SetStateAction<string>>
+  cookiesAccept: any
+  setCookiesAccept: Dispatch<SetStateAction<any>>
   contentData: ContentDataProps
-  setContentData: any
+  setContentData: Dispatch<SetStateAction<ContentDataProps>>
   user: any | null
   setUser: any
   providerName: string | null
-  setProvider: any
+  setProvider: Dispatch<SetStateAction<string | null>>
   componentName: string,
-  setComponentName: any,
+  setComponentName: Dispatch<SetStateAction<string>>
   code: string,
-  setCode: any;
-  createOrEdit: string;
-  setCreateOrEdit: any;
-  showModal: boolean;
-  setShowModal: any;
-  languageSelect: string;
-  setLanguageSelect: any;
+  setCode: Dispatch<SetStateAction<string>>
+  createOrEdit: string
+  setCreateOrEdit: Dispatch<SetStateAction<string>>
+  showModal: boolean
+  setShowModal: Dispatch<SetStateAction<boolean>>
+  languageSelect: string
+  setLanguageSelect: Dispatch<SetStateAction<string>>
 }
 
 
