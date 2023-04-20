@@ -17,8 +17,8 @@ interface AppContextType {
   setThemeValue: Dispatch<SetStateAction<themeValueType>>
   clickedContent: string
   setClickedContent: Dispatch<SetStateAction<string>>
-  cookiesAccept: string
-  setCookiesAccept: Dispatch<SetStateAction<string>>
+  cookiesAccept: any
+  setCookiesAccept: Dispatch<SetStateAction<any>>
   contentData: ContentDataProps
   setContentData: Dispatch<SetStateAction<ContentDataProps>>
   user: any | null
