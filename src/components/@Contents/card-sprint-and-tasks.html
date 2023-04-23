@@ -1,0 +1,102 @@
+<div class='card-container'>
+    <!-- This card can be used to manage your project into an dashboard-->
+    <!-- Esse card pode ser usado para monitorar tasks do seu projeto via dashboard -->
+    <div class='card-sprint'>
+        <link href='https://fonts.googleapis.com/icon?family=Material+Icons'
+            rel='stylesheet'>
+        <div class='header'>
+            <div>
+                <strong>Sprint #001 - OpenXBI</strong>
+                <p>Tasks</p>
+            </div>
+            <img src='https://logos-world.net/wp-content/uploads/2021/02/Jira-Emblem-700x394.png' height='35px'>
+        </div>
+        <div class='wrapper'>
+            <div class='task'>
+                <div class='task-type-name'>
+                    <span class='material-icons' style='color: #62b84b' title='history'>turned_in</span>
+                    <small>Create new components</small>
+                </div>
+                <span class='material-icons' style='color: limegreen' title='finished'>
+                    check_circle
+                </span>
+            </div>
+            <div class='task'>
+                <div class='task-type-name'>
+                    <span class='material-icons' style='color: orangered' title='bug'>bug_report</span>
+                    <small>Fix platform problems</small>
+                </div>
+                <span class='material-icons' style='color: lightgray' title='in progress'>
+                    radio_button_unchecked
+                </span>
+            </div>
+            <div class='task'>
+                <div class='task-type-name'>
+                    <span class='material-icons' style='color: #62b84b' title='history'>turned_in</span>
+                    <small>New function</small>
+                </div>
+                <span class='material-icons' style='color: red' title='calceled'>
+                    cancel
+                </span>
+            </div>
+            <div class='task'>
+                <div class='task-type-name'>
+                    <span class='material-icons' style='color: #62b84b' title='history'>turned_in</span>
+                    <small>Community page</small>
+                </div>
+                <span class='material-icons' style='color: orange' title='awaiting'>
+                    hourglass_top
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap');
+* {
+    font-family: 'Inter', sans-serif; 
+    margin: 0;
+} 
+
+.card-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+.card-sprint {
+    background: white;
+    box-shadow: 0 0 4px 1px rgba(155,155,155,.4);
+    border-radius: 6px;
+    padding: 1rem;
+    margin: .2rem;
+    width: 100%;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 1.2rem;
+    border-bottom: 1px solid lightgray;
+}
+
+.wrapper {
+    padding: 1rem 0 .4rem 0;
+}
+
+.task, .task-type-name {
+    display: flex;
+    align-items: center;
+}
+
+.task {
+    justify-content: space-between;
+    margin: .6rem 0;
+}
+
+.task-type-name span {
+    margin-right: .2rem;
+}
+
+</style>

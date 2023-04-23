@@ -12,11 +12,14 @@
                 <small>0%</small>
             </div>
             <div class='chart-bar-area'>
-                <div class='bar' id='bar1' style='height: calc(185px * 0.59)'> <!-- 0.59 altura da barra 1 -->
-                    <p>59%</p> <!-- Texto de exibição na barra 1 -->
+                <div class='bar' id='bar1' style='height: calc(185px * 0.49)'> <!-- 0.59 altura da barra 1 -->
+                    <p>49%</p> <!-- Texto de exibição na barra 1 -->
                 </div>
-                <div class='bar' id='bar2' style='height: calc(185px * 0.41)'>  <!-- 0.41 altura da barra 2-->
-                    <p>41%</p> <!-- Texto de exibição na barra 2 -->
+                <div class='bar' id='bar2' style='height: calc(185px * 0.40)'>  <!-- 0.41 altura da barra 2-->
+                    <p>40%</p> <!-- Texto de exibição na barra 2 -->
+                </div>
+                <div class='bar' id='bar3' style='height: calc(185px * 0.11)'>  <!-- 0.41 altura da barra 2-->
+                    <p>11%</p> <!-- Texto de exibição na barra 2 -->
                 </div>
             </div>
         </div>
@@ -26,6 +29,9 @@
             </p>
             <p title='male'>
                 <span class='material-icons' style='font-size:1.2rem; font-weight: bold;'>male</span>
+            </p>
+            <p title='others'>
+                <span class='material-icons' style='font-size:1.2rem; font-weight: bold;'>group</span>
             </p>
         </div>
     </div>
@@ -112,6 +118,10 @@
     background: linear-gradient(#3f17b1, #5f27f8); /* cor da barra 2 */
 }
 
+#bar3 {
+    background: linear-gradient(#b6b6b6, #cccccc); /* cor da barra 2 */
+}
+
 .chart-bar-area, .footer {
     display: flex;
     justify-content: space-around;
@@ -127,8 +137,12 @@
     color: #c42c96; /* cor do icone de genero 1 */
 }
 
-.footer p:last-child {
+.footer p:nth-child(2) {
     color: #3f17b1; /* cor do icone de genero 2 */
+}
+
+.footer p:last-child {
+    color: #b6b6b6; /* cor do icone de genero 2 */
 }
 
 </style>

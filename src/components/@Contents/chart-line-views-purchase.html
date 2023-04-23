@@ -1,0 +1,308 @@
+<div class='frame'>
+	<div class='card'>
+		  <div class='clearfix'></div>
+		  <div class='parameter'>
+			  <span class='orange'>Views</span>
+			  <span class='purple'>Purchases</span>
+		  </div>
+		  <div class='statistic'>
+			  <div class='line-1'></div>
+			  <div class='line-2'></div>
+			  <div class='line-3'></div>
+			  <div class='data orange'>
+				  <svg>
+					  <polyline points='9,46 50,12 90,23 130,11 171,38 211,48 251,19'></polyline>    
+				  </svg>
+				  <div class='points'>
+					  <div class='point-1'>
+						  <div class='tooltip'>458</div>
+					  </div>
+					  <div class='point-2'>
+						  <div class='tooltip'>812</div>
+					  </div>
+					  <div class='point-3'>
+						  <div class='tooltip'>746</div>
+					  </div>
+					  <div class='point-4'>
+						  <div class='tooltip'>877</div>
+					  </div>
+					  <div class='point-5'>
+						  <div class='tooltip'>517</div>
+					  </div>
+					  <div class='point-6'>
+						  <div class='tooltip'>434</div>
+					  </div>
+					  <div class='point-7'>
+						  <div class='tooltip'>458</div>
+					  </div>
+				  </div>
+			  </div>
+			  <div class='data purple'>
+				  <svg>
+					  <polyline points='9,61 50,50 90,65 130,55 171,61 211,74 251,64'></polyline>    
+				  </svg>
+				  <div class='points'>
+					  <div class='point-1'>
+						  <div class='tooltip'>26</div>
+					  </div>
+					  <div class='point-2'>
+						  <div class='tooltip'>41</div>
+					  </div>
+					  <div class='point-3'>
+						  <div class='tooltip'>22</div>
+					  </div>
+					  <div class='point-4'>
+						  <div class='tooltip'>36</div>
+					  </div>
+					  <div class='point-5'>
+						  <div class='tooltip'>25</div>
+					  </div>
+					  <div class='point-6'>
+						  <div class='tooltip'>13</div>
+					  </div>
+					  <div class='point-7'>
+						  <div class='tooltip'>20</div>
+					  </div>
+				  </div>
+			  </div>
+		  </div>
+		  <div class='days'>
+			  <span class='day'>Mon</span>
+			  <span class='day'>Tue</span>
+			  <span class='day'>Wed</span>
+			  <span class='day'>Thu</span>
+			  <span class='day'>Fri</span>
+			  <span class='day'>Sat</span>
+			  <span class='day'>Sun</span>
+		  </div>
+	</div>
+  </div>
+  <style>
+  .frame {
+	  --views-color: #ff8c00;
+	  --purchase-color: #6b55f9;
+	   width: 100%;
+	   height: 100%;
+	   border-radius: 2px;
+	   -webkit-font-smoothing: antialiased;
+  }
+   .card {
+	   position: absolute;
+	   height: 200px;
+	   width: 370px;
+	   background: #fff;
+	   border-radius: 5px;
+	   box-shadow: 0 0 5px rgba(155, 155, 155, 0.4);
+	   overflow: hidden;
+	   font-family: 'Inter', sans-serif;
+  }
+   .card .header {
+	   position: relative;
+	   background: white;
+	   color: #fff;
+  }
+   .card .header .big {
+	  position: absolute;
+	  font-size: 1.5rem;
+  }
+   .card .header .small {
+	  position: absolute;
+	  font-size: 1rem;
+  }
+  
+  .card .header .value {
+	  position: absolute;
+	  font-size: 1.5rem;
+  }
+  
+  .card .parameter {
+	  text-align: right;
+	  padding: 10px 0 14px 0;
+  }
+   .card .parameter span {
+	  position: relative;
+	  font-size: 0.85rem;
+	  padding: 0 10px 0 25px;
+  }
+   .card .parameter span:before {
+	   position: absolute;
+	   left: 6px;
+	   top: 6px;
+	   display: block;
+	   content: '';
+	   width: 11px;
+	   height: 4px;
+	   border-radius: 3px;
+  }
+   .card .parameter .orange:before {
+	   background: var(--views-color);
+  }
+   .card .parameter .purple:before {
+	   background: var(--purchase-color);
+  }
+   .card .statistic {
+	   position: relative;
+	   height: 120px;
+	   width: 260px;
+	   margin: 0 auto;
+  }
+   .card .statistic .line-1, 
+   .card .statistic .line-2, 
+   .card .statistic .line-3 {
+	   position: absolute;
+	   top: 0;
+	   left: 0;
+	   right: 0;
+	   height: 1px;
+	   background: rgba(255, 192, 203, 0.3);
+  }
+   .card .statistic .line-2 {
+	   top: 60px;
+  }
+   .card .statistic .line-3 {
+	   top: inherit;
+	   bottom: 0;
+  }
+   .card .statistic .data svg {
+	   position: absolute;
+	   top: 0;
+	   left: 0;
+	   right: 0;
+	   bottom: 0;
+	   stroke-dasharray: 1000;
+	   stroke-dashoffset: 1000;
+	   animation: 4s dash 0.5s linear forwards;
+  }
+   @keyframes dash {
+	   to {
+		   stroke-dashoffset: 0;
+	  }
+  }
+   .card .statistic .data polyline {
+	   fill: none;
+	   stroke-width: 2;
+	   stroke-linecap: round;
+  }
+   .card .statistic .data.orange polyline {
+	   stroke: var(--views-color);
+  
+  }
+   .card .statistic .data.purple polyline {
+	   stroke: var(--purchase-color);
+  }
+   .card .statistic .data .tooltip {
+	   position: absolute;
+	   bottom: 13px;
+	   left: 50%;
+	   transform: translate3d(-50%, 10px, 0);
+	   font-weight: 600;
+	   font-size: 11px;
+	   line-height: 11px;
+	   color: white;
+	   padding: 8px 6px;
+	   border-radius: 3px;
+	   visibility: hidden;
+	   opacity: 0;
+	   transition: transform 0.4s ease-out 0s, opacity 0.4s ease-out 0s;
+  }
+   .card .statistic .data .tooltip:after {
+	   position: absolute;
+	   display: block;
+	   content: '';
+	   height: 6px;
+	   width: 6px;
+	   left: 50%;
+	   margin-left: -3px;
+	   bottom: -3px;
+	   transform: rotate(45deg);
+  }
+   .card .statistic .data [class^='point-'] {
+	   position: absolute;
+	   width: 6px;
+	   height: 6px;
+	   border-radius: 3px;
+	   cursor: pointer;
+	   z-index: 10;
+  }
+   .card .statistic .data [class^='point-']:hover .tooltip {
+	   visibility: visible;
+	   opacity: 1;
+	   transform: translate3d(-50%, 0, 0);
+  }
+   .card .statistic .data.orange [class^='point-'], .card .statistic .data.orange .tooltip, .card .statistic .data.orange .tooltip:after {
+	   background: var(--views-color);
+  }
+   .card .statistic .data.orange .point-1 {
+	   left: 7px; /* Desloca no eixo X */
+	   top: 42px; /* Desloca no eixo Y */
+  }
+   .card .statistic .data.orange .point-2 {
+	   left: 48px;
+	   top: 9px;
+  }
+   .card .statistic .data.orange .point-3 {
+	   left: 88px;
+	   top: 20px;
+  }
+   .card .statistic .data.orange .point-4 {
+	   left: 128px;
+	   top: 8px;
+  }
+   .card .statistic .data.orange .point-5 {
+	   left: 169px;
+	   top: 35px;
+  }
+   .card .statistic .data.orange .point-6 {
+	   left: 209px;
+	   top: 45px;
+  }
+   .card .statistic .data.orange .point-7 {
+	   left: 249px;
+	   top: 16px;
+  }
+   .card .statistic .data.purple [class^='point-'], .card .statistic .data.purple .tooltip, .card .statistic .data.purple .tooltip:after {
+	   background: var(--purchase-color);
+  }
+   .card .statistic .data.purple .point-1 {
+	   left: 7px;
+	   top: 58px;
+  }
+   .card .statistic .data.purple .point-2 {
+	   left: 48px;
+	   top: 47px;
+  }
+   .card .statistic .data.purple .point-3 {
+	   left: 88px;
+	   top: 62px;
+  }
+   .card .statistic .data.purple .point-4 {
+	   left: 128px;
+	   top: 52px;
+  }
+   .card .statistic .data.purple .point-5 {
+	   left: 169px;
+	   top: 58px;
+  }
+   .card .statistic .data.purple .point-6 {
+	   left: 209px;
+	   top: 71px;
+  }
+   .card .statistic .data.purple .point-7 {
+	   left: 249px;
+	   top: 61px;
+  }
+   .card .days {
+	   width: 280px;
+	   margin: 0 auto;
+  }
+   .card .days .day {
+	   display: block;
+	   float: left;
+	   width: 14%;
+	   font-size: 9px;
+	   color: #949494;
+	   line-height: 30px;
+	   text-transform: uppercase;
+	   text-align: center;
+  }
+  </style>
