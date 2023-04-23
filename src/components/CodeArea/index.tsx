@@ -245,11 +245,8 @@ export function CodeArea() {
         // const actualCode = DOMPurify.sanitize(code)
         const actualCode = code.replace(/<script\b[^<]*(?:(?!<\/script>)<[^<]*)*<\/script>/gi, '').replace('script', '').replace('.js', '')
         const htmlString = actualCode;
-        const encoder = new TextEncoder();
-        const encodedBytes = encoder.encode(htmlString);
-        const encodedHtml = btoa(String.fromCharCode(...new Uint8Array(encodedBytes)));
-        const decodedHtml = decodeURIComponent(escape(atob(encodedHtml)));
-        const dataUrl = `data:text/html;base64,${btoa(decodedHtml)}`;
+        const encodedHtml = Buffer.from(htmlString).toString('base64');
+        const dataUrl = `data:text/html;charset=utf-8;base64,${encodedHtml}`;
         return dataUrl;
     }
 

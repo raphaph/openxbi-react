@@ -1,0 +1,117 @@
+<!-- This element is Complex -->
+<!-- Elemento complexo -->
+<figure class='c-graph'>
+    <figcaption class='c-graph__title'>Do you use OpenXBI at work?</figcaption><svg class='chart' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='355' height='520' role='img'>
+        <defs>
+            <pattern id='pattern' patternUnits='userOpenxbi' width='10' height='10'></pattern>
+        </defs>
+        <text class='c-graph__label' x='0' y='40'>Yes, we use it in production.</text>
+        <g class='c-graph__value'>
+            <rect class='c-graph__bar' width='160' height='30' y='50' fill='#1e1935'></rect><text class='c-graph__number c-graph__number--value' x='170' y='50' dy='22.2'> 20%</text>
+        </g>
+        <g class='c-graph__segment'>
+            <rect class='c-graph__bar' width='144' height='30' y='50' fill='url(#pattern)'></rect><text class='c-graph__number' x='10' y='50' dy='22.22222222222222'> 18%</text>
+        </g>
+        <text class='c-graph__label' x='0' y='120'>Yes, we use it in development.</text>
+        <g class='c-graph__value'>
+            <rect class='c-graph__bar' width='104' height='30' y='130' fill='#1e1935'></rect><text class='c-graph__number c-graph__number--value' x='114' y='130' dy='22.2'> 13%</text>
+        </g>
+        <g class='c-graph__segment'>
+            <rect class='c-graph__bar' width='96' height='30' y='130' fill='url(#pattern)'></rect><text class='c-graph__number' x='10' y='130' dy='22.2'> 12%</text>
+        </g>
+        <text class='c-graph__label' x='0' y='200'>Yes, we use it for research.</text>
+        <g class='c-graph__value'>
+            <rect class='c-graph__bar' width='248' height='30' y='210' fill='#1e1935'></rect><text class='c-graph__number c-graph__number--value' x='258' y='210' dy='22.2'> 31%</text>
+        </g>
+        <g class='c-graph__segment'>
+            <rect class='c-graph__bar' width='144' height='30' y='210' fill='url(#pattern)'></rect><text class='c-graph__number' x='10' y='210' dy='22.2'> 18%</text>
+        </g>
+        <text class='c-graph__label' x='0' y='280'>No, but we're planning to.</text>
+        <g class='c-graph__value'>
+            <rect class='c-graph__bar' width='136' height='30' y='290' fill='#1e1935'></rect><text class='c-graph__number c-graph__number--value' x='146' y='290' dy='22.2'> 17%</text>
+        </g>
+        <g class='c-graph__segment'>
+            <rect class='c-graph__bar' width='112' height='30' y='290' fill='url(#pattern)'></rect><text class='c-graph__number' x='10' y='290' dy='22.2'> 14%</text>
+        </g><text class='c-graph__label' x='0' y='360'>No, and we're currently not planning to.</text>
+        <g class='c-graph__value'>
+            <rect class='c-graph__bar' width='112' height='30' y='370' fill='#1e1935'></rect><text class='c-graph__number c-graph__number--value' x='122' y='370' dy='22.2'> 14%</text>
+        </g>
+        <g class='c-graph__segment'>
+            <rect class='c-graph__bar' width='112' height='30' y='370' fill=''></rect><text class='c-graph__number' x='10' y='370' dy='22.2'> 14%</text>
+        </g>
+        <g class='c-graph__footer' x='0' y='500' height='20' dy='10'>
+            <rect class='c-graph__legend-value' y='460' width='20' height='20' fill='#1e1935'></rect><text x='30' y='460' dy='1em'>everyone</text>
+            <rect class='c-graph__legend-segment' y='490' width='20' height='20' fill='#6b55f9'></rect><text x='30' y='490' dy='1em'>data analyst</text>
+        </g>
+    </svg>
+</figure>
+<style>
+.c-graph {
+    width:99%;
+    padding: 1rem;
+    margin: .2rem;
+    background: white;
+    border-radius: 6px;
+    box-shadow: 0 0 5px 1px rgba(144,144,144,0.2);
+}
+
+c-graph__title {
+    width: 200px;
+}
+
+.c-graph__bar {
+    cursor: pointer;
+    transition: fill 0.15s ease;
+    fill: #6b55f9;
+}
+
+.c-graph__bar:hover {
+    fill: #6b55f9;
+}
+
+.c-graph__segment {
+    fill: white;
+}
+
+.c-graph__segment:hover {
+    fill: white;
+    opacity: 1;
+    z-index: 2;
+}
+
+.c-graph__number {
+    cursor: pointer;
+    font-weight: bold;
+    transition: opacity 0.25s ease;
+}
+
+.c-graph__value .c-graph__bar,
+.c-graph__legend-value {
+    fill: #FF8C0C;
+}
+
+.c-graph__title,
+.c-graph__label, 
+.c-graph__footer, 
+.c-graph__number {
+    font: bold 15px 'Inter', sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    border: 0;
+    margin: 0;
+    padding: 0;
+}
+
+*::-webkit-scrollbar {
+    width: 4px;
+    background: rgba(144, 144, 144,.3);
+}
+
+*::-webkit-scrollbar-thumb {
+    background: rgba(122, 122, 122,.3);
+    border-radius: 2px;
+}
+</style>
