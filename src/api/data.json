@@ -161,6 +161,51 @@
             "description": "Mapa dos EUA como gráico personalizável.",
             "likes": 0,
             "id": "3eddf056-810d-4cc0-9899-asd9as7e78d"
+        },
+        {
+            "name": "card-sprint-and-tasks",
+            "path": "/src/components/@Contents/card-sprint-and-tasks.html",
+            "type": "chart",
+            "creator": "raphaph",
+            "description": "",
+            "likes": 0,
+            "id": "8b1ce45e-34e7-4d12-9a55-c61b9a23f923"
+        },
+        {
+            "name": "chart-indicator-circle",
+            "path": "/src/components/@Contents/chart-indicator-circle.html",
+            "type": "chart",
+            "creator": "raphaph",
+            "description": "",
+            "likes": 0,
+            "id": "6f7828a6-6106-4c6c-a38e-97f3c3b28d4b"
+        },
+        {
+            "name": "chart-line-views-purchase",
+            "path": "/src/components/@Contents/chart-line-views-purchase.html",
+            "type": "chart",
+            "creator": "raphaph",
+            "description": "",
+            "likes": 0,
+            "id": "f4b8c913-4e7d-44c6-bb06-ee9c1fbbd01e"
+        },
+        {
+            "name": "chart-questions-and-answers",
+            "path": "/src/components/@Contents/chart-questions-and-answers.html",
+            "type": "chart",
+            "creator": "raphaph",
+            "description": "",
+            "likes": 0,
+            "id": "ae8ecfe8-6cdd-4d0d-bc97-1f9b3c8814e4"
+        },
+        {
+            "name": "chart-hierarchy-group",
+            "path": "/src/components/@Contents/chart-hierarchy-group.html",
+            "type": "chart",
+            "creator": "raphaph",
+            "description": "",
+            "likes": 0,
+            "id": "0e6c778c-4dcf-48b5-9df5-5c5eb5d19215"
         }
 ]
 }
