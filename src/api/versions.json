@@ -1,6 +1,19 @@
 {
     "versions" : [
         {
+            "version": "1.0.2",
+            "release": "April 27, 2023",
+            "description": "New Components and Templates! ❣️",
+            "marks": [
+                {
+                    "mark": "5 components added, 4 charts and 1 card."
+                },
+                {
+                    "mark": "3 templates added, fraud-detection, cybersec-vulnerabilities, supermarket-sales."
+                }
+            ]
+        },
+        {
             "version": "1.0.1",
             "release": "April 12, 2023",
             "description": "New feature 'Create mode'!👩🏻‍💻",

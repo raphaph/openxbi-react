@@ -180,9 +180,7 @@ return
 
   "
   `
-  useEffect(() => {
-    setCode('<div></div>')
-  }, [])
+
 
   const htmlCode = `<!-- Componente OpenXBI, ajude-nos compartilhando nossa plataforma -->
 <!-- https://openxbi.com.br -->
@@ -248,6 +246,7 @@ return
     if (cookies === null) {
       setCookiesAccept(null)
     }
+    setCode('<div></div>')
   }, [])
 
   return (
@@ -263,7 +262,7 @@ return
         <CardsMainContentOne>
           <div>
             <iframe
-              src={contentsNames[7]}
+              src={contentsNames[4]}
               frameBorder={0}
               height={300}
 
@@ -271,14 +270,14 @@ return
           </div>
           <div>
             <iframe
-              src={contentsNames[10]}
+              src={contentsNames[16]}
               frameBorder={0}
               height={300}
             ></iframe>
           </div>
           <div>
             <iframe
-              src={contentsNames[11]}
+              src={contentsNames[22]}
               frameBorder={0}
               height={365}
               width={360}

@@ -37,6 +37,10 @@ export const HeaderContentsContainer = styled.header<ThemeProps>`
 
   width: 100%;
 
+  p {
+    margin-top: .8rem;
+  }
+
   div {
     max-width: 1660px;
     width: 100%;

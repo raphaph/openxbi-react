@@ -3,19 +3,46 @@
         {
             "id": 1,
             "name": "openxbi-initial-template", 
-            "path": "src/pbix/openxbi-templates.zip",
+            "path": "",
             "download": "https://www.dropbox.com/s/yhcqy4r7bggymx3/openxbi-templates.pbix?dl=0",
             "image": "https://i.imgur.com/ryp8pLx.png",
             "public": "https://app.powerbi.com/view?r=eyJrIjoiMDhmZjhhNTEtZDU1Ny00YjM3LTk2MGMtMGU2OGQxYzJhMGY3IiwidCI6IjBhODViZGRhLTVhN2YtNGIyZS04Y2FmLTcyMDRmMGU1NTM2MSJ9",
             "creator": "raphaph"
         },
         {
+            "id": 3,
+            "name": "fraud-detection",
+            "path": "",
+            "download": "https://www.dropbox.com/s/1ims119dciatyhd/fraud-attempts.pbix?dl=0",
+            "image": "https://i.imgur.com/pEUBelo.png",
+            "public": "https://app.powerbi.com/view?r=eyJrIjoiYWJjNWI0ODQtOThlNy00YjRmLTliNzAtMDA4MWNlZjQ3ZjkxIiwidCI6IjBhODViZGRhLTVhN2YtNGIyZS04Y2FmLTcyMDRmMGU1NTM2MSJ9",
+            "creator": "raphaph"
+        },
+        {
             "id": 2,
             "name": "openxbi-cloud-costs",
-            "path": "src/pbix/openxbi-cloud-costs.zip",
+            "path": "",
             "download": "https://www.dropbox.com/s/smd6usy46y6oype/openxbi-cloud-costs.pbix?dl=0",
             "image": "https://i.imgur.com/9IZF64q.png",
             "public": "https://app.powerbi.com/view?r=eyJrIjoiNWNmYjZjMTAtMjUwMy00MmUxLWEzN2EtN2MxOGE1MDQ4NWQ2IiwidCI6IjBhODViZGRhLTVhN2YtNGIyZS04Y2FmLTcyMDRmMGU1NTM2MSJ9",
+            "creator": "raphaph"
+        },
+        {
+            "id": 4,
+            "name": "supermarket-sales",
+            "path": "",
+            "download": "https://www.dropbox.com/s/ak41er5x0pasdhr/supermarket-sales.pbix?dl=0",
+            "image": "https://i.imgur.com/N0fJySE.png",
+            "public": "https://app.powerbi.com/view?r=eyJrIjoiZjMwYjU1YWYtMmE2Ni00Y2MyLTk3MTgtZjk5MTJjNTgzMTllIiwidCI6IjBhODViZGRhLTVhN2YtNGIyZS04Y2FmLTcyMDRmMGU1NTM2MSJ9",
+            "creator": "raphaph"
+        },
+        {
+            "id": 5,
+            "name": "cybersec-vulnerabilities",
+            "path": "",
+            "download": "https://www.dropbox.com/s/ji5blhn799vksb3/cybersec-vulnerabilities.pbix?dl=0",
+            "image": "https://i.imgur.com/5MoihpV.png",
+            "public": "https://app.powerbi.com/view?r=eyJrIjoiYTc3MzE0NGMtOGE2OC00MjRiLWJlZmItZTVlMzI1MjRiZjAyIiwidCI6IjBhODViZGRhLTVhN2YtNGIyZS04Y2FmLTcyMDRmMGU1NTM2MSJ9",
             "creator": "raphaph"
         }
     ]

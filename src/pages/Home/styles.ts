@@ -36,21 +36,21 @@ export const MainContentOne = styled.div`
   opacity: 0;
   padding: 0 2rem;
 
-  width: 100vw;
-  max-width: 1300px;
+  max-width: 1200px;
+  width: 100%;
 
   animation: anim 1s forwards;
   animation-delay: 250ms;
 
   h1 {
     margin: 5rem 0 1rem 0;
-    width: 80%;
+
     text-align: left;
     font-size: 4rem;
     text-shadow: 0px 0px 2px ${(props) => props.theme['gray-500']};
 
     @media (max-width: 700px) {
-      font-size: 2rem;
+      font-size: 2.5rem;
     }
 
   }
@@ -74,14 +74,22 @@ export const MainContentOne = styled.div`
 `
 
 export const CardsMainContentOne = styled.div`
-  display: flex;
+  display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   gap: 1rem;
-  flex-wrap: wrap;
-  align-items: center;
+
+  @media (max-width: 700px) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    height: 100%;
+  }
+
   animation: anim 1s forwards;
   animation-delay: 600ms;
   opacity: 0;
+  
   div {
     display: flex;
     align-items: center;
