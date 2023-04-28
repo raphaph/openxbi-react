@@ -40,7 +40,7 @@ export function Templates() {
           {templates.map((template: TemplateProps) => {
             return (
               <CardMap key={template.id} variant={themeValue}>
-                {user === null ? <a onClick={() => alert(`${languageSelect === 'pt' ? 'Acesse sua conta para poder visualizar e copiar o código.🚀' : 'Login to your account to view and copy the code.🚀'}`)} rel="noreferrer">
+                {user === null ? <a onClick={() => alert(`${languageSelect === 'pt' ? 'Acesse sua conta para poder fazer o download.🚀' : 'Login to your account to download.🚀'}`)} rel="noreferrer">
                   <img src={template.image} alt={template.name} />
                 </a> :
                   <a href={template.public} target={'_blank'} rel="noreferrer">
@@ -48,7 +48,7 @@ export function Templates() {
                   </a>}
                 <CardFooter>
                   <strong>{template.name}</strong>
-                  {user === null ? <button onClick={() => alert(`${languageSelect === 'pt' ? 'Acesse sua conta para poder visualizar e copiar o código.🚀' : 'Login to your account to view and copy the code.🚀'}`)}>
+                  {user === null ? <button onClick={() => alert(`${languageSelect === 'pt' ? 'Acesse sua conta para poder fazer o download.🚀' : 'Login to your account to download.🚀'}`)}>
                     <NavLink to="">
                       <DownloadSimple />
                       Download</NavLink>
