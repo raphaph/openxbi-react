@@ -34,7 +34,8 @@ export const TemplatesContainer = styled.main<ThemeProps>`
 export const TemplatesContents = styled.header`
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: center;
+  align-items: center;
   width: 100%;
 `
 
@@ -47,14 +48,19 @@ export const HearderTemplate = styled.header<ThemeProps>`
   
   p {
     margin-top: .6rem;
+    margin-bottom: 1rem;
   }
 
   width: 100%;
+
+  small {
+    color: gray;
+  }
 `
 
 export const TemplatesMap = styled.main`
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
   gap: 1rem;
   margin: 1rem 0.5rem;
 
@@ -63,12 +69,6 @@ export const TemplatesMap = styled.main`
     display: flex;
     flex-wrap: wrap;
   }
-
-  max-width: 1200px;
-  width: 100%;
-
-  align-items: center;
-  justify-content: center;
 `
 
 export const CardMap = styled.div<ThemeProps>`
@@ -84,13 +84,17 @@ export const CardMap = styled.div<ThemeProps>`
 
   img {
     cursor: pointer;
-    width: 540px;
-    box-shadow: 0 0 2px 1px #aaaaaa;
+    width: 500px;
+    height: 280px;
+    box-shadow: 0 0 3px 1px rgba(55,55,55,0.1);
     border-radius: 6px;
-    transition: all 500ms;    
+    transition: all 500ms; 
+    filter: contrast(103%); 
 
     &:hover {
-      transform: scale(1.5);
+      transform: scale(1.05);
+      z-index: 2;
+      box-shadow: none;
     }
   }
 
