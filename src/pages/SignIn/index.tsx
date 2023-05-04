@@ -4,7 +4,6 @@ import { useNavigate } from 'react-router-dom';
 import { AppContext } from '../../context/AppContext';
 import { auth } from '../../services/firebase'
 import { SignInContainer } from './styles';
-import axios from 'axios'
 import { User } from 'phosphor-react';
 import Loading from '../../components/LoadingModal';
 
@@ -24,36 +23,37 @@ export function SignIn() {
             // A autenticação persistente foi ativada com sucesso
             // Inicia o processo de login com o Google
             const result = await signInWithPopup(auth, provider);
+
             setUser(result);
             setProvider(result.providerId);
 
-            const apikey = import.meta.env.VITE_AUTH_KEY;
+            // const apikey = import.meta.env.VITE_AUTH_KEY;
 
-            const response = await axios.get(`https://uxbi.com.br/api/accounts/${result.user.email}`, {
-                headers: {
-                    'Content-Type': 'application/json',
-                    "api-key": `${apikey}`,
-                }
-            });
+            // const response = await axios.get(`https://uxbi.com.br/api/accounts/${result.user.email}`, {
+            //     headers: {
+            //         'Content-Type': 'application/json',
+            //         "api-key": `${apikey}`,
+            //     }
+            // });
 
-            if (response.data.length !== 1) {
-                const data = {
-                    uuid: result.user.uid,
-                    display_name: result.user.displayName,
-                    email: result.user.email,
-                    provider: result.providerId,
-                    photo_url: result.user.photoURL,
-                    username: result.user.email?.split('@', 1),
-                    created_at: new Date().toISOString()
-                };
+            // if (response.data.length !== 1) {
+            //     const data = {
+            //         uuid: result.user.uid,
+            //         display_name: result.user.displayName,
+            //         email: result.user.email,
+            //         provider: result.providerId,
+            //         photo_url: result.user.photoURL,
+            //         username: result.user.email?.split('@', 1),
+            //         created_at: new Date().toISOString()
+            //     };
 
-                await axios.post('https://uxbi.com.br/api/accounts/', data, {
-                    headers: {
-                        'Content-Type': 'application/json',
-                        "api-key": `${apikey}`,
-                    }
-                });
-            }
+            //     await axios.post('https://uxbi.com.br/api/accounts/', data, {
+            //         headers: {
+            //             'Content-Type': 'application/json',
+            //             "api-key": `${apikey}`,
+            //         }
+            //     });
+            // }
 
 
         } catch (error) {
@@ -73,35 +73,35 @@ export function SignIn() {
             setUser(result);
             setProvider(result.providerId);
 
-            const apikey = import.meta.env.VITE_AUTH_KEY;
-            try {
-                const response = await axios.get(`https://uxbi.com.br/api/accounts/${result.user.email}`, {
-                    headers: {
-                        'Content-Type': 'application/json',
-                        "api-key": `${apikey}`,
-                    }
-                });
-                if (response.data.length !== 1) {
-                    const data = {
-                        uuid: result.user.uid,
-                        display_name: result.user.displayName,
-                        email: result.user.email,
-                        provider: result.providerId,
-                        photo_url: result.user.photoURL,
-                        username: result.user.email?.split('@', 1),
-                        created_at: new Date().toISOString()
-                    };
+            // const apikey = import.meta.env.VITE_AUTH_KEY;
+            // try {
+            //     const response = await axios.get(`https://uxbi.com.br/api/accounts/${result.user.email}`, {
+            //         headers: {
+            //             'Content-Type': 'application/json',
+            //             "api-key": `${apikey}`,
+            //         }
+            //     });
+            //     if (response.data.length !== 1) {
+            //         const data = {
+            //             uuid: result.user.uid,
+            //             display_name: result.user.displayName,
+            //             email: result.user.email,
+            //             provider: result.providerId,
+            //             photo_url: result.user.photoURL,
+            //             username: result.user.email?.split('@', 1),
+            //             created_at: new Date().toISOString()
+            //         };
 
-                    await axios.post('https://uxbi.com.br/api/accounts/', data, {
-                        headers: {
-                            'Content-Type': 'application/json',
-                            "api-key": `${apikey}`,
-                        }
-                    });
-                }
-            } catch (error) {
-                console.log(error);
-            }
+            //         await axios.post('https://uxbi.com.br/api/accounts/', data, {
+            //             headers: {
+            //                 'Content-Type': 'application/json',
+            //                 "api-key": `${apikey}`,
+            //             }
+            //         });
+            //     }
+            // } catch (error) {
+            //     console.log(error);
+            // }
 
             navigate("/profile");
             setIsLoading(false)
