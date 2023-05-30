@@ -1,4 +1,4 @@
-import { useContext, useState, useEffect } from "react";
+import { useContext, useState, ChangeEvent, KeyboardEvent } from "react";
 import AceEditor from "react-ace";
 import "ace-builds/src-noconflict/mode-html";
 import "ace-builds/src-noconflict/theme-monokai";
@@ -166,14 +166,22 @@ const chart_default = `<div class='chart-container'>
 
 export function CodeArea() {
     const [necklaceSelect, setNecklaceSelect] = useState<any>('html')
-    const { themeValue, user, code, setCode, languageSelect, componentName, setComponentName, createOrEdit } =
-        useContext(AppContext)
+    const {
+        themeValue,
+        user,
+        code,
+        setCode,
+        languageSelect,
+        componentName,
+        setComponentName,
+        createOrEdit
+    } = useContext(AppContext)
     const [typeDefaultCode, setTypeDefaultCode] = useState('card')
     const apiKey = import.meta.env.VITE_AUTH_KEY
     const [saveShowConfirm, setSaveShowConfirm] = useState(false)
     const [typeComponentSave, setTypeComponentSave] = useState('card')
 
-    function selectTypeDefaultCode(event: any) {
+    function selectTypeDefaultCode(event: ChangeEvent<HTMLSelectElement>): void {
         setTypeDefaultCode(event.target.value);
 
         if (event.target.value === 'card') {
@@ -187,7 +195,7 @@ export function CodeArea() {
         }
     }
 
-    function selectTypeComponentSave(event: any) {
+    function selectTypeComponentSave(event: ChangeEvent<HTMLSelectElement>): void {
         setTypeComponentSave(event.target.value);
 
         if (event.target.value === 'card') {
@@ -217,7 +225,7 @@ export function CodeArea() {
                 "api-key": `${apiKey}`,
             }
         })
-            .then(response => {
+            .then(res => {
                 setSaveShowConfirm(true)
                 setTimeout(() => {
                     setSaveShowConfirm(false)
@@ -228,11 +236,11 @@ export function CodeArea() {
             })
     }
 
-    function handleInputChange(event: any) {
+    function handleInputChange(event: ChangeEvent<HTMLInputElement>): void {
         setComponentName(event.target.value);
     }
 
-    function validarEntrada(event: any) {
+    function validarEntrada(event: KeyboardEvent<HTMLInputElement>): void {
         const tecla = event.key;
         const regex = /^[a-z0-9\_]+$/;
         const entradaValida = regex.test(tecla);
@@ -262,7 +270,7 @@ export function CodeArea() {
                         <InputNameComponent variant={themeValue}>
                             {createOrEdit === 'create' ?
                                 <div>
-                                    <select id="select-type-name" name="type-name" onChange={selectTypeComponentSave}>
+                                    <select id="select-type-name" name="type-name" onChange={() => selectTypeComponentSave}>
                                         <option value="card">card</option>
                                         <option value="chart">chart</option>
                                         <option value="button">button</option>
