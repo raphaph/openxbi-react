@@ -35,4 +35,4 @@ Path to components content: /src/components/@Contents/
 7. Submit a pull request to merge your changes into the main repository.
 
 ## Support
-If you need assistance or have any questions regarding PowerBI Components, please reach out to our support team by [creating an issue](https://github.com/raphaph/openxbi-react/issues). We are here to help and provide guidance as you explore and utilize the components.
+If you need assistance or have any questions regarding OpenXBI Components, please reach out to our support team by [creating an issue](https://github.com/raphaph/openxbi-react/issues). We are here to help and provide guidance as you explore and utilize the components.
