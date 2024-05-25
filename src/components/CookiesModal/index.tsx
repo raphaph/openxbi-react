@@ -15,6 +15,7 @@ export function CookiesModal() {
         <CookiesContainer>
             {languageSelect === 'pt' ?
                 <div>
+                    <p>Anúncios são utilizados para manter a plataforma no ar!</p>
                     <strong>🍪 Este site utiliza cookies.</strong>
                     <p>Nós utilizamos cookies para melhorar a experiência de navegação dos usuários. Ao utilizar o site você concorda com o armazenamento de preferências do usuários e perfil conectado:</p>
                     <li>Preferência de tema</li>
@@ -23,6 +24,7 @@ export function CookiesModal() {
                     <button onClick={() => CookiesAccept()}>Aceitar</button>
                 </div> :
                 <div>
+                    <p>Ads are used to keep the platform running!</p>
                     <strong>🍪 This site uses cookies.</strong>
                     <p>We use cookies to improve the browsing experience for users. By using the site, you agree to the storage of user preferences and connected profile:</p>
                     <li>Theme preference</li>
